@@ -1,11 +1,11 @@
 
 #include <gmock/gmock.h>
 
-#include <glesbinding/gles/gl.h>
-#include <glesbinding/gles20/gl.h>
-#include <glesbinding/gles30/gl.h>
-#include <glesbinding/gles31/gl.h>
-#include <glesbinding/gles32/gl.h>
+#include <glesbinding/gles/gles.h>
+#include <glesbinding/gles20/gles.h>
+#include <glesbinding/gles30/gles.h>
+#include <glesbinding/gles31/gles.h>
+#include <glesbinding/gles32/gles.h>
 
 
 TEST(AllVersions, Compilation)
