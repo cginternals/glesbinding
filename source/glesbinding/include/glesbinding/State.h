@@ -9,7 +9,7 @@ namespace glesbinding
 {
 
 
-class State : public AbstractState
+class GLESBINDING_API State : public AbstractState
 {
 public:
     State() = default;

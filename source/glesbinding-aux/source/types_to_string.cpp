@@ -5,7 +5,7 @@
 #include <bitset>
 #include <sstream>
 
-#include <glesbinding/AbstractVersion.h>
+#include <glesbinding/Version.h>
 #include <glesbinding-aux/Meta.h>
 
 #include "types_to_string_private.h"
@@ -320,7 +320,7 @@ std::ostream & operator<<(std::ostream & stream, const Value<gles::GLuint_array_
     return stream;
 }
 
-std::ostream & operator<<(std::ostream & stream, const AbstractVersion & version)
+std::ostream & operator<<(std::ostream & stream, const Version & version)
 {
     stream << version.toString();
 

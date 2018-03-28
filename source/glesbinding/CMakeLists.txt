@@ -57,6 +57,8 @@ set(headers
     ${include_path}/gles/functions.h
     ${include_path}/gles/types.h
     ${include_path}/gles/values.h
+    
+    ${include_path}/glesbinding.h
 
     ${include_path}/AbstractFunction.h
     ${include_path}/CallbackMask.h
@@ -73,8 +75,6 @@ set(headers
     ${include_path}/AbstractFunction.h
     ${include_path}/AbstractState.h
     ${include_path}/AbstractValue.h
-    ${include_path}/AbstractVersion.h
-    ${include_path}/AbstractVersion.inl
     ${include_path}/Boolean32.h
     ${include_path}/Boolean32.inl
     ${include_path}/CallbackMask.h
@@ -99,6 +99,8 @@ file(GLOB featured_includes ${include_path}/gles*/*.h)
 list(APPEND headers ${featured_includes})
 
 set(sources
+    ${source_path}/glesbinding.cpp
+    
     ${source_path}/Binding.cpp
     ${source_path}/Binding_list.cpp
 

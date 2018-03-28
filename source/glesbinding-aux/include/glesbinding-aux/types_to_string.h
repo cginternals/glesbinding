@@ -227,7 +227,7 @@ namespace glesbinding
 {
 
 
-class AbstractVersion;
+class Version;
 
 
 template <typename T>
@@ -282,7 +282,7 @@ GLESBINDING_AUX_API std::ostream & operator<<(std::ostream & stream, const Value
 *  @brief
 *    The operator to allow Versions to be printed onto a std::ostream
 */
-GLESBINDING_AUX_API std::ostream & operator<<(std::ostream & stream, const AbstractVersion & version);
+GLESBINDING_AUX_API std::ostream & operator<<(std::ostream & stream, const Version & version);
 
 GLESBINDING_AUX_API std::ostream & operator<<(std::ostream & stream, const AbstractValue * value);
 
