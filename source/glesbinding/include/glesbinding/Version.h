@@ -30,7 +30,7 @@ namespace glesbinding
 *  }
 *  \endcode
 */
-class GLESBINDING_API Version
+class GLESBINDING_TEMPLATE_API Version
 {
 public:
     /**
@@ -111,7 +111,7 @@ public:
     *  @return
     *    The version as string, "-.-" iff the string is invalid
     */
-    GLESBINDING_API inline std::string toString() const;
+    inline std::string toString() const;
 
     /**
     *  @brief
