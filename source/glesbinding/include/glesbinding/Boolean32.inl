@@ -100,3 +100,20 @@ GLESBINDING_CONSTEXPR bool Boolean32::operator!=(const Boolean32 & other) const
 
 
 } // namespace glesbinding
+
+
+namespace std
+{
+
+
+template<>
+struct hash<glesbinding::Boolean32>
+{
+    hash<int>::result_type operator()(const glesbinding::Boolean32 & boolean) const
+    {
+        return hash<glesbinding::Boolean32::underlying_type>()(static_cast<glesbinding::Boolean32::underlying_type>(boolean));
+    }
+};
+
+
+} // namespace std

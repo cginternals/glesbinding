@@ -49,20 +49,3 @@ public:
 
 
 #include <glesbinding/Boolean32.inl>
-
-
-namespace std
-{
-
-
-template<>
-struct hash<glesbinding::Boolean32>
-{
-    hash<int>::result_type operator()(const glesbinding::Boolean32 & boolean) const
-    {
-        return hash<glesbinding::Boolean32::underlying_type>()(static_cast<glesbinding::Boolean32::underlying_type>(boolean));
-    }
-};
-
-
-} // namespace std
