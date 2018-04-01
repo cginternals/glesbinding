@@ -2,7 +2,7 @@
 #pragma once
 
 
-#include <utility>
+#include <functional>
 
 #include <glesbinding/glesbinding_api.h>
 #include <glesbinding/glesbinding_features.h>

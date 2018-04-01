@@ -101,6 +101,8 @@ list(APPEND headers ${featured_includes})
 set(sources
     ${source_path}/glesbinding.cpp
     
+    ${source_path}/gles/functions-patches.cpp
+    
     ${source_path}/Binding.cpp
     ${source_path}/Binding_list.cpp
 
