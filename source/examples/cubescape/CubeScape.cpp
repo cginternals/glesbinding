@@ -7,7 +7,6 @@
 #include <cmath>
 
 #include <cpplocate/cpplocate.h>
-#include <cpplocate/ModuleInfo.h>
 
 #include <glesbinding/gles/gles.h>
 
@@ -18,6 +17,7 @@ using namespace gles;
 
 namespace
 {
+
 
 bool readFile(const std::string & filePath, std::string & content)
 {
@@ -43,14 +43,16 @@ std::string readFile(const std::string & filePath)
 
 std::string determineDataPath()
 {
-    std::string path = cpplocate::locatePath("data/cubescape", "share/glesbinding/cubescape", reinterpret_cast<void *>(&gles::glCreateShader));
+    std::string path = cpplocate::locatePath("data/cubescape", "share/glbinding/cubescape", reinterpret_cast<void *>(&gles::glCreateShader));
     if (path.empty()) path = "./data";
     else              path = path + "/data";
 
     return path;
 }
 
-}
+
+} // namespace
+
 
 CubeScape::CubeScape()
 : a_vertex(-1)
@@ -92,7 +94,7 @@ CubeScape::CubeScape()
     compile_info(fs);
 
     m_program = glCreateProgram();
-    
+
     glAttachShader(m_program, vs);
     glAttachShader(m_program, gs);
     glAttachShader(m_program, fs);
@@ -181,10 +183,10 @@ CubeScape::CubeScape()
     GLint terrain = glGetUniformLocation(m_program, "terrain");
     GLint patches = glGetUniformLocation(m_program, "patches");
 
-    // since only single program and single data is used, bind only once 
+    // since only single program and single data is used, bind only once
 
     glEnable(GL_DEPTH_TEST);
-    
+
     glClearColor(0.f, 0.f, 0.f, 1.0f);
 
     glUseProgram(m_program);
