@@ -24,6 +24,8 @@ Function<void, GLuint, GLenum, const GLint *> Binding::SamplerParameteriv("glSam
 Function<void, GLint, GLint, GLsizei, GLsizei> Binding::Scissor("glScissor");
 Function<void, GLuint, GLsizei, const GLint *> Binding::ScissorArrayvNV("glScissorArrayvNV");
 Function<void, GLuint, GLsizei, const GLint *> Binding::ScissorArrayvOES("glScissorArrayvOES");
+Function<void, GLuint, GLsizei, const GLint *> Binding::ScissorExclusiveArrayvNV("glScissorExclusiveArrayvNV");
+Function<void, GLint, GLint, GLsizei, GLsizei> Binding::ScissorExclusiveNV("glScissorExclusiveNV");
 Function<void, GLuint, GLint, GLint, GLsizei, GLsizei> Binding::ScissorIndexedNV("glScissorIndexedNV");
 Function<void, GLuint, GLint, GLint, GLsizei, GLsizei> Binding::ScissorIndexedOES("glScissorIndexedOES");
 Function<void, GLuint, const GLint *> Binding::ScissorIndexedvNV("glScissorIndexedvNV");
@@ -33,6 +35,10 @@ Function<void, GLuint, GLenum, const GLuint64 *> Binding::SemaphoreParameterui64
 Function<void, GLuint, GLenum> Binding::SetFenceNV("glSetFenceNV");
 Function<void, GLsizei, const GLuint *, GLenum, const void *, GLsizei> Binding::ShaderBinary("glShaderBinary");
 Function<void, GLuint, GLsizei, const GLchar *const*, const GLint *> Binding::ShaderSource("glShaderSource");
+Function<void, GLboolean> Binding::ShadingRateImageBarrierNV("glShadingRateImageBarrierNV");
+Function<void, GLuint, GLuint, GLsizei, const GLenum *> Binding::ShadingRateImagePaletteNV("glShadingRateImagePaletteNV");
+Function<void, GLenum, GLuint, const GLint *> Binding::ShadingRateSampleOrderCustomNV("glShadingRateSampleOrderCustomNV");
+Function<void, GLenum> Binding::ShadingRateSampleOrderNV("glShadingRateSampleOrderNV");
 Function<void, GLuint, GLuint, const GLuint *, GLuint, const GLuint *, const GLenum *> Binding::SignalSemaphoreEXT("glSignalSemaphoreEXT");
 Function<void, GLuint64> Binding::SignalVkFenceNV("glSignalVkFenceNV");
 Function<void, GLuint64> Binding::SignalVkSemaphoreNV("glSignalVkSemaphoreNV");

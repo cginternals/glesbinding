@@ -6,6 +6,7 @@
 
 #include <glesbinding/State.h>
 #include <glesbinding/AbstractFunction.h>
+#include <glesbinding/getProcAddress.h>
 
 
 namespace glesbinding
@@ -170,7 +171,9 @@ void Binding::initialize(
 
         if (s_firstGetProcAddress() == nullptr)
         {
-            s_firstGetProcAddress() = functionPointerResolver;
+            s_firstGetProcAddress() = functionPointerResolver == nullptr
+                ? glesbinding::getProcAddress
+                : functionPointerResolver;
         }
 
         s_getProcAddress() = functionPointerResolver == nullptr ? s_firstGetProcAddress() : functionPointerResolver;

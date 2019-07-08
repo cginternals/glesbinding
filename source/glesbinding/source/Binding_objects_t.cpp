@@ -10,6 +10,7 @@ namespace glesbinding
 
 
 Function<GLboolean, GLuint> Binding::TestFenceNV("glTestFenceNV");
+Function<void, GLenum, GLuint, GLuint64> Binding::TexAttachMemoryNV("glTexAttachMemoryNV");
 Function<void, GLenum, GLenum, GLuint> Binding::TexBuffer("glTexBuffer");
 Function<void, GLenum, GLenum, GLuint> Binding::TexBufferEXT("glTexBufferEXT");
 Function<void, GLenum, GLenum, GLuint> Binding::TexBufferOES("glTexBufferOES");
@@ -45,6 +46,7 @@ Function<void, GLenum, GLsizei, GLenum, GLsizei, GLsizei, GLsizei, GLboolean, GL
 Function<void, GLenum, GLint, GLint, GLint, GLsizei, GLsizei, GLenum, GLenum, const void *> Binding::TexSubImage2D("glTexSubImage2D");
 Function<void, GLenum, GLint, GLint, GLint, GLint, GLsizei, GLsizei, GLsizei, GLenum, GLenum, const void *> Binding::TexSubImage3D("glTexSubImage3D");
 Function<void, GLenum, GLint, GLint, GLint, GLint, GLsizei, GLsizei, GLsizei, GLenum, GLenum, const void *> Binding::TexSubImage3DOES("glTexSubImage3DOES");
+Function<void, GLuint, GLuint, GLuint64> Binding::TextureAttachMemoryNV("glTextureAttachMemoryNV");
 Function<void, GLuint, GLuint, GLuint, GLfloat, GLfloat, GLfloat, GLfloat, GLfloat> Binding::TextureFoveationParametersQCOM("glTextureFoveationParametersQCOM");
 Function<void, GLuint, GLenum, GLsizei, GLenum, GLsizei> Binding::TextureStorage1DEXT("glTextureStorage1DEXT");
 Function<void, GLuint, GLenum, GLsizei, GLenum, GLsizei, GLsizei> Binding::TextureStorage2DEXT("glTextureStorage2DEXT");

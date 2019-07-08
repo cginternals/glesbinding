@@ -286,6 +286,11 @@ void glGetInternalformativ(GLenum target, GLenum internalformat, GLenum pname, G
     return Binding::GetInternalformativ(target, internalformat, pname, bufSize, params);
 }
 
+void glGetMemoryObjectDetachedResourcesuivNV(GLuint memory, GLenum pname, GLint first, GLsizei count, GLuint * params)
+{
+    return Binding::GetMemoryObjectDetachedResourcesuivNV(memory, pname, first, count, params);
+}
+
 void glGetMemoryObjectParameterivEXT(GLuint memoryObject, GLenum pname, GLint * params)
 {
     return Binding::GetMemoryObjectParameterivEXT(memoryObject, pname, params);
@@ -584,6 +589,16 @@ void glGetShaderSource(GLuint shader, GLsizei bufSize, GLsizei * length, GLchar 
 void glGetShaderiv(GLuint shader, GLenum pname, GLint * params)
 {
     return Binding::GetShaderiv(shader, pname, params);
+}
+
+void glGetShadingRateImagePaletteNV(GLuint viewport, GLuint entry, GLenum * rate)
+{
+    return Binding::GetShadingRateImagePaletteNV(viewport, entry, rate);
+}
+
+void glGetShadingRateSampleLocationivNV(GLenum rate, GLuint samples, GLuint index, GLint * location)
+{
+    return Binding::GetShadingRateSampleLocationivNV(rate, samples, index, location);
 }
 
 const GLubyte * glGetString(GLenum name)

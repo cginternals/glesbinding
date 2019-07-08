@@ -22,9 +22,11 @@ Function<void, GLenum, GLenum, GLsizei, GLsizei> Binding::RenderbufferStorage("g
 Function<void, GLenum, GLsizei, GLenum, GLsizei, GLsizei> Binding::RenderbufferStorageMultisample("glRenderbufferStorageMultisample");
 Function<void, GLenum, GLsizei, GLenum, GLsizei, GLsizei> Binding::RenderbufferStorageMultisampleANGLE("glRenderbufferStorageMultisampleANGLE");
 Function<void, GLenum, GLsizei, GLenum, GLsizei, GLsizei> Binding::RenderbufferStorageMultisampleAPPLE("glRenderbufferStorageMultisampleAPPLE");
+Function<void, GLenum, GLsizei, GLsizei, GLenum, GLsizei, GLsizei> Binding::RenderbufferStorageMultisampleAdvancedAMD("glRenderbufferStorageMultisampleAdvancedAMD");
 Function<void, GLenum, GLsizei, GLenum, GLsizei, GLsizei> Binding::RenderbufferStorageMultisampleEXT("glRenderbufferStorageMultisampleEXT");
 Function<void, GLenum, GLsizei, GLenum, GLsizei, GLsizei> Binding::RenderbufferStorageMultisampleIMG("glRenderbufferStorageMultisampleIMG");
 Function<void, GLenum, GLsizei, GLenum, GLsizei, GLsizei> Binding::RenderbufferStorageMultisampleNV("glRenderbufferStorageMultisampleNV");
+Function<void, GLuint, GLenum> Binding::ResetMemoryObjectParameterNV("glResetMemoryObjectParameterNV");
 Function<void> Binding::ResolveDepthValuesNV("glResolveDepthValuesNV");
 Function<void> Binding::ResolveMultisampleFramebufferAPPLE("glResolveMultisampleFramebufferAPPLE");
 Function<void> Binding::ResumeTransformFeedback("glResumeTransformFeedback");

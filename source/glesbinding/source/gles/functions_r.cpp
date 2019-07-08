@@ -76,6 +76,11 @@ void glRenderbufferStorageMultisampleAPPLE(GLenum target, GLsizei samples, GLenu
     return Binding::RenderbufferStorageMultisampleAPPLE(target, samples, internalformat, width, height);
 }
 
+void glRenderbufferStorageMultisampleAdvancedAMD(GLenum target, GLsizei samples, GLsizei storageSamples, GLenum internalformat, GLsizei width, GLsizei height)
+{
+    return Binding::RenderbufferStorageMultisampleAdvancedAMD(target, samples, storageSamples, internalformat, width, height);
+}
+
 void glRenderbufferStorageMultisampleEXT(GLenum target, GLsizei samples, GLenum internalformat, GLsizei width, GLsizei height)
 {
     return Binding::RenderbufferStorageMultisampleEXT(target, samples, internalformat, width, height);
@@ -89,6 +94,11 @@ void glRenderbufferStorageMultisampleIMG(GLenum target, GLsizei samples, GLenum 
 void glRenderbufferStorageMultisampleNV(GLenum target, GLsizei samples, GLenum internalformat, GLsizei width, GLsizei height)
 {
     return Binding::RenderbufferStorageMultisampleNV(target, samples, internalformat, width, height);
+}
+
+void glResetMemoryObjectParameterNV(GLuint memory, GLenum pname)
+{
+    return Binding::ResetMemoryObjectParameterNV(memory, pname);
 }
 
 void glResolveDepthValuesNV()

@@ -86,6 +86,16 @@ void glScissorArrayvOES(GLuint first, GLsizei count, const GLint * v)
     return Binding::ScissorArrayvOES(first, count, v);
 }
 
+void glScissorExclusiveArrayvNV(GLuint first, GLsizei count, const GLint * v)
+{
+    return Binding::ScissorExclusiveArrayvNV(first, count, v);
+}
+
+void glScissorExclusiveNV(GLint x, GLint y, GLsizei width, GLsizei height)
+{
+    return Binding::ScissorExclusiveNV(x, y, width, height);
+}
+
 void glScissorIndexedNV(GLuint index, GLint left, GLint bottom, GLsizei width, GLsizei height)
 {
     return Binding::ScissorIndexedNV(index, left, bottom, width, height);
@@ -129,6 +139,26 @@ void glShaderBinary(GLsizei count, const GLuint * shaders, GLenum binaryformat, 
 void glShaderSource(GLuint shader, GLsizei count, const GLchar *const* string, const GLint * length)
 {
     return Binding::ShaderSource(shader, count, string, length);
+}
+
+void glShadingRateImageBarrierNV(GLboolean synchronize)
+{
+    return Binding::ShadingRateImageBarrierNV(synchronize);
+}
+
+void glShadingRateImagePaletteNV(GLuint viewport, GLuint first, GLsizei count, const GLenum * rates)
+{
+    return Binding::ShadingRateImagePaletteNV(viewport, first, count, rates);
+}
+
+void glShadingRateSampleOrderCustomNV(GLenum rate, GLuint samples, const GLint * locations)
+{
+    return Binding::ShadingRateSampleOrderCustomNV(rate, samples, locations);
+}
+
+void glShadingRateSampleOrderNV(GLenum order)
+{
+    return Binding::ShadingRateSampleOrderNV(order);
 }
 
 void glSignalSemaphoreEXT(GLuint semaphore, GLuint numBufferBarriers, const GLuint * buffers, GLuint numTextureBarriers, const GLuint * textures, const GLenum * dstLayouts)

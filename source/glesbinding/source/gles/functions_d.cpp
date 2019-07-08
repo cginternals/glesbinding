@@ -346,6 +346,16 @@ void glDrawElementsInstancedNV(GLenum mode, GLsizei count, GLenum type, const vo
     return Binding::DrawElementsInstancedNV(mode, count, type, indices, primcount);
 }
 
+void glDrawMeshTasksIndirectNV(GLintptr indirect)
+{
+    return Binding::DrawMeshTasksIndirectNV(indirect);
+}
+
+void glDrawMeshTasksNV(GLuint first, GLuint count)
+{
+    return Binding::DrawMeshTasksNV(first, count);
+}
+
 void glDrawRangeElements(GLenum mode, GLuint start, GLuint end, GLsizei count, GLenum type, const void * indices)
 {
     return Binding::DrawRangeElements(mode, start, end, count, type, indices);

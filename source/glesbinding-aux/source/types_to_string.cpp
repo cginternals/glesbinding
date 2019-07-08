@@ -67,9 +67,9 @@ namespace gles
 {
 
 
-std::ostream & operator<<(std::ostream & stream, const BufferAccessMask & value)
+std::ostream & operator<<(std::ostream & stream, const BufferBitQCOM & value)
 {
-    stream << glesbinding::aux::bitfieldString<BufferAccessMask>(value);
+    stream << glesbinding::aux::bitfieldString<BufferBitQCOM>(value);
     return stream;
 }
 
@@ -80,9 +80,9 @@ namespace gles
 {
 
 
-std::ostream & operator<<(std::ostream & stream, const BufferBitQCOM & value)
+std::ostream & operator<<(std::ostream & stream, const BufferStorageMask & value)
 {
-    stream << glesbinding::aux::bitfieldString<BufferBitQCOM>(value);
+    stream << glesbinding::aux::bitfieldString<BufferStorageMask>(value);
     return stream;
 }
 
@@ -132,9 +132,9 @@ namespace gles
 {
 
 
-std::ostream & operator<<(std::ostream & stream, const MapBufferUsageMask & value)
+std::ostream & operator<<(std::ostream & stream, const MapBufferAccessMask & value)
 {
-    stream << glesbinding::aux::bitfieldString<MapBufferUsageMask>(value);
+    stream << glesbinding::aux::bitfieldString<MapBufferAccessMask>(value);
     return stream;
 }
 
@@ -249,9 +249,9 @@ namespace gles
 {
 
 
-std::ostream & operator<<(std::ostream & stream, const BufferStorageMask & value)
+std::ostream & operator<<(std::ostream & stream, const BufferAccessMask & value)
 {
-    stream << glesbinding::aux::bitfieldString<BufferStorageMask>(value);
+    stream << glesbinding::aux::bitfieldString<BufferAccessMask>(value);
     return stream;
 }
 
@@ -381,33 +381,6 @@ std::ostream & operator<<(std::ostream & stream, const AbstractValue * value)
         return stream << *reinterpret_cast<const Value<gles::GLbyte *>*>(value);
     }
 
-    if (typeid(*value) == typeid(Value<gles::GLshort>))
-    {
-        return stream << *reinterpret_cast<const Value<gles::GLshort>*>(value);
-    }
-    if (typeid(*value) == typeid(Value<gles::GLshort *>))
-    {
-        return stream << *reinterpret_cast<const Value<gles::GLshort *>*>(value);
-    }
-
-    if (typeid(*value) == typeid(Value<gles::GLint>))
-    {
-        return stream << *reinterpret_cast<const Value<gles::GLint>*>(value);
-    }
-    if (typeid(*value) == typeid(Value<gles::GLint *>))
-    {
-        return stream << *reinterpret_cast<const Value<gles::GLint *>*>(value);
-    }
-
-    if (typeid(*value) == typeid(Value<gles::GLclampx>))
-    {
-        return stream << *reinterpret_cast<const Value<gles::GLclampx>*>(value);
-    }
-    if (typeid(*value) == typeid(Value<gles::GLclampx *>))
-    {
-        return stream << *reinterpret_cast<const Value<gles::GLclampx *>*>(value);
-    }
-
     if (typeid(*value) == typeid(Value<gles::GLubyte>))
     {
         return stream << *reinterpret_cast<const Value<gles::GLubyte>*>(value);
@@ -415,6 +388,15 @@ std::ostream & operator<<(std::ostream & stream, const AbstractValue * value)
     if (typeid(*value) == typeid(Value<gles::GLubyte *>))
     {
         return stream << *reinterpret_cast<const Value<gles::GLubyte *>*>(value);
+    }
+
+    if (typeid(*value) == typeid(Value<gles::GLshort>))
+    {
+        return stream << *reinterpret_cast<const Value<gles::GLshort>*>(value);
+    }
+    if (typeid(*value) == typeid(Value<gles::GLshort *>))
+    {
+        return stream << *reinterpret_cast<const Value<gles::GLshort *>*>(value);
     }
 
     if (typeid(*value) == typeid(Value<gles::GLushort>))
@@ -426,6 +408,15 @@ std::ostream & operator<<(std::ostream & stream, const AbstractValue * value)
         return stream << *reinterpret_cast<const Value<gles::GLushort *>*>(value);
     }
 
+    if (typeid(*value) == typeid(Value<gles::GLint>))
+    {
+        return stream << *reinterpret_cast<const Value<gles::GLint>*>(value);
+    }
+    if (typeid(*value) == typeid(Value<gles::GLint *>))
+    {
+        return stream << *reinterpret_cast<const Value<gles::GLint *>*>(value);
+    }
+
     if (typeid(*value) == typeid(Value<gles::GLuint>))
     {
         return stream << *reinterpret_cast<const Value<gles::GLuint>*>(value);
@@ -433,6 +424,15 @@ std::ostream & operator<<(std::ostream & stream, const AbstractValue * value)
     if (typeid(*value) == typeid(Value<gles::GLuint *>))
     {
         return stream << *reinterpret_cast<const Value<gles::GLuint *>*>(value);
+    }
+
+    if (typeid(*value) == typeid(Value<gles::GLclampx>))
+    {
+        return stream << *reinterpret_cast<const Value<gles::GLclampx>*>(value);
+    }
+    if (typeid(*value) == typeid(Value<gles::GLclampx *>))
+    {
+        return stream << *reinterpret_cast<const Value<gles::GLclampx *>*>(value);
     }
 
     if (typeid(*value) == typeid(Value<gles::GLsizei>))
@@ -525,15 +525,6 @@ std::ostream & operator<<(std::ostream & stream, const AbstractValue * value)
         return stream << *reinterpret_cast<const Value<gles::GLhandleARB *>*>(value);
     }
 
-    if (typeid(*value) == typeid(Value<gles::GLhalfARB>))
-    {
-        return stream << *reinterpret_cast<const Value<gles::GLhalfARB>*>(value);
-    }
-    if (typeid(*value) == typeid(Value<gles::GLhalfARB *>))
-    {
-        return stream << *reinterpret_cast<const Value<gles::GLhalfARB *>*>(value);
-    }
-
     if (typeid(*value) == typeid(Value<gles::GLhalf>))
     {
         return stream << *reinterpret_cast<const Value<gles::GLhalf>*>(value);
@@ -541,6 +532,15 @@ std::ostream & operator<<(std::ostream & stream, const AbstractValue * value)
     if (typeid(*value) == typeid(Value<gles::GLhalf *>))
     {
         return stream << *reinterpret_cast<const Value<gles::GLhalf *>*>(value);
+    }
+
+    if (typeid(*value) == typeid(Value<gles::GLhalfARB>))
+    {
+        return stream << *reinterpret_cast<const Value<gles::GLhalfARB>*>(value);
+    }
+    if (typeid(*value) == typeid(Value<gles::GLhalfARB *>))
+    {
+        return stream << *reinterpret_cast<const Value<gles::GLhalfARB *>*>(value);
     }
 
     if (typeid(*value) == typeid(Value<gles::GLfixed>))
@@ -561,33 +561,6 @@ std::ostream & operator<<(std::ostream & stream, const AbstractValue * value)
         return stream << *reinterpret_cast<const Value<gles::GLintptr *>*>(value);
     }
 
-    if (typeid(*value) == typeid(Value<gles::GLsizeiptr>))
-    {
-        return stream << *reinterpret_cast<const Value<gles::GLsizeiptr>*>(value);
-    }
-    if (typeid(*value) == typeid(Value<gles::GLsizeiptr *>))
-    {
-        return stream << *reinterpret_cast<const Value<gles::GLsizeiptr *>*>(value);
-    }
-
-    if (typeid(*value) == typeid(Value<gles::GLint64>))
-    {
-        return stream << *reinterpret_cast<const Value<gles::GLint64>*>(value);
-    }
-    if (typeid(*value) == typeid(Value<gles::GLint64 *>))
-    {
-        return stream << *reinterpret_cast<const Value<gles::GLint64 *>*>(value);
-    }
-
-    if (typeid(*value) == typeid(Value<gles::GLuint64>))
-    {
-        return stream << *reinterpret_cast<const Value<gles::GLuint64>*>(value);
-    }
-    if (typeid(*value) == typeid(Value<gles::GLuint64 *>))
-    {
-        return stream << *reinterpret_cast<const Value<gles::GLuint64 *>*>(value);
-    }
-
     if (typeid(*value) == typeid(Value<gles::GLintptrARB>))
     {
         return stream << *reinterpret_cast<const Value<gles::GLintptrARB>*>(value);
@@ -595,6 +568,15 @@ std::ostream & operator<<(std::ostream & stream, const AbstractValue * value)
     if (typeid(*value) == typeid(Value<gles::GLintptrARB *>))
     {
         return stream << *reinterpret_cast<const Value<gles::GLintptrARB *>*>(value);
+    }
+
+    if (typeid(*value) == typeid(Value<gles::GLsizeiptr>))
+    {
+        return stream << *reinterpret_cast<const Value<gles::GLsizeiptr>*>(value);
+    }
+    if (typeid(*value) == typeid(Value<gles::GLsizeiptr *>))
+    {
+        return stream << *reinterpret_cast<const Value<gles::GLsizeiptr *>*>(value);
     }
 
     if (typeid(*value) == typeid(Value<gles::GLsizeiptrARB>))
@@ -606,6 +588,15 @@ std::ostream & operator<<(std::ostream & stream, const AbstractValue * value)
         return stream << *reinterpret_cast<const Value<gles::GLsizeiptrARB *>*>(value);
     }
 
+    if (typeid(*value) == typeid(Value<gles::GLint64>))
+    {
+        return stream << *reinterpret_cast<const Value<gles::GLint64>*>(value);
+    }
+    if (typeid(*value) == typeid(Value<gles::GLint64 *>))
+    {
+        return stream << *reinterpret_cast<const Value<gles::GLint64 *>*>(value);
+    }
+
     if (typeid(*value) == typeid(Value<gles::GLint64EXT>))
     {
         return stream << *reinterpret_cast<const Value<gles::GLint64EXT>*>(value);
@@ -613,6 +604,15 @@ std::ostream & operator<<(std::ostream & stream, const AbstractValue * value)
     if (typeid(*value) == typeid(Value<gles::GLint64EXT *>))
     {
         return stream << *reinterpret_cast<const Value<gles::GLint64EXT *>*>(value);
+    }
+
+    if (typeid(*value) == typeid(Value<gles::GLuint64>))
+    {
+        return stream << *reinterpret_cast<const Value<gles::GLuint64>*>(value);
+    }
+    if (typeid(*value) == typeid(Value<gles::GLuint64 *>))
+    {
+        return stream << *reinterpret_cast<const Value<gles::GLuint64 *>*>(value);
     }
 
     if (typeid(*value) == typeid(Value<gles::GLuint64EXT>))
@@ -664,105 +664,6 @@ std::ostream & operator<<(std::ostream & stream, const AbstractValue * value)
     if (typeid(*value) == typeid(Value<gles::GLDEBUGPROCKHR *>))
     {
         return stream << *reinterpret_cast<const Value<gles::GLDEBUGPROCKHR *>*>(value);
-    }
-
-    if (typeid(*value) == typeid(Value<gles::GLbyte>))
-    {
-        return stream << *reinterpret_cast<const Value<gles::GLbyte>*>(value);
-    }
-    if (typeid(*value) == typeid(Value<gles::GLbyte *>))
-    {
-        return stream << *reinterpret_cast<const Value<gles::GLbyte *>*>(value);
-    }
-
-    if (typeid(*value) == typeid(Value<gles::GLubyte>))
-    {
-        return stream << *reinterpret_cast<const Value<gles::GLubyte>*>(value);
-    }
-    if (typeid(*value) == typeid(Value<gles::GLubyte *>))
-    {
-        return stream << *reinterpret_cast<const Value<gles::GLubyte *>*>(value);
-    }
-
-    if (typeid(*value) == typeid(Value<gles::GLfloat>))
-    {
-        return stream << *reinterpret_cast<const Value<gles::GLfloat>*>(value);
-    }
-    if (typeid(*value) == typeid(Value<gles::GLfloat *>))
-    {
-        return stream << *reinterpret_cast<const Value<gles::GLfloat *>*>(value);
-    }
-
-    if (typeid(*value) == typeid(Value<gles::GLclampf>))
-    {
-        return stream << *reinterpret_cast<const Value<gles::GLclampf>*>(value);
-    }
-    if (typeid(*value) == typeid(Value<gles::GLclampf *>))
-    {
-        return stream << *reinterpret_cast<const Value<gles::GLclampf *>*>(value);
-    }
-
-    if (typeid(*value) == typeid(Value<gles::GLfixed>))
-    {
-        return stream << *reinterpret_cast<const Value<gles::GLfixed>*>(value);
-    }
-    if (typeid(*value) == typeid(Value<gles::GLfixed *>))
-    {
-        return stream << *reinterpret_cast<const Value<gles::GLfixed *>*>(value);
-    }
-
-    if (typeid(*value) == typeid(Value<gles::GLint64>))
-    {
-        return stream << *reinterpret_cast<const Value<gles::GLint64>*>(value);
-    }
-    if (typeid(*value) == typeid(Value<gles::GLint64 *>))
-    {
-        return stream << *reinterpret_cast<const Value<gles::GLint64 *>*>(value);
-    }
-
-    if (typeid(*value) == typeid(Value<gles::GLuint64>))
-    {
-        return stream << *reinterpret_cast<const Value<gles::GLuint64>*>(value);
-    }
-    if (typeid(*value) == typeid(Value<gles::GLuint64 *>))
-    {
-        return stream << *reinterpret_cast<const Value<gles::GLuint64 *>*>(value);
-    }
-
-    if (typeid(*value) == typeid(Value<gles::GLint64EXT>))
-    {
-        return stream << *reinterpret_cast<const Value<gles::GLint64EXT>*>(value);
-    }
-    if (typeid(*value) == typeid(Value<gles::GLint64EXT *>))
-    {
-        return stream << *reinterpret_cast<const Value<gles::GLint64EXT *>*>(value);
-    }
-
-    if (typeid(*value) == typeid(Value<gles::GLuint64EXT>))
-    {
-        return stream << *reinterpret_cast<const Value<gles::GLuint64EXT>*>(value);
-    }
-    if (typeid(*value) == typeid(Value<gles::GLuint64EXT *>))
-    {
-        return stream << *reinterpret_cast<const Value<gles::GLuint64EXT *>*>(value);
-    }
-
-    if (typeid(*value) == typeid(Value<gles::GLintptr>))
-    {
-        return stream << *reinterpret_cast<const Value<gles::GLintptr>*>(value);
-    }
-    if (typeid(*value) == typeid(Value<gles::GLintptr *>))
-    {
-        return stream << *reinterpret_cast<const Value<gles::GLintptr *>*>(value);
-    }
-
-    if (typeid(*value) == typeid(Value<gles::GLsizeiptr>))
-    {
-        return stream << *reinterpret_cast<const Value<gles::GLsizeiptr>*>(value);
-    }
-    if (typeid(*value) == typeid(Value<gles::GLsizeiptr *>))
-    {
-        return stream << *reinterpret_cast<const Value<gles::GLsizeiptr *>*>(value);
     }
 
     if (typeid(*value) == typeid(Value<gles::GLDEBUGPROCAMD>))
@@ -819,15 +720,6 @@ std::ostream & operator<<(std::ostream & stream, const AbstractValue * value)
         return stream << *reinterpret_cast<const Value<gles::AttribMask *>*>(value);
     }
 
-    if (typeid(*value) == typeid(Value<gles::BufferAccessMask>))
-    {
-        return stream << *reinterpret_cast<const Value<gles::BufferAccessMask>*>(value);
-    }
-    if (typeid(*value) == typeid(Value<gles::BufferAccessMask *>))
-    {
-        return stream << *reinterpret_cast<const Value<gles::BufferAccessMask *>*>(value);
-    }
-
     if (typeid(*value) == typeid(Value<gles::BufferBitQCOM>))
     {
         return stream << *reinterpret_cast<const Value<gles::BufferBitQCOM>*>(value);
@@ -835,6 +727,15 @@ std::ostream & operator<<(std::ostream & stream, const AbstractValue * value)
     if (typeid(*value) == typeid(Value<gles::BufferBitQCOM *>))
     {
         return stream << *reinterpret_cast<const Value<gles::BufferBitQCOM *>*>(value);
+    }
+
+    if (typeid(*value) == typeid(Value<gles::BufferStorageMask>))
+    {
+        return stream << *reinterpret_cast<const Value<gles::BufferStorageMask>*>(value);
+    }
+    if (typeid(*value) == typeid(Value<gles::BufferStorageMask *>))
+    {
+        return stream << *reinterpret_cast<const Value<gles::BufferStorageMask *>*>(value);
     }
 
     if (typeid(*value) == typeid(Value<gles::ClearBufferMask>))
@@ -864,13 +765,13 @@ std::ostream & operator<<(std::ostream & stream, const AbstractValue * value)
         return stream << *reinterpret_cast<const Value<gles::FoveationConfigBitQCOM *>*>(value);
     }
 
-    if (typeid(*value) == typeid(Value<gles::MapBufferUsageMask>))
+    if (typeid(*value) == typeid(Value<gles::MapBufferAccessMask>))
     {
-        return stream << *reinterpret_cast<const Value<gles::MapBufferUsageMask>*>(value);
+        return stream << *reinterpret_cast<const Value<gles::MapBufferAccessMask>*>(value);
     }
-    if (typeid(*value) == typeid(Value<gles::MapBufferUsageMask *>))
+    if (typeid(*value) == typeid(Value<gles::MapBufferAccessMask *>))
     {
-        return stream << *reinterpret_cast<const Value<gles::MapBufferUsageMask *>*>(value);
+        return stream << *reinterpret_cast<const Value<gles::MapBufferAccessMask *>*>(value);
     }
 
     if (typeid(*value) == typeid(Value<gles::MemoryBarrierMask>))
@@ -945,13 +846,13 @@ std::ostream & operator<<(std::ostream & stream, const AbstractValue * value)
         return stream << *reinterpret_cast<const Value<gles::UnusedMask *>*>(value);
     }
 
-    if (typeid(*value) == typeid(Value<gles::BufferStorageMask>))
+    if (typeid(*value) == typeid(Value<gles::BufferAccessMask>))
     {
-        return stream << *reinterpret_cast<const Value<gles::BufferStorageMask>*>(value);
+        return stream << *reinterpret_cast<const Value<gles::BufferAccessMask>*>(value);
     }
-    if (typeid(*value) == typeid(Value<gles::BufferStorageMask *>))
+    if (typeid(*value) == typeid(Value<gles::BufferAccessMask *>))
     {
-        return stream << *reinterpret_cast<const Value<gles::BufferStorageMask *>*>(value);
+        return stream << *reinterpret_cast<const Value<gles::BufferAccessMask *>*>(value);
     }
 
     // expect an AbstractValue with a pointer in first member

@@ -62,6 +62,7 @@ set(headers
 
     ${include_path}/AbstractFunction.h
     ${include_path}/CallbackMask.h
+    ${include_path}/getProcAddress.h
     ${include_path}/Function.h
     ${include_path}/FunctionCall.h
     ${include_path}/Binding.h
@@ -103,6 +104,7 @@ set(sources
     
     ${source_path}/gles/functions-patches.cpp
     
+    ${source_path}/getProcAddress.cpp
     ${source_path}/Binding.cpp
     ${source_path}/Binding_list.cpp
 

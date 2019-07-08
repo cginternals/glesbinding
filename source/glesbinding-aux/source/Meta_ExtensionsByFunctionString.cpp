@@ -28,6 +28,7 @@ const std::unordered_map<std::string, std::set<GLextension>> Meta_ExtensionsByFu
     { "glBeginQueryEXT", { GLextension::GL_EXT_disjoint_timer_query, GLextension::GL_EXT_occlusion_query_boolean } },
     { "glBindFragDataLocationEXT", { GLextension::GL_EXT_blend_func_extended } },
     { "glBindFragDataLocationIndexedEXT", { GLextension::GL_EXT_blend_func_extended } },
+    { "glBindShadingRateImageNV", { GLextension::GL_NV_shading_rate_image } },
     { "glBindVertexArrayOES", { GLextension::GL_OES_vertex_array_object } },
     { "glBlendBarrierKHR", { GLextension::GL_KHR_blend_equation_advanced } },
     { "glBlendBarrierNV", { GLextension::GL_NV_blend_equation_advanced } },
@@ -42,6 +43,7 @@ const std::unordered_map<std::string, std::set<GLextension>> Meta_ExtensionsByFu
     { "glBlendParameteriNV", { GLextension::GL_NV_blend_equation_advanced } },
     { "glBlitFramebufferANGLE", { GLextension::GL_ANGLE_framebuffer_blit } },
     { "glBlitFramebufferNV", { GLextension::GL_NV_framebuffer_blit } },
+    { "glBufferAttachMemoryNV", { GLextension::GL_NV_memory_attachment } },
     { "glBufferStorageEXT", { GLextension::GL_EXT_buffer_storage } },
     { "glBufferStorageExternalEXT", { GLextension::GL_EXT_external_buffer } },
     { "glBufferStorageMemEXT", { GLextension::GL_EXT_memory_object } }
@@ -113,6 +115,8 @@ const std::unordered_map<std::string, std::set<GLextension>> Meta_ExtensionsByFu
     { "glDrawElementsInstancedBaseVertexOES", { GLextension::GL_OES_draw_elements_base_vertex } },
     { "glDrawElementsInstancedEXT", { GLextension::GL_EXT_draw_instanced, GLextension::GL_EXT_instanced_arrays } },
     { "glDrawElementsInstancedNV", { GLextension::GL_NV_draw_instanced } },
+    { "glDrawMeshTasksIndirectNV", { GLextension::GL_NV_mesh_shader } },
+    { "glDrawMeshTasksNV", { GLextension::GL_NV_mesh_shader } },
     { "glDrawRangeElementsBaseVertexEXT", { GLextension::GL_EXT_draw_elements_base_vertex } },
     { "glDrawRangeElementsBaseVertexOES", { GLextension::GL_OES_draw_elements_base_vertex } },
     { "glDrawTransformFeedbackEXT", { GLextension::GL_EXT_draw_transform_feedback } },
@@ -195,6 +199,7 @@ const std::unordered_map<std::string, std::set<GLextension>> Meta_ExtensionsByFu
     { "glGetInteger64vAPPLE", { GLextension::GL_APPLE_sync } },
     { "glGetIntegeri_vEXT", { GLextension::GL_EXT_multiview_draw_buffers } },
     { "glGetInternalformatSampleivNV", { GLextension::GL_NV_internalformat_sample_query } },
+    { "glGetMemoryObjectDetachedResourcesuivNV", { GLextension::GL_NV_memory_attachment } },
     { "glGetMemoryObjectParameterivEXT", { GLextension::GL_EXT_memory_object } },
     { "glGetNextPerfQueryIdINTEL", { GLextension::GL_INTEL_performance_query } },
     { "glGetObjectLabelEXT", { GLextension::GL_EXT_debug_label } },
@@ -230,6 +235,8 @@ const std::unordered_map<std::string, std::set<GLextension>> Meta_ExtensionsByFu
     { "glGetSamplerParameterIuivEXT", { GLextension::GL_EXT_texture_border_clamp } },
     { "glGetSamplerParameterIuivOES", { GLextension::GL_OES_texture_border_clamp } },
     { "glGetSemaphoreParameterui64vEXT", { GLextension::GL_EXT_semaphore } },
+    { "glGetShadingRateImagePaletteNV", { GLextension::GL_NV_shading_rate_image } },
+    { "glGetShadingRateSampleLocationivNV", { GLextension::GL_NV_shading_rate_image } },
     { "glGetSyncivAPPLE", { GLextension::GL_APPLE_sync } },
     { "glGetTexParameterIivEXT", { GLextension::GL_EXT_texture_border_clamp } },
     { "glGetTexParameterIivOES", { GLextension::GL_OES_texture_border_clamp } },
@@ -325,14 +332,18 @@ const std::unordered_map<std::string, std::set<GLextension>> Meta_ExtensionsByFu
     { "glMultiDrawArraysIndirectEXT", { GLextension::GL_EXT_multi_draw_indirect } },
     { "glMultiDrawElementsBaseVertexEXT", { GLextension::GL_EXT_draw_elements_base_vertex, GLextension::GL_OES_draw_elements_base_vertex } },
     { "glMultiDrawElementsEXT", { GLextension::GL_EXT_multi_draw_arrays } },
-    { "glMultiDrawElementsIndirectEXT", { GLextension::GL_EXT_multi_draw_indirect } }
+    { "glMultiDrawElementsIndirectEXT", { GLextension::GL_EXT_multi_draw_indirect } },
+    { "glMultiDrawMeshTasksIndirectCountNV", { GLextension::GL_NV_mesh_shader } },
+    { "glMultiDrawMeshTasksIndirectNV", { GLextension::GL_NV_mesh_shader } }
 };
 
 const std::unordered_map<std::string, std::set<GLextension>> Meta_ExtensionsByFunctionString_N =
 {
+    { "glNamedBufferAttachMemoryNV", { GLextension::GL_NV_memory_attachment } },
     { "glNamedBufferStorageExternalEXT", { GLextension::GL_EXT_external_buffer } },
     { "glNamedBufferStorageMemEXT", { GLextension::GL_EXT_memory_object } },
-    { "glNamedFramebufferSampleLocationsfvNV", { GLextension::GL_NV_sample_locations } }
+    { "glNamedFramebufferSampleLocationsfvNV", { GLextension::GL_NV_sample_locations } },
+    { "glNamedRenderbufferStorageMultisampleAdvancedAMD", { GLextension::GL_AMD_framebuffer_multisample_advanced } }
 };
 
 const std::unordered_map<std::string, std::set<GLextension>> Meta_ExtensionsByFunctionString_O{};
@@ -404,9 +415,11 @@ const std::unordered_map<std::string, std::set<GLextension>> Meta_ExtensionsByFu
     { "glReleaseKeyedMutexWin32EXT", { GLextension::GL_EXT_win32_keyed_mutex } },
     { "glRenderbufferStorageMultisampleANGLE", { GLextension::GL_ANGLE_framebuffer_multisample } },
     { "glRenderbufferStorageMultisampleAPPLE", { GLextension::GL_APPLE_framebuffer_multisample } },
+    { "glRenderbufferStorageMultisampleAdvancedAMD", { GLextension::GL_AMD_framebuffer_multisample_advanced } },
     { "glRenderbufferStorageMultisampleEXT", { GLextension::GL_EXT_multisampled_render_to_texture } },
     { "glRenderbufferStorageMultisampleIMG", { GLextension::GL_IMG_multisampled_render_to_texture } },
     { "glRenderbufferStorageMultisampleNV", { GLextension::GL_NV_framebuffer_multisample } },
+    { "glResetMemoryObjectParameterNV", { GLextension::GL_NV_memory_attachment } },
     { "glResolveDepthValuesNV", { GLextension::GL_NV_sample_locations } },
     { "glResolveMultisampleFramebufferAPPLE", { GLextension::GL_APPLE_framebuffer_multisample } }
 };
@@ -419,6 +432,8 @@ const std::unordered_map<std::string, std::set<GLextension>> Meta_ExtensionsByFu
     { "glSamplerParameterIuivOES", { GLextension::GL_OES_texture_border_clamp } },
     { "glScissorArrayvNV", { GLextension::GL_NV_viewport_array } },
     { "glScissorArrayvOES", { GLextension::GL_OES_viewport_array } },
+    { "glScissorExclusiveArrayvNV", { GLextension::GL_NV_scissor_exclusive } },
+    { "glScissorExclusiveNV", { GLextension::GL_NV_scissor_exclusive } },
     { "glScissorIndexedNV", { GLextension::GL_NV_viewport_array } },
     { "glScissorIndexedOES", { GLextension::GL_OES_viewport_array } },
     { "glScissorIndexedvNV", { GLextension::GL_NV_viewport_array } },
@@ -426,6 +441,10 @@ const std::unordered_map<std::string, std::set<GLextension>> Meta_ExtensionsByFu
     { "glSelectPerfMonitorCountersAMD", { GLextension::GL_AMD_performance_monitor } },
     { "glSemaphoreParameterui64vEXT", { GLextension::GL_EXT_semaphore } },
     { "glSetFenceNV", { GLextension::GL_NV_fence } },
+    { "glShadingRateImageBarrierNV", { GLextension::GL_NV_shading_rate_image } },
+    { "glShadingRateImagePaletteNV", { GLextension::GL_NV_shading_rate_image } },
+    { "glShadingRateSampleOrderCustomNV", { GLextension::GL_NV_shading_rate_image } },
+    { "glShadingRateSampleOrderNV", { GLextension::GL_NV_shading_rate_image } },
     { "glSignalSemaphoreEXT", { GLextension::GL_EXT_semaphore } },
     { "glSignalVkFenceNV", { GLextension::GL_NV_draw_vulkan_image } },
     { "glSignalVkSemaphoreNV", { GLextension::GL_NV_draw_vulkan_image } },
@@ -444,6 +463,7 @@ const std::unordered_map<std::string, std::set<GLextension>> Meta_ExtensionsByFu
 const std::unordered_map<std::string, std::set<GLextension>> Meta_ExtensionsByFunctionString_T =
 {
     { "glTestFenceNV", { GLextension::GL_NV_fence } },
+    { "glTexAttachMemoryNV", { GLextension::GL_NV_memory_attachment } },
     { "glTexBufferEXT", { GLextension::GL_EXT_texture_buffer } },
     { "glTexBufferOES", { GLextension::GL_OES_texture_buffer } },
     { "glTexBufferRangeEXT", { GLextension::GL_EXT_texture_buffer } },
@@ -463,6 +483,7 @@ const std::unordered_map<std::string, std::set<GLextension>> Meta_ExtensionsByFu
     { "glTexStorageMem3DEXT", { GLextension::GL_EXT_memory_object } },
     { "glTexStorageMem3DMultisampleEXT", { GLextension::GL_EXT_memory_object } },
     { "glTexSubImage3DOES", { GLextension::GL_OES_texture_3D } },
+    { "glTextureAttachMemoryNV", { GLextension::GL_NV_memory_attachment } },
     { "glTextureFoveationParametersQCOM", { GLextension::GL_QCOM_texture_foveated } },
     { "glTextureStorage1DEXT", { GLextension::GL_EXT_texture_storage } },
     { "glTextureStorage2DEXT", { GLextension::GL_EXT_texture_storage } },

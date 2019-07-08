@@ -61,7 +61,7 @@ namespace gles
 {
 
 
-GLESBINDING_AUX_API std::ostream & operator<<(std::ostream & stream, const BufferAccessMask & value);
+GLESBINDING_AUX_API std::ostream & operator<<(std::ostream & stream, const BufferBitQCOM & value);
 
 
 } // namespace gles
@@ -72,7 +72,7 @@ namespace gles
 {
 
 
-GLESBINDING_AUX_API std::ostream & operator<<(std::ostream & stream, const BufferBitQCOM & value);
+GLESBINDING_AUX_API std::ostream & operator<<(std::ostream & stream, const BufferStorageMask & value);
 
 
 } // namespace gles
@@ -116,7 +116,7 @@ namespace gles
 {
 
 
-GLESBINDING_AUX_API std::ostream & operator<<(std::ostream & stream, const MapBufferUsageMask & value);
+GLESBINDING_AUX_API std::ostream & operator<<(std::ostream & stream, const MapBufferAccessMask & value);
 
 
 } // namespace gles
@@ -215,7 +215,7 @@ namespace gles
 {
 
 
-GLESBINDING_AUX_API std::ostream & operator<<(std::ostream & stream, const BufferStorageMask & value);
+GLESBINDING_AUX_API std::ostream & operator<<(std::ostream & stream, const BufferAccessMask & value);
 
 
 } // namespace gles
@@ -230,9 +230,17 @@ namespace glesbinding
 class Version;
 
 
+/**
+*  @brief
+*    Generic ostream operator for the Value template
+*/
 template <typename T>
 GLESBINDING_AUX_TEMPLATE_API std::ostream & operator<<(std::ostream & stream, const Value<T> & value);
 
+/**
+*  @brief
+*    Generic ostream operator for the Value template with pointer types
+*/
 template <typename T>
 GLESBINDING_AUX_TEMPLATE_API std::ostream & operator<<(std::ostream & stream, const Value<T *> & value);
 
@@ -243,7 +251,7 @@ GLESBINDING_AUX_TEMPLATE_API std::ostream & operator<<(std::ostream & stream, co
 template <>
 GLESBINDING_AUX_API std::ostream & operator<<(std::ostream & stream, const Value<gles::GLenum> & value);
 
-/**
+/* <- ToDo: Add back second * when implementing this function again
 *  @brief
 *    A specialized ostream operator for the gl::GLbitfield Value template
 */
@@ -284,6 +292,10 @@ GLESBINDING_AUX_API std::ostream & operator<<(std::ostream & stream, const Value
 */
 GLESBINDING_AUX_API std::ostream & operator<<(std::ostream & stream, const Version & version);
 
+/**
+*  @brief
+*    The operator to allow AbstractValues to be printed onto a std::ostream
+*/
 GLESBINDING_AUX_API std::ostream & operator<<(std::ostream & stream, const AbstractValue * value);
 
 

@@ -33,22 +33,6 @@ using gles::GL_BOOL_VEC4_ARB;
 using gles::GL_FLOAT_MAT2_ARB;
 using gles::GL_FLOAT_MAT3_ARB;
 using gles::GL_FLOAT_MAT4_ARB;
-using gles::GL_SAMPLER_1D;
-using gles::GL_SAMPLER_1D_ARB;
-using gles::GL_SAMPLER_2D_ARB;
-using gles::GL_SAMPLER_3D;
-using gles::GL_SAMPLER_3D_ARB;
-using gles::GL_SAMPLER_3D_OES;
-using gles::GL_SAMPLER_CUBE_ARB;
-using gles::GL_SAMPLER_1D_SHADOW;
-using gles::GL_SAMPLER_1D_SHADOW_ARB;
-using gles::GL_SAMPLER_2D_SHADOW;
-using gles::GL_SAMPLER_2D_SHADOW_ARB;
-using gles::GL_SAMPLER_2D_SHADOW_EXT;
-using gles::GL_SAMPLER_2D_RECT;
-using gles::GL_SAMPLER_2D_RECT_ARB;
-using gles::GL_SAMPLER_2D_RECT_SHADOW;
-using gles::GL_SAMPLER_2D_RECT_SHADOW_ARB;
 using gles::GL_FLOAT_MAT2x3;
 using gles::GL_FLOAT_MAT2x3_NV;
 using gles::GL_FLOAT_MAT2x4;
@@ -68,7 +52,9 @@ using gles::GL_TRANSFORM_FEEDBACK;
 
 // BlendEquationModeEXT
 
+using gles::GL_MIN;
 using gles::GL_MIN_EXT;
+using gles::GL_MAX;
 using gles::GL_MAX_EXT;
 
 // Buffer
@@ -82,6 +68,17 @@ using gles::GL_STENCIL;
 using gles::GL_READ_ONLY;
 using gles::GL_WRITE_ONLY;
 using gles::GL_READ_WRITE;
+
+// BufferPNameARB
+
+using gles::GL_BUFFER_MAPPED;
+using gles::GL_BUFFER_ACCESS_FLAGS;
+using gles::GL_BUFFER_MAP_LENGTH;
+using gles::GL_BUFFER_MAP_OFFSET;
+
+// BufferPointerNameARB
+
+using gles::GL_BUFFER_MAP_POINTER;
 
 // BufferStorageTarget
 
@@ -175,6 +172,7 @@ using gles::GL_COLOR_ATTACHMENT31;
 
 // DebugSeverity
 
+using gles::GL_DEBUG_SEVERITY_NOTIFICATION;
 using gles::GL_DEBUG_SEVERITY_HIGH;
 using gles::GL_DEBUG_SEVERITY_MEDIUM;
 using gles::GL_DEBUG_SEVERITY_LOW;
@@ -200,9 +198,52 @@ using gles::GL_DEBUG_TYPE_MARKER;
 using gles::GL_DEBUG_TYPE_PUSH_GROUP;
 using gles::GL_DEBUG_TYPE_POP_GROUP;
 
+// DrawBufferMode
+
+// using gles::GL_COLOR_ATTACHMENT1; // reuse ColorBuffer
+// using gles::GL_COLOR_ATTACHMENT2; // reuse ColorBuffer
+// using gles::GL_COLOR_ATTACHMENT3; // reuse ColorBuffer
+// using gles::GL_COLOR_ATTACHMENT4; // reuse ColorBuffer
+// using gles::GL_COLOR_ATTACHMENT5; // reuse ColorBuffer
+// using gles::GL_COLOR_ATTACHMENT6; // reuse ColorBuffer
+// using gles::GL_COLOR_ATTACHMENT7; // reuse ColorBuffer
+// using gles::GL_COLOR_ATTACHMENT8; // reuse ColorBuffer
+// using gles::GL_COLOR_ATTACHMENT9; // reuse ColorBuffer
+// using gles::GL_COLOR_ATTACHMENT10; // reuse ColorBuffer
+// using gles::GL_COLOR_ATTACHMENT11; // reuse ColorBuffer
+// using gles::GL_COLOR_ATTACHMENT12; // reuse ColorBuffer
+// using gles::GL_COLOR_ATTACHMENT13; // reuse ColorBuffer
+// using gles::GL_COLOR_ATTACHMENT14; // reuse ColorBuffer
+// using gles::GL_COLOR_ATTACHMENT15; // reuse ColorBuffer
+
+// DrawBufferModeATI
+
+using gles::GL_COLOR_ATTACHMENT0_NV;
+using gles::GL_COLOR_ATTACHMENT1_NV;
+using gles::GL_COLOR_ATTACHMENT2_NV;
+using gles::GL_COLOR_ATTACHMENT3_NV;
+using gles::GL_COLOR_ATTACHMENT4_NV;
+using gles::GL_COLOR_ATTACHMENT5_NV;
+using gles::GL_COLOR_ATTACHMENT6_NV;
+using gles::GL_COLOR_ATTACHMENT7_NV;
+using gles::GL_COLOR_ATTACHMENT8_NV;
+using gles::GL_COLOR_ATTACHMENT9_NV;
+using gles::GL_COLOR_ATTACHMENT10_NV;
+using gles::GL_COLOR_ATTACHMENT11_NV;
+using gles::GL_COLOR_ATTACHMENT12_NV;
+using gles::GL_COLOR_ATTACHMENT13_NV;
+using gles::GL_COLOR_ATTACHMENT14_NV;
+using gles::GL_COLOR_ATTACHMENT15_NV;
+
 // EnableCap
 
 using gles::GL_VERTEX_ARRAY;
+using gles::GL_DEBUG_OUTPUT_SYNCHRONOUS;
+using gles::GL_SAMPLE_SHADING;
+using gles::GL_RASTERIZER_DISCARD;
+using gles::GL_PRIMITIVE_RESTART_FIXED_INDEX;
+using gles::GL_SAMPLE_MASK;
+using gles::GL_DEBUG_OUTPUT;
 
 // ErrorCode
 
@@ -220,58 +261,68 @@ using gles::GL_HANDLE_TYPE_D3D11_IMAGE_EXT;
 using gles::GL_HANDLE_TYPE_D3D11_IMAGE_KMT_EXT;
 using gles::GL_HANDLE_TYPE_D3D12_FENCE_EXT;
 
+// FenceConditionNV
+
+using gles::GL_ALL_COMPLETED_NV;
+
+// FenceParameterNameNV
+
+using gles::GL_FENCE_STATUS_NV;
+using gles::GL_FENCE_CONDITION_NV;
+
 // FramebufferAttachment
 
+using gles::GL_DEPTH_STENCIL_ATTACHMENT;
 using gles::GL_MAX_COLOR_ATTACHMENTS;
 using gles::GL_MAX_COLOR_ATTACHMENTS_EXT;
 using gles::GL_MAX_COLOR_ATTACHMENTS_NV;
 using gles::GL_COLOR_ATTACHMENT0_EXT;
-using gles::GL_COLOR_ATTACHMENT0_NV;
+// using gles::GL_COLOR_ATTACHMENT0_NV; // reuse DrawBufferModeATI
 // using gles::GL_COLOR_ATTACHMENT1; // reuse ColorBuffer
 using gles::GL_COLOR_ATTACHMENT1_EXT;
-using gles::GL_COLOR_ATTACHMENT1_NV;
+// using gles::GL_COLOR_ATTACHMENT1_NV; // reuse DrawBufferModeATI
 // using gles::GL_COLOR_ATTACHMENT2; // reuse ColorBuffer
 using gles::GL_COLOR_ATTACHMENT2_EXT;
-using gles::GL_COLOR_ATTACHMENT2_NV;
+// using gles::GL_COLOR_ATTACHMENT2_NV; // reuse DrawBufferModeATI
 // using gles::GL_COLOR_ATTACHMENT3; // reuse ColorBuffer
 using gles::GL_COLOR_ATTACHMENT3_EXT;
-using gles::GL_COLOR_ATTACHMENT3_NV;
+// using gles::GL_COLOR_ATTACHMENT3_NV; // reuse DrawBufferModeATI
 // using gles::GL_COLOR_ATTACHMENT4; // reuse ColorBuffer
 using gles::GL_COLOR_ATTACHMENT4_EXT;
-using gles::GL_COLOR_ATTACHMENT4_NV;
+// using gles::GL_COLOR_ATTACHMENT4_NV; // reuse DrawBufferModeATI
 // using gles::GL_COLOR_ATTACHMENT5; // reuse ColorBuffer
 using gles::GL_COLOR_ATTACHMENT5_EXT;
-using gles::GL_COLOR_ATTACHMENT5_NV;
+// using gles::GL_COLOR_ATTACHMENT5_NV; // reuse DrawBufferModeATI
 // using gles::GL_COLOR_ATTACHMENT6; // reuse ColorBuffer
 using gles::GL_COLOR_ATTACHMENT6_EXT;
-using gles::GL_COLOR_ATTACHMENT6_NV;
+// using gles::GL_COLOR_ATTACHMENT6_NV; // reuse DrawBufferModeATI
 // using gles::GL_COLOR_ATTACHMENT7; // reuse ColorBuffer
 using gles::GL_COLOR_ATTACHMENT7_EXT;
-using gles::GL_COLOR_ATTACHMENT7_NV;
+// using gles::GL_COLOR_ATTACHMENT7_NV; // reuse DrawBufferModeATI
 // using gles::GL_COLOR_ATTACHMENT8; // reuse ColorBuffer
 using gles::GL_COLOR_ATTACHMENT8_EXT;
-using gles::GL_COLOR_ATTACHMENT8_NV;
+// using gles::GL_COLOR_ATTACHMENT8_NV; // reuse DrawBufferModeATI
 // using gles::GL_COLOR_ATTACHMENT9; // reuse ColorBuffer
 using gles::GL_COLOR_ATTACHMENT9_EXT;
-using gles::GL_COLOR_ATTACHMENT9_NV;
+// using gles::GL_COLOR_ATTACHMENT9_NV; // reuse DrawBufferModeATI
 // using gles::GL_COLOR_ATTACHMENT10; // reuse ColorBuffer
 using gles::GL_COLOR_ATTACHMENT10_EXT;
-using gles::GL_COLOR_ATTACHMENT10_NV;
+// using gles::GL_COLOR_ATTACHMENT10_NV; // reuse DrawBufferModeATI
 // using gles::GL_COLOR_ATTACHMENT11; // reuse ColorBuffer
 using gles::GL_COLOR_ATTACHMENT11_EXT;
-using gles::GL_COLOR_ATTACHMENT11_NV;
+// using gles::GL_COLOR_ATTACHMENT11_NV; // reuse DrawBufferModeATI
 // using gles::GL_COLOR_ATTACHMENT12; // reuse ColorBuffer
 using gles::GL_COLOR_ATTACHMENT12_EXT;
-using gles::GL_COLOR_ATTACHMENT12_NV;
+// using gles::GL_COLOR_ATTACHMENT12_NV; // reuse DrawBufferModeATI
 // using gles::GL_COLOR_ATTACHMENT13; // reuse ColorBuffer
 using gles::GL_COLOR_ATTACHMENT13_EXT;
-using gles::GL_COLOR_ATTACHMENT13_NV;
+// using gles::GL_COLOR_ATTACHMENT13_NV; // reuse DrawBufferModeATI
 // using gles::GL_COLOR_ATTACHMENT14; // reuse ColorBuffer
 using gles::GL_COLOR_ATTACHMENT14_EXT;
-using gles::GL_COLOR_ATTACHMENT14_NV;
+// using gles::GL_COLOR_ATTACHMENT14_NV; // reuse DrawBufferModeATI
 // using gles::GL_COLOR_ATTACHMENT15; // reuse ColorBuffer
 using gles::GL_COLOR_ATTACHMENT15_EXT;
-using gles::GL_COLOR_ATTACHMENT15_NV;
+// using gles::GL_COLOR_ATTACHMENT15_NV; // reuse DrawBufferModeATI
 // using gles::GL_COLOR_ATTACHMENT16; // reuse ColorBuffer
 // using gles::GL_COLOR_ATTACHMENT17; // reuse ColorBuffer
 // using gles::GL_COLOR_ATTACHMENT18; // reuse ColorBuffer
@@ -333,6 +384,10 @@ using gles::GL_FRAMEBUFFER_INCOMPLETE_LAYER_TARGETS;
 // using gles::GL_FRAMEBUFFER_DEFAULT_SAMPLES; // reuse FramebufferParameterName
 // using gles::GL_FRAMEBUFFER_DEFAULT_FIXED_SAMPLE_LOCATIONS; // reuse FramebufferParameterName
 
+// GetMultisamplePNameNV
+
+using gles::GL_SAMPLE_POSITION;
+
 // GetPName
 
 using gles::GL_ALPHA_TEST_QCOM;
@@ -349,7 +404,110 @@ using gles::GL_PACK_ROW_LENGTH;
 using gles::GL_PACK_SKIP_ROWS;
 using gles::GL_PACK_SKIP_PIXELS;
 using gles::GL_TEXTURE_BINDING_3D;
+using gles::GL_UNPACK_SKIP_IMAGES;
+using gles::GL_UNPACK_IMAGE_HEIGHT;
+using gles::GL_MAX_3D_TEXTURE_SIZE;
 // using gles::GL_VERTEX_ARRAY; // reuse EnableCap
+using gles::GL_MAX_ELEMENTS_VERTICES;
+using gles::GL_MAX_ELEMENTS_INDICES;
+using gles::GL_MAJOR_VERSION;
+using gles::GL_MINOR_VERSION;
+using gles::GL_NUM_EXTENSIONS;
+using gles::GL_CONTEXT_FLAGS;
+using gles::GL_PROGRAM_PIPELINE_BINDING;
+using gles::GL_LAYER_PROVOKING_VERTEX;
+using gles::GL_MAX_COMPUTE_UNIFORM_COMPONENTS;
+using gles::GL_MAX_COMPUTE_ATOMIC_COUNTER_BUFFERS;
+using gles::GL_MAX_COMPUTE_ATOMIC_COUNTERS;
+using gles::GL_MAX_COMBINED_COMPUTE_UNIFORM_COMPONENTS;
+using gles::GL_MAX_DEBUG_GROUP_STACK_DEPTH;
+using gles::GL_DEBUG_GROUP_STACK_DEPTH;
+using gles::GL_MAX_UNIFORM_LOCATIONS;
+using gles::GL_VERTEX_BINDING_DIVISOR;
+using gles::GL_VERTEX_BINDING_OFFSET;
+using gles::GL_VERTEX_BINDING_STRIDE;
+using gles::GL_MAX_VERTEX_ATTRIB_RELATIVE_OFFSET;
+using gles::GL_MAX_VERTEX_ATTRIB_BINDINGS;
+using gles::GL_MAX_LABEL_LENGTH;
+using gles::GL_MAX_TEXTURE_LOD_BIAS;
+using gles::GL_VERTEX_ARRAY_BINDING;
+using gles::GL_NUM_PROGRAM_BINARY_FORMATS;
+using gles::GL_PROGRAM_BINARY_FORMATS;
+using gles::GL_MAX_DRAW_BUFFERS;
+using gles::GL_PIXEL_PACK_BUFFER_BINDING;
+using gles::GL_PIXEL_UNPACK_BUFFER_BINDING;
+using gles::GL_MAX_ARRAY_TEXTURE_LAYERS;
+using gles::GL_MIN_PROGRAM_TEXEL_OFFSET;
+using gles::GL_MAX_PROGRAM_TEXEL_OFFSET;
+using gles::GL_SAMPLER_BINDING;
+using gles::GL_UNIFORM_BUFFER_BINDING;
+using gles::GL_UNIFORM_BUFFER_START;
+using gles::GL_UNIFORM_BUFFER_SIZE;
+using gles::GL_MAX_VERTEX_UNIFORM_BLOCKS;
+using gles::GL_MAX_GEOMETRY_UNIFORM_BLOCKS;
+using gles::GL_MAX_FRAGMENT_UNIFORM_BLOCKS;
+using gles::GL_MAX_COMBINED_UNIFORM_BLOCKS;
+using gles::GL_MAX_UNIFORM_BUFFER_BINDINGS;
+using gles::GL_MAX_UNIFORM_BLOCK_SIZE;
+using gles::GL_MAX_COMBINED_VERTEX_UNIFORM_COMPONENTS;
+using gles::GL_MAX_COMBINED_GEOMETRY_UNIFORM_COMPONENTS;
+using gles::GL_MAX_COMBINED_FRAGMENT_UNIFORM_COMPONENTS;
+using gles::GL_UNIFORM_BUFFER_OFFSET_ALIGNMENT;
+using gles::GL_MAX_FRAGMENT_UNIFORM_COMPONENTS;
+using gles::GL_MAX_VERTEX_UNIFORM_COMPONENTS;
+using gles::GL_MAX_VARYING_COMPONENTS;
+using gles::GL_FRAGMENT_SHADER_DERIVATIVE_HINT;
+using gles::GL_TEXTURE_BINDING_2D_ARRAY;
+using gles::GL_MAX_GEOMETRY_TEXTURE_IMAGE_UNITS;
+using gles::GL_MAX_TEXTURE_BUFFER_SIZE;
+using gles::GL_TEXTURE_BINDING_BUFFER;
+using gles::GL_TRANSFORM_FEEDBACK_BUFFER_START;
+using gles::GL_TRANSFORM_FEEDBACK_BUFFER_SIZE;
+using gles::GL_TRANSFORM_FEEDBACK_BUFFER_BINDING;
+using gles::GL_DRAW_FRAMEBUFFER_BINDING;
+using gles::GL_READ_FRAMEBUFFER_BINDING;
+using gles::GL_MAX_ELEMENT_INDEX;
+using gles::GL_MAX_GEOMETRY_UNIFORM_COMPONENTS;
+using gles::GL_MAX_SAMPLE_MASK_WORDS;
+using gles::GL_SHADER_STORAGE_BUFFER_BINDING;
+using gles::GL_SHADER_STORAGE_BUFFER_START;
+using gles::GL_SHADER_STORAGE_BUFFER_SIZE;
+using gles::GL_MAX_VERTEX_SHADER_STORAGE_BLOCKS;
+using gles::GL_MAX_GEOMETRY_SHADER_STORAGE_BLOCKS;
+using gles::GL_MAX_TESS_CONTROL_SHADER_STORAGE_BLOCKS;
+using gles::GL_MAX_TESS_EVALUATION_SHADER_STORAGE_BLOCKS;
+using gles::GL_MAX_FRAGMENT_SHADER_STORAGE_BLOCKS;
+using gles::GL_MAX_COMPUTE_SHADER_STORAGE_BLOCKS;
+using gles::GL_MAX_COMBINED_SHADER_STORAGE_BLOCKS;
+using gles::GL_MAX_SHADER_STORAGE_BUFFER_BINDINGS;
+using gles::GL_SHADER_STORAGE_BUFFER_OFFSET_ALIGNMENT;
+using gles::GL_MAX_COMPUTE_WORK_GROUP_INVOCATIONS;
+using gles::GL_DISPATCH_INDIRECT_BUFFER_BINDING;
+using gles::GL_TEXTURE_BINDING_2D_MULTISAMPLE;
+using gles::GL_TEXTURE_BINDING_2D_MULTISAMPLE_ARRAY;
+using gles::GL_MAX_COLOR_TEXTURE_SAMPLES;
+using gles::GL_MAX_DEPTH_TEXTURE_SAMPLES;
+using gles::GL_MAX_INTEGER_SAMPLES;
+using gles::GL_MAX_SERVER_WAIT_TIMEOUT;
+using gles::GL_MAX_VERTEX_OUTPUT_COMPONENTS;
+using gles::GL_MAX_GEOMETRY_INPUT_COMPONENTS;
+using gles::GL_MAX_GEOMETRY_OUTPUT_COMPONENTS;
+using gles::GL_MAX_FRAGMENT_INPUT_COMPONENTS;
+using gles::GL_TEXTURE_BUFFER_OFFSET_ALIGNMENT;
+using gles::GL_MAX_COMPUTE_UNIFORM_BLOCKS;
+using gles::GL_MAX_COMPUTE_TEXTURE_IMAGE_UNITS;
+using gles::GL_MAX_COMPUTE_WORK_GROUP_COUNT;
+using gles::GL_MAX_COMPUTE_WORK_GROUP_SIZE;
+using gles::GL_MAX_VERTEX_ATOMIC_COUNTERS;
+using gles::GL_MAX_TESS_CONTROL_ATOMIC_COUNTERS;
+using gles::GL_MAX_TESS_EVALUATION_ATOMIC_COUNTERS;
+using gles::GL_MAX_GEOMETRY_ATOMIC_COUNTERS;
+using gles::GL_MAX_FRAGMENT_ATOMIC_COUNTERS;
+using gles::GL_MAX_COMBINED_ATOMIC_COUNTERS;
+using gles::GL_MAX_FRAMEBUFFER_WIDTH;
+using gles::GL_MAX_FRAMEBUFFER_HEIGHT;
+using gles::GL_MAX_FRAMEBUFFER_LAYERS;
+using gles::GL_MAX_FRAMEBUFFER_SAMPLES;
 using gles::GL_NUM_DEVICE_UUIDS_EXT;
 using gles::GL_DEVICE_UUID_EXT;
 using gles::GL_DRIVER_UUID_EXT;
@@ -373,6 +531,67 @@ using gles::GL_TEXTURE_GREEN_SIZE;
 using gles::GL_TEXTURE_BLUE_SIZE;
 using gles::GL_TEXTURE_ALPHA_SIZE;
 
+// GlslTypeToken
+
+using gles::GL_SAMPLER_1D;
+using gles::GL_SAMPLER_3D;
+using gles::GL_SAMPLER_1D_SHADOW;
+using gles::GL_SAMPLER_2D_SHADOW;
+using gles::GL_SAMPLER_2D_RECT;
+using gles::GL_SAMPLER_2D_RECT_SHADOW;
+// using gles::GL_FLOAT_MAT2x3; // reuse AttributeType
+// using gles::GL_FLOAT_MAT2x4; // reuse AttributeType
+// using gles::GL_FLOAT_MAT3x2; // reuse AttributeType
+// using gles::GL_FLOAT_MAT3x4; // reuse AttributeType
+// using gles::GL_FLOAT_MAT4x2; // reuse AttributeType
+// using gles::GL_FLOAT_MAT4x3; // reuse AttributeType
+using gles::GL_SAMPLER_2D_ARRAY;
+using gles::GL_SAMPLER_BUFFER;
+using gles::GL_SAMPLER_2D_ARRAY_SHADOW;
+using gles::GL_SAMPLER_CUBE_SHADOW;
+using gles::GL_UNSIGNED_INT_VEC2;
+using gles::GL_UNSIGNED_INT_VEC3;
+using gles::GL_UNSIGNED_INT_VEC4;
+using gles::GL_INT_SAMPLER_2D;
+using gles::GL_INT_SAMPLER_3D;
+using gles::GL_INT_SAMPLER_CUBE;
+using gles::GL_INT_SAMPLER_2D_ARRAY;
+using gles::GL_INT_SAMPLER_BUFFER;
+using gles::GL_UNSIGNED_INT_SAMPLER_2D;
+using gles::GL_UNSIGNED_INT_SAMPLER_3D;
+using gles::GL_UNSIGNED_INT_SAMPLER_CUBE;
+using gles::GL_UNSIGNED_INT_SAMPLER_2D_ARRAY;
+using gles::GL_UNSIGNED_INT_SAMPLER_BUFFER;
+using gles::GL_SAMPLER_CUBE_MAP_ARRAY;
+using gles::GL_SAMPLER_CUBE_MAP_ARRAY_SHADOW;
+using gles::GL_INT_SAMPLER_CUBE_MAP_ARRAY;
+using gles::GL_UNSIGNED_INT_SAMPLER_CUBE_MAP_ARRAY;
+using gles::GL_IMAGE_2D;
+using gles::GL_IMAGE_3D;
+using gles::GL_IMAGE_CUBE;
+using gles::GL_IMAGE_BUFFER;
+using gles::GL_IMAGE_2D_ARRAY;
+using gles::GL_IMAGE_CUBE_MAP_ARRAY;
+using gles::GL_INT_IMAGE_2D;
+using gles::GL_INT_IMAGE_3D;
+using gles::GL_INT_IMAGE_CUBE;
+using gles::GL_INT_IMAGE_BUFFER;
+using gles::GL_INT_IMAGE_2D_ARRAY;
+using gles::GL_INT_IMAGE_CUBE_MAP_ARRAY;
+using gles::GL_UNSIGNED_INT_IMAGE_2D;
+using gles::GL_UNSIGNED_INT_IMAGE_3D;
+using gles::GL_UNSIGNED_INT_IMAGE_CUBE;
+using gles::GL_UNSIGNED_INT_IMAGE_BUFFER;
+using gles::GL_UNSIGNED_INT_IMAGE_2D_ARRAY;
+using gles::GL_UNSIGNED_INT_IMAGE_CUBE_MAP_ARRAY;
+using gles::GL_SAMPLER_2D_MULTISAMPLE;
+using gles::GL_INT_SAMPLER_2D_MULTISAMPLE;
+using gles::GL_UNSIGNED_INT_SAMPLER_2D_MULTISAMPLE;
+using gles::GL_SAMPLER_2D_MULTISAMPLE_ARRAY;
+using gles::GL_INT_SAMPLER_2D_MULTISAMPLE_ARRAY;
+using gles::GL_UNSIGNED_INT_SAMPLER_2D_MULTISAMPLE_ARRAY;
+using gles::GL_UNSIGNED_INT_ATOMIC_COUNTER;
+
 // GraphicsResetStatus
 
 using gles::GL_GUILTY_CONTEXT_RESET;
@@ -382,7 +601,7 @@ using gles::GL_UNKNOWN_CONTEXT_RESET;
 // HintTarget
 
 using gles::GL_PROGRAM_BINARY_RETRIEVABLE_HINT;
-using gles::GL_FRAGMENT_SHADER_DERIVATIVE_HINT;
+// using gles::GL_FRAGMENT_SHADER_DERIVATIVE_HINT; // reuse GetPName
 using gles::GL_FRAGMENT_SHADER_DERIVATIVE_HINT_OES;
 using gles::GL_BINNING_CONTROL_HINT_QCOM;
 
@@ -521,6 +740,54 @@ using gles::GL_SAMPLER;
 
 using gles::GL_PATCH_VERTICES;
 
+// PathCoordType
+
+using gles::GL_CLOSE_PATH_NV;
+using gles::GL_MOVE_TO_NV;
+using gles::GL_RELATIVE_MOVE_TO_NV;
+using gles::GL_LINE_TO_NV;
+using gles::GL_RELATIVE_LINE_TO_NV;
+using gles::GL_HORIZONTAL_LINE_TO_NV;
+using gles::GL_RELATIVE_HORIZONTAL_LINE_TO_NV;
+using gles::GL_VERTICAL_LINE_TO_NV;
+using gles::GL_RELATIVE_VERTICAL_LINE_TO_NV;
+using gles::GL_QUADRATIC_CURVE_TO_NV;
+using gles::GL_RELATIVE_QUADRATIC_CURVE_TO_NV;
+using gles::GL_CUBIC_CURVE_TO_NV;
+using gles::GL_RELATIVE_CUBIC_CURVE_TO_NV;
+using gles::GL_SMOOTH_QUADRATIC_CURVE_TO_NV;
+using gles::GL_RELATIVE_SMOOTH_QUADRATIC_CURVE_TO_NV;
+using gles::GL_SMOOTH_CUBIC_CURVE_TO_NV;
+using gles::GL_RELATIVE_SMOOTH_CUBIC_CURVE_TO_NV;
+using gles::GL_SMALL_CCW_ARC_TO_NV;
+using gles::GL_RELATIVE_SMALL_CCW_ARC_TO_NV;
+using gles::GL_SMALL_CW_ARC_TO_NV;
+using gles::GL_RELATIVE_SMALL_CW_ARC_TO_NV;
+using gles::GL_LARGE_CCW_ARC_TO_NV;
+using gles::GL_RELATIVE_LARGE_CCW_ARC_TO_NV;
+using gles::GL_LARGE_CW_ARC_TO_NV;
+using gles::GL_RELATIVE_LARGE_CW_ARC_TO_NV;
+using gles::GL_CONIC_CURVE_TO_NV;
+using gles::GL_RELATIVE_CONIC_CURVE_TO_NV;
+using gles::GL_ROUNDED_RECT_NV;
+using gles::GL_RELATIVE_ROUNDED_RECT_NV;
+using gles::GL_ROUNDED_RECT2_NV;
+using gles::GL_RELATIVE_ROUNDED_RECT2_NV;
+using gles::GL_ROUNDED_RECT4_NV;
+using gles::GL_RELATIVE_ROUNDED_RECT4_NV;
+using gles::GL_ROUNDED_RECT8_NV;
+using gles::GL_RELATIVE_ROUNDED_RECT8_NV;
+using gles::GL_RESTART_PATH_NV;
+using gles::GL_DUP_FIRST_CUBIC_CURVE_TO_NV;
+using gles::GL_DUP_LAST_CUBIC_CURVE_TO_NV;
+using gles::GL_RECT_NV;
+using gles::GL_RELATIVE_RECT_NV;
+using gles::GL_CIRCULAR_CCW_ARC_TO_NV;
+using gles::GL_CIRCULAR_CW_ARC_TO_NV;
+using gles::GL_CIRCULAR_TANGENT_ARC_TO_NV;
+using gles::GL_ARC_TO_NV;
+using gles::GL_RELATIVE_ARC_TO_NV;
+
 // PathCoverMode
 
 using gles::GL_PATH_FILL_COVER_MODE_NV;
@@ -626,6 +893,12 @@ using gles::GL_STENCIL_INDEX;
 // using gles::GL_RED_EXT; // reuse InternalFormat
 using gles::GL_GREEN;
 using gles::GL_BLUE;
+// using gles::GL_RG; // reuse InternalFormat
+using gles::GL_RG_INTEGER;
+// using gles::GL_DEPTH_STENCIL; // reuse InternalFormat
+using gles::GL_RED_INTEGER;
+using gles::GL_RGB_INTEGER;
+using gles::GL_RGBA_INTEGER;
 
 // PixelStoreParameter
 
@@ -638,8 +911,8 @@ using gles::GL_UNPACK_SKIP_PIXELS_EXT;
 // using gles::GL_PACK_ROW_LENGTH; // reuse GetPName
 // using gles::GL_PACK_SKIP_ROWS; // reuse GetPName
 // using gles::GL_PACK_SKIP_PIXELS; // reuse GetPName
-using gles::GL_UNPACK_SKIP_IMAGES;
-using gles::GL_UNPACK_IMAGE_HEIGHT;
+// using gles::GL_UNPACK_SKIP_IMAGES; // reuse GetPName
+// using gles::GL_UNPACK_IMAGE_HEIGHT; // reuse GetPName
 
 // PrimitiveType
 
@@ -692,6 +965,33 @@ using gles::GL_TRANSFORM_FEEDBACK_BUFFER_MODE;
 using gles::GL_TRANSFORM_FEEDBACK_VARYINGS;
 using gles::GL_ACTIVE_ATOMIC_COUNTER_BUFFERS;
 
+// ProgramResourceProperty
+
+// using gles::GL_UNIFORM; // reuse ProgramInterface
+using gles::GL_IS_PER_PATCH;
+using gles::GL_NAME_LENGTH;
+using gles::GL_TYPE;
+using gles::GL_ARRAY_SIZE;
+using gles::GL_OFFSET;
+using gles::GL_BLOCK_INDEX;
+using gles::GL_ARRAY_STRIDE;
+using gles::GL_MATRIX_STRIDE;
+using gles::GL_IS_ROW_MAJOR;
+using gles::GL_ATOMIC_COUNTER_BUFFER_INDEX;
+using gles::GL_BUFFER_BINDING;
+using gles::GL_BUFFER_DATA_SIZE;
+using gles::GL_NUM_ACTIVE_VARIABLES;
+using gles::GL_ACTIVE_VARIABLES;
+using gles::GL_REFERENCED_BY_VERTEX_SHADER;
+using gles::GL_REFERENCED_BY_TESS_CONTROL_SHADER;
+using gles::GL_REFERENCED_BY_TESS_EVALUATION_SHADER;
+using gles::GL_REFERENCED_BY_GEOMETRY_SHADER;
+using gles::GL_REFERENCED_BY_FRAGMENT_SHADER;
+using gles::GL_REFERENCED_BY_COMPUTE_SHADER;
+using gles::GL_TOP_LEVEL_ARRAY_SIZE;
+using gles::GL_TOP_LEVEL_ARRAY_STRIDE;
+using gles::GL_LOCATION;
+
 // QueryObjectParameterName
 
 using gles::GL_QUERY_RESULT;
@@ -708,16 +1008,37 @@ using gles::GL_PRIMITIVES_GENERATED;
 using gles::GL_TRANSFORM_FEEDBACK_PRIMITIVES_WRITTEN;
 using gles::GL_ANY_SAMPLES_PASSED_CONSERVATIVE;
 
+// ReadBufferMode
+
+// using gles::GL_COLOR_ATTACHMENT1; // reuse ColorBuffer
+// using gles::GL_COLOR_ATTACHMENT2; // reuse ColorBuffer
+// using gles::GL_COLOR_ATTACHMENT3; // reuse ColorBuffer
+// using gles::GL_COLOR_ATTACHMENT4; // reuse ColorBuffer
+// using gles::GL_COLOR_ATTACHMENT5; // reuse ColorBuffer
+// using gles::GL_COLOR_ATTACHMENT6; // reuse ColorBuffer
+// using gles::GL_COLOR_ATTACHMENT7; // reuse ColorBuffer
+// using gles::GL_COLOR_ATTACHMENT8; // reuse ColorBuffer
+// using gles::GL_COLOR_ATTACHMENT9; // reuse ColorBuffer
+// using gles::GL_COLOR_ATTACHMENT10; // reuse ColorBuffer
+// using gles::GL_COLOR_ATTACHMENT11; // reuse ColorBuffer
+// using gles::GL_COLOR_ATTACHMENT12; // reuse ColorBuffer
+// using gles::GL_COLOR_ATTACHMENT13; // reuse ColorBuffer
+// using gles::GL_COLOR_ATTACHMENT14; // reuse ColorBuffer
+// using gles::GL_COLOR_ATTACHMENT15; // reuse ColorBuffer
+
 // RenderbufferParameterName
 
 using gles::GL_RENDERBUFFER_SAMPLES;
 
-// SamplerParameterName
+// SamplerParameterF
 
 // using gles::GL_TEXTURE_BORDER_COLOR; // reuse GetTextureParameter
-using gles::GL_TEXTURE_WRAP_R;
 using gles::GL_TEXTURE_MIN_LOD;
 using gles::GL_TEXTURE_MAX_LOD;
+
+// SamplerParameterI
+
+using gles::GL_TEXTURE_WRAP_R;
 using gles::GL_TEXTURE_COMPARE_MODE;
 using gles::GL_TEXTURE_COMPARE_FUNC;
 
@@ -757,6 +1078,10 @@ using gles::GL_TIMEOUT_EXPIRED;
 using gles::GL_CONDITION_SATISFIED;
 using gles::GL_WAIT_FAILED;
 
+// TextureCompareMode
+
+using gles::GL_COMPARE_REF_TO_TEXTURE;
+
 // TextureLayout
 
 using gles::GL_LAYOUT_DEPTH_READ_ONLY_STENCIL_ATTACHMENT_EXT;
@@ -780,20 +1105,26 @@ using gles::GL_LAYOUT_TRANSFER_DST_EXT;
 // using gles::GL_TEXTURE_GREEN_SIZE; // reuse GetTextureParameter
 // using gles::GL_TEXTURE_BLUE_SIZE; // reuse GetTextureParameter
 // using gles::GL_TEXTURE_ALPHA_SIZE; // reuse GetTextureParameter
-// using gles::GL_TEXTURE_WRAP_R; // reuse SamplerParameterName
+// using gles::GL_TEXTURE_WRAP_R; // reuse SamplerParameterI
 using gles::GL_TEXTURE_WRAP_R_OES;
-// using gles::GL_TEXTURE_MIN_LOD; // reuse SamplerParameterName
-// using gles::GL_TEXTURE_MAX_LOD; // reuse SamplerParameterName
+// using gles::GL_TEXTURE_MIN_LOD; // reuse SamplerParameterF
+// using gles::GL_TEXTURE_MAX_LOD; // reuse SamplerParameterF
 using gles::GL_TEXTURE_BASE_LEVEL;
 using gles::GL_TEXTURE_MAX_LEVEL;
-// using gles::GL_TEXTURE_COMPARE_MODE; // reuse SamplerParameterName
-// using gles::GL_TEXTURE_COMPARE_FUNC; // reuse SamplerParameterName
+// using gles::GL_TEXTURE_COMPARE_MODE; // reuse SamplerParameterI
+// using gles::GL_TEXTURE_COMPARE_FUNC; // reuse SamplerParameterI
 using gles::GL_TEXTURE_SWIZZLE_R;
 using gles::GL_TEXTURE_SWIZZLE_G;
 using gles::GL_TEXTURE_SWIZZLE_B;
 using gles::GL_TEXTURE_SWIZZLE_A;
 using gles::GL_DEPTH_STENCIL_TEXTURE_MODE;
 using gles::GL_TEXTURE_TILING_EXT;
+
+// TextureSwizzle
+
+// using gles::GL_RED; // reuse InternalFormat
+// using gles::GL_GREEN; // reuse PixelFormat
+// using gles::GL_BLUE; // reuse PixelFormat
 
 // TextureTarget
 
@@ -811,11 +1142,16 @@ using gles::GL_TEXTURE_2D_MULTISAMPLE_ARRAY;
 using gles::GL_CLAMP_TO_BORDER;
 using gles::GL_CLAMP_TO_BORDER_NV;
 
+// TransformFeedbackBufferMode
+
+using gles::GL_INTERLEAVED_ATTRIBS;
+using gles::GL_SEPARATE_ATTRIBS;
+
 // TransformFeedbackPName
 
-using gles::GL_TRANSFORM_FEEDBACK_BUFFER_START;
-using gles::GL_TRANSFORM_FEEDBACK_BUFFER_SIZE;
-using gles::GL_TRANSFORM_FEEDBACK_BUFFER_BINDING;
+// using gles::GL_TRANSFORM_FEEDBACK_BUFFER_START; // reuse GetPName
+// using gles::GL_TRANSFORM_FEEDBACK_BUFFER_SIZE; // reuse GetPName
+// using gles::GL_TRANSFORM_FEEDBACK_BUFFER_BINDING; // reuse GetPName
 using gles::GL_TRANSFORM_FEEDBACK_PAUSED;
 using gles::GL_TRANSFORM_FEEDBACK_ACTIVE;
 
@@ -840,6 +1176,38 @@ using gles::GL_UNIFORM_ARRAY_STRIDE;
 using gles::GL_UNIFORM_MATRIX_STRIDE;
 using gles::GL_UNIFORM_IS_ROW_MAJOR;
 
+// UniformType
+
+// using gles::GL_SAMPLER_1D; // reuse GlslTypeToken
+// using gles::GL_SAMPLER_3D; // reuse GlslTypeToken
+// using gles::GL_SAMPLER_1D_SHADOW; // reuse GlslTypeToken
+// using gles::GL_SAMPLER_2D_SHADOW; // reuse GlslTypeToken
+// using gles::GL_SAMPLER_2D_RECT; // reuse GlslTypeToken
+// using gles::GL_SAMPLER_2D_RECT_SHADOW; // reuse GlslTypeToken
+// using gles::GL_SAMPLER_2D_ARRAY; // reuse GlslTypeToken
+// using gles::GL_SAMPLER_BUFFER; // reuse GlslTypeToken
+// using gles::GL_SAMPLER_2D_ARRAY_SHADOW; // reuse GlslTypeToken
+// using gles::GL_SAMPLER_CUBE_SHADOW; // reuse GlslTypeToken
+// using gles::GL_UNSIGNED_INT_VEC2; // reuse GlslTypeToken
+// using gles::GL_UNSIGNED_INT_VEC3; // reuse GlslTypeToken
+// using gles::GL_UNSIGNED_INT_VEC4; // reuse GlslTypeToken
+// using gles::GL_INT_SAMPLER_2D; // reuse GlslTypeToken
+// using gles::GL_INT_SAMPLER_3D; // reuse GlslTypeToken
+// using gles::GL_INT_SAMPLER_CUBE; // reuse GlslTypeToken
+// using gles::GL_INT_SAMPLER_2D_ARRAY; // reuse GlslTypeToken
+// using gles::GL_INT_SAMPLER_BUFFER; // reuse GlslTypeToken
+// using gles::GL_UNSIGNED_INT_SAMPLER_2D; // reuse GlslTypeToken
+// using gles::GL_UNSIGNED_INT_SAMPLER_3D; // reuse GlslTypeToken
+// using gles::GL_UNSIGNED_INT_SAMPLER_CUBE; // reuse GlslTypeToken
+// using gles::GL_UNSIGNED_INT_SAMPLER_2D_ARRAY; // reuse GlslTypeToken
+// using gles::GL_UNSIGNED_INT_SAMPLER_BUFFER; // reuse GlslTypeToken
+// using gles::GL_SAMPLER_2D_MULTISAMPLE; // reuse GlslTypeToken
+// using gles::GL_INT_SAMPLER_2D_MULTISAMPLE; // reuse GlslTypeToken
+// using gles::GL_UNSIGNED_INT_SAMPLER_2D_MULTISAMPLE; // reuse GlslTypeToken
+// using gles::GL_SAMPLER_2D_MULTISAMPLE_ARRAY; // reuse GlslTypeToken
+// using gles::GL_INT_SAMPLER_2D_MULTISAMPLE_ARRAY; // reuse GlslTypeToken
+// using gles::GL_UNSIGNED_INT_SAMPLER_2D_MULTISAMPLE_ARRAY; // reuse GlslTypeToken
+
 // VertexArrayPName
 
 using gles::GL_VERTEX_ATTRIB_RELATIVE_OFFSET;
@@ -858,6 +1226,13 @@ using gles::GL_UNSIGNED_INT_2_10_10_10_REV;
 using gles::GL_UNSIGNED_INT_10F_11F_11F_REV;
 using gles::GL_INT_2_10_10_10_REV;
 
+// VertexAttribPropertyARB
+
+using gles::GL_VERTEX_ATTRIB_BINDING;
+// using gles::GL_VERTEX_ATTRIB_RELATIVE_OFFSET; // reuse VertexArrayPName
+// using gles::GL_VERTEX_ATTRIB_ARRAY_INTEGER; // reuse VertexArrayPName
+// using gles::GL_VERTEX_ATTRIB_ARRAY_DIVISOR; // reuse VertexArrayPName
+
 // VertexAttribType
 
 // using gles::GL_HALF_FLOAT; // reuse VertexAttribPointerType
@@ -867,10 +1242,10 @@ using gles::GL_INT_2_10_10_10_REV;
 
 // VertexBufferObjectParameter
 
-using gles::GL_BUFFER_MAPPED;
-using gles::GL_BUFFER_ACCESS_FLAGS;
-using gles::GL_BUFFER_MAP_LENGTH;
-using gles::GL_BUFFER_MAP_OFFSET;
+// using gles::GL_BUFFER_MAPPED; // reuse BufferPNameARB
+// using gles::GL_BUFFER_ACCESS_FLAGS; // reuse BufferPNameARB
+// using gles::GL_BUFFER_MAP_LENGTH; // reuse BufferPNameARB
+// using gles::GL_BUFFER_MAP_OFFSET; // reuse BufferPNameARB
 
 // VertexBufferObjectUsage
 
@@ -888,61 +1263,34 @@ using gles::GL_LAST_VERTEX_CONVENTION;
 
 // __UNGROUPED__
 
-using gles::GL_CLOSE_PATH_NV;
 using gles::GL_QUADS_OES;
 using gles::GL_LINES_ADJACENCY_OES;
 using gles::GL_LINE_STRIP_ADJACENCY_OES;
 using gles::GL_TRIANGLES_ADJACENCY_OES;
 using gles::GL_TRIANGLE_STRIP_ADJACENCY_OES;
 using gles::GL_PATCHES_OES;
-using gles::GL_MOVE_TO_NV;
-using gles::GL_RELATIVE_MOVE_TO_NV;
 using gles::GL_SRC_ALPHA_SATURATE_EXT;
-using gles::GL_LINE_TO_NV;
-using gles::GL_RELATIVE_LINE_TO_NV;
 using gles::GL_CONTEXT_LOST;
-using gles::GL_HORIZONTAL_LINE_TO_NV;
-using gles::GL_RELATIVE_HORIZONTAL_LINE_TO_NV;
-using gles::GL_VERTICAL_LINE_TO_NV;
-using gles::GL_RELATIVE_VERTICAL_LINE_TO_NV;
-using gles::GL_QUADRATIC_CURVE_TO_NV;
-using gles::GL_RELATIVE_QUADRATIC_CURVE_TO_NV;
 using gles::GL_POLYGON_MODE_NV;
 using gles::GL_PATH_MODELVIEW_STACK_DEPTH_NV;
 using gles::GL_PATH_PROJECTION_STACK_DEPTH_NV;
 using gles::GL_PATH_MODELVIEW_MATRIX_NV;
 using gles::GL_PATH_PROJECTION_MATRIX_NV;
-using gles::GL_CUBIC_CURVE_TO_NV;
-using gles::GL_RELATIVE_CUBIC_CURVE_TO_NV;
 using gles::GL_MAX_CLIP_DISTANCES_APPLE;
 using gles::GL_MAX_CLIP_DISTANCES_EXT;
 using gles::GL_PATH_MAX_MODELVIEW_STACK_DEPTH_NV;
 using gles::GL_PATH_MAX_PROJECTION_STACK_DEPTH_NV;
-using gles::GL_SMOOTH_QUADRATIC_CURVE_TO_NV;
-using gles::GL_RELATIVE_SMOOTH_QUADRATIC_CURVE_TO_NV;
-using gles::GL_SMOOTH_CUBIC_CURVE_TO_NV;
 using gles::GL_TEXTURE_BORDER_COLOR_EXT;
 using gles::GL_TEXTURE_BORDER_COLOR_OES;
-using gles::GL_RELATIVE_SMOOTH_CUBIC_CURVE_TO_NV;
-using gles::GL_SMALL_CCW_ARC_TO_NV;
-using gles::GL_RELATIVE_SMALL_CCW_ARC_TO_NV;
-using gles::GL_SMALL_CW_ARC_TO_NV;
 using gles::GL_INT64_NV;
 using gles::GL_UNSIGNED_INT64_NV;
-using gles::GL_RELATIVE_SMALL_CW_ARC_TO_NV;
 using gles::GL_XOR_NV;
-using gles::GL_LARGE_CCW_ARC_TO_NV;
-using gles::GL_RELATIVE_LARGE_CCW_ARC_TO_NV;
 using gles::GL_PATH_MODELVIEW_NV;
 using gles::GL_PATH_PROJECTION_NV;
-using gles::GL_LARGE_CW_ARC_TO_NV;
-using gles::GL_RELATIVE_LARGE_CW_ARC_TO_NV;
 using gles::GL_STENCIL_INDEX_OES;
 using gles::GL_RED_NV;
 using gles::GL_GREEN_NV;
 using gles::GL_BLUE_NV;
-using gles::GL_CONIC_CURVE_TO_NV;
-using gles::GL_RELATIVE_CONIC_CURVE_TO_NV;
 using gles::GL_POINT_NV;
 using gles::GL_LINE_NV;
 using gles::GL_FILL_NV;
@@ -964,8 +1312,6 @@ using gles::GL_CLIP_DISTANCE6_APPLE;
 using gles::GL_CLIP_DISTANCE6_EXT;
 using gles::GL_CLIP_DISTANCE7_APPLE;
 using gles::GL_CLIP_DISTANCE7_EXT;
-using gles::GL_MIN;
-using gles::GL_MAX;
 using gles::GL_ALPHA8_EXT;
 using gles::GL_ALPHA8_OES;
 using gles::GL_LUMINANCE8_EXT;
@@ -975,14 +1321,11 @@ using gles::GL_LUMINANCE8_ALPHA8_EXT;
 using gles::GL_LUMINANCE8_ALPHA8_OES;
 using gles::GL_TEXTURE_BINDING_3D_OES;
 using gles::GL_TEXTURE_DEPTH;
-using gles::GL_MAX_3D_TEXTURE_SIZE;
 using gles::GL_MAX_3D_TEXTURE_SIZE_OES;
 using gles::GL_MULTISAMPLE_EXT;
 using gles::GL_SAMPLE_ALPHA_TO_ONE_EXT;
 using gles::GL_BGRA_EXT;
 using gles::GL_BGRA_IMG;
-using gles::GL_MAX_ELEMENTS_VERTICES;
-using gles::GL_MAX_ELEMENTS_INDICES;
 using gles::GL_CLAMP_TO_BORDER_EXT;
 using gles::GL_CLAMP_TO_BORDER_OES;
 using gles::GL_TEXTURE_MAX_LEVEL_APPLE;
@@ -991,18 +1334,11 @@ using gles::GL_FRAMEBUFFER_ATTACHMENT_COLOR_ENCODING_EXT;
 using gles::GL_FRAMEBUFFER_ATTACHMENT_COMPONENT_TYPE_EXT;
 using gles::GL_FRAMEBUFFER_DEFAULT;
 using gles::GL_FRAMEBUFFER_UNDEFINED_OES;
-using gles::GL_DEPTH_STENCIL_ATTACHMENT;
-using gles::GL_MAJOR_VERSION;
-using gles::GL_MINOR_VERSION;
-using gles::GL_NUM_EXTENSIONS;
-using gles::GL_CONTEXT_FLAGS;
 using gles::GL_BUFFER_IMMUTABLE_STORAGE_EXT;
 using gles::GL_BUFFER_STORAGE_FLAGS_EXT;
 using gles::GL_PRIMITIVE_RESTART_FOR_PATCHES_SUPPORTED;
 using gles::GL_PRIMITIVE_RESTART_FOR_PATCHES_SUPPORTED_OES;
 using gles::GL_RG_EXT;
-using gles::GL_RG_INTEGER;
-using gles::GL_DEBUG_OUTPUT_SYNCHRONOUS;
 using gles::GL_DEBUG_NEXT_LOGGED_MESSAGE_LENGTH;
 using gles::GL_LOSE_CONTEXT_ON_RESET;
 using gles::GL_LOSE_CONTEXT_ON_RESET_EXT;
@@ -1011,14 +1347,12 @@ using gles::GL_INNOCENT_CONTEXT_RESET_EXT;
 using gles::GL_UNKNOWN_CONTEXT_RESET_EXT;
 using gles::GL_RESET_NOTIFICATION_STRATEGY;
 using gles::GL_RESET_NOTIFICATION_STRATEGY_EXT;
-using gles::GL_PROGRAM_PIPELINE_BINDING;
 using gles::GL_MAX_VIEWPORTS_NV;
 using gles::GL_MAX_VIEWPORTS_OES;
 using gles::GL_VIEWPORT_SUBPIXEL_BITS_NV;
 using gles::GL_VIEWPORT_SUBPIXEL_BITS_OES;
 using gles::GL_VIEWPORT_BOUNDS_RANGE_NV;
 using gles::GL_VIEWPORT_BOUNDS_RANGE_OES;
-using gles::GL_LAYER_PROVOKING_VERTEX;
 using gles::GL_LAYER_PROVOKING_VERTEX_EXT;
 using gles::GL_LAYER_PROVOKING_VERTEX_OES;
 using gles::GL_VIEWPORT_INDEX_PROVOKING_VERTEX_NV;
@@ -1029,20 +1363,6 @@ using gles::GL_UNDEFINED_VERTEX_OES;
 using gles::GL_NO_RESET_NOTIFICATION;
 using gles::GL_NO_RESET_NOTIFICATION_EXT;
 using gles::GL_MAX_COMPUTE_SHARED_MEMORY_SIZE;
-using gles::GL_MAX_COMPUTE_UNIFORM_COMPONENTS;
-using gles::GL_MAX_COMPUTE_ATOMIC_COUNTER_BUFFERS;
-using gles::GL_MAX_COMPUTE_ATOMIC_COUNTERS;
-using gles::GL_MAX_COMBINED_COMPUTE_UNIFORM_COMPONENTS;
-using gles::GL_DEBUG_SEVERITY_NOTIFICATION;
-using gles::GL_MAX_DEBUG_GROUP_STACK_DEPTH;
-using gles::GL_DEBUG_GROUP_STACK_DEPTH;
-using gles::GL_MAX_UNIFORM_LOCATIONS;
-using gles::GL_VERTEX_ATTRIB_BINDING;
-using gles::GL_VERTEX_BINDING_DIVISOR;
-using gles::GL_VERTEX_BINDING_OFFSET;
-using gles::GL_VERTEX_BINDING_STRIDE;
-using gles::GL_MAX_VERTEX_ATTRIB_RELATIVE_OFFSET;
-using gles::GL_MAX_VERTEX_ATTRIB_BINDINGS;
 using gles::GL_TEXTURE_VIEW_MIN_LEVEL_EXT;
 using gles::GL_TEXTURE_VIEW_MIN_LEVEL_OES;
 using gles::GL_TEXTURE_VIEW_NUM_LEVELS_EXT;
@@ -1053,7 +1373,6 @@ using gles::GL_TEXTURE_VIEW_NUM_LAYERS_EXT;
 using gles::GL_TEXTURE_VIEW_NUM_LAYERS_OES;
 using gles::GL_TEXTURE_IMMUTABLE_LEVELS;
 using gles::GL_MAX_VERTEX_ATTRIB_STRIDE;
-using gles::GL_MAX_LABEL_LENGTH;
 using gles::GL_MAX_CULL_DISTANCES_EXT;
 using gles::GL_MAX_COMBINED_CLIP_AND_CULL_DISTANCES_EXT;
 using gles::GL_UNSIGNED_SHORT_4_4_4_4_REV_EXT;
@@ -1069,19 +1388,15 @@ using gles::GL_BLACKHOLE_RENDER_INTEL;
 using gles::GL_CONSERVATIVE_RASTERIZATION_INTEL;
 using gles::GL_PATH_TRANSPOSE_MODELVIEW_MATRIX_NV;
 using gles::GL_PATH_TRANSPOSE_PROJECTION_MATRIX_NV;
-using gles::GL_ALL_COMPLETED_NV;
-using gles::GL_FENCE_STATUS_NV;
-using gles::GL_FENCE_CONDITION_NV;
 using gles::GL_UNSIGNED_INT_24_8;
 using gles::GL_UNSIGNED_INT_24_8_OES;
-using gles::GL_MAX_TEXTURE_LOD_BIAS;
 using gles::GL_TEXTURE_MAX_ANISOTROPY_EXT;
 using gles::GL_MAX_TEXTURE_MAX_ANISOTROPY_EXT;
 using gles::GL_SRC1_ALPHA_EXT;
-using gles::GL_VERTEX_ARRAY_BINDING;
 using gles::GL_VERTEX_ARRAY_BINDING_OES;
 using gles::GL_UNSIGNED_SHORT_8_8_APPLE;
 using gles::GL_UNSIGNED_SHORT_8_8_REV_APPLE;
+using gles::GL_DEPTH_CLAMP_EXT;
 using gles::GL_Z400_BINARY_AMD;
 using gles::GL_PROGRAM_BINARY_LENGTH_OES;
 using gles::GL_MIRROR_CLAMP_TO_EDGE_EXT;
@@ -1089,9 +1404,7 @@ using gles::GL_PROGRAM_BINARY_FORMAT_MESA;
 using gles::GL_ATC_RGBA_INTERPOLATED_ALPHA_AMD;
 using gles::GL_3DC_X_AMD;
 using gles::GL_3DC_XY_AMD;
-using gles::GL_NUM_PROGRAM_BINARY_FORMATS;
 using gles::GL_NUM_PROGRAM_BINARY_FORMATS_OES;
-using gles::GL_PROGRAM_BINARY_FORMATS;
 using gles::GL_PROGRAM_BINARY_FORMATS_OES;
 using gles::GL_RGB32F;
 using gles::GL_RGB32F_EXT;
@@ -1102,7 +1415,6 @@ using gles::GL_ALPHA16F_EXT;
 using gles::GL_LUMINANCE16F_EXT;
 using gles::GL_LUMINANCE_ALPHA16F_EXT;
 using gles::GL_WRITEONLY_RENDERING_QCOM;
-using gles::GL_MAX_DRAW_BUFFERS;
 using gles::GL_MAX_DRAW_BUFFERS_EXT;
 using gles::GL_MAX_DRAW_BUFFERS_NV;
 using gles::GL_DRAW_BUFFER0;
@@ -1156,7 +1468,6 @@ using gles::GL_DRAW_BUFFER15_NV;
 using gles::GL_TEXTURE_DEPTH_SIZE;
 using gles::GL_TEXTURE_COMPARE_MODE_EXT;
 using gles::GL_TEXTURE_COMPARE_FUNC_EXT;
-using gles::GL_COMPARE_REF_TO_TEXTURE;
 using gles::GL_COMPARE_REF_TO_TEXTURE_EXT;
 using gles::GL_QUERY_COUNTER_BITS_EXT;
 using gles::GL_CURRENT_QUERY_EXT;
@@ -1174,15 +1485,12 @@ using gles::GL_GEOMETRY_SHADER_INVOCATIONS_OES;
 using gles::GL_WRITE_ONLY_OES;
 using gles::GL_BUFFER_ACCESS_OES;
 using gles::GL_BUFFER_MAPPED_OES;
-using gles::GL_BUFFER_MAP_POINTER;
 using gles::GL_BUFFER_MAP_POINTER_OES;
 using gles::GL_TIME_ELAPSED_EXT;
 using gles::GL_PIXEL_PACK_BUFFER_NV;
 using gles::GL_PIXEL_UNPACK_BUFFER_NV;
-using gles::GL_PIXEL_PACK_BUFFER_BINDING;
 using gles::GL_PIXEL_PACK_BUFFER_BINDING_NV;
 using gles::GL_ETC1_SRGB8_NV;
-using gles::GL_PIXEL_UNPACK_BUFFER_BINDING;
 using gles::GL_PIXEL_UNPACK_BUFFER_BINDING_NV;
 using gles::GL_TEXTURE_STENCIL_SIZE;
 using gles::GL_SRC1_COLOR_EXT;
@@ -1192,34 +1500,17 @@ using gles::GL_MAX_DUAL_SOURCE_DRAW_BUFFERS_EXT;
 using gles::GL_VERTEX_ATTRIB_ARRAY_DIVISOR_ANGLE;
 using gles::GL_VERTEX_ATTRIB_ARRAY_DIVISOR_EXT;
 using gles::GL_VERTEX_ATTRIB_ARRAY_DIVISOR_NV;
-using gles::GL_MAX_ARRAY_TEXTURE_LAYERS;
-using gles::GL_MIN_PROGRAM_TEXEL_OFFSET;
-using gles::GL_MAX_PROGRAM_TEXEL_OFFSET;
 using gles::GL_GEOMETRY_LINKED_VERTICES_OUT_EXT;
 using gles::GL_GEOMETRY_LINKED_VERTICES_OUT_OES;
 using gles::GL_GEOMETRY_LINKED_INPUT_TYPE_EXT;
 using gles::GL_GEOMETRY_LINKED_INPUT_TYPE_OES;
 using gles::GL_GEOMETRY_LINKED_OUTPUT_TYPE_EXT;
 using gles::GL_GEOMETRY_LINKED_OUTPUT_TYPE_OES;
-using gles::GL_SAMPLER_BINDING;
 using gles::GL_RGB_422_APPLE;
-using gles::GL_UNIFORM_BUFFER_BINDING;
-using gles::GL_UNIFORM_BUFFER_START;
-using gles::GL_UNIFORM_BUFFER_SIZE;
-using gles::GL_MAX_VERTEX_UNIFORM_BLOCKS;
-using gles::GL_MAX_GEOMETRY_UNIFORM_BLOCKS;
 using gles::GL_MAX_GEOMETRY_UNIFORM_BLOCKS_EXT;
 using gles::GL_MAX_GEOMETRY_UNIFORM_BLOCKS_OES;
-using gles::GL_MAX_FRAGMENT_UNIFORM_BLOCKS;
-using gles::GL_MAX_COMBINED_UNIFORM_BLOCKS;
-using gles::GL_MAX_UNIFORM_BUFFER_BINDINGS;
-using gles::GL_MAX_UNIFORM_BLOCK_SIZE;
-using gles::GL_MAX_COMBINED_VERTEX_UNIFORM_COMPONENTS;
-using gles::GL_MAX_COMBINED_GEOMETRY_UNIFORM_COMPONENTS;
 using gles::GL_MAX_COMBINED_GEOMETRY_UNIFORM_COMPONENTS_EXT;
 using gles::GL_MAX_COMBINED_GEOMETRY_UNIFORM_COMPONENTS_OES;
-using gles::GL_MAX_COMBINED_FRAGMENT_UNIFORM_COMPONENTS;
-using gles::GL_UNIFORM_BUFFER_OFFSET_ALIGNMENT;
 using gles::GL_TEXTURE_SRGB_DECODE_EXT;
 using gles::GL_DECODE_EXT;
 using gles::GL_SKIP_DECODE_EXT;
@@ -1233,9 +1524,16 @@ using gles::GL_COMPRESSED_SRGB_ALPHA_PVRTC_2BPPV1_EXT;
 using gles::GL_COMPRESSED_SRGB_ALPHA_PVRTC_4BPPV1_EXT;
 using gles::GL_PROGRAM_OBJECT_EXT;
 using gles::GL_SHADER_OBJECT_EXT;
-using gles::GL_MAX_FRAGMENT_UNIFORM_COMPONENTS;
-using gles::GL_MAX_VERTEX_UNIFORM_COMPONENTS;
-using gles::GL_MAX_VARYING_COMPONENTS;
+using gles::GL_SAMPLER_1D_ARB;
+using gles::GL_SAMPLER_2D_ARB;
+using gles::GL_SAMPLER_3D_ARB;
+using gles::GL_SAMPLER_3D_OES;
+using gles::GL_SAMPLER_CUBE_ARB;
+using gles::GL_SAMPLER_1D_SHADOW_ARB;
+using gles::GL_SAMPLER_2D_SHADOW_ARB;
+using gles::GL_SAMPLER_2D_SHADOW_EXT;
+using gles::GL_SAMPLER_2D_RECT_ARB;
+using gles::GL_SAMPLER_2D_RECT_SHADOW_ARB;
 using gles::GL_PALETTE4_RGB8_OES;
 using gles::GL_PALETTE4_RGBA8_OES;
 using gles::GL_PALETTE4_R5_G6_B5_OES;
@@ -1246,6 +1544,7 @@ using gles::GL_PALETTE8_RGBA8_OES;
 using gles::GL_PALETTE8_R5_G6_B5_OES;
 using gles::GL_PALETTE8_RGBA4_OES;
 using gles::GL_PALETTE8_RGB5_A1_OES;
+using gles::GL_FRAMEBUFFER_FLIP_Y_MESA;
 using gles::GL_COUNTER_TYPE_AMD;
 using gles::GL_COUNTER_RANGE_AMD;
 using gles::GL_UNSIGNED_INT64_AMD;
@@ -1283,8 +1582,6 @@ using gles::GL_TEXTURE_ALPHA_TYPE;
 using gles::GL_TEXTURE_DEPTH_TYPE;
 using gles::GL_UNSIGNED_NORMALIZED;
 using gles::GL_UNSIGNED_NORMALIZED_EXT;
-using gles::GL_TEXTURE_BINDING_2D_ARRAY;
-using gles::GL_MAX_GEOMETRY_TEXTURE_IMAGE_UNITS;
 using gles::GL_MAX_GEOMETRY_TEXTURE_IMAGE_UNITS_EXT;
 using gles::GL_MAX_GEOMETRY_TEXTURE_IMAGE_UNITS_OES;
 using gles::GL_TEXTURE_BUFFER_BINDING;
@@ -1292,17 +1589,14 @@ using gles::GL_TEXTURE_BUFFER_BINDING_EXT;
 using gles::GL_TEXTURE_BUFFER_BINDING_OES;
 using gles::GL_TEXTURE_BUFFER_EXT;
 using gles::GL_TEXTURE_BUFFER_OES;
-using gles::GL_MAX_TEXTURE_BUFFER_SIZE;
 using gles::GL_MAX_TEXTURE_BUFFER_SIZE_EXT;
 using gles::GL_MAX_TEXTURE_BUFFER_SIZE_OES;
-using gles::GL_TEXTURE_BINDING_BUFFER;
 using gles::GL_TEXTURE_BINDING_BUFFER_EXT;
 using gles::GL_TEXTURE_BINDING_BUFFER_OES;
 using gles::GL_TEXTURE_BUFFER_DATA_STORE_BINDING;
 using gles::GL_TEXTURE_BUFFER_DATA_STORE_BINDING_EXT;
 using gles::GL_TEXTURE_BUFFER_DATA_STORE_BINDING_OES;
 using gles::GL_ANY_SAMPLES_PASSED_EXT;
-using gles::GL_SAMPLE_SHADING;
 using gles::GL_SAMPLE_SHADING_OES;
 using gles::GL_MIN_SAMPLE_SHADING_VALUE;
 using gles::GL_MIN_SAMPLE_SHADING_VALUE_OES;
@@ -1321,16 +1615,12 @@ using gles::GL_COMPRESSED_SRGB_ALPHA_S3TC_DXT5_NV;
 using gles::GL_MAX_TRANSFORM_FEEDBACK_SEPARATE_COMPONENTS;
 using gles::GL_PRIMITIVES_GENERATED_EXT;
 using gles::GL_PRIMITIVES_GENERATED_OES;
-using gles::GL_RASTERIZER_DISCARD;
 using gles::GL_MAX_TRANSFORM_FEEDBACK_INTERLEAVED_COMPONENTS;
 using gles::GL_MAX_TRANSFORM_FEEDBACK_SEPARATE_ATTRIBS;
-using gles::GL_INTERLEAVED_ATTRIBS;
-using gles::GL_SEPARATE_ATTRIBS;
 using gles::GL_ATC_RGB_AMD;
 using gles::GL_ATC_RGBA_EXPLICIT_ALPHA_AMD;
 using gles::GL_LOWER_LEFT_EXT;
 using gles::GL_UPPER_LEFT_EXT;
-using gles::GL_DRAW_FRAMEBUFFER_BINDING;
 using gles::GL_DRAW_FRAMEBUFFER_BINDING_ANGLE;
 using gles::GL_DRAW_FRAMEBUFFER_BINDING_APPLE;
 using gles::GL_DRAW_FRAMEBUFFER_BINDING_NV;
@@ -1340,7 +1630,6 @@ using gles::GL_READ_FRAMEBUFFER_NV;
 using gles::GL_DRAW_FRAMEBUFFER_ANGLE;
 using gles::GL_DRAW_FRAMEBUFFER_APPLE;
 using gles::GL_DRAW_FRAMEBUFFER_NV;
-using gles::GL_READ_FRAMEBUFFER_BINDING;
 using gles::GL_READ_FRAMEBUFFER_BINDING_ANGLE;
 using gles::GL_READ_FRAMEBUFFER_BINDING_APPLE;
 using gles::GL_READ_FRAMEBUFFER_BINDING_NV;
@@ -1367,13 +1656,8 @@ using gles::GL_ETC1_RGB8_OES;
 using gles::GL_TEXTURE_EXTERNAL_OES;
 using gles::GL_TEXTURE_BINDING_EXTERNAL_OES;
 using gles::GL_REQUIRED_TEXTURE_IMAGE_UNITS_OES;
-using gles::GL_PRIMITIVE_RESTART_FIXED_INDEX;
 using gles::GL_ANY_SAMPLES_PASSED_CONSERVATIVE_EXT;
-using gles::GL_MAX_ELEMENT_INDEX;
 using gles::GL_FRAMEBUFFER_ATTACHMENT_TEXTURE_SAMPLES_EXT;
-using gles::GL_RED_INTEGER;
-using gles::GL_RGB_INTEGER;
-using gles::GL_RGBA_INTEGER;
 using gles::GL_FRAMEBUFFER_ATTACHMENT_LAYERED_EXT;
 using gles::GL_FRAMEBUFFER_ATTACHMENT_LAYERED_OES;
 using gles::GL_FRAMEBUFFER_INCOMPLETE_LAYER_TARGETS_EXT;
@@ -1382,34 +1666,16 @@ using gles::GL_FLOAT_32_UNSIGNED_INT_24_8_REV;
 using gles::GL_FRAMEBUFFER_SRGB_EXT;
 using gles::GL_COMPRESSED_RED_GREEN_RGTC2_EXT;
 using gles::GL_COMPRESSED_SIGNED_RED_GREEN_RGTC2_EXT;
-using gles::GL_SAMPLER_2D_ARRAY;
-using gles::GL_SAMPLER_BUFFER;
 using gles::GL_SAMPLER_BUFFER_EXT;
 using gles::GL_SAMPLER_BUFFER_OES;
-using gles::GL_SAMPLER_2D_ARRAY_SHADOW;
 using gles::GL_SAMPLER_2D_ARRAY_SHADOW_NV;
-using gles::GL_SAMPLER_CUBE_SHADOW;
 using gles::GL_SAMPLER_CUBE_SHADOW_NV;
-using gles::GL_UNSIGNED_INT_VEC2;
-using gles::GL_UNSIGNED_INT_VEC3;
-using gles::GL_UNSIGNED_INT_VEC4;
-using gles::GL_INT_SAMPLER_2D;
-using gles::GL_INT_SAMPLER_3D;
-using gles::GL_INT_SAMPLER_CUBE;
-using gles::GL_INT_SAMPLER_2D_ARRAY;
-using gles::GL_INT_SAMPLER_BUFFER;
 using gles::GL_INT_SAMPLER_BUFFER_EXT;
 using gles::GL_INT_SAMPLER_BUFFER_OES;
-using gles::GL_UNSIGNED_INT_SAMPLER_2D;
-using gles::GL_UNSIGNED_INT_SAMPLER_3D;
-using gles::GL_UNSIGNED_INT_SAMPLER_CUBE;
-using gles::GL_UNSIGNED_INT_SAMPLER_2D_ARRAY;
-using gles::GL_UNSIGNED_INT_SAMPLER_BUFFER;
 using gles::GL_UNSIGNED_INT_SAMPLER_BUFFER_EXT;
 using gles::GL_UNSIGNED_INT_SAMPLER_BUFFER_OES;
 using gles::GL_GEOMETRY_SHADER_EXT;
 using gles::GL_GEOMETRY_SHADER_OES;
-using gles::GL_MAX_GEOMETRY_UNIFORM_COMPONENTS;
 using gles::GL_MAX_GEOMETRY_UNIFORM_COMPONENTS_EXT;
 using gles::GL_MAX_GEOMETRY_UNIFORM_COMPONENTS_OES;
 using gles::GL_MAX_GEOMETRY_OUTPUT_VERTICES;
@@ -1440,10 +1706,7 @@ using gles::GL_FIRST_VERTEX_CONVENTION_OES;
 using gles::GL_LAST_VERTEX_CONVENTION_EXT;
 using gles::GL_LAST_VERTEX_CONVENTION_OES;
 using gles::GL_SAMPLE_LOCATION_NV;
-using gles::GL_SAMPLE_POSITION;
-using gles::GL_SAMPLE_MASK;
 using gles::GL_SAMPLE_MASK_VALUE;
-using gles::GL_MAX_SAMPLE_MASK_WORDS;
 using gles::GL_MAX_GEOMETRY_SHADER_INVOCATIONS;
 using gles::GL_MAX_GEOMETRY_SHADER_INVOCATIONS_EXT;
 using gles::GL_MAX_GEOMETRY_SHADER_INVOCATIONS_OES;
@@ -1455,6 +1718,22 @@ using gles::GL_FRAGMENT_INTERPOLATION_OFFSET_BITS;
 using gles::GL_FRAGMENT_INTERPOLATION_OFFSET_BITS_OES;
 using gles::GL_MIN_PROGRAM_TEXTURE_GATHER_OFFSET;
 using gles::GL_MAX_PROGRAM_TEXTURE_GATHER_OFFSET;
+using gles::GL_MAX_MESH_UNIFORM_BLOCKS_NV;
+using gles::GL_MAX_MESH_TEXTURE_IMAGE_UNITS_NV;
+using gles::GL_MAX_MESH_IMAGE_UNIFORMS_NV;
+using gles::GL_MAX_MESH_UNIFORM_COMPONENTS_NV;
+using gles::GL_MAX_MESH_ATOMIC_COUNTER_BUFFERS_NV;
+using gles::GL_MAX_MESH_ATOMIC_COUNTERS_NV;
+using gles::GL_MAX_MESH_SHADER_STORAGE_BLOCKS_NV;
+using gles::GL_MAX_COMBINED_MESH_UNIFORM_COMPONENTS_NV;
+using gles::GL_MAX_TASK_UNIFORM_BLOCKS_NV;
+using gles::GL_MAX_TASK_TEXTURE_IMAGE_UNITS_NV;
+using gles::GL_MAX_TASK_IMAGE_UNIFORMS_NV;
+using gles::GL_MAX_TASK_UNIFORM_COMPONENTS_NV;
+using gles::GL_MAX_TASK_ATOMIC_COUNTER_BUFFERS_NV;
+using gles::GL_MAX_TASK_ATOMIC_COUNTERS_NV;
+using gles::GL_MAX_TASK_SHADER_STORAGE_BLOCKS_NV;
+using gles::GL_MAX_COMBINED_TASK_UNIFORM_COMPONENTS_NV;
 using gles::GL_PATCH_VERTICES_EXT;
 using gles::GL_PATCH_VERTICES_OES;
 using gles::GL_TESS_CONTROL_OUTPUT_VERTICES;
@@ -1563,6 +1842,7 @@ using gles::GL_TEXTURE_ASTC_DECODE_PRECISION_EXT;
 using gles::GL_RGBA16_SNORM_EXT;
 using gles::GL_SIGNED_NORMALIZED;
 using gles::GL_PERFMON_GLOBAL_MODE_QCOM;
+using gles::GL_MAX_SHADER_SUBSAMPLED_IMAGE_UNITS_QCOM;
 using gles::GL_CPU_OPTIMIZED_QCOM;
 using gles::GL_GPU_OPTIMIZED_QCOM;
 using gles::GL_RENDER_DIRECT_TO_FRAMEBUFFER_QCOM;
@@ -1600,48 +1880,26 @@ using gles::GL_FLOAT16_VEC4_NV;
 using gles::GL_TEXTURE_BINDING_CUBE_MAP_ARRAY;
 using gles::GL_TEXTURE_BINDING_CUBE_MAP_ARRAY_EXT;
 using gles::GL_TEXTURE_BINDING_CUBE_MAP_ARRAY_OES;
-using gles::GL_SAMPLER_CUBE_MAP_ARRAY;
 using gles::GL_SAMPLER_CUBE_MAP_ARRAY_EXT;
 using gles::GL_SAMPLER_CUBE_MAP_ARRAY_OES;
-using gles::GL_SAMPLER_CUBE_MAP_ARRAY_SHADOW;
 using gles::GL_SAMPLER_CUBE_MAP_ARRAY_SHADOW_EXT;
 using gles::GL_SAMPLER_CUBE_MAP_ARRAY_SHADOW_OES;
-using gles::GL_INT_SAMPLER_CUBE_MAP_ARRAY;
 using gles::GL_INT_SAMPLER_CUBE_MAP_ARRAY_EXT;
 using gles::GL_INT_SAMPLER_CUBE_MAP_ARRAY_OES;
-using gles::GL_UNSIGNED_INT_SAMPLER_CUBE_MAP_ARRAY;
 using gles::GL_UNSIGNED_INT_SAMPLER_CUBE_MAP_ARRAY_EXT;
 using gles::GL_UNSIGNED_INT_SAMPLER_CUBE_MAP_ARRAY_OES;
 using gles::GL_FACTOR_MIN_AMD;
 using gles::GL_FACTOR_MAX_AMD;
-using gles::GL_IMAGE_2D;
-using gles::GL_IMAGE_3D;
-using gles::GL_IMAGE_CUBE;
-using gles::GL_IMAGE_BUFFER;
 using gles::GL_IMAGE_BUFFER_EXT;
 using gles::GL_IMAGE_BUFFER_OES;
-using gles::GL_IMAGE_2D_ARRAY;
-using gles::GL_IMAGE_CUBE_MAP_ARRAY;
 using gles::GL_IMAGE_CUBE_MAP_ARRAY_EXT;
 using gles::GL_IMAGE_CUBE_MAP_ARRAY_OES;
-using gles::GL_INT_IMAGE_2D;
-using gles::GL_INT_IMAGE_3D;
-using gles::GL_INT_IMAGE_CUBE;
-using gles::GL_INT_IMAGE_BUFFER;
 using gles::GL_INT_IMAGE_BUFFER_EXT;
 using gles::GL_INT_IMAGE_BUFFER_OES;
-using gles::GL_INT_IMAGE_2D_ARRAY;
-using gles::GL_INT_IMAGE_CUBE_MAP_ARRAY;
 using gles::GL_INT_IMAGE_CUBE_MAP_ARRAY_EXT;
 using gles::GL_INT_IMAGE_CUBE_MAP_ARRAY_OES;
-using gles::GL_UNSIGNED_INT_IMAGE_2D;
-using gles::GL_UNSIGNED_INT_IMAGE_3D;
-using gles::GL_UNSIGNED_INT_IMAGE_CUBE;
-using gles::GL_UNSIGNED_INT_IMAGE_BUFFER;
 using gles::GL_UNSIGNED_INT_IMAGE_BUFFER_EXT;
 using gles::GL_UNSIGNED_INT_IMAGE_BUFFER_OES;
-using gles::GL_UNSIGNED_INT_IMAGE_2D_ARRAY;
-using gles::GL_UNSIGNED_INT_IMAGE_CUBE_MAP_ARRAY;
 using gles::GL_UNSIGNED_INT_IMAGE_CUBE_MAP_ARRAY_EXT;
 using gles::GL_UNSIGNED_INT_IMAGE_CUBE_MAP_ARRAY_OES;
 using gles::GL_IMAGE_BINDING_FORMAT;
@@ -1677,50 +1935,24 @@ using gles::GL_MAX_GEOMETRY_IMAGE_UNIFORMS_EXT;
 using gles::GL_MAX_GEOMETRY_IMAGE_UNIFORMS_OES;
 using gles::GL_MAX_FRAGMENT_IMAGE_UNIFORMS;
 using gles::GL_MAX_COMBINED_IMAGE_UNIFORMS;
-using gles::GL_SHADER_STORAGE_BUFFER_BINDING;
-using gles::GL_SHADER_STORAGE_BUFFER_START;
-using gles::GL_SHADER_STORAGE_BUFFER_SIZE;
-using gles::GL_MAX_VERTEX_SHADER_STORAGE_BLOCKS;
-using gles::GL_MAX_GEOMETRY_SHADER_STORAGE_BLOCKS;
 using gles::GL_MAX_GEOMETRY_SHADER_STORAGE_BLOCKS_EXT;
 using gles::GL_MAX_GEOMETRY_SHADER_STORAGE_BLOCKS_OES;
-using gles::GL_MAX_TESS_CONTROL_SHADER_STORAGE_BLOCKS;
 using gles::GL_MAX_TESS_CONTROL_SHADER_STORAGE_BLOCKS_EXT;
 using gles::GL_MAX_TESS_CONTROL_SHADER_STORAGE_BLOCKS_OES;
-using gles::GL_MAX_TESS_EVALUATION_SHADER_STORAGE_BLOCKS;
 using gles::GL_MAX_TESS_EVALUATION_SHADER_STORAGE_BLOCKS_EXT;
 using gles::GL_MAX_TESS_EVALUATION_SHADER_STORAGE_BLOCKS_OES;
-using gles::GL_MAX_FRAGMENT_SHADER_STORAGE_BLOCKS;
-using gles::GL_MAX_COMPUTE_SHADER_STORAGE_BLOCKS;
-using gles::GL_MAX_COMBINED_SHADER_STORAGE_BLOCKS;
-using gles::GL_MAX_SHADER_STORAGE_BUFFER_BINDINGS;
 using gles::GL_MAX_SHADER_STORAGE_BLOCK_SIZE;
-using gles::GL_SHADER_STORAGE_BUFFER_OFFSET_ALIGNMENT;
-using gles::GL_MAX_COMPUTE_WORK_GROUP_INVOCATIONS;
-using gles::GL_DISPATCH_INDIRECT_BUFFER_BINDING;
 using gles::GL_COLOR_ATTACHMENT_EXT;
 using gles::GL_MULTIVIEW_EXT;
 using gles::GL_MAX_MULTIVIEW_BUFFERS_EXT;
 using gles::GL_CONTEXT_ROBUST_ACCESS_EXT;
 using gles::GL_TEXTURE_2D_MULTISAMPLE_ARRAY_OES;
-using gles::GL_TEXTURE_BINDING_2D_MULTISAMPLE;
-using gles::GL_TEXTURE_BINDING_2D_MULTISAMPLE_ARRAY;
 using gles::GL_TEXTURE_BINDING_2D_MULTISAMPLE_ARRAY_OES;
 using gles::GL_TEXTURE_SAMPLES;
 using gles::GL_TEXTURE_FIXED_SAMPLE_LOCATIONS;
-using gles::GL_SAMPLER_2D_MULTISAMPLE;
-using gles::GL_INT_SAMPLER_2D_MULTISAMPLE;
-using gles::GL_UNSIGNED_INT_SAMPLER_2D_MULTISAMPLE;
-using gles::GL_SAMPLER_2D_MULTISAMPLE_ARRAY;
 using gles::GL_SAMPLER_2D_MULTISAMPLE_ARRAY_OES;
-using gles::GL_INT_SAMPLER_2D_MULTISAMPLE_ARRAY;
 using gles::GL_INT_SAMPLER_2D_MULTISAMPLE_ARRAY_OES;
-using gles::GL_UNSIGNED_INT_SAMPLER_2D_MULTISAMPLE_ARRAY;
 using gles::GL_UNSIGNED_INT_SAMPLER_2D_MULTISAMPLE_ARRAY_OES;
-using gles::GL_MAX_COLOR_TEXTURE_SAMPLES;
-using gles::GL_MAX_DEPTH_TEXTURE_SAMPLES;
-using gles::GL_MAX_INTEGER_SAMPLES;
-using gles::GL_MAX_SERVER_WAIT_TIMEOUT;
 using gles::GL_MAX_SERVER_WAIT_TIMEOUT_APPLE;
 using gles::GL_OBJECT_TYPE_APPLE;
 using gles::GL_SYNC_CONDITION_APPLE;
@@ -1737,14 +1969,10 @@ using gles::GL_ALREADY_SIGNALED_APPLE;
 using gles::GL_TIMEOUT_EXPIRED_APPLE;
 using gles::GL_CONDITION_SATISFIED_APPLE;
 using gles::GL_WAIT_FAILED_APPLE;
-using gles::GL_MAX_VERTEX_OUTPUT_COMPONENTS;
-using gles::GL_MAX_GEOMETRY_INPUT_COMPONENTS;
 using gles::GL_MAX_GEOMETRY_INPUT_COMPONENTS_EXT;
 using gles::GL_MAX_GEOMETRY_INPUT_COMPONENTS_OES;
-using gles::GL_MAX_GEOMETRY_OUTPUT_COMPONENTS;
 using gles::GL_MAX_GEOMETRY_OUTPUT_COMPONENTS_EXT;
 using gles::GL_MAX_GEOMETRY_OUTPUT_COMPONENTS_OES;
-using gles::GL_MAX_FRAGMENT_INPUT_COMPONENTS;
 using gles::GL_TEXTURE_IMMUTABLE_FORMAT;
 using gles::GL_TEXTURE_IMMUTABLE_FORMAT_EXT;
 using gles::GL_SGX_PROGRAM_BINARY_IMG;
@@ -1779,7 +2007,6 @@ using gles::GL_TEXTURE_BUFFER_OFFSET_OES;
 using gles::GL_TEXTURE_BUFFER_SIZE;
 using gles::GL_TEXTURE_BUFFER_SIZE_EXT;
 using gles::GL_TEXTURE_BUFFER_SIZE_OES;
-using gles::GL_TEXTURE_BUFFER_OFFSET_ALIGNMENT;
 using gles::GL_TEXTURE_BUFFER_OFFSET_ALIGNMENT_EXT;
 using gles::GL_TEXTURE_BUFFER_OFFSET_ALIGNMENT_OES;
 using gles::GL_TEXTURE_SPARSE_EXT;
@@ -1789,11 +2016,13 @@ using gles::GL_SPARSE_TEXTURE_FULL_ARRAY_CUBE_MIPMAPS_EXT;
 using gles::GL_NUM_SPARSE_LEVELS_EXT;
 using gles::GL_MAX_SHADER_COMPILER_THREADS_KHR;
 using gles::GL_COMPLETION_STATUS_KHR;
-using gles::GL_MAX_COMPUTE_UNIFORM_BLOCKS;
-using gles::GL_MAX_COMPUTE_TEXTURE_IMAGE_UNITS;
+using gles::GL_RENDERBUFFER_STORAGE_SAMPLES_AMD;
+using gles::GL_MAX_COLOR_FRAMEBUFFER_SAMPLES_AMD;
+using gles::GL_MAX_COLOR_FRAMEBUFFER_STORAGE_SAMPLES_AMD;
+using gles::GL_MAX_DEPTH_STENCIL_FRAMEBUFFER_SAMPLES_AMD;
+using gles::GL_NUM_SUPPORTED_MULTISAMPLE_MODES_AMD;
+using gles::GL_SUPPORTED_MULTISAMPLE_MODES_AMD;
 using gles::GL_MAX_COMPUTE_IMAGE_UNIFORMS;
-using gles::GL_MAX_COMPUTE_WORK_GROUP_COUNT;
-using gles::GL_MAX_COMPUTE_WORK_GROUP_SIZE;
 using gles::GL_SHADER_BINARY_DMP;
 using gles::GL_SMAPHS30_PROGRAM_BINARY_DMP;
 using gles::GL_SMAPHS_PROGRAM_BINARY_DMP;
@@ -1893,64 +2122,30 @@ using gles::GL_MAX_GEOMETRY_ATOMIC_COUNTER_BUFFERS_EXT;
 using gles::GL_MAX_GEOMETRY_ATOMIC_COUNTER_BUFFERS_OES;
 using gles::GL_MAX_FRAGMENT_ATOMIC_COUNTER_BUFFERS;
 using gles::GL_MAX_COMBINED_ATOMIC_COUNTER_BUFFERS;
-using gles::GL_MAX_VERTEX_ATOMIC_COUNTERS;
-using gles::GL_MAX_TESS_CONTROL_ATOMIC_COUNTERS;
 using gles::GL_MAX_TESS_CONTROL_ATOMIC_COUNTERS_EXT;
 using gles::GL_MAX_TESS_CONTROL_ATOMIC_COUNTERS_OES;
-using gles::GL_MAX_TESS_EVALUATION_ATOMIC_COUNTERS;
 using gles::GL_MAX_TESS_EVALUATION_ATOMIC_COUNTERS_EXT;
 using gles::GL_MAX_TESS_EVALUATION_ATOMIC_COUNTERS_OES;
-using gles::GL_MAX_GEOMETRY_ATOMIC_COUNTERS;
 using gles::GL_MAX_GEOMETRY_ATOMIC_COUNTERS_EXT;
 using gles::GL_MAX_GEOMETRY_ATOMIC_COUNTERS_OES;
-using gles::GL_MAX_FRAGMENT_ATOMIC_COUNTERS;
-using gles::GL_MAX_COMBINED_ATOMIC_COUNTERS;
 using gles::GL_MAX_ATOMIC_COUNTER_BUFFER_SIZE;
-using gles::GL_UNSIGNED_INT_ATOMIC_COUNTER;
 using gles::GL_MAX_ATOMIC_COUNTER_BUFFER_BINDINGS;
 using gles::GL_FRAGMENT_COVERAGE_TO_COLOR_NV;
 using gles::GL_FRAGMENT_COVERAGE_COLOR_NV;
-using gles::GL_DEBUG_OUTPUT;
-using gles::GL_IS_PER_PATCH;
+using gles::GL_MESH_OUTPUT_PER_VERTEX_GRANULARITY_NV;
 using gles::GL_IS_PER_PATCH_EXT;
 using gles::GL_IS_PER_PATCH_OES;
-using gles::GL_NAME_LENGTH;
-using gles::GL_TYPE;
-using gles::GL_ARRAY_SIZE;
-using gles::GL_OFFSET;
-using gles::GL_BLOCK_INDEX;
-using gles::GL_ARRAY_STRIDE;
-using gles::GL_MATRIX_STRIDE;
-using gles::GL_IS_ROW_MAJOR;
-using gles::GL_ATOMIC_COUNTER_BUFFER_INDEX;
-using gles::GL_BUFFER_BINDING;
-using gles::GL_BUFFER_DATA_SIZE;
-using gles::GL_NUM_ACTIVE_VARIABLES;
-using gles::GL_ACTIVE_VARIABLES;
-using gles::GL_REFERENCED_BY_VERTEX_SHADER;
-using gles::GL_REFERENCED_BY_TESS_CONTROL_SHADER;
 using gles::GL_REFERENCED_BY_TESS_CONTROL_SHADER_EXT;
 using gles::GL_REFERENCED_BY_TESS_CONTROL_SHADER_OES;
-using gles::GL_REFERENCED_BY_TESS_EVALUATION_SHADER;
 using gles::GL_REFERENCED_BY_TESS_EVALUATION_SHADER_EXT;
 using gles::GL_REFERENCED_BY_TESS_EVALUATION_SHADER_OES;
-using gles::GL_REFERENCED_BY_GEOMETRY_SHADER;
 using gles::GL_REFERENCED_BY_GEOMETRY_SHADER_EXT;
 using gles::GL_REFERENCED_BY_GEOMETRY_SHADER_OES;
-using gles::GL_REFERENCED_BY_FRAGMENT_SHADER;
-using gles::GL_REFERENCED_BY_COMPUTE_SHADER;
-using gles::GL_TOP_LEVEL_ARRAY_SIZE;
-using gles::GL_TOP_LEVEL_ARRAY_STRIDE;
-using gles::GL_LOCATION;
 using gles::GL_LOCATION_INDEX_EXT;
 using gles::GL_FRAMEBUFFER_DEFAULT_LAYERS_EXT;
 using gles::GL_FRAMEBUFFER_DEFAULT_LAYERS_OES;
-using gles::GL_MAX_FRAMEBUFFER_WIDTH;
-using gles::GL_MAX_FRAMEBUFFER_HEIGHT;
-using gles::GL_MAX_FRAMEBUFFER_LAYERS;
 using gles::GL_MAX_FRAMEBUFFER_LAYERS_EXT;
 using gles::GL_MAX_FRAMEBUFFER_LAYERS_OES;
-using gles::GL_MAX_FRAMEBUFFER_SAMPLES;
 using gles::GL_RASTER_MULTISAMPLE_EXT;
 using gles::GL_RASTER_SAMPLES_EXT;
 using gles::GL_MAX_RASTER_SAMPLES_EXT;
@@ -2007,6 +2202,7 @@ using gles::GL_CONFORMANT_NV;
 using gles::GL_VIEWPORT_POSITION_W_SCALE_NV;
 using gles::GL_VIEWPORT_POSITION_W_SCALE_X_COEFF_NV;
 using gles::GL_VIEWPORT_POSITION_W_SCALE_Y_COEFF_NV;
+using gles::GL_REPRESENTATIVE_FRAGMENT_TEST_NV;
 using gles::GL_MULTISAMPLE_LINE_WIDTH_RANGE;
 using gles::GL_MULTISAMPLE_LINE_WIDTH_GRANULARITY;
 using gles::GL_TRANSLATED_SHADER_SOURCE_LENGTH_ANGLE;
@@ -2108,14 +2304,76 @@ using gles::GL_PERFQUERY_QUERY_NAME_LENGTH_MAX_INTEL;
 using gles::GL_PERFQUERY_COUNTER_NAME_LENGTH_MAX_INTEL;
 using gles::GL_PERFQUERY_COUNTER_DESC_LENGTH_MAX_INTEL;
 using gles::GL_PERFQUERY_GPA_EXTENDED_COUNTERS_INTEL;
+using gles::GL_MAX_MESH_TOTAL_MEMORY_SIZE_NV;
+using gles::GL_MAX_TASK_TOTAL_MEMORY_SIZE_NV;
+using gles::GL_MAX_MESH_OUTPUT_VERTICES_NV;
+using gles::GL_MAX_MESH_OUTPUT_PRIMITIVES_NV;
+using gles::GL_MAX_TASK_OUTPUT_COUNT_NV;
+using gles::GL_MAX_MESH_WORK_GROUP_SIZE_NV;
+using gles::GL_MAX_TASK_WORK_GROUP_SIZE_NV;
+using gles::GL_MAX_DRAW_MESH_TASKS_COUNT_NV;
+using gles::GL_MESH_WORK_GROUP_SIZE_NV;
+using gles::GL_TASK_WORK_GROUP_SIZE_NV;
+using gles::GL_MESH_OUTPUT_PER_PRIMITIVE_GRANULARITY_NV;
 using gles::GL_CONSERVATIVE_RASTER_MODE_NV;
 using gles::GL_CONSERVATIVE_RASTER_MODE_POST_SNAP_NV;
 using gles::GL_CONSERVATIVE_RASTER_MODE_PRE_SNAP_TRIANGLES_NV;
 using gles::GL_CONSERVATIVE_RASTER_MODE_PRE_SNAP_NV;
+using gles::GL_SCISSOR_TEST_EXCLUSIVE_NV;
+using gles::GL_SCISSOR_BOX_EXCLUSIVE_NV;
+using gles::GL_MAX_MESH_VIEWS_NV;
+using gles::GL_MESH_SHADER_NV;
+using gles::GL_TASK_SHADER_NV;
+using gles::GL_SHADING_RATE_IMAGE_BINDING_NV;
+using gles::GL_SHADING_RATE_IMAGE_TEXEL_WIDTH_NV;
+using gles::GL_SHADING_RATE_IMAGE_TEXEL_HEIGHT_NV;
+using gles::GL_SHADING_RATE_IMAGE_PALETTE_SIZE_NV;
+using gles::GL_MAX_COARSE_FRAGMENT_SAMPLES_NV;
+using gles::GL_SHADING_RATE_IMAGE_NV;
+using gles::GL_SHADING_RATE_NO_INVOCATIONS_NV;
+using gles::GL_SHADING_RATE_1_INVOCATION_PER_PIXEL_NV;
+using gles::GL_SHADING_RATE_1_INVOCATION_PER_1X2_PIXELS_NV;
+using gles::GL_SHADING_RATE_1_INVOCATION_PER_2X1_PIXELS_NV;
+using gles::GL_SHADING_RATE_1_INVOCATION_PER_2X2_PIXELS_NV;
+using gles::GL_SHADING_RATE_1_INVOCATION_PER_2X4_PIXELS_NV;
+using gles::GL_SHADING_RATE_1_INVOCATION_PER_4X2_PIXELS_NV;
+using gles::GL_SHADING_RATE_1_INVOCATION_PER_4X4_PIXELS_NV;
+using gles::GL_SHADING_RATE_2_INVOCATIONS_PER_PIXEL_NV;
+using gles::GL_SHADING_RATE_4_INVOCATIONS_PER_PIXEL_NV;
+using gles::GL_SHADING_RATE_8_INVOCATIONS_PER_PIXEL_NV;
+using gles::GL_SHADING_RATE_16_INVOCATIONS_PER_PIXEL_NV;
+using gles::GL_MESH_VERTICES_OUT_NV;
+using gles::GL_MESH_PRIMITIVES_OUT_NV;
+using gles::GL_MESH_OUTPUT_TYPE_NV;
+using gles::GL_MESH_SUBROUTINE_NV;
+using gles::GL_TASK_SUBROUTINE_NV;
+using gles::GL_MESH_SUBROUTINE_UNIFORM_NV;
+using gles::GL_TASK_SUBROUTINE_UNIFORM_NV;
 using gles::GL_NUM_TILING_TYPES_EXT;
 using gles::GL_TILING_TYPES_EXT;
 using gles::GL_OPTIMAL_TILING_EXT;
 using gles::GL_LINEAR_TILING_EXT;
+using gles::GL_UNIFORM_BLOCK_REFERENCED_BY_MESH_SHADER_NV;
+using gles::GL_UNIFORM_BLOCK_REFERENCED_BY_TASK_SHADER_NV;
+using gles::GL_ATOMIC_COUNTER_BUFFER_REFERENCED_BY_MESH_SHADER_NV;
+using gles::GL_ATOMIC_COUNTER_BUFFER_REFERENCED_BY_TASK_SHADER_NV;
+using gles::GL_REFERENCED_BY_MESH_SHADER_NV;
+using gles::GL_REFERENCED_BY_TASK_SHADER_NV;
+using gles::GL_MAX_MESH_WORK_GROUP_INVOCATIONS_NV;
+using gles::GL_MAX_TASK_WORK_GROUP_INVOCATIONS_NV;
+using gles::GL_ATTACHED_MEMORY_OBJECT_NV;
+using gles::GL_ATTACHED_MEMORY_OFFSET_NV;
+using gles::GL_MEMORY_ATTACHABLE_ALIGNMENT_NV;
+using gles::GL_MEMORY_ATTACHABLE_SIZE_NV;
+using gles::GL_MEMORY_ATTACHABLE_NV;
+using gles::GL_DETACHED_MEMORY_INCARNATION_NV;
+using gles::GL_DETACHED_TEXTURES_NV;
+using gles::GL_DETACHED_BUFFERS_NV;
+using gles::GL_MAX_DETACHED_TEXTURES_NV;
+using gles::GL_MAX_DETACHED_BUFFERS_NV;
+using gles::GL_SHADING_RATE_SAMPLE_ORDER_DEFAULT_NV;
+using gles::GL_SHADING_RATE_SAMPLE_ORDER_PIXEL_MAJOR_NV;
+using gles::GL_SHADING_RATE_SAMPLE_ORDER_SAMPLE_MAJOR_NV;
 using gles::GL_FRAMEBUFFER_ATTACHMENT_TEXTURE_NUM_VIEWS_OVR;
 using gles::GL_MAX_VIEWS_OVR;
 using gles::GL_FRAMEBUFFER_ATTACHMENT_TEXTURE_BASE_VIEW_INDEX_OVR;
@@ -2124,24 +2382,6 @@ using gles::GL_MAX_SHADER_COMBINED_LOCAL_STORAGE_FAST_SIZE_EXT;
 using gles::GL_MAX_SHADER_COMBINED_LOCAL_STORAGE_SIZE_EXT;
 using gles::GL_FRAMEBUFFER_INCOMPLETE_INSUFFICIENT_SHADER_COMBINED_LOCAL_STORAGE_EXT;
 using gles::GL_SHARED_EDGE_NV;
-using gles::GL_ROUNDED_RECT_NV;
-using gles::GL_RELATIVE_ROUNDED_RECT_NV;
-using gles::GL_ROUNDED_RECT2_NV;
-using gles::GL_RELATIVE_ROUNDED_RECT2_NV;
-using gles::GL_ROUNDED_RECT4_NV;
-using gles::GL_RELATIVE_ROUNDED_RECT4_NV;
-using gles::GL_ROUNDED_RECT8_NV;
-using gles::GL_RELATIVE_ROUNDED_RECT8_NV;
-using gles::GL_RESTART_PATH_NV;
-using gles::GL_DUP_FIRST_CUBIC_CURVE_TO_NV;
-using gles::GL_DUP_LAST_CUBIC_CURVE_TO_NV;
-using gles::GL_RECT_NV;
-using gles::GL_RELATIVE_RECT_NV;
-using gles::GL_CIRCULAR_CCW_ARC_TO_NV;
-using gles::GL_CIRCULAR_CW_ARC_TO_NV;
-using gles::GL_CIRCULAR_TANGENT_ARC_TO_NV;
-using gles::GL_ARC_TO_NV;
-using gles::GL_RELATIVE_ARC_TO_NV;
 using gles::GL_UUID_SIZE_EXT;
 using gles::GL_LUID_SIZE_EXT;
 

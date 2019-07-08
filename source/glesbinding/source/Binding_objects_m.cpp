@@ -14,8 +14,8 @@ Function<void, GLuint64, GLenum> Binding::MakeImageHandleResidentNV("glMakeImage
 Function<void, GLuint64> Binding::MakeTextureHandleNonResidentNV("glMakeTextureHandleNonResidentNV");
 Function<void, GLuint64> Binding::MakeTextureHandleResidentNV("glMakeTextureHandleResidentNV");
 Function<void *, GLenum, GLenum> Binding::MapBufferOES("glMapBufferOES");
-Function<void *, GLenum, GLintptr, GLsizeiptr, BufferAccessMask> Binding::MapBufferRange("glMapBufferRange");
-Function<void *, GLenum, GLintptr, GLsizeiptr, BufferAccessMask> Binding::MapBufferRangeEXT("glMapBufferRangeEXT");
+Function<void *, GLenum, GLintptr, GLsizeiptr, MapBufferAccessMask> Binding::MapBufferRange("glMapBufferRange");
+Function<void *, GLenum, GLintptr, GLsizeiptr, MapBufferAccessMask> Binding::MapBufferRangeEXT("glMapBufferRangeEXT");
 Function<void, GLenum, GLdouble, GLdouble, GLdouble, GLdouble, GLdouble, GLdouble> Binding::MatrixFrustumEXT("glMatrixFrustumEXT");
 Function<void, GLenum, const GLfloat *> Binding::MatrixLoad3x2fNV("glMatrixLoad3x2fNV");
 Function<void, GLenum, const GLfloat *> Binding::MatrixLoad3x3fNV("glMatrixLoad3x3fNV");
@@ -52,6 +52,8 @@ Function<void, GLenum, const void *, GLsizei, GLsizei> Binding::MultiDrawArraysI
 Function<void, GLenum, const GLsizei *, GLenum, const void *const*, GLsizei, const GLint *> Binding::MultiDrawElementsBaseVertexEXT("glMultiDrawElementsBaseVertexEXT");
 Function<void, GLenum, const GLsizei *, GLenum, const void *const*, GLsizei> Binding::MultiDrawElementsEXT("glMultiDrawElementsEXT");
 Function<void, GLenum, GLenum, const void *, GLsizei, GLsizei> Binding::MultiDrawElementsIndirectEXT("glMultiDrawElementsIndirectEXT");
+Function<void, GLintptr, GLintptr, GLsizei, GLsizei> Binding::MultiDrawMeshTasksIndirectCountNV("glMultiDrawMeshTasksIndirectCountNV");
+Function<void, GLintptr, GLsizei, GLsizei> Binding::MultiDrawMeshTasksIndirectNV("glMultiDrawMeshTasksIndirectNV");
 
 
 

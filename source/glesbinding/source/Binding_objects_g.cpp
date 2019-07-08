@@ -64,6 +64,7 @@ Function<void, GLenum, GLuint, GLint *> Binding::GetIntegeri_vEXT("glGetIntegeri
 Function<void, GLenum, GLint *> Binding::GetIntegerv("glGetIntegerv");
 Function<void, GLenum, GLenum, GLsizei, GLenum, GLsizei, GLint *> Binding::GetInternalformatSampleivNV("glGetInternalformatSampleivNV");
 Function<void, GLenum, GLenum, GLenum, GLsizei, GLint *> Binding::GetInternalformativ("glGetInternalformativ");
+Function<void, GLuint, GLenum, GLint, GLsizei, GLuint *> Binding::GetMemoryObjectDetachedResourcesuivNV("glGetMemoryObjectDetachedResourcesuivNV");
 Function<void, GLuint, GLenum, GLint *> Binding::GetMemoryObjectParameterivEXT("glGetMemoryObjectParameterivEXT");
 Function<void, GLenum, GLuint, GLfloat *> Binding::GetMultisamplefv("glGetMultisamplefv");
 Function<void, GLuint, GLuint *> Binding::GetNextPerfQueryIdINTEL("glGetNextPerfQueryIdINTEL");
@@ -124,6 +125,8 @@ Function<void, GLuint, GLsizei, GLsizei *, GLchar *> Binding::GetShaderInfoLog("
 Function<void, GLenum, GLenum, GLint *, GLint *> Binding::GetShaderPrecisionFormat("glGetShaderPrecisionFormat");
 Function<void, GLuint, GLsizei, GLsizei *, GLchar *> Binding::GetShaderSource("glGetShaderSource");
 Function<void, GLuint, GLenum, GLint *> Binding::GetShaderiv("glGetShaderiv");
+Function<void, GLuint, GLuint, GLenum *> Binding::GetShadingRateImagePaletteNV("glGetShadingRateImagePaletteNV");
+Function<void, GLenum, GLuint, GLuint, GLint *> Binding::GetShadingRateSampleLocationivNV("glGetShadingRateSampleLocationivNV");
 Function<const GLubyte *, GLenum> Binding::GetString("glGetString");
 Function<const GLubyte *, GLenum, GLuint> Binding::GetStringi("glGetStringi");
 Function<void, GLsync, GLenum, GLsizei, GLsizei *, GLint *> Binding::GetSynciv("glGetSynciv");

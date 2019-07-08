@@ -36,12 +36,12 @@ void * glMapBufferOES(GLenum target, GLenum access)
     return Binding::MapBufferOES(target, access);
 }
 
-void * glMapBufferRange(GLenum target, GLintptr offset, GLsizeiptr length, BufferAccessMask access)
+void * glMapBufferRange(GLenum target, GLintptr offset, GLsizeiptr length, MapBufferAccessMask access)
 {
     return Binding::MapBufferRange(target, offset, length, access);
 }
 
-void * glMapBufferRangeEXT(GLenum target, GLintptr offset, GLsizeiptr length, BufferAccessMask access)
+void * glMapBufferRangeEXT(GLenum target, GLintptr offset, GLsizeiptr length, MapBufferAccessMask access)
 {
     return Binding::MapBufferRangeEXT(target, offset, length, access);
 }
@@ -224,6 +224,16 @@ void glMultiDrawElementsEXT(GLenum mode, const GLsizei * count, GLenum type, con
 void glMultiDrawElementsIndirectEXT(GLenum mode, GLenum type, const void * indirect, GLsizei drawcount, GLsizei stride)
 {
     return Binding::MultiDrawElementsIndirectEXT(mode, type, indirect, drawcount, stride);
+}
+
+void glMultiDrawMeshTasksIndirectCountNV(GLintptr indirect, GLintptr drawcount, GLsizei maxdrawcount, GLsizei stride)
+{
+    return Binding::MultiDrawMeshTasksIndirectCountNV(indirect, drawcount, maxdrawcount, stride);
+}
+
+void glMultiDrawMeshTasksIndirectNV(GLintptr indirect, GLsizei drawcount, GLsizei stride)
+{
+    return Binding::MultiDrawMeshTasksIndirectNV(indirect, drawcount, stride);
 }
 
 

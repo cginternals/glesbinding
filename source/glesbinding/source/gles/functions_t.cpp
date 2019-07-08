@@ -16,6 +16,11 @@ GLboolean glTestFenceNV(GLuint fence)
     return Binding::TestFenceNV(fence);
 }
 
+void glTexAttachMemoryNV(GLenum target, GLuint memory, GLuint64 offset)
+{
+    return Binding::TexAttachMemoryNV(target, memory, offset);
+}
+
 void glTexBuffer(GLenum target, GLenum internalformat, GLuint buffer)
 {
     return Binding::TexBuffer(target, internalformat, buffer);
@@ -189,6 +194,11 @@ void glTexSubImage3D(GLenum target, GLint level, GLint xoffset, GLint yoffset, G
 void glTexSubImage3DOES(GLenum target, GLint level, GLint xoffset, GLint yoffset, GLint zoffset, GLsizei width, GLsizei height, GLsizei depth, GLenum format, GLenum type, const void * pixels)
 {
     return Binding::TexSubImage3DOES(target, level, xoffset, yoffset, zoffset, width, height, depth, format, type, pixels);
+}
+
+void glTextureAttachMemoryNV(GLuint texture, GLuint memory, GLuint64 offset)
+{
+    return Binding::TextureAttachMemoryNV(texture, memory, offset);
 }
 
 void glTextureFoveationParametersQCOM(GLuint texture, GLuint layer, GLuint focalPoint, GLfloat focalX, GLfloat focalY, GLfloat gainX, GLfloat gainY, GLfloat foveaArea)

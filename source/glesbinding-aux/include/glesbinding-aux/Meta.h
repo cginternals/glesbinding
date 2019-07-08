@@ -43,6 +43,8 @@ public:
     *  @brief
     *    Returns the revision of the parsed gl.xml file
     *
+    *  @deprecated
+    *
     *  @return
     *    The revision of the parsed gl.xml file
     */
@@ -73,22 +75,22 @@ public:
     *  @brief
     *    Converts a GLenum to a string
     *
-    *  @param[in] enum
+    *  @param[in] glesenum
     *    The enum to convert
     *
     *  @return
-    *    A string representation of the GLenum symbol name
+    *    A string representation of the GLESenum symbol name
     *
-    *  @remarks
+    *  @remark
     *    Beware, that some enums in the OpenGL API have different symbol names but identical enum values and that this function cannot differentiate between them
     */
     static const std::string & getString(gles::GLenum glesenum);
     
     /**
     *  @brief
-    *    Converts a string to a enum symbol
+    *    Converts a string to an enum symbol
     *
-    *  @param[in] enum
+    *  @param[in] glesenum
     *    The string representation of the enum
     *
     *  @return
@@ -115,8 +117,8 @@ public:
     *  @return
     *    A string representation of the GLboolean symbol name
     *
-    *  @remarks
-    *    Can either be 'GLES_TRUE' or 'GLES_FALSE'
+    *  @remark
+    *    Can either be '`GLES_TRUE`' or '`GLES_FALSE`'
     */
     static const std::string & getString(const gles::GLboolean & boolean);
     
@@ -124,11 +126,11 @@ public:
     *  @brief
     *    Converts a string to a GLboolean symbol
     *
-    *  @param[in] glboolean
+    *  @param[in] boolean
     *    The string representation of the GLboolean
     *
     *  @return
-    *    The symbol identified through the boolean string, 'GLES_FALSE' if failed
+    *    The symbol identified through the boolean string, '`GLES_FALSE`' if failed
     */
     static gles::GLboolean getBoolean(const std::string & boolean);
 
@@ -152,7 +154,7 @@ public:
     *    The string representation of the extension
     *
     *  @return
-    *    The symbol identified through the extension string, 'UNKNOWN' if failed
+    *    The symbol identified through the extension string, '`UNKNOWN`' if failed
     */
     static gles::GLextension getExtension(const std::string & extension);
 
@@ -176,7 +178,7 @@ public:
     *
     *  @return
     *    The set of extensions that should be supported for the given version.
-    *    All non versioned extensions can be queried by providing the null version
+    *    All non-versioned extensions can be queried by providing the null version
     */
     static const std::set<gles::GLextension> extensions(const Version & version);
 
@@ -184,7 +186,7 @@ public:
     *  @brief
     *    Returns the list of extensions that are requiring an OpenGL function
     *
-    *  @param[in] function
+    *  @param[in] glesfunction
     *    The name of the function, including the 'gles' prefix
     *
     *  @return
@@ -196,7 +198,7 @@ public:
     *  @brief
     *    Returns the list of features that are requiring an OpenGL function
     *
-    *  @param[in] function
+    *  @param[in] glesfunction
     *    The name of the function, including the 'gles' prefix
     *
     *  @return
@@ -214,7 +216,7 @@ public:
     *  @return
     *    The set of functions that are required for the version
     *
-    *  @remarks
+    *  @remark
     *    This is exclusive (preceeding versions are ignored)
     */
     static const std::set<AbstractFunction *> functions(const Version & version);
@@ -235,13 +237,13 @@ public:
     *  @brief
     *    Returns the first OpenGL Version (Feature) that required the extension
     *
-    *  @param[in] extension
+    *  @param[in] glesextension
     *    The extension
     *
     *  @return
     *    The first GLES Version (Feature) that required the extension
     */
-    static const Version & version(gles::GLextension glextension);
+    static const Version & version(gles::GLextension glesextension);
     
     /**
     *  @brief
@@ -253,9 +255,10 @@ public:
     static const std::set<Version> & versions();
 
     /**
-    *  @brief convert bitfield to symbol name string representation
+    *  @brief
+    *    Convert bitfield to symbol name string representation
     *
-    *  @param[in] glbitfield
+    *  @param[in] bitfield
     *    The bitfield value
     *
     *  @return
@@ -264,9 +267,10 @@ public:
     static const std::string & getString(gles::AttribMask bitfield);
 
     /**
-    *  @brief convert bitfield to symbol name string representation
+    *  @brief
+    *    Convert bitfield to symbol name string representation
     *
-    *  @param[in] glbitfield
+    *  @param[in] bitfield
     *    The bitfield value
     *
     *  @return
@@ -275,9 +279,10 @@ public:
     static const std::string & getString(gles::BufferAccessMask bitfield);
 
     /**
-    *  @brief convert bitfield to symbol name string representation
+    *  @brief
+    *    Convert bitfield to symbol name string representation
     *
-    *  @param[in] glbitfield
+    *  @param[in] bitfield
     *    The bitfield value
     *
     *  @return
@@ -286,9 +291,10 @@ public:
     static const std::string & getString(gles::BufferBitQCOM bitfield);
 
     /**
-    *  @brief convert bitfield to symbol name string representation
+    *  @brief
+    *    Convert bitfield to symbol name string representation
     *
-    *  @param[in] glbitfield
+    *  @param[in] bitfield
     *    The bitfield value
     *
     *  @return
@@ -297,9 +303,10 @@ public:
     static const std::string & getString(gles::BufferStorageMask bitfield);
 
     /**
-    *  @brief convert bitfield to symbol name string representation
+    *  @brief
+    *    Convert bitfield to symbol name string representation
     *
-    *  @param[in] glbitfield
+    *  @param[in] bitfield
     *    The bitfield value
     *
     *  @return
@@ -308,9 +315,10 @@ public:
     static const std::string & getString(gles::ClearBufferMask bitfield);
 
     /**
-    *  @brief convert bitfield to symbol name string representation
+    *  @brief
+    *    Convert bitfield to symbol name string representation
     *
-    *  @param[in] glbitfield
+    *  @param[in] bitfield
     *    The bitfield value
     *
     *  @return
@@ -319,9 +327,10 @@ public:
     static const std::string & getString(gles::ContextFlagMask bitfield);
 
     /**
-    *  @brief convert bitfield to symbol name string representation
+    *  @brief
+    *    Convert bitfield to symbol name string representation
     *
-    *  @param[in] glbitfield
+    *  @param[in] bitfield
     *    The bitfield value
     *
     *  @return
@@ -330,20 +339,22 @@ public:
     static const std::string & getString(gles::FoveationConfigBitQCOM bitfield);
 
     /**
-    *  @brief convert bitfield to symbol name string representation
+    *  @brief
+    *    Convert bitfield to symbol name string representation
     *
-    *  @param[in] glbitfield
+    *  @param[in] bitfield
     *    The bitfield value
     *
     *  @return
     *    The string representation of the value
     */
-    static const std::string & getString(gles::MapBufferUsageMask bitfield);
+    static const std::string & getString(gles::MapBufferAccessMask bitfield);
 
     /**
-    *  @brief convert bitfield to symbol name string representation
+    *  @brief
+    *    Convert bitfield to symbol name string representation
     *
-    *  @param[in] glbitfield
+    *  @param[in] bitfield
     *    The bitfield value
     *
     *  @return
@@ -352,9 +363,10 @@ public:
     static const std::string & getString(gles::MemoryBarrierMask bitfield);
 
     /**
-    *  @brief convert bitfield to symbol name string representation
+    *  @brief
+    *    Convert bitfield to symbol name string representation
     *
-    *  @param[in] glbitfield
+    *  @param[in] bitfield
     *    The bitfield value
     *
     *  @return
@@ -363,9 +375,10 @@ public:
     static const std::string & getString(gles::PathFontStyle bitfield);
 
     /**
-    *  @brief convert bitfield to symbol name string representation
+    *  @brief
+    *    Convert bitfield to symbol name string representation
     *
-    *  @param[in] glbitfield
+    *  @param[in] bitfield
     *    The bitfield value
     *
     *  @return
@@ -374,9 +387,10 @@ public:
     static const std::string & getString(gles::PathMetricMask bitfield);
 
     /**
-    *  @brief convert bitfield to symbol name string representation
+    *  @brief
+    *    Convert bitfield to symbol name string representation
     *
-    *  @param[in] glbitfield
+    *  @param[in] bitfield
     *    The bitfield value
     *
     *  @return
@@ -385,9 +399,10 @@ public:
     static const std::string & getString(gles::PathRenderingMaskNV bitfield);
 
     /**
-    *  @brief convert bitfield to symbol name string representation
+    *  @brief
+    *    Convert bitfield to symbol name string representation
     *
-    *  @param[in] glbitfield
+    *  @param[in] bitfield
     *    The bitfield value
     *
     *  @return
@@ -396,9 +411,10 @@ public:
     static const std::string & getString(gles::PerformanceQueryCapsMaskINTEL bitfield);
 
     /**
-    *  @brief convert bitfield to symbol name string representation
+    *  @brief
+    *    Convert bitfield to symbol name string representation
     *
-    *  @param[in] glbitfield
+    *  @param[in] bitfield
     *    The bitfield value
     *
     *  @return
@@ -407,9 +423,10 @@ public:
     static const std::string & getString(gles::SyncObjectMask bitfield);
 
     /**
-    *  @brief convert bitfield to symbol name string representation
+    *  @brief
+    *    Convert bitfield to symbol name string representation
     *
-    *  @param[in] glbitfield
+    *  @param[in] bitfield
     *    The bitfield value
     *
     *  @return
@@ -418,9 +435,10 @@ public:
     static const std::string & getString(gles::UnusedMask bitfield);
 
     /**
-    *  @brief convert bitfield to symbol name string representation
+    *  @brief
+    *    Convert bitfield to symbol name string representation
     *
-    *  @param[in] glbitfield
+    *  @param[in] bitfield
     *    The bitfield value
     *
     *  @return

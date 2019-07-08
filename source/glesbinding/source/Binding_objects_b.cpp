@@ -26,6 +26,7 @@ Function<void, GLuint, GLuint, GLint, GLboolean, GLint, GLenum, GLenum> Binding:
 Function<void, GLuint> Binding::BindProgramPipeline("glBindProgramPipeline");
 Function<void, GLenum, GLuint> Binding::BindRenderbuffer("glBindRenderbuffer");
 Function<void, GLuint, GLuint> Binding::BindSampler("glBindSampler");
+Function<void, GLuint> Binding::BindShadingRateImageNV("glBindShadingRateImageNV");
 Function<void, GLenum, GLuint> Binding::BindTexture("glBindTexture");
 Function<void, GLenum, GLuint> Binding::BindTransformFeedback("glBindTransformFeedback");
 Function<void, GLuint> Binding::BindVertexArray("glBindVertexArray");
@@ -55,9 +56,10 @@ Function<void, GLenum, GLint> Binding::BlendParameteriNV("glBlendParameteriNV");
 Function<void, GLint, GLint, GLint, GLint, GLint, GLint, GLint, GLint, ClearBufferMask, GLenum> Binding::BlitFramebuffer("glBlitFramebuffer");
 Function<void, GLint, GLint, GLint, GLint, GLint, GLint, GLint, GLint, ClearBufferMask, GLenum> Binding::BlitFramebufferANGLE("glBlitFramebufferANGLE");
 Function<void, GLint, GLint, GLint, GLint, GLint, GLint, GLint, GLint, ClearBufferMask, GLenum> Binding::BlitFramebufferNV("glBlitFramebufferNV");
+Function<void, GLenum, GLuint, GLuint64> Binding::BufferAttachMemoryNV("glBufferAttachMemoryNV");
 Function<void, GLenum, GLsizeiptr, const void *, GLenum> Binding::BufferData("glBufferData");
-Function<void, GLenum, GLsizeiptr, const void *, MapBufferUsageMask> Binding::BufferStorageEXT("glBufferStorageEXT");
-Function<void, GLenum, GLintptr, GLsizeiptr, GLeglClientBufferEXT, MapBufferUsageMask> Binding::BufferStorageExternalEXT("glBufferStorageExternalEXT");
+Function<void, GLenum, GLsizeiptr, const void *, BufferStorageMask> Binding::BufferStorageEXT("glBufferStorageEXT");
+Function<void, GLenum, GLintptr, GLsizeiptr, GLeglClientBufferEXT, BufferStorageMask> Binding::BufferStorageExternalEXT("glBufferStorageExternalEXT");
 Function<void, GLenum, GLsizeiptr, GLuint, GLuint64> Binding::BufferStorageMemEXT("glBufferStorageMemEXT");
 Function<void, GLenum, GLintptr, GLsizeiptr, const void *> Binding::BufferSubData("glBufferSubData");
 

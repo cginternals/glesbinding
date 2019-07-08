@@ -40,8 +40,6 @@ using gles::GL_BOOL_VEC4;
 using gles::GL_FLOAT_MAT2;
 using gles::GL_FLOAT_MAT3;
 using gles::GL_FLOAT_MAT4;
-using gles::GL_SAMPLER_2D;
-using gles::GL_SAMPLER_CUBE;
 
 // BlendEquationModeEXT
 
@@ -71,6 +69,11 @@ using gles::GL_ONE;
 
 using gles::GL_NEAREST;
 using gles::GL_LINEAR;
+
+// BufferPNameARB
+
+using gles::GL_BUFFER_SIZE;
+using gles::GL_BUFFER_USAGE;
 
 // BufferStorageTarget
 
@@ -116,6 +119,14 @@ using gles::GL_INT;
 using gles::GL_UNSIGNED_INT;
 using gles::GL_FLOAT;
 
+// CombinerBiasNV
+
+// using gles::GL_NONE; // reuse ColorBuffer
+
+// CombinerScaleNV
+
+// using gles::GL_NONE; // reuse ColorBuffer
+
 // CopyBufferSubDataTarget
 
 // using gles::GL_ARRAY_BUFFER; // reuse BufferStorageTarget
@@ -156,6 +167,7 @@ using gles::GL_DONT_CARE;
 // using gles::GL_FRONT; // reuse ColorBuffer
 // using gles::GL_BACK; // reuse ColorBuffer
 // using gles::GL_FRONT_AND_BACK; // reuse ColorBuffer
+// using gles::GL_COLOR_ATTACHMENT0; // reuse ColorBuffer
 
 // DrawElementsType
 
@@ -173,6 +185,8 @@ using gles::GL_BLEND;
 using gles::GL_SCISSOR_TEST;
 using gles::GL_TEXTURE_2D;
 using gles::GL_POLYGON_OFFSET_FILL;
+using gles::GL_SAMPLE_ALPHA_TO_COVERAGE;
+using gles::GL_SAMPLE_COVERAGE;
 
 // ErrorCode
 
@@ -273,11 +287,50 @@ using gles::GL_DEPTH_BITS;
 using gles::GL_STENCIL_BITS;
 // using gles::GL_TEXTURE_2D; // reuse EnableCap
 using gles::GL_POLYGON_OFFSET_UNITS;
+using gles::GL_BLEND_COLOR;
+using gles::GL_BLEND_EQUATION_RGB;
 // using gles::GL_POLYGON_OFFSET_FILL; // reuse EnableCap
 using gles::GL_POLYGON_OFFSET_FACTOR;
 using gles::GL_TEXTURE_BINDING_2D;
+// using gles::GL_SAMPLE_BUFFERS; // reuse GetFramebufferParameter
+// using gles::GL_SAMPLES; // reuse GetFramebufferParameter
+using gles::GL_SAMPLE_COVERAGE_VALUE;
+using gles::GL_SAMPLE_COVERAGE_INVERT;
+using gles::GL_BLEND_DST_RGB;
+using gles::GL_BLEND_SRC_RGB;
+using gles::GL_BLEND_DST_ALPHA;
+using gles::GL_BLEND_SRC_ALPHA;
 using gles::GL_ALIASED_POINT_SIZE_RANGE;
 using gles::GL_ALIASED_LINE_WIDTH_RANGE;
+using gles::GL_ACTIVE_TEXTURE;
+using gles::GL_MAX_RENDERBUFFER_SIZE;
+using gles::GL_TEXTURE_BINDING_CUBE_MAP;
+using gles::GL_MAX_CUBE_MAP_TEXTURE_SIZE;
+using gles::GL_NUM_COMPRESSED_TEXTURE_FORMATS;
+using gles::GL_COMPRESSED_TEXTURE_FORMATS;
+using gles::GL_STENCIL_BACK_FUNC;
+using gles::GL_STENCIL_BACK_FAIL;
+using gles::GL_STENCIL_BACK_PASS_DEPTH_FAIL;
+using gles::GL_STENCIL_BACK_PASS_DEPTH_PASS;
+using gles::GL_BLEND_EQUATION_ALPHA;
+using gles::GL_MAX_VERTEX_ATTRIBS;
+using gles::GL_MAX_TEXTURE_IMAGE_UNITS;
+using gles::GL_ARRAY_BUFFER_BINDING;
+using gles::GL_ELEMENT_ARRAY_BUFFER_BINDING;
+using gles::GL_MAX_VERTEX_TEXTURE_IMAGE_UNITS;
+using gles::GL_MAX_COMBINED_TEXTURE_IMAGE_UNITS;
+using gles::GL_CURRENT_PROGRAM;
+// using gles::GL_IMPLEMENTATION_COLOR_READ_TYPE; // reuse GetFramebufferParameter
+// using gles::GL_IMPLEMENTATION_COLOR_READ_FORMAT; // reuse GetFramebufferParameter
+using gles::GL_STENCIL_BACK_REF;
+using gles::GL_STENCIL_BACK_VALUE_MASK;
+using gles::GL_STENCIL_BACK_WRITEMASK;
+using gles::GL_RENDERBUFFER_BINDING;
+using gles::GL_NUM_SHADER_BINARY_FORMATS;
+using gles::GL_SHADER_COMPILER;
+using gles::GL_MAX_VERTEX_UNIFORM_VECTORS;
+using gles::GL_MAX_VARYING_VECTORS;
+using gles::GL_MAX_FRAGMENT_UNIFORM_VECTORS;
 
 // GetTextureParameter
 
@@ -285,6 +338,27 @@ using gles::GL_TEXTURE_MAG_FILTER;
 using gles::GL_TEXTURE_MIN_FILTER;
 using gles::GL_TEXTURE_WRAP_S;
 using gles::GL_TEXTURE_WRAP_T;
+
+// GlslTypeToken
+
+// using gles::GL_INT; // reuse ColorPointerType
+// using gles::GL_UNSIGNED_INT; // reuse ColorPointerType
+// using gles::GL_FLOAT; // reuse ColorPointerType
+// using gles::GL_FLOAT_VEC2; // reuse AttributeType
+// using gles::GL_FLOAT_VEC3; // reuse AttributeType
+// using gles::GL_FLOAT_VEC4; // reuse AttributeType
+// using gles::GL_INT_VEC2; // reuse AttributeType
+// using gles::GL_INT_VEC3; // reuse AttributeType
+// using gles::GL_INT_VEC4; // reuse AttributeType
+// using gles::GL_BOOL; // reuse AttributeType
+// using gles::GL_BOOL_VEC2; // reuse AttributeType
+// using gles::GL_BOOL_VEC3; // reuse AttributeType
+// using gles::GL_BOOL_VEC4; // reuse AttributeType
+// using gles::GL_FLOAT_MAT2; // reuse AttributeType
+// using gles::GL_FLOAT_MAT3; // reuse AttributeType
+// using gles::GL_FLOAT_MAT4; // reuse AttributeType
+using gles::GL_SAMPLER_2D;
+using gles::GL_SAMPLER_CUBE;
 
 // GraphicsResetStatus
 
@@ -453,6 +527,7 @@ using gles::GL_ACTIVE_ATTRIBUTE_MAX_LENGTH;
 
 // using gles::GL_FRONT; // reuse ColorBuffer
 // using gles::GL_BACK; // reuse ColorBuffer
+// using gles::GL_COLOR_ATTACHMENT0; // reuse ColorBuffer
 
 // RenderbufferParameterName
 
@@ -470,7 +545,7 @@ using gles::GL_RENDERBUFFER_STENCIL_SIZE;
 
 // using gles::GL_RENDERBUFFER; // reuse ObjectIdentifier
 
-// SamplerParameterName
+// SamplerParameterI
 
 // using gles::GL_TEXTURE_MAG_FILTER; // reuse GetTextureParameter
 // using gles::GL_TEXTURE_MIN_FILTER; // reuse GetTextureParameter
@@ -515,6 +590,8 @@ using gles::GL_KEEP;
 // using gles::GL_REPLACE; // reuse LightEnvModeSGIX
 using gles::GL_INCR;
 using gles::GL_DECR;
+using gles::GL_INCR_WRAP;
+using gles::GL_DECR_WRAP;
 
 // StringName
 
@@ -529,6 +606,10 @@ using gles::GL_SHADING_LANGUAGE_VERSION;
 // using gles::GL_SHORT; // reuse ColorPointerType
 // using gles::GL_INT; // reuse ColorPointerType
 // using gles::GL_FLOAT; // reuse ColorPointerType
+
+// TextureCompareMode
+
+// using gles::GL_NONE; // reuse ColorBuffer
 
 // TextureEnvMode
 
@@ -554,6 +635,12 @@ using gles::GL_LINEAR_MIPMAP_LINEAR;
 // using gles::GL_TEXTURE_MIN_FILTER; // reuse GetTextureParameter
 // using gles::GL_TEXTURE_WRAP_S; // reuse GetTextureParameter
 // using gles::GL_TEXTURE_WRAP_T; // reuse GetTextureParameter
+
+// TextureSwizzle
+
+// using gles::GL_ZERO; // reuse BlendingFactor
+// using gles::GL_ALPHA; // reuse PixelFormat
+// using gles::GL_ONE; // reuse BlendingFactor
 
 // TextureTarget
 
@@ -603,8 +690,31 @@ using gles::GL_TEXTURE31;
 
 // TextureWrapMode
 
+// using gles::GL_LINEAR_MIPMAP_LINEAR; // reuse TextureMinFilter
 using gles::GL_REPEAT;
 using gles::GL_CLAMP_TO_EDGE;
+using gles::GL_MIRRORED_REPEAT;
+
+// UniformType
+
+// using gles::GL_INT; // reuse ColorPointerType
+// using gles::GL_UNSIGNED_INT; // reuse ColorPointerType
+// using gles::GL_FLOAT; // reuse ColorPointerType
+// using gles::GL_FLOAT_VEC2; // reuse AttributeType
+// using gles::GL_FLOAT_VEC3; // reuse AttributeType
+// using gles::GL_FLOAT_VEC4; // reuse AttributeType
+// using gles::GL_INT_VEC2; // reuse AttributeType
+// using gles::GL_INT_VEC3; // reuse AttributeType
+// using gles::GL_INT_VEC4; // reuse AttributeType
+// using gles::GL_BOOL; // reuse AttributeType
+// using gles::GL_BOOL_VEC2; // reuse AttributeType
+// using gles::GL_BOOL_VEC3; // reuse AttributeType
+// using gles::GL_BOOL_VEC4; // reuse AttributeType
+// using gles::GL_FLOAT_MAT2; // reuse AttributeType
+// using gles::GL_FLOAT_MAT3; // reuse AttributeType
+// using gles::GL_FLOAT_MAT4; // reuse AttributeType
+// using gles::GL_SAMPLER_2D; // reuse GlslTypeToken
+// using gles::GL_SAMPLER_CUBE; // reuse GlslTypeToken
 
 // VertexArrayPName
 
@@ -624,6 +734,19 @@ using gles::GL_CURRENT_VERTEX_ATTRIB;
 // using gles::GL_VERTEX_ATTRIB_ARRAY_NORMALIZED; // reuse VertexArrayPName
 using gles::GL_VERTEX_ATTRIB_ARRAY_BUFFER_BINDING;
 
+// VertexAttribIType
+
+// using gles::GL_BYTE; // reuse ColorPointerType
+// using gles::GL_UNSIGNED_BYTE; // reuse ColorPointerType
+// using gles::GL_SHORT; // reuse ColorPointerType
+// using gles::GL_UNSIGNED_SHORT; // reuse ColorPointerType
+// using gles::GL_INT; // reuse ColorPointerType
+// using gles::GL_UNSIGNED_INT; // reuse ColorPointerType
+
+// VertexAttribPointerPropertyARB
+
+using gles::GL_VERTEX_ATTRIB_ARRAY_POINTER;
+
 // VertexAttribPointerType
 
 // using gles::GL_BYTE; // reuse ColorPointerType
@@ -634,6 +757,16 @@ using gles::GL_VERTEX_ATTRIB_ARRAY_BUFFER_BINDING;
 // using gles::GL_UNSIGNED_INT; // reuse ColorPointerType
 // using gles::GL_FLOAT; // reuse ColorPointerType
 using gles::GL_FIXED;
+
+// VertexAttribPropertyARB
+
+// using gles::GL_VERTEX_ATTRIB_ARRAY_ENABLED; // reuse VertexArrayPName
+// using gles::GL_VERTEX_ATTRIB_ARRAY_SIZE; // reuse VertexArrayPName
+// using gles::GL_VERTEX_ATTRIB_ARRAY_STRIDE; // reuse VertexArrayPName
+// using gles::GL_VERTEX_ATTRIB_ARRAY_TYPE; // reuse VertexArrayPName
+// using gles::GL_CURRENT_VERTEX_ATTRIB; // reuse VertexAttribEnum
+// using gles::GL_VERTEX_ATTRIB_ARRAY_NORMALIZED; // reuse VertexArrayPName
+// using gles::GL_VERTEX_ATTRIB_ARRAY_BUFFER_BINDING; // reuse VertexAttribEnum
 
 // VertexAttribType
 
@@ -648,8 +781,8 @@ using gles::GL_FIXED;
 
 // VertexBufferObjectParameter
 
-using gles::GL_BUFFER_SIZE;
-using gles::GL_BUFFER_USAGE;
+// using gles::GL_BUFFER_SIZE; // reuse BufferPNameARB
+// using gles::GL_BUFFER_USAGE; // reuse BufferPNameARB
 
 // VertexBufferObjectUsage
 
@@ -665,56 +798,15 @@ using gles::GL_BUFFER_USAGE;
 
 // __UNGROUPED__
 
-using gles::GL_BLEND_COLOR;
 using gles::GL_BLEND_EQUATION;
-using gles::GL_BLEND_EQUATION_RGB;
-using gles::GL_SAMPLE_ALPHA_TO_COVERAGE;
-using gles::GL_SAMPLE_COVERAGE;
-using gles::GL_SAMPLE_COVERAGE_VALUE;
-using gles::GL_SAMPLE_COVERAGE_INVERT;
-using gles::GL_BLEND_DST_RGB;
-using gles::GL_BLEND_SRC_RGB;
-using gles::GL_BLEND_DST_ALPHA;
-using gles::GL_BLEND_SRC_ALPHA;
 using gles::GL_UNSIGNED_SHORT_5_6_5;
-using gles::GL_MIRRORED_REPEAT;
-using gles::GL_ACTIVE_TEXTURE;
-using gles::GL_MAX_RENDERBUFFER_SIZE;
-using gles::GL_INCR_WRAP;
-using gles::GL_DECR_WRAP;
-using gles::GL_TEXTURE_BINDING_CUBE_MAP;
-using gles::GL_MAX_CUBE_MAP_TEXTURE_SIZE;
-using gles::GL_VERTEX_ATTRIB_ARRAY_POINTER;
-using gles::GL_NUM_COMPRESSED_TEXTURE_FORMATS;
-using gles::GL_COMPRESSED_TEXTURE_FORMATS;
-using gles::GL_STENCIL_BACK_FUNC;
-using gles::GL_STENCIL_BACK_FAIL;
-using gles::GL_STENCIL_BACK_PASS_DEPTH_FAIL;
-using gles::GL_STENCIL_BACK_PASS_DEPTH_PASS;
-using gles::GL_BLEND_EQUATION_ALPHA;
-using gles::GL_MAX_VERTEX_ATTRIBS;
-using gles::GL_MAX_TEXTURE_IMAGE_UNITS;
-using gles::GL_ARRAY_BUFFER_BINDING;
-using gles::GL_ELEMENT_ARRAY_BUFFER_BINDING;
-using gles::GL_MAX_VERTEX_TEXTURE_IMAGE_UNITS;
-using gles::GL_MAX_COMBINED_TEXTURE_IMAGE_UNITS;
-using gles::GL_CURRENT_PROGRAM;
-using gles::GL_STENCIL_BACK_REF;
-using gles::GL_STENCIL_BACK_VALUE_MASK;
-using gles::GL_STENCIL_BACK_WRITEMASK;
 using gles::GL_FRAMEBUFFER_BINDING;
-using gles::GL_RENDERBUFFER_BINDING;
 using gles::GL_FRAMEBUFFER_ATTACHMENT_OBJECT_TYPE;
 using gles::GL_FRAMEBUFFER_INCOMPLETE_DIMENSIONS;
 using gles::GL_STENCIL_ATTACHMENT;
 using gles::GL_STENCIL_INDEX8;
 using gles::GL_RGB565;
 using gles::GL_SHADER_BINARY_FORMATS;
-using gles::GL_NUM_SHADER_BINARY_FORMATS;
-using gles::GL_SHADER_COMPILER;
-using gles::GL_MAX_VERTEX_UNIFORM_VECTORS;
-using gles::GL_MAX_VARYING_VECTORS;
-using gles::GL_MAX_FRAGMENT_UNIFORM_VECTORS;
 
 
 
