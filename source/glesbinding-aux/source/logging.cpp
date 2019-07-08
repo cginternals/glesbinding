@@ -7,7 +7,7 @@
 #include <fstream>
 #include <sstream>
 
-#ifdef GLBINDING_USE_BOOST_THREAD
+#ifdef GLESBINDING_USE_BOOST_THREAD
 #include <boost/chrono.hpp>
 #include <boost/thread.hpp>
 namespace std_boost = boost;
