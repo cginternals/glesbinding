@@ -45,6 +45,7 @@ using gles::PathMetricMask;
 using gles::PathRenderingMaskNV;
 using gles::PerformanceQueryCapsMaskINTEL;
 using gles::SyncObjectMask;
+using gles::UnusedMask;
 using gles::UseProgramStageMask;
 
 

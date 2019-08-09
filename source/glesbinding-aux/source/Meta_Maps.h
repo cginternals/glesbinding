@@ -44,6 +44,7 @@ extern const std::unordered_map<gles::PathMetricMask, std::string> Meta_StringsB
 extern const std::unordered_map<gles::PathRenderingMaskNV, std::string> Meta_StringsByPathRenderingMaskNV;
 extern const std::unordered_map<gles::PerformanceQueryCapsMaskINTEL, std::string> Meta_StringsByPerformanceQueryCapsMaskINTEL;
 extern const std::unordered_map<gles::SyncObjectMask, std::string> Meta_StringsBySyncObjectMask;
+extern const std::unordered_map<gles::UnusedMask, std::string> Meta_StringsByUnusedMask;
 extern const std::unordered_map<gles::UseProgramStageMask, std::string> Meta_StringsByUseProgramStageMask;
 
 extern const std::array<std::unordered_map<std::string, gles::GLbitfield>, 27> Meta_BitfieldsByStringMaps;

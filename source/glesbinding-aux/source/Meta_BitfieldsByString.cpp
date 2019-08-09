@@ -122,7 +122,10 @@ const std::unordered_map<std::string, GLbitfield> Meta_BitfieldsByString_M =
     { "GL_MESH_SHADER_BIT_NV", static_cast<GLbitfield>(UseProgramStageMask::GL_MESH_SHADER_BIT_NV) }
 };
 
-const std::unordered_map<std::string, GLbitfield> Meta_BitfieldsByString_N{};
+const std::unordered_map<std::string, GLbitfield> Meta_BitfieldsByString_N =
+{
+    { "GL_NONE_BIT", static_cast<GLbitfield>(AttribMask::GL_NONE_BIT) }
+};
 
 const std::unordered_map<std::string, GLbitfield> Meta_BitfieldsByString_O{};
 
@@ -162,7 +165,8 @@ const std::unordered_map<std::string, GLbitfield> Meta_BitfieldsByString_T =
 
 const std::unordered_map<std::string, GLbitfield> Meta_BitfieldsByString_U =
 {
-    { "GL_UNIFORM_BARRIER_BIT", static_cast<GLbitfield>(MemoryBarrierMask::GL_UNIFORM_BARRIER_BIT) }
+    { "GL_UNIFORM_BARRIER_BIT", static_cast<GLbitfield>(MemoryBarrierMask::GL_UNIFORM_BARRIER_BIT) },
+    { "GL_UNUSED_BIT", static_cast<GLbitfield>(UnusedMask::GL_UNUSED_BIT) }
 };
 
 const std::unordered_map<std::string, GLbitfield> Meta_BitfieldsByString_V =

@@ -394,6 +394,18 @@ public:
     *  @return
     *    The string representation of the value
     */
+    static const std::string & getString(gles::UnusedMask glesbitfield);
+
+    /**
+    *  @brief
+    *    Convert bitfield to symbol name string representation
+    *
+    *  @param[in] glbitfield
+    *    The bitfield value
+    *
+    *  @return
+    *    The string representation of the value
+    */
     static const std::string & getString(gles::UseProgramStageMask glesbitfield);
 
 

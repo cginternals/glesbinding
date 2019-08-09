@@ -793,6 +793,67 @@ namespace std
 
 
 template<>
+struct hash<gles::UnusedMask>
+{
+    std::size_t operator()(const gles::UnusedMask & t) const
+    {
+        return hash<std::underlying_type<gles::UnusedMask>::type>()(static_cast<std::underlying_type<gles::UnusedMask>::type>(t));
+    }
+};
+
+
+} // namespace std
+
+
+namespace gles
+{
+
+
+GLESBINDING_CONSTEXPR inline UnusedMask operator|(const UnusedMask & a, const UnusedMask & b)
+{
+    return static_cast<UnusedMask>(static_cast<std::underlying_type<UnusedMask>::type>(a) | static_cast<std::underlying_type<UnusedMask>::type>(b));
+}
+
+inline UnusedMask & operator|=(UnusedMask & a, const UnusedMask & b)
+{
+    a = static_cast<UnusedMask>(static_cast<std::underlying_type<UnusedMask>::type>(a) | static_cast<std::underlying_type<UnusedMask>::type>(b));
+
+    return a;
+}
+
+GLESBINDING_CONSTEXPR inline UnusedMask operator&(const UnusedMask & a, const UnusedMask & b)
+{
+    return static_cast<UnusedMask>(static_cast<std::underlying_type<UnusedMask>::type>(a) & static_cast<std::underlying_type<UnusedMask>::type>(b));
+}
+
+inline UnusedMask & operator&=(UnusedMask & a, const UnusedMask & b)
+{
+    a = static_cast<UnusedMask>(static_cast<std::underlying_type<UnusedMask>::type>(a) & static_cast<std::underlying_type<UnusedMask>::type>(b));
+
+    return a;
+}
+
+GLESBINDING_CONSTEXPR inline UnusedMask operator^(const UnusedMask & a, const UnusedMask & b)
+{
+    return static_cast<UnusedMask>(static_cast<std::underlying_type<UnusedMask>::type>(a) ^ static_cast<std::underlying_type<UnusedMask>::type>(b));
+}
+
+inline UnusedMask & operator^=(UnusedMask & a, const UnusedMask & b)
+{
+    a = static_cast<UnusedMask>(static_cast<std::underlying_type<UnusedMask>::type>(a) ^ static_cast<std::underlying_type<UnusedMask>::type>(b));
+
+    return a;
+}
+
+
+} // namespace gles
+
+
+namespace std
+{
+
+
+template<>
 struct hash<gles::UseProgramStageMask>
 {
     std::size_t operator()(const gles::UseProgramStageMask & t) const

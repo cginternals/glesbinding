@@ -133,6 +133,16 @@ const std::string & Meta::getString(const SyncObjectMask glesbitfield)
     return none;
 }
 
+const std::string & Meta::getString(const UnusedMask glesbitfield)
+{
+    const auto i = Meta_StringsByUnusedMask.find(glesbitfield);
+    if (i != Meta_StringsByUnusedMask.end())
+    {
+        return i->second;
+    }
+    return none;
+}
+
 const std::string & Meta::getString(const UseProgramStageMask glesbitfield)
 {
     const auto i = Meta_StringsByUseProgramStageMask.find(glesbitfield);

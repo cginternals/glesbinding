@@ -65,6 +65,7 @@ enum class PathFontStyle : unsigned int;
 enum class PathMetricMask : unsigned int;
 enum class PathRenderingMaskNV : unsigned int;
 enum class PerformanceQueryCapsMaskINTEL : unsigned int;
+enum class UnusedMask : unsigned int;
 
 } // namespace gles
 

@@ -99,6 +99,12 @@ std::ostream & operator<<(std::ostream & stream, const SyncObjectMask & value)
     return stream;
 }
 
+std::ostream & operator<<(std::ostream & stream, const UnusedMask & value)
+{
+    stream << glesbinding::aux::bitfieldString<UnusedMask>(value);
+    return stream;
+}
+
 std::ostream & operator<<(std::ostream & stream, const UseProgramStageMask & value)
 {
     stream << glesbinding::aux::bitfieldString<UseProgramStageMask>(value);
@@ -581,6 +587,18 @@ std::ostream & operator<<(std::ostream & stream, const AbstractValue * value)
     if (typeid(*value) == typeid(Value<gles::SyncObjectMask *>))
     {
         return stream << *reinterpret_cast<const Value<gles::SyncObjectMask *>*>(value);
+    }
+
+    
+    if (typeid(*value) == typeid(Value<gles::UnusedMask>))
+    {
+        return stream << *reinterpret_cast<const Value<gles::UnusedMask>*>(value);
+    }
+    
+    
+    if (typeid(*value) == typeid(Value<gles::UnusedMask *>))
+    {
+        return stream << *reinterpret_cast<const Value<gles::UnusedMask *>*>(value);
     }
 
     

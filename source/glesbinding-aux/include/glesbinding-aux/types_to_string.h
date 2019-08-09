@@ -30,6 +30,7 @@ GLESBINDING_AUX_API std::ostream & operator<<(std::ostream & stream, const PathM
 GLESBINDING_AUX_API std::ostream & operator<<(std::ostream & stream, const PathRenderingMaskNV & value);
 GLESBINDING_AUX_API std::ostream & operator<<(std::ostream & stream, const PerformanceQueryCapsMaskINTEL & value);
 GLESBINDING_AUX_API std::ostream & operator<<(std::ostream & stream, const SyncObjectMask & value);
+GLESBINDING_AUX_API std::ostream & operator<<(std::ostream & stream, const UnusedMask & value);
 GLESBINDING_AUX_API std::ostream & operator<<(std::ostream & stream, const UseProgramStageMask & value);
 
 

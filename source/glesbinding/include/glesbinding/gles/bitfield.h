@@ -16,31 +16,9 @@ namespace gles
 enum class AttribMask : unsigned int
 {
     GL_NONE_BIT                                = 0x0, // Generic GL_NONE_BIT
-    GL_CURRENT_BIT                             = 0x00000001,
-    GL_POINT_BIT                               = 0x00000002,
-    GL_LINE_BIT                                = 0x00000004,
-    GL_POLYGON_BIT                             = 0x00000008,
-    GL_POLYGON_STIPPLE_BIT                     = 0x00000010,
-    GL_PIXEL_MODE_BIT                          = 0x00000020,
-    GL_LIGHTING_BIT                            = 0x00000040,
-    GL_FOG_BIT                                 = 0x00000080,
     GL_DEPTH_BUFFER_BIT                        = 0x00000100,
-    GL_ACCUM_BUFFER_BIT                        = 0x00000200,
     GL_STENCIL_BUFFER_BIT                      = 0x00000400,
-    GL_VIEWPORT_BIT                            = 0x00000800,
-    GL_TRANSFORM_BIT                           = 0x00001000,
-    GL_ENABLE_BIT                              = 0x00002000,
-    GL_COLOR_BUFFER_BIT                        = 0x00004000,
-    GL_HINT_BIT                                = 0x00008000,
-    GL_EVAL_BIT                                = 0x00010000,
-    GL_LIST_BIT                                = 0x00020000,
-    GL_TEXTURE_BIT                             = 0x00040000,
-    GL_SCISSOR_BIT                             = 0x00080000,
-    GL_MULTISAMPLE_BIT                         = 0x20000000,
-    GL_MULTISAMPLE_BIT_3DFX                    = 0x20000000,
-    GL_MULTISAMPLE_BIT_ARB                     = 0x20000000,
-    GL_MULTISAMPLE_BIT_EXT                     = 0x20000000,
-    GL_ALL_ATTRIB_BITS                         = 0xFFFFFFFF
+    GL_COLOR_BUFFER_BIT                        = 0x00004000
 };
 
 
@@ -51,18 +29,10 @@ enum class BufferStorageMask : unsigned int
     GL_MAP_READ_BIT_EXT                        = 0x0001,
     GL_MAP_WRITE_BIT                           = 0x0002,
     GL_MAP_WRITE_BIT_EXT                       = 0x0002,
-    GL_MAP_PERSISTENT_BIT                      = 0x0040,
     GL_MAP_PERSISTENT_BIT_EXT                  = 0x0040,
-    GL_MAP_COHERENT_BIT                        = 0x0080,
     GL_MAP_COHERENT_BIT_EXT                    = 0x0080,
-    GL_DYNAMIC_STORAGE_BIT                     = 0x0100,
     GL_DYNAMIC_STORAGE_BIT_EXT                 = 0x0100,
-    GL_CLIENT_STORAGE_BIT                      = 0x0200,
-    GL_CLIENT_STORAGE_BIT_EXT                  = 0x0200,
-    GL_SPARSE_STORAGE_BIT_ARB                  = 0x0400,
-    GL_LGPU_SEPARATE_STORAGE_BIT_NVX           = 0x0800,
-    GL_PER_GPU_STORAGE_BIT_NV                  = 0x0800,
-    GL_EXTERNAL_STORAGE_BIT_NVX                = 0x2000
+    GL_CLIENT_STORAGE_BIT_EXT                  = 0x0200
 };
 
 
@@ -70,7 +40,6 @@ enum class ClearBufferMask : unsigned int
 {
     GL_NONE_BIT                                = 0x0, // Generic GL_NONE_BIT
     GL_DEPTH_BUFFER_BIT                        = 0x00000100, // reuse from AttribMask
-    GL_ACCUM_BUFFER_BIT                        = 0x00000200, // reuse from AttribMask
     GL_STENCIL_BUFFER_BIT                      = 0x00000400, // reuse from AttribMask
     GL_COLOR_BUFFER_BIT                        = 0x00004000, // reuse from AttribMask
     GL_COVERAGE_BUFFER_BIT_NV                  = 0x00008000
@@ -80,12 +49,9 @@ enum class ClearBufferMask : unsigned int
 enum class ContextFlagMask : unsigned int
 {
     GL_NONE_BIT                                = 0x0, // Generic GL_NONE_BIT
-    GL_CONTEXT_FLAG_FORWARD_COMPATIBLE_BIT     = 0x00000001,
     GL_CONTEXT_FLAG_DEBUG_BIT                  = 0x00000002,
     GL_CONTEXT_FLAG_DEBUG_BIT_KHR              = 0x00000002,
     GL_CONTEXT_FLAG_ROBUST_ACCESS_BIT          = 0x00000004,
-    GL_CONTEXT_FLAG_ROBUST_ACCESS_BIT_ARB      = 0x00000004,
-    GL_CONTEXT_FLAG_NO_ERROR_BIT               = 0x00000008,
     GL_CONTEXT_FLAG_NO_ERROR_BIT_KHR           = 0x00000008,
     GL_CONTEXT_FLAG_PROTECTED_CONTENT_BIT_EXT  = 0x00000010
 };
@@ -106,9 +72,7 @@ enum class MapBufferAccessMask : unsigned int
     GL_MAP_FLUSH_EXPLICIT_BIT_EXT              = 0x0010,
     GL_MAP_UNSYNCHRONIZED_BIT                  = 0x0020,
     GL_MAP_UNSYNCHRONIZED_BIT_EXT              = 0x0020,
-    GL_MAP_PERSISTENT_BIT                      = 0x0040, // reuse from BufferStorageMask
     GL_MAP_PERSISTENT_BIT_EXT                  = 0x0040, // reuse from BufferStorageMask
-    GL_MAP_COHERENT_BIT                        = 0x0080, // reuse from BufferStorageMask
     GL_MAP_COHERENT_BIT_EXT                    = 0x0080 // reuse from BufferStorageMask
 };
 
@@ -117,36 +81,20 @@ enum class MemoryBarrierMask : unsigned int
 {
     GL_NONE_BIT                                = 0x0, // Generic GL_NONE_BIT
     GL_VERTEX_ATTRIB_ARRAY_BARRIER_BIT         = 0x00000001,
-    GL_VERTEX_ATTRIB_ARRAY_BARRIER_BIT_EXT     = 0x00000001,
     GL_ELEMENT_ARRAY_BARRIER_BIT               = 0x00000002,
-    GL_ELEMENT_ARRAY_BARRIER_BIT_EXT           = 0x00000002,
     GL_UNIFORM_BARRIER_BIT                     = 0x00000004,
-    GL_UNIFORM_BARRIER_BIT_EXT                 = 0x00000004,
     GL_TEXTURE_FETCH_BARRIER_BIT               = 0x00000008,
-    GL_TEXTURE_FETCH_BARRIER_BIT_EXT           = 0x00000008,
-    GL_SHADER_GLOBAL_ACCESS_BARRIER_BIT_NV     = 0x00000010,
     GL_SHADER_IMAGE_ACCESS_BARRIER_BIT         = 0x00000020,
-    GL_SHADER_IMAGE_ACCESS_BARRIER_BIT_EXT     = 0x00000020,
     GL_COMMAND_BARRIER_BIT                     = 0x00000040,
-    GL_COMMAND_BARRIER_BIT_EXT                 = 0x00000040,
     GL_PIXEL_BUFFER_BARRIER_BIT                = 0x00000080,
-    GL_PIXEL_BUFFER_BARRIER_BIT_EXT            = 0x00000080,
     GL_TEXTURE_UPDATE_BARRIER_BIT              = 0x00000100,
-    GL_TEXTURE_UPDATE_BARRIER_BIT_EXT          = 0x00000100,
     GL_BUFFER_UPDATE_BARRIER_BIT               = 0x00000200,
-    GL_BUFFER_UPDATE_BARRIER_BIT_EXT           = 0x00000200,
     GL_FRAMEBUFFER_BARRIER_BIT                 = 0x00000400,
-    GL_FRAMEBUFFER_BARRIER_BIT_EXT             = 0x00000400,
     GL_TRANSFORM_FEEDBACK_BARRIER_BIT          = 0x00000800,
-    GL_TRANSFORM_FEEDBACK_BARRIER_BIT_EXT      = 0x00000800,
     GL_ATOMIC_COUNTER_BARRIER_BIT              = 0x00001000,
-    GL_ATOMIC_COUNTER_BARRIER_BIT_EXT          = 0x00001000,
     GL_SHADER_STORAGE_BARRIER_BIT              = 0x00002000,
-    GL_CLIENT_MAPPED_BUFFER_BARRIER_BIT        = 0x00004000,
     GL_CLIENT_MAPPED_BUFFER_BARRIER_BIT_EXT    = 0x00004000,
-    GL_QUERY_BUFFER_BARRIER_BIT                = 0x00008000,
-    GL_ALL_BARRIER_BITS                        = 0xFFFFFFFF,
-    GL_ALL_BARRIER_BITS_EXT                    = 0xFFFFFFFF
+    GL_ALL_BARRIER_BITS                        = 0xFFFFFFFF
 };
 
 
@@ -231,6 +179,12 @@ enum class SyncObjectMask : unsigned int
     GL_NONE_BIT                                = 0x0, // Generic GL_NONE_BIT
     GL_SYNC_FLUSH_COMMANDS_BIT                 = 0x00000001,
     GL_SYNC_FLUSH_COMMANDS_BIT_APPLE           = 0x00000001
+};
+
+
+enum class UnusedMask : unsigned int
+{
+    GL_UNUSED_BIT                              = 0x00000000
 };
 
 
@@ -325,6 +279,7 @@ GLESBINDING_CONSTEXPR static const MapBufferAccessMask GL_MAP_UNSYNCHRONIZED_BIT
 GLESBINDING_CONSTEXPR static const glesbinding::SharedBitfield<BufferStorageMask, MapBufferAccessMask> GL_MAP_WRITE_BIT = BufferStorageMask::GL_MAP_WRITE_BIT;
 GLESBINDING_CONSTEXPR static const glesbinding::SharedBitfield<BufferStorageMask, MapBufferAccessMask> GL_MAP_WRITE_BIT_EXT = BufferStorageMask::GL_MAP_WRITE_BIT_EXT;
 GLESBINDING_CONSTEXPR static const UseProgramStageMask GL_MESH_SHADER_BIT_NV = UseProgramStageMask::GL_MESH_SHADER_BIT_NV;
+GLESBINDING_CONSTEXPR static const glesbinding::SharedBitfield<AttribMask, BufferStorageMask, ClearBufferMask, ContextFlagMask, MapBufferAccessMask, MemoryBarrierMask, PathFontStyle, PathMetricMask, PathRenderingMaskNV, PerformanceQueryCapsMaskINTEL, SyncObjectMask, UseProgramStageMask> GL_NONE_BIT = AttribMask::GL_NONE_BIT;
 GLESBINDING_CONSTEXPR static const PerformanceQueryCapsMaskINTEL GL_PERFQUERY_GLOBAL_CONTEXT_INTEL = PerformanceQueryCapsMaskINTEL::GL_PERFQUERY_GLOBAL_CONTEXT_INTEL;
 GLESBINDING_CONSTEXPR static const PerformanceQueryCapsMaskINTEL GL_PERFQUERY_SINGLE_CONTEXT_INTEL = PerformanceQueryCapsMaskINTEL::GL_PERFQUERY_SINGLE_CONTEXT_INTEL;
 GLESBINDING_CONSTEXPR static const MemoryBarrierMask GL_PIXEL_BUFFER_BARRIER_BIT = MemoryBarrierMask::GL_PIXEL_BUFFER_BARRIER_BIT;
@@ -344,6 +299,7 @@ GLESBINDING_CONSTEXPR static const MemoryBarrierMask GL_TEXTURE_FETCH_BARRIER_BI
 GLESBINDING_CONSTEXPR static const MemoryBarrierMask GL_TEXTURE_UPDATE_BARRIER_BIT = MemoryBarrierMask::GL_TEXTURE_UPDATE_BARRIER_BIT;
 GLESBINDING_CONSTEXPR static const MemoryBarrierMask GL_TRANSFORM_FEEDBACK_BARRIER_BIT = MemoryBarrierMask::GL_TRANSFORM_FEEDBACK_BARRIER_BIT;
 GLESBINDING_CONSTEXPR static const MemoryBarrierMask GL_UNIFORM_BARRIER_BIT = MemoryBarrierMask::GL_UNIFORM_BARRIER_BIT;
+GLESBINDING_CONSTEXPR static const UnusedMask GL_UNUSED_BIT = UnusedMask::GL_UNUSED_BIT;
 GLESBINDING_CONSTEXPR static const MemoryBarrierMask GL_VERTEX_ATTRIB_ARRAY_BARRIER_BIT = MemoryBarrierMask::GL_VERTEX_ATTRIB_ARRAY_BARRIER_BIT;
 GLESBINDING_CONSTEXPR static const UseProgramStageMask GL_VERTEX_SHADER_BIT = UseProgramStageMask::GL_VERTEX_SHADER_BIT;
 GLESBINDING_CONSTEXPR static const UseProgramStageMask GL_VERTEX_SHADER_BIT_EXT = UseProgramStageMask::GL_VERTEX_SHADER_BIT_EXT;
