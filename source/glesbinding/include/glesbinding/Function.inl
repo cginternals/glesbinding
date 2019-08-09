@@ -9,7 +9,9 @@
 #include <glesbinding/Value.h>
 #include <glesbinding/FunctionCall.h>
 #include <glesbinding/CallbackMask.h>
+
 #include <glesbinding/Boolean32.h>
+
 
 
 namespace glesbinding
@@ -28,6 +30,7 @@ struct BasicCallHelper
 
 // Special case for booleans because of MSVC differing behavior
 
+
 template <typename... Arguments>
 struct BasicCallHelper<glesbinding::Boolean32, Arguments...>
 {
@@ -36,6 +39,7 @@ struct BasicCallHelper<glesbinding::Boolean32, Arguments...>
         return reinterpret_cast<typename glesbinding::Function<glesbinding::Boolean32::underlying_type, Arguments...>::Signature>(function->address())(std::forward<Arguments>(arguments)...);
     }
 };
+
 
 
 template <typename ReturnType, typename... Arguments>

@@ -4,13 +4,8 @@
 #include <glesbinding/gles/functions.h>
 
 
-using namespace glesbinding;
-
-
 namespace gles
 {
-
-
 
 
 

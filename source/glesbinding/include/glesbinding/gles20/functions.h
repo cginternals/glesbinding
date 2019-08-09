@@ -9,7 +9,7 @@
 namespace gles20
 {
 
-
+// import functions
 using gles::glActiveTexture;
 using gles::glAttachShader;
 using gles::glBindAttribLocation;
@@ -60,10 +60,10 @@ using gles::glFramebufferRenderbuffer;
 using gles::glFramebufferTexture2D;
 using gles::glFrontFace;
 using gles::glGenBuffers;
+using gles::glGenerateMipmap;
 using gles::glGenFramebuffers;
 using gles::glGenRenderbuffers;
 using gles::glGenTextures;
-using gles::glGenerateMipmap;
 using gles::glGetActiveAttrib;
 using gles::glGetActiveUniform;
 using gles::glGetAttachedShaders;
@@ -78,18 +78,18 @@ using gles::glGetProgramInfoLog;
 using gles::glGetProgramiv;
 using gles::glGetRenderbufferParameteriv;
 using gles::glGetShaderInfoLog;
+using gles::glGetShaderiv;
 using gles::glGetShaderPrecisionFormat;
 using gles::glGetShaderSource;
-using gles::glGetShaderiv;
 using gles::glGetString;
 using gles::glGetTexParameterfv;
 using gles::glGetTexParameteriv;
-using gles::glGetUniformLocation;
 using gles::glGetUniformfv;
 using gles::glGetUniformiv;
-using gles::glGetVertexAttribPointerv;
+using gles::glGetUniformLocation;
 using gles::glGetVertexAttribfv;
 using gles::glGetVertexAttribiv;
+using gles::glGetVertexAttribPointerv;
 using gles::glHint;
 using gles::glIsBuffer;
 using gles::glIsEnabled;
@@ -152,6 +152,5 @@ using gles::glVertexAttrib4f;
 using gles::glVertexAttrib4fv;
 using gles::glVertexAttribPointer;
 using gles::glViewport;
-
 
 } // namespace gles20

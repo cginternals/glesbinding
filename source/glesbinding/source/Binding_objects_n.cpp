@@ -16,5 +16,4 @@ Function<void, GLuint, GLuint, GLsizei, const GLfloat *> Binding::NamedFramebuff
 Function<void, GLuint, GLsizei, GLsizei, GLenum, GLsizei, GLsizei> Binding::NamedRenderbufferStorageMultisampleAdvancedAMD("glNamedRenderbufferStorageMultisampleAdvancedAMD");
 
 
-
 } // namespace glesbinding

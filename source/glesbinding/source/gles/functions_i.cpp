@@ -4,204 +4,204 @@
 #include <glesbinding/gles/functions.h>
 
 
-using namespace glesbinding;
-
-
 namespace gles
 {
 
 
 void glImportMemoryFdEXT(GLuint memory, GLuint64 size, GLenum handleType, GLint fd)
 {
-    return Binding::ImportMemoryFdEXT(memory, size, handleType, fd);
+    return glesbinding::Binding::ImportMemoryFdEXT(memory, size, handleType, fd);
 }
 
 void glImportMemoryWin32HandleEXT(GLuint memory, GLuint64 size, GLenum handleType, void * handle)
 {
-    return Binding::ImportMemoryWin32HandleEXT(memory, size, handleType, handle);
+    return glesbinding::Binding::ImportMemoryWin32HandleEXT(memory, size, handleType, handle);
 }
 
 void glImportMemoryWin32NameEXT(GLuint memory, GLuint64 size, GLenum handleType, const void * name)
 {
-    return Binding::ImportMemoryWin32NameEXT(memory, size, handleType, name);
+    return glesbinding::Binding::ImportMemoryWin32NameEXT(memory, size, handleType, name);
 }
 
 void glImportSemaphoreFdEXT(GLuint semaphore, GLenum handleType, GLint fd)
 {
-    return Binding::ImportSemaphoreFdEXT(semaphore, handleType, fd);
+    return glesbinding::Binding::ImportSemaphoreFdEXT(semaphore, handleType, fd);
 }
 
 void glImportSemaphoreWin32HandleEXT(GLuint semaphore, GLenum handleType, void * handle)
 {
-    return Binding::ImportSemaphoreWin32HandleEXT(semaphore, handleType, handle);
+    return glesbinding::Binding::ImportSemaphoreWin32HandleEXT(semaphore, handleType, handle);
 }
 
 void glImportSemaphoreWin32NameEXT(GLuint semaphore, GLenum handleType, const void * name)
 {
-    return Binding::ImportSemaphoreWin32NameEXT(semaphore, handleType, name);
+    return glesbinding::Binding::ImportSemaphoreWin32NameEXT(semaphore, handleType, name);
 }
 
 void glInsertEventMarkerEXT(GLsizei length, const GLchar * marker)
 {
-    return Binding::InsertEventMarkerEXT(length, marker);
+    return glesbinding::Binding::InsertEventMarkerEXT(length, marker);
 }
 
 void glInterpolatePathsNV(GLuint resultPath, GLuint pathA, GLuint pathB, GLfloat weight)
 {
-    return Binding::InterpolatePathsNV(resultPath, pathA, pathB, weight);
+    return glesbinding::Binding::InterpolatePathsNV(resultPath, pathA, pathB, weight);
 }
 
 void glInvalidateFramebuffer(GLenum target, GLsizei numAttachments, const GLenum * attachments)
 {
-    return Binding::InvalidateFramebuffer(target, numAttachments, attachments);
+    return glesbinding::Binding::InvalidateFramebuffer(target, numAttachments, attachments);
 }
 
 void glInvalidateSubFramebuffer(GLenum target, GLsizei numAttachments, const GLenum * attachments, GLint x, GLint y, GLsizei width, GLsizei height)
 {
-    return Binding::InvalidateSubFramebuffer(target, numAttachments, attachments, x, y, width, height);
+    return glesbinding::Binding::InvalidateSubFramebuffer(target, numAttachments, attachments, x, y, width, height);
 }
 
 GLboolean glIsBuffer(GLuint buffer)
 {
-    return Binding::IsBuffer(buffer);
+    return glesbinding::Binding::IsBuffer(buffer);
 }
 
 GLboolean glIsEnabled(GLenum cap)
 {
-    return Binding::IsEnabled(cap);
+    return glesbinding::Binding::IsEnabled(cap);
 }
 
 GLboolean glIsEnabledi(GLenum target, GLuint index)
 {
-    return Binding::IsEnabledi(target, index);
+    return glesbinding::Binding::IsEnabledi(target, index);
 }
 
 GLboolean glIsEnablediEXT(GLenum target, GLuint index)
 {
-    return Binding::IsEnablediEXT(target, index);
+    return glesbinding::Binding::IsEnablediEXT(target, index);
 }
 
 GLboolean glIsEnablediNV(GLenum target, GLuint index)
 {
-    return Binding::IsEnablediNV(target, index);
+    return glesbinding::Binding::IsEnablediNV(target, index);
 }
 
 GLboolean glIsEnablediOES(GLenum target, GLuint index)
 {
-    return Binding::IsEnablediOES(target, index);
+    return glesbinding::Binding::IsEnablediOES(target, index);
 }
 
 GLboolean glIsFenceNV(GLuint fence)
 {
-    return Binding::IsFenceNV(fence);
+    return glesbinding::Binding::IsFenceNV(fence);
 }
 
 GLboolean glIsFramebuffer(GLuint framebuffer)
 {
-    return Binding::IsFramebuffer(framebuffer);
+    return glesbinding::Binding::IsFramebuffer(framebuffer);
 }
 
 GLboolean glIsImageHandleResidentNV(GLuint64 handle)
 {
-    return Binding::IsImageHandleResidentNV(handle);
+    return glesbinding::Binding::IsImageHandleResidentNV(handle);
 }
 
 GLboolean glIsMemoryObjectEXT(GLuint memoryObject)
 {
-    return Binding::IsMemoryObjectEXT(memoryObject);
+    return glesbinding::Binding::IsMemoryObjectEXT(memoryObject);
 }
 
 GLboolean glIsPathNV(GLuint path)
 {
-    return Binding::IsPathNV(path);
+    return glesbinding::Binding::IsPathNV(path);
 }
 
 GLboolean glIsPointInFillPathNV(GLuint path, GLuint mask, GLfloat x, GLfloat y)
 {
-    return Binding::IsPointInFillPathNV(path, mask, x, y);
+    return glesbinding::Binding::IsPointInFillPathNV(path, mask, x, y);
 }
 
 GLboolean glIsPointInStrokePathNV(GLuint path, GLfloat x, GLfloat y)
 {
-    return Binding::IsPointInStrokePathNV(path, x, y);
+    return glesbinding::Binding::IsPointInStrokePathNV(path, x, y);
 }
 
 GLboolean glIsProgram(GLuint program)
 {
-    return Binding::IsProgram(program);
+    return glesbinding::Binding::IsProgram(program);
 }
 
 GLboolean glIsProgramPipeline(GLuint pipeline)
 {
-    return Binding::IsProgramPipeline(pipeline);
+    return glesbinding::Binding::IsProgramPipeline(pipeline);
+}
+
+GLboolean glIsProgramPipelineEXT(GLuint pipeline)
+{
+    return glesbinding::Binding::IsProgramPipelineEXT(pipeline);
 }
 
 GLboolean glIsQuery(GLuint id)
 {
-    return Binding::IsQuery(id);
+    return glesbinding::Binding::IsQuery(id);
 }
 
 GLboolean glIsQueryEXT(GLuint id)
 {
-    return Binding::IsQueryEXT(id);
+    return glesbinding::Binding::IsQueryEXT(id);
 }
 
 GLboolean glIsRenderbuffer(GLuint renderbuffer)
 {
-    return Binding::IsRenderbuffer(renderbuffer);
+    return glesbinding::Binding::IsRenderbuffer(renderbuffer);
 }
 
 GLboolean glIsSampler(GLuint sampler)
 {
-    return Binding::IsSampler(sampler);
+    return glesbinding::Binding::IsSampler(sampler);
 }
 
 GLboolean glIsSemaphoreEXT(GLuint semaphore)
 {
-    return Binding::IsSemaphoreEXT(semaphore);
+    return glesbinding::Binding::IsSemaphoreEXT(semaphore);
 }
 
 GLboolean glIsShader(GLuint shader)
 {
-    return Binding::IsShader(shader);
+    return glesbinding::Binding::IsShader(shader);
 }
 
 GLboolean glIsSync(GLsync sync)
 {
-    return Binding::IsSync(sync);
+    return glesbinding::Binding::IsSync(sync);
 }
 
 GLboolean glIsSyncAPPLE(GLsync sync)
 {
-    return Binding::IsSyncAPPLE(sync);
+    return glesbinding::Binding::IsSyncAPPLE(sync);
 }
 
 GLboolean glIsTexture(GLuint texture)
 {
-    return Binding::IsTexture(texture);
+    return glesbinding::Binding::IsTexture(texture);
 }
 
 GLboolean glIsTextureHandleResidentNV(GLuint64 handle)
 {
-    return Binding::IsTextureHandleResidentNV(handle);
+    return glesbinding::Binding::IsTextureHandleResidentNV(handle);
 }
 
 GLboolean glIsTransformFeedback(GLuint id)
 {
-    return Binding::IsTransformFeedback(id);
+    return glesbinding::Binding::IsTransformFeedback(id);
 }
 
 GLboolean glIsVertexArray(GLuint array)
 {
-    return Binding::IsVertexArray(array);
+    return glesbinding::Binding::IsVertexArray(array);
 }
 
 GLboolean glIsVertexArrayOES(GLuint array)
 {
-    return Binding::IsVertexArrayOES(array);
+    return glesbinding::Binding::IsVertexArrayOES(array);
 }
-
-
 
 
 } // namespace gles

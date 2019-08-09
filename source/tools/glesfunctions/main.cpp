@@ -153,7 +153,7 @@ int main()
 
     std::cout << std::endl;
     std::cout << "# Extensions:    " << (supportedExts.size() + unknownExts.size()) << " of " << allExts.size() + unknownExts.size() << " supported"
-        << " (" << unknownExts.size() << " of which are unknown to glbinding)" << std::endl;
+        << " (" << unknownExts.size() << " of which are unknown to glesbinding)" << std::endl;
 
     for (auto p : extsByVer)
     {

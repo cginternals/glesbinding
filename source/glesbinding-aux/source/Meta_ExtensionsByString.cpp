@@ -59,9 +59,6 @@ const std::unordered_map<std::string, GLextension> Meta_ExtensionsByString_D =
 
 const std::unordered_map<std::string, GLextension> Meta_ExtensionsByString_E =
 {
-    { "GL_EXT_EGL_image_array", GLextension::GL_EXT_EGL_image_array },
-    { "GL_EXT_EGL_image_storage", GLextension::GL_EXT_EGL_image_storage },
-    { "GL_EXT_YUV_target", GLextension::GL_EXT_YUV_target },
     { "GL_EXT_base_instance", GLextension::GL_EXT_base_instance },
     { "GL_EXT_blend_func_extended", GLextension::GL_EXT_blend_func_extended },
     { "GL_EXT_blend_minmax", GLextension::GL_EXT_blend_minmax },
@@ -83,6 +80,8 @@ const std::unordered_map<std::string, GLextension> Meta_ExtensionsByString_E =
     { "GL_EXT_draw_elements_base_vertex", GLextension::GL_EXT_draw_elements_base_vertex },
     { "GL_EXT_draw_instanced", GLextension::GL_EXT_draw_instanced },
     { "GL_EXT_draw_transform_feedback", GLextension::GL_EXT_draw_transform_feedback },
+    { "GL_EXT_EGL_image_array", GLextension::GL_EXT_EGL_image_array },
+    { "GL_EXT_EGL_image_storage", GLextension::GL_EXT_EGL_image_storage },
     { "GL_EXT_external_buffer", GLextension::GL_EXT_external_buffer },
     { "GL_EXT_float_blend", GLextension::GL_EXT_float_blend },
     { "GL_EXT_geometry_point_size", GLextension::GL_EXT_geometry_point_size },
@@ -111,8 +110,6 @@ const std::unordered_map<std::string, GLextension> Meta_ExtensionsByString_E =
     { "GL_EXT_read_format_bgra", GLextension::GL_EXT_read_format_bgra },
     { "GL_EXT_render_snorm", GLextension::GL_EXT_render_snorm },
     { "GL_EXT_robustness", GLextension::GL_EXT_robustness },
-    { "GL_EXT_sRGB", GLextension::GL_EXT_sRGB },
-    { "GL_EXT_sRGB_write_control", GLextension::GL_EXT_sRGB_write_control },
     { "GL_EXT_semaphore", GLextension::GL_EXT_semaphore },
     { "GL_EXT_semaphore_fd", GLextension::GL_EXT_semaphore_fd },
     { "GL_EXT_semaphore_win32", GLextension::GL_EXT_semaphore_win32 },
@@ -130,6 +127,8 @@ const std::unordered_map<std::string, GLextension> Meta_ExtensionsByString_E =
     { "GL_EXT_shadow_samplers", GLextension::GL_EXT_shadow_samplers },
     { "GL_EXT_sparse_texture", GLextension::GL_EXT_sparse_texture },
     { "GL_EXT_sparse_texture2", GLextension::GL_EXT_sparse_texture2 },
+    { "GL_EXT_sRGB", GLextension::GL_EXT_sRGB },
+    { "GL_EXT_sRGB_write_control", GLextension::GL_EXT_sRGB_write_control },
     { "GL_EXT_tessellation_point_size", GLextension::GL_EXT_tessellation_point_size },
     { "GL_EXT_tessellation_shader", GLextension::GL_EXT_tessellation_shader },
     { "GL_EXT_texture_border_clamp", GLextension::GL_EXT_texture_border_clamp },
@@ -149,16 +148,17 @@ const std::unordered_map<std::string, GLextension> Meta_ExtensionsByString_E =
     { "GL_EXT_texture_norm16", GLextension::GL_EXT_texture_norm16 },
     { "GL_EXT_texture_query_lod", GLextension::GL_EXT_texture_query_lod },
     { "GL_EXT_texture_rg", GLextension::GL_EXT_texture_rg },
+    { "GL_EXT_texture_shadow_lod", GLextension::GL_EXT_texture_shadow_lod },
+    { "GL_EXT_texture_sRGB_decode", GLextension::GL_EXT_texture_sRGB_decode },
     { "GL_EXT_texture_sRGB_R8", GLextension::GL_EXT_texture_sRGB_R8 },
     { "GL_EXT_texture_sRGB_RG8", GLextension::GL_EXT_texture_sRGB_RG8 },
-    { "GL_EXT_texture_sRGB_decode", GLextension::GL_EXT_texture_sRGB_decode },
-    { "GL_EXT_texture_shadow_lod", GLextension::GL_EXT_texture_shadow_lod },
     { "GL_EXT_texture_storage", GLextension::GL_EXT_texture_storage },
     { "GL_EXT_texture_type_2_10_10_10_REV", GLextension::GL_EXT_texture_type_2_10_10_10_REV },
     { "GL_EXT_texture_view", GLextension::GL_EXT_texture_view },
     { "GL_EXT_unpack_subimage", GLextension::GL_EXT_unpack_subimage },
     { "GL_EXT_win32_keyed_mutex", GLextension::GL_EXT_win32_keyed_mutex },
-    { "GL_EXT_window_rectangles", GLextension::GL_EXT_window_rectangles }
+    { "GL_EXT_window_rectangles", GLextension::GL_EXT_window_rectangles },
+    { "GL_EXT_YUV_target", GLextension::GL_EXT_YUV_target }
 };
 
 const std::unordered_map<std::string, GLextension> Meta_ExtensionsByString_F =
@@ -199,6 +199,7 @@ const std::unordered_map<std::string, GLextension> Meta_ExtensionsByString_K =
     { "GL_KHR_parallel_shader_compile", GLextension::GL_KHR_parallel_shader_compile },
     { "GL_KHR_robust_buffer_access_behavior", GLextension::GL_KHR_robust_buffer_access_behavior },
     { "GL_KHR_robustness", GLextension::GL_KHR_robustness },
+    { "GL_KHR_shader_subgroup", GLextension::GL_KHR_shader_subgroup },
     { "GL_KHR_texture_compression_astc_hdr", GLextension::GL_KHR_texture_compression_astc_hdr },
     { "GL_KHR_texture_compression_astc_ldr", GLextension::GL_KHR_texture_compression_astc_ldr },
     { "GL_KHR_texture_compression_astc_sliced_3d", GLextension::GL_KHR_texture_compression_astc_sliced_3d }
@@ -215,7 +216,6 @@ const std::unordered_map<std::string, GLextension> Meta_ExtensionsByString_M =
 
 const std::unordered_map<std::string, GLextension> Meta_ExtensionsByString_N =
 {
-    { "GL_NVX_blend_equation_advanced_multi_draw_buffers", GLextension::GL_NVX_blend_equation_advanced_multi_draw_buffers },
     { "GL_NV_bindless_texture", GLextension::GL_NV_bindless_texture },
     { "GL_NV_blend_equation_advanced", GLextension::GL_NV_blend_equation_advanced },
     { "GL_NV_blend_equation_advanced_coherent", GLextension::GL_NV_blend_equation_advanced_coherent },
@@ -261,30 +261,29 @@ const std::unordered_map<std::string, GLextension> Meta_ExtensionsByString_N =
     { "GL_NV_read_depth_stencil", GLextension::GL_NV_read_depth_stencil },
     { "GL_NV_read_stencil", GLextension::GL_NV_read_stencil },
     { "GL_NV_representative_fragment_test", GLextension::GL_NV_representative_fragment_test },
-    { "GL_NV_sRGB_formats", GLextension::GL_NV_sRGB_formats },
     { "GL_NV_sample_locations", GLextension::GL_NV_sample_locations },
     { "GL_NV_sample_mask_override_coverage", GLextension::GL_NV_sample_mask_override_coverage },
     { "GL_NV_scissor_exclusive", GLextension::GL_NV_scissor_exclusive },
     { "GL_NV_shader_atomic_fp16_vector", GLextension::GL_NV_shader_atomic_fp16_vector },
     { "GL_NV_shader_noperspective_interpolation", GLextension::GL_NV_shader_noperspective_interpolation },
+    { "GL_NV_shader_subgroup_partitioned", GLextension::GL_NV_shader_subgroup_partitioned },
     { "GL_NV_shader_texture_footprint", GLextension::GL_NV_shader_texture_footprint },
     { "GL_NV_shading_rate_image", GLextension::GL_NV_shading_rate_image },
     { "GL_NV_shadow_samplers_array", GLextension::GL_NV_shadow_samplers_array },
     { "GL_NV_shadow_samplers_cube", GLextension::GL_NV_shadow_samplers_cube },
+    { "GL_NV_sRGB_formats", GLextension::GL_NV_sRGB_formats },
     { "GL_NV_stereo_view_rendering", GLextension::GL_NV_stereo_view_rendering },
     { "GL_NV_texture_border_clamp", GLextension::GL_NV_texture_border_clamp },
     { "GL_NV_texture_compression_s3tc_update", GLextension::GL_NV_texture_compression_s3tc_update },
     { "GL_NV_texture_npot_2D_mipmap", GLextension::GL_NV_texture_npot_2D_mipmap },
     { "GL_NV_viewport_array", GLextension::GL_NV_viewport_array },
     { "GL_NV_viewport_array2", GLextension::GL_NV_viewport_array2 },
-    { "GL_NV_viewport_swizzle", GLextension::GL_NV_viewport_swizzle }
+    { "GL_NV_viewport_swizzle", GLextension::GL_NV_viewport_swizzle },
+    { "GL_NVX_blend_equation_advanced_multi_draw_buffers", GLextension::GL_NVX_blend_equation_advanced_multi_draw_buffers }
 };
 
 const std::unordered_map<std::string, GLextension> Meta_ExtensionsByString_O =
 {
-    { "GL_OES_EGL_image", GLextension::GL_OES_EGL_image },
-    { "GL_OES_EGL_image_external", GLextension::GL_OES_EGL_image_external },
-    { "GL_OES_EGL_image_external_essl3", GLextension::GL_OES_EGL_image_external_essl3 },
     { "GL_OES_compressed_ETC1_RGB8_sub_texture", GLextension::GL_OES_compressed_ETC1_RGB8_sub_texture },
     { "GL_OES_compressed_ETC1_RGB8_texture", GLextension::GL_OES_compressed_ETC1_RGB8_texture },
     { "GL_OES_compressed_paletted_texture", GLextension::GL_OES_compressed_paletted_texture },
@@ -294,6 +293,9 @@ const std::unordered_map<std::string, GLextension> Meta_ExtensionsByString_O =
     { "GL_OES_depth_texture", GLextension::GL_OES_depth_texture },
     { "GL_OES_draw_buffers_indexed", GLextension::GL_OES_draw_buffers_indexed },
     { "GL_OES_draw_elements_base_vertex", GLextension::GL_OES_draw_elements_base_vertex },
+    { "GL_OES_EGL_image", GLextension::GL_OES_EGL_image },
+    { "GL_OES_EGL_image_external", GLextension::GL_OES_EGL_image_external },
+    { "GL_OES_EGL_image_external_essl3", GLextension::GL_OES_EGL_image_external_essl3 },
     { "GL_OES_element_index_uint", GLextension::GL_OES_element_index_uint },
     { "GL_OES_fbo_render_mipmap", GLextension::GL_OES_fbo_render_mipmap },
     { "GL_OES_fragment_precision_high", GLextension::GL_OES_fragment_precision_high },
@@ -343,7 +345,6 @@ const std::unordered_map<std::string, GLextension> Meta_ExtensionsByString_P{};
 
 const std::unordered_map<std::string, GLextension> Meta_ExtensionsByString_Q =
 {
-    { "GL_QCOM_YUV_texture_gather", GLextension::GL_QCOM_YUV_texture_gather },
     { "GL_QCOM_alpha_test", GLextension::GL_QCOM_alpha_test },
     { "GL_QCOM_binning_control", GLextension::GL_QCOM_binning_control },
     { "GL_QCOM_driver_control", GLextension::GL_QCOM_driver_control },
@@ -356,7 +357,8 @@ const std::unordered_map<std::string, GLextension> Meta_ExtensionsByString_Q =
     { "GL_QCOM_texture_foveated", GLextension::GL_QCOM_texture_foveated },
     { "GL_QCOM_texture_foveated_subsampled_layout", GLextension::GL_QCOM_texture_foveated_subsampled_layout },
     { "GL_QCOM_tiled_rendering", GLextension::GL_QCOM_tiled_rendering },
-    { "GL_QCOM_writeonly_rendering", GLextension::GL_QCOM_writeonly_rendering }
+    { "GL_QCOM_writeonly_rendering", GLextension::GL_QCOM_writeonly_rendering },
+    { "GL_QCOM_YUV_texture_gather", GLextension::GL_QCOM_YUV_texture_gather }
 };
 
 const std::unordered_map<std::string, GLextension> Meta_ExtensionsByString_R{};

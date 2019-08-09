@@ -73,7 +73,8 @@ Function<GLboolean, GLenum> Binding::UnmapBuffer("glUnmapBuffer");
 Function<GLboolean, GLenum> Binding::UnmapBufferOES("glUnmapBufferOES");
 Function<void, GLuint> Binding::UseProgram("glUseProgram");
 Function<void, GLuint, UseProgramStageMask, GLuint> Binding::UseProgramStages("glUseProgramStages");
-
+Function<void, GLuint, UseProgramStageMask, GLuint> Binding::UseProgramStagesEXT("glUseProgramStagesEXT");
+Function<void, GLenum, GLuint> Binding::UseShaderProgramEXT("glUseShaderProgramEXT");
 
 
 } // namespace glesbinding

@@ -19,19 +19,19 @@ Function<void *, GLenum, GLintptr, GLsizeiptr, MapBufferAccessMask> Binding::Map
 Function<void, GLenum, GLdouble, GLdouble, GLdouble, GLdouble, GLdouble, GLdouble> Binding::MatrixFrustumEXT("glMatrixFrustumEXT");
 Function<void, GLenum, const GLfloat *> Binding::MatrixLoad3x2fNV("glMatrixLoad3x2fNV");
 Function<void, GLenum, const GLfloat *> Binding::MatrixLoad3x3fNV("glMatrixLoad3x3fNV");
+Function<void, GLenum, const GLdouble *> Binding::MatrixLoaddEXT("glMatrixLoaddEXT");
+Function<void, GLenum, const GLfloat *> Binding::MatrixLoadfEXT("glMatrixLoadfEXT");
 Function<void, GLenum> Binding::MatrixLoadIdentityEXT("glMatrixLoadIdentityEXT");
 Function<void, GLenum, const GLfloat *> Binding::MatrixLoadTranspose3x3fNV("glMatrixLoadTranspose3x3fNV");
 Function<void, GLenum, const GLdouble *> Binding::MatrixLoadTransposedEXT("glMatrixLoadTransposedEXT");
 Function<void, GLenum, const GLfloat *> Binding::MatrixLoadTransposefEXT("glMatrixLoadTransposefEXT");
-Function<void, GLenum, const GLdouble *> Binding::MatrixLoaddEXT("glMatrixLoaddEXT");
-Function<void, GLenum, const GLfloat *> Binding::MatrixLoadfEXT("glMatrixLoadfEXT");
 Function<void, GLenum, const GLfloat *> Binding::MatrixMult3x2fNV("glMatrixMult3x2fNV");
 Function<void, GLenum, const GLfloat *> Binding::MatrixMult3x3fNV("glMatrixMult3x3fNV");
+Function<void, GLenum, const GLdouble *> Binding::MatrixMultdEXT("glMatrixMultdEXT");
+Function<void, GLenum, const GLfloat *> Binding::MatrixMultfEXT("glMatrixMultfEXT");
 Function<void, GLenum, const GLfloat *> Binding::MatrixMultTranspose3x3fNV("glMatrixMultTranspose3x3fNV");
 Function<void, GLenum, const GLdouble *> Binding::MatrixMultTransposedEXT("glMatrixMultTransposedEXT");
 Function<void, GLenum, const GLfloat *> Binding::MatrixMultTransposefEXT("glMatrixMultTransposefEXT");
-Function<void, GLenum, const GLdouble *> Binding::MatrixMultdEXT("glMatrixMultdEXT");
-Function<void, GLenum, const GLfloat *> Binding::MatrixMultfEXT("glMatrixMultfEXT");
 Function<void, GLenum, GLdouble, GLdouble, GLdouble, GLdouble, GLdouble, GLdouble> Binding::MatrixOrthoEXT("glMatrixOrthoEXT");
 Function<void, GLenum> Binding::MatrixPopEXT("glMatrixPopEXT");
 Function<void, GLenum> Binding::MatrixPushEXT("glMatrixPushEXT");
@@ -54,7 +54,6 @@ Function<void, GLenum, const GLsizei *, GLenum, const void *const*, GLsizei> Bin
 Function<void, GLenum, GLenum, const void *, GLsizei, GLsizei> Binding::MultiDrawElementsIndirectEXT("glMultiDrawElementsIndirectEXT");
 Function<void, GLintptr, GLintptr, GLsizei, GLsizei> Binding::MultiDrawMeshTasksIndirectCountNV("glMultiDrawMeshTasksIndirectCountNV");
 Function<void, GLintptr, GLsizei, GLsizei> Binding::MultiDrawMeshTasksIndirectNV("glMultiDrawMeshTasksIndirectNV");
-
 
 
 } // namespace glesbinding

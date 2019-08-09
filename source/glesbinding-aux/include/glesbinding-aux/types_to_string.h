@@ -12,215 +12,28 @@
 #include <glesbinding/Value.h>
 
 
-
-namespace gles
-{
-
-
-GLESBINDING_AUX_API std::ostream & operator<<(std::ostream & stream, const GLextension & value);
-
-
-} // namespace gles
-
-
-
-namespace gles
-{
-
-
-GLESBINDING_AUX_API std::ostream & operator<<(std::ostream & stream, const GLenum & value);
-
-
-} // namespace gles
-
-
-
 namespace gles
 {
 
 
 GLESBINDING_AUX_API std::ostream & operator<<(std::ostream & stream, const GLboolean & value);
-
-
-} // namespace gles
-
-
-
-namespace gles
-{
-
-
+GLESBINDING_AUX_API std::ostream & operator<<(std::ostream & stream, const GLenum & value);
+GLESBINDING_AUX_API std::ostream & operator<<(std::ostream & stream, const GLextension & value);
 GLESBINDING_AUX_API std::ostream & operator<<(std::ostream & stream, const AttribMask & value);
-
-
-} // namespace gles
-
-
-
-namespace gles
-{
-
-
-GLESBINDING_AUX_API std::ostream & operator<<(std::ostream & stream, const BufferBitQCOM & value);
-
-
-} // namespace gles
-
-
-
-namespace gles
-{
-
-
 GLESBINDING_AUX_API std::ostream & operator<<(std::ostream & stream, const BufferStorageMask & value);
-
-
-} // namespace gles
-
-
-
-namespace gles
-{
-
-
 GLESBINDING_AUX_API std::ostream & operator<<(std::ostream & stream, const ClearBufferMask & value);
-
-
-} // namespace gles
-
-
-
-namespace gles
-{
-
-
 GLESBINDING_AUX_API std::ostream & operator<<(std::ostream & stream, const ContextFlagMask & value);
-
-
-} // namespace gles
-
-
-
-namespace gles
-{
-
-
-GLESBINDING_AUX_API std::ostream & operator<<(std::ostream & stream, const FoveationConfigBitQCOM & value);
-
-
-} // namespace gles
-
-
-
-namespace gles
-{
-
-
 GLESBINDING_AUX_API std::ostream & operator<<(std::ostream & stream, const MapBufferAccessMask & value);
-
-
-} // namespace gles
-
-
-
-namespace gles
-{
-
-
 GLESBINDING_AUX_API std::ostream & operator<<(std::ostream & stream, const MemoryBarrierMask & value);
-
-
-} // namespace gles
-
-
-
-namespace gles
-{
-
-
 GLESBINDING_AUX_API std::ostream & operator<<(std::ostream & stream, const PathFontStyle & value);
-
-
-} // namespace gles
-
-
-
-namespace gles
-{
-
-
 GLESBINDING_AUX_API std::ostream & operator<<(std::ostream & stream, const PathMetricMask & value);
-
-
-} // namespace gles
-
-
-
-namespace gles
-{
-
-
 GLESBINDING_AUX_API std::ostream & operator<<(std::ostream & stream, const PathRenderingMaskNV & value);
-
-
-} // namespace gles
-
-
-
-namespace gles
-{
-
-
 GLESBINDING_AUX_API std::ostream & operator<<(std::ostream & stream, const PerformanceQueryCapsMaskINTEL & value);
-
-
-} // namespace gles
-
-
-
-namespace gles
-{
-
-
 GLESBINDING_AUX_API std::ostream & operator<<(std::ostream & stream, const SyncObjectMask & value);
-
-
-} // namespace gles
-
-
-
-namespace gles
-{
-
-
 GLESBINDING_AUX_API std::ostream & operator<<(std::ostream & stream, const UseProgramStageMask & value);
 
 
 } // namespace gles
-
-
-
-namespace gles
-{
-
-
-GLESBINDING_AUX_API std::ostream & operator<<(std::ostream & stream, const UnusedMask & value);
-
-
-} // namespace gles
-
-
-
-namespace gles
-{
-
-
-GLESBINDING_AUX_API std::ostream & operator<<(std::ostream & stream, const BufferAccessMask & value);
-
-
-} // namespace gles
-
-
 
 
 namespace glesbinding
@@ -278,13 +91,6 @@ GLESBINDING_AUX_API std::ostream & operator<<(std::ostream & stream, const Value
 */
 template <>
 GLESBINDING_AUX_API std::ostream & operator<<(std::ostream & stream, const Value<gles::GLchar *> & value);
-
-/**
-*  @brief
-*    A specialized ostream operator for the gl::GLuint_array_2 Value template
-*/
-template <>
-GLESBINDING_AUX_API std::ostream & operator<<(std::ostream & stream, const Value<gles::GLuint_array_2> & value);
 
 /**
 *  @brief

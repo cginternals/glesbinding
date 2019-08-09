@@ -11,15 +11,15 @@ namespace glesbinding
 
 Function<void, GLfloat, GLboolean> Binding::SampleCoverage("glSampleCoverage");
 Function<void, GLuint, GLbitfield> Binding::SampleMaski("glSampleMaski");
+Function<void, GLuint, GLenum, GLfloat> Binding::SamplerParameterf("glSamplerParameterf");
+Function<void, GLuint, GLenum, const GLfloat *> Binding::SamplerParameterfv("glSamplerParameterfv");
+Function<void, GLuint, GLenum, GLint> Binding::SamplerParameteri("glSamplerParameteri");
 Function<void, GLuint, GLenum, const GLint *> Binding::SamplerParameterIiv("glSamplerParameterIiv");
 Function<void, GLuint, GLenum, const GLint *> Binding::SamplerParameterIivEXT("glSamplerParameterIivEXT");
 Function<void, GLuint, GLenum, const GLint *> Binding::SamplerParameterIivOES("glSamplerParameterIivOES");
 Function<void, GLuint, GLenum, const GLuint *> Binding::SamplerParameterIuiv("glSamplerParameterIuiv");
 Function<void, GLuint, GLenum, const GLuint *> Binding::SamplerParameterIuivEXT("glSamplerParameterIuivEXT");
 Function<void, GLuint, GLenum, const GLuint *> Binding::SamplerParameterIuivOES("glSamplerParameterIuivOES");
-Function<void, GLuint, GLenum, GLfloat> Binding::SamplerParameterf("glSamplerParameterf");
-Function<void, GLuint, GLenum, const GLfloat *> Binding::SamplerParameterfv("glSamplerParameterfv");
-Function<void, GLuint, GLenum, GLint> Binding::SamplerParameteri("glSamplerParameteri");
 Function<void, GLuint, GLenum, const GLint *> Binding::SamplerParameteriv("glSamplerParameteriv");
 Function<void, GLint, GLint, GLsizei, GLsizei> Binding::Scissor("glScissor");
 Function<void, GLuint, GLsizei, const GLint *> Binding::ScissorArrayvNV("glScissorArrayvNV");
@@ -42,7 +42,7 @@ Function<void, GLenum> Binding::ShadingRateSampleOrderNV("glShadingRateSampleOrd
 Function<void, GLuint, GLuint, const GLuint *, GLuint, const GLuint *, const GLenum *> Binding::SignalSemaphoreEXT("glSignalSemaphoreEXT");
 Function<void, GLuint64> Binding::SignalVkFenceNV("glSignalVkFenceNV");
 Function<void, GLuint64> Binding::SignalVkSemaphoreNV("glSignalVkSemaphoreNV");
-Function<void, GLuint, GLuint, GLuint, GLuint, BufferBitQCOM> Binding::StartTilingQCOM("glStartTilingQCOM");
+Function<void, GLuint, GLuint, GLuint, GLuint, GLbitfield> Binding::StartTilingQCOM("glStartTilingQCOM");
 Function<void, GLsizei, GLenum, const void *, GLuint, GLenum, GLuint, GLenum, const GLfloat *> Binding::StencilFillPathInstancedNV("glStencilFillPathInstancedNV");
 Function<void, GLuint, GLenum, GLuint> Binding::StencilFillPathNV("glStencilFillPathNV");
 Function<void, GLenum, GLint, GLuint> Binding::StencilFunc("glStencilFunc");
@@ -58,7 +58,6 @@ Function<void, GLuint, GLenum, GLuint, GLenum> Binding::StencilThenCoverFillPath
 Function<void, GLsizei, GLenum, const void *, GLuint, GLint, GLuint, GLenum, GLenum, const GLfloat *> Binding::StencilThenCoverStrokePathInstancedNV("glStencilThenCoverStrokePathInstancedNV");
 Function<void, GLuint, GLint, GLuint, GLenum> Binding::StencilThenCoverStrokePathNV("glStencilThenCoverStrokePathNV");
 Function<void, GLuint, GLuint> Binding::SubpixelPrecisionBiasNV("glSubpixelPrecisionBiasNV");
-
 
 
 } // namespace glesbinding

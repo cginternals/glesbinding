@@ -47,21 +47,22 @@ Function<void, GLenum, GLint, GLint, GLint, GLint, GLint, GLsizei, GLsizei> Bind
 Function<void, GLenum, GLint, GLint, GLint, GLint, GLint, GLint, GLsizei, GLsizei> Binding::CopyTexSubImage3D("glCopyTexSubImage3D");
 Function<void, GLenum, GLint, GLint, GLint, GLint, GLint, GLint, GLsizei, GLsizei> Binding::CopyTexSubImage3DOES("glCopyTexSubImage3DOES");
 Function<void, GLuint, GLuint, GLint, GLsizei> Binding::CopyTextureLevelsAPPLE("glCopyTextureLevelsAPPLE");
-Function<void, GLsizei, GLenum, const void *, GLuint, GLenum, GLenum, const GLfloat *> Binding::CoverFillPathInstancedNV("glCoverFillPathInstancedNV");
-Function<void, GLuint, GLenum> Binding::CoverFillPathNV("glCoverFillPathNV");
-Function<void, GLsizei, GLenum, const void *, GLuint, GLenum, GLenum, const GLfloat *> Binding::CoverStrokePathInstancedNV("glCoverStrokePathInstancedNV");
-Function<void, GLuint, GLenum> Binding::CoverStrokePathNV("glCoverStrokePathNV");
 Function<void, GLboolean> Binding::CoverageMaskNV("glCoverageMaskNV");
 Function<void, GLenum> Binding::CoverageModulationNV("glCoverageModulationNV");
 Function<void, GLsizei, const GLfloat *> Binding::CoverageModulationTableNV("glCoverageModulationTableNV");
 Function<void, GLenum> Binding::CoverageOperationNV("glCoverageOperationNV");
+Function<void, GLsizei, GLenum, const void *, GLuint, GLenum, GLenum, const GLfloat *> Binding::CoverFillPathInstancedNV("glCoverFillPathInstancedNV");
+Function<void, GLuint, GLenum> Binding::CoverFillPathNV("glCoverFillPathNV");
+Function<void, GLsizei, GLenum, const void *, GLuint, GLenum, GLenum, const GLfloat *> Binding::CoverStrokePathInstancedNV("glCoverStrokePathInstancedNV");
+Function<void, GLuint, GLenum> Binding::CoverStrokePathNV("glCoverStrokePathNV");
 Function<void, GLsizei, GLuint *> Binding::CreateMemoryObjectsEXT("glCreateMemoryObjectsEXT");
 Function<void, GLuint, GLuint *> Binding::CreatePerfQueryINTEL("glCreatePerfQueryINTEL");
 Function<GLuint> Binding::CreateProgram("glCreateProgram");
 Function<GLuint, GLenum> Binding::CreateShader("glCreateShader");
+Function<GLuint, GLenum, const GLchar *> Binding::CreateShaderProgramEXT("glCreateShaderProgramEXT");
 Function<GLuint, GLenum, GLsizei, const GLchar *const*> Binding::CreateShaderProgramv("glCreateShaderProgramv");
+Function<GLuint, GLenum, GLsizei, const GLchar **> Binding::CreateShaderProgramvEXT("glCreateShaderProgramvEXT");
 Function<void, GLenum> Binding::CullFace("glCullFace");
-
 
 
 } // namespace glesbinding

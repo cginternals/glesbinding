@@ -2,7 +2,7 @@
 #pragma once
 
 
-namespace glesbinding 
+namespace glesbinding
 {
 
 

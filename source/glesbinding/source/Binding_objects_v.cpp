@@ -11,6 +11,7 @@ namespace glesbinding
 
 Function<void, GLuint> Binding::ValidateProgram("glValidateProgram");
 Function<void, GLuint> Binding::ValidateProgramPipeline("glValidateProgramPipeline");
+Function<void, GLuint> Binding::ValidateProgramPipelineEXT("glValidateProgramPipelineEXT");
 Function<void, GLuint, GLfloat> Binding::VertexAttrib1f("glVertexAttrib1f");
 Function<void, GLuint, const GLfloat *> Binding::VertexAttrib1fv("glVertexAttrib1fv");
 Function<void, GLuint, GLfloat, GLfloat> Binding::VertexAttrib2f("glVertexAttrib2f");
@@ -42,7 +43,6 @@ Function<void, GLuint, const GLfloat *> Binding::ViewportIndexedfvNV("glViewport
 Function<void, GLuint, const GLfloat *> Binding::ViewportIndexedfvOES("glViewportIndexedfvOES");
 Function<void, GLuint, GLfloat, GLfloat> Binding::ViewportPositionWScaleNV("glViewportPositionWScaleNV");
 Function<void, GLuint, GLenum, GLenum, GLenum, GLenum> Binding::ViewportSwizzleNV("glViewportSwizzleNV");
-
 
 
 } // namespace glesbinding

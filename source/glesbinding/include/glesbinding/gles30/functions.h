@@ -9,7 +9,7 @@
 namespace gles30
 {
 
-
+// import functions
 using gles::glActiveTexture;
 using gles::glAttachShader;
 using gles::glBeginQuery;
@@ -91,6 +91,7 @@ using gles::glFramebufferTexture2D;
 using gles::glFramebufferTextureLayer;
 using gles::glFrontFace;
 using gles::glGenBuffers;
+using gles::glGenerateMipmap;
 using gles::glGenFramebuffers;
 using gles::glGenQueries;
 using gles::glGenRenderbuffers;
@@ -98,11 +99,10 @@ using gles::glGenSamplers;
 using gles::glGenTextures;
 using gles::glGenTransformFeedbacks;
 using gles::glGenVertexArrays;
-using gles::glGenerateMipmap;
 using gles::glGetActiveAttrib;
 using gles::glGetActiveUniform;
-using gles::glGetActiveUniformBlockName;
 using gles::glGetActiveUniformBlockiv;
+using gles::glGetActiveUniformBlockName;
 using gles::glGetActiveUniformsiv;
 using gles::glGetAttachedShaders;
 using gles::glGetAttribLocation;
@@ -122,15 +122,15 @@ using gles::glGetInternalformativ;
 using gles::glGetProgramBinary;
 using gles::glGetProgramInfoLog;
 using gles::glGetProgramiv;
-using gles::glGetQueryObjectuiv;
 using gles::glGetQueryiv;
+using gles::glGetQueryObjectuiv;
 using gles::glGetRenderbufferParameteriv;
 using gles::glGetSamplerParameterfv;
 using gles::glGetSamplerParameteriv;
 using gles::glGetShaderInfoLog;
+using gles::glGetShaderiv;
 using gles::glGetShaderPrecisionFormat;
 using gles::glGetShaderSource;
-using gles::glGetShaderiv;
 using gles::glGetString;
 using gles::glGetStringi;
 using gles::glGetSynciv;
@@ -138,16 +138,16 @@ using gles::glGetTexParameterfv;
 using gles::glGetTexParameteriv;
 using gles::glGetTransformFeedbackVarying;
 using gles::glGetUniformBlockIndex;
-using gles::glGetUniformIndices;
-using gles::glGetUniformLocation;
 using gles::glGetUniformfv;
+using gles::glGetUniformIndices;
 using gles::glGetUniformiv;
+using gles::glGetUniformLocation;
 using gles::glGetUniformuiv;
+using gles::glGetVertexAttribfv;
 using gles::glGetVertexAttribIiv;
 using gles::glGetVertexAttribIuiv;
-using gles::glGetVertexAttribPointerv;
-using gles::glGetVertexAttribfv;
 using gles::glGetVertexAttribiv;
+using gles::glGetVertexAttribPointerv;
 using gles::glHint;
 using gles::glInvalidateFramebuffer;
 using gles::glInvalidateSubFramebuffer;
@@ -256,6 +256,5 @@ using gles::glVertexAttribIPointer;
 using gles::glVertexAttribPointer;
 using gles::glViewport;
 using gles::glWaitSync;
-
 
 } // namespace gles30

@@ -34,6 +34,7 @@ Function<GLboolean, GLuint, GLuint, GLfloat, GLfloat> Binding::IsPointInFillPath
 Function<GLboolean, GLuint, GLfloat, GLfloat> Binding::IsPointInStrokePathNV("glIsPointInStrokePathNV");
 Function<GLboolean, GLuint> Binding::IsProgram("glIsProgram");
 Function<GLboolean, GLuint> Binding::IsProgramPipeline("glIsProgramPipeline");
+Function<GLboolean, GLuint> Binding::IsProgramPipelineEXT("glIsProgramPipelineEXT");
 Function<GLboolean, GLuint> Binding::IsQuery("glIsQuery");
 Function<GLboolean, GLuint> Binding::IsQueryEXT("glIsQueryEXT");
 Function<GLboolean, GLuint> Binding::IsRenderbuffer("glIsRenderbuffer");
@@ -47,7 +48,6 @@ Function<GLboolean, GLuint64> Binding::IsTextureHandleResidentNV("glIsTextureHan
 Function<GLboolean, GLuint> Binding::IsTransformFeedback("glIsTransformFeedback");
 Function<GLboolean, GLuint> Binding::IsVertexArray("glIsVertexArray");
 Function<GLboolean, GLuint> Binding::IsVertexArrayOES("glIsVertexArrayOES");
-
 
 
 } // namespace glesbinding

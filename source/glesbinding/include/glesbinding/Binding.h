@@ -64,7 +64,7 @@ public:
 
     using ContextSwitchCallback = std::function<void(ContextHandle)>;   ///< The signature of the context switch callback
     
-    using array_t = std::array<AbstractFunction *, 813>; ///< The type of the build-in functions collection
+    using array_t = std::array<AbstractFunction *, 886>; ///< The type of the build-in functions collection
 
 
 public:
@@ -446,7 +446,9 @@ public:
 
 public:
     static Function<gles::GLboolean, gles::GLuint, gles::GLuint64, gles::GLuint> AcquireKeyedMutexWin32EXT; ///< Wrapper for glAcquireKeyedMutexWin32EXT
+    static Function<void, gles::GLuint> ActiveProgramEXT; ///< Wrapper for glActiveProgramEXT
     static Function<void, gles::GLuint, gles::GLuint> ActiveShaderProgram; ///< Wrapper for glActiveShaderProgram
+    static Function<void, gles::GLuint, gles::GLuint> ActiveShaderProgramEXT; ///< Wrapper for glActiveShaderProgramEXT
     static Function<void, gles::GLenum> ActiveTexture; ///< Wrapper for glActiveTexture
     static Function<void, gles::GLenum, gles::GLclampf> AlphaFuncQCOM; ///< Wrapper for glAlphaFuncQCOM
     static Function<void> ApplyFramebufferAttachmentCMAAINTEL; ///< Wrapper for glApplyFramebufferAttachmentCMAAINTEL
@@ -466,6 +468,7 @@ public:
     static Function<void, gles::GLenum, gles::GLuint> BindFramebuffer; ///< Wrapper for glBindFramebuffer
     static Function<void, gles::GLuint, gles::GLuint, gles::GLint, gles::GLboolean, gles::GLint, gles::GLenum, gles::GLenum> BindImageTexture; ///< Wrapper for glBindImageTexture
     static Function<void, gles::GLuint> BindProgramPipeline; ///< Wrapper for glBindProgramPipeline
+    static Function<void, gles::GLuint> BindProgramPipelineEXT; ///< Wrapper for glBindProgramPipelineEXT
     static Function<void, gles::GLenum, gles::GLuint> BindRenderbuffer; ///< Wrapper for glBindRenderbuffer
     static Function<void, gles::GLuint, gles::GLuint> BindSampler; ///< Wrapper for glBindSampler
     static Function<void, gles::GLuint> BindShadingRateImageNV; ///< Wrapper for glBindShadingRateImageNV
@@ -479,21 +482,22 @@ public:
     static Function<void> BlendBarrierNV; ///< Wrapper for glBlendBarrierNV
     static Function<void, gles::GLfloat, gles::GLfloat, gles::GLfloat, gles::GLfloat> BlendColor; ///< Wrapper for glBlendColor
     static Function<void, gles::GLenum> BlendEquation; ///< Wrapper for glBlendEquation
+    static Function<void, gles::GLenum> BlendEquationEXT; ///< Wrapper for glBlendEquationEXT
+    static Function<void, gles::GLuint, gles::GLenum> BlendEquationi; ///< Wrapper for glBlendEquationi
+    static Function<void, gles::GLuint, gles::GLenum> BlendEquationiEXT; ///< Wrapper for glBlendEquationiEXT
+    static Function<void, gles::GLuint, gles::GLenum> BlendEquationiOES; ///< Wrapper for glBlendEquationiOES
     static Function<void, gles::GLenum, gles::GLenum> BlendEquationSeparate; ///< Wrapper for glBlendEquationSeparate
     static Function<void, gles::GLuint, gles::GLenum, gles::GLenum> BlendEquationSeparatei; ///< Wrapper for glBlendEquationSeparatei
     static Function<void, gles::GLuint, gles::GLenum, gles::GLenum> BlendEquationSeparateiEXT; ///< Wrapper for glBlendEquationSeparateiEXT
     static Function<void, gles::GLuint, gles::GLenum, gles::GLenum> BlendEquationSeparateiOES; ///< Wrapper for glBlendEquationSeparateiOES
-    static Function<void, gles::GLuint, gles::GLenum> BlendEquationi; ///< Wrapper for glBlendEquationi
-    static Function<void, gles::GLuint, gles::GLenum> BlendEquationiEXT; ///< Wrapper for glBlendEquationiEXT
-    static Function<void, gles::GLuint, gles::GLenum> BlendEquationiOES; ///< Wrapper for glBlendEquationiOES
     static Function<void, gles::GLenum, gles::GLenum> BlendFunc; ///< Wrapper for glBlendFunc
+    static Function<void, gles::GLuint, gles::GLenum, gles::GLenum> BlendFunci; ///< Wrapper for glBlendFunci
+    static Function<void, gles::GLuint, gles::GLenum, gles::GLenum> BlendFunciEXT; ///< Wrapper for glBlendFunciEXT
+    static Function<void, gles::GLuint, gles::GLenum, gles::GLenum> BlendFunciOES; ///< Wrapper for glBlendFunciOES
     static Function<void, gles::GLenum, gles::GLenum, gles::GLenum, gles::GLenum> BlendFuncSeparate; ///< Wrapper for glBlendFuncSeparate
     static Function<void, gles::GLuint, gles::GLenum, gles::GLenum, gles::GLenum, gles::GLenum> BlendFuncSeparatei; ///< Wrapper for glBlendFuncSeparatei
     static Function<void, gles::GLuint, gles::GLenum, gles::GLenum, gles::GLenum, gles::GLenum> BlendFuncSeparateiEXT; ///< Wrapper for glBlendFuncSeparateiEXT
     static Function<void, gles::GLuint, gles::GLenum, gles::GLenum, gles::GLenum, gles::GLenum> BlendFuncSeparateiOES; ///< Wrapper for glBlendFuncSeparateiOES
-    static Function<void, gles::GLuint, gles::GLenum, gles::GLenum> BlendFunci; ///< Wrapper for glBlendFunci
-    static Function<void, gles::GLuint, gles::GLenum, gles::GLenum> BlendFunciEXT; ///< Wrapper for glBlendFunciEXT
-    static Function<void, gles::GLuint, gles::GLenum, gles::GLenum> BlendFunciOES; ///< Wrapper for glBlendFunciOES
     static Function<void, gles::GLenum, gles::GLint> BlendParameteriNV; ///< Wrapper for glBlendParameteriNV
     static Function<void, gles::GLint, gles::GLint, gles::GLint, gles::GLint, gles::GLint, gles::GLint, gles::GLint, gles::GLint, gles::ClearBufferMask, gles::GLenum> BlitFramebuffer; ///< Wrapper for glBlitFramebuffer
     static Function<void, gles::GLint, gles::GLint, gles::GLint, gles::GLint, gles::GLint, gles::GLint, gles::GLint, gles::GLint, gles::ClearBufferMask, gles::GLenum> BlitFramebufferANGLE; ///< Wrapper for glBlitFramebufferANGLE
@@ -542,23 +546,28 @@ public:
     static Function<void, gles::GLenum, gles::GLint, gles::GLint, gles::GLint, gles::GLint, gles::GLint, gles::GLint, gles::GLsizei, gles::GLsizei> CopyTexSubImage3D; ///< Wrapper for glCopyTexSubImage3D
     static Function<void, gles::GLenum, gles::GLint, gles::GLint, gles::GLint, gles::GLint, gles::GLint, gles::GLint, gles::GLsizei, gles::GLsizei> CopyTexSubImage3DOES; ///< Wrapper for glCopyTexSubImage3DOES
     static Function<void, gles::GLuint, gles::GLuint, gles::GLint, gles::GLsizei> CopyTextureLevelsAPPLE; ///< Wrapper for glCopyTextureLevelsAPPLE
-    static Function<void, gles::GLsizei, gles::GLenum, const void *, gles::GLuint, gles::GLenum, gles::GLenum, const gles::GLfloat *> CoverFillPathInstancedNV; ///< Wrapper for glCoverFillPathInstancedNV
-    static Function<void, gles::GLuint, gles::GLenum> CoverFillPathNV; ///< Wrapper for glCoverFillPathNV
-    static Function<void, gles::GLsizei, gles::GLenum, const void *, gles::GLuint, gles::GLenum, gles::GLenum, const gles::GLfloat *> CoverStrokePathInstancedNV; ///< Wrapper for glCoverStrokePathInstancedNV
-    static Function<void, gles::GLuint, gles::GLenum> CoverStrokePathNV; ///< Wrapper for glCoverStrokePathNV
     static Function<void, gles::GLboolean> CoverageMaskNV; ///< Wrapper for glCoverageMaskNV
     static Function<void, gles::GLenum> CoverageModulationNV; ///< Wrapper for glCoverageModulationNV
     static Function<void, gles::GLsizei, const gles::GLfloat *> CoverageModulationTableNV; ///< Wrapper for glCoverageModulationTableNV
     static Function<void, gles::GLenum> CoverageOperationNV; ///< Wrapper for glCoverageOperationNV
+    static Function<void, gles::GLsizei, gles::GLenum, const void *, gles::GLuint, gles::GLenum, gles::GLenum, const gles::GLfloat *> CoverFillPathInstancedNV; ///< Wrapper for glCoverFillPathInstancedNV
+    static Function<void, gles::GLuint, gles::GLenum> CoverFillPathNV; ///< Wrapper for glCoverFillPathNV
+    static Function<void, gles::GLsizei, gles::GLenum, const void *, gles::GLuint, gles::GLenum, gles::GLenum, const gles::GLfloat *> CoverStrokePathInstancedNV; ///< Wrapper for glCoverStrokePathInstancedNV
+    static Function<void, gles::GLuint, gles::GLenum> CoverStrokePathNV; ///< Wrapper for glCoverStrokePathNV
     static Function<void, gles::GLsizei, gles::GLuint *> CreateMemoryObjectsEXT; ///< Wrapper for glCreateMemoryObjectsEXT
     static Function<void, gles::GLuint, gles::GLuint *> CreatePerfQueryINTEL; ///< Wrapper for glCreatePerfQueryINTEL
     static Function<gles::GLuint> CreateProgram; ///< Wrapper for glCreateProgram
     static Function<gles::GLuint, gles::GLenum> CreateShader; ///< Wrapper for glCreateShader
+    static Function<gles::GLuint, gles::GLenum, const gles::GLchar *> CreateShaderProgramEXT; ///< Wrapper for glCreateShaderProgramEXT
     static Function<gles::GLuint, gles::GLenum, gles::GLsizei, const gles::GLchar *const*> CreateShaderProgramv; ///< Wrapper for glCreateShaderProgramv
+    static Function<gles::GLuint, gles::GLenum, gles::GLsizei, const gles::GLchar **> CreateShaderProgramvEXT; ///< Wrapper for glCreateShaderProgramvEXT
     static Function<void, gles::GLenum> CullFace; ///< Wrapper for glCullFace
     static Function<void, gles::GLDEBUGPROC, const void *> DebugMessageCallback; ///< Wrapper for glDebugMessageCallback
+    static Function<void, gles::GLDEBUGPROCKHR, const void *> DebugMessageCallbackKHR; ///< Wrapper for glDebugMessageCallbackKHR
     static Function<void, gles::GLenum, gles::GLenum, gles::GLenum, gles::GLsizei, const gles::GLuint *, gles::GLboolean> DebugMessageControl; ///< Wrapper for glDebugMessageControl
+    static Function<void, gles::GLenum, gles::GLenum, gles::GLenum, gles::GLsizei, const gles::GLuint *, gles::GLboolean> DebugMessageControlKHR; ///< Wrapper for glDebugMessageControlKHR
     static Function<void, gles::GLenum, gles::GLenum, gles::GLuint, gles::GLenum, gles::GLsizei, const gles::GLchar *> DebugMessageInsert; ///< Wrapper for glDebugMessageInsert
+    static Function<void, gles::GLenum, gles::GLenum, gles::GLuint, gles::GLenum, gles::GLsizei, const gles::GLchar *> DebugMessageInsertKHR; ///< Wrapper for glDebugMessageInsertKHR
     static Function<void, gles::GLsizei, const gles::GLuint *> DeleteBuffers; ///< Wrapper for glDeleteBuffers
     static Function<void, gles::GLsizei, const gles::GLuint *> DeleteFencesNV; ///< Wrapper for glDeleteFencesNV
     static Function<void, gles::GLsizei, const gles::GLuint *> DeleteFramebuffers; ///< Wrapper for glDeleteFramebuffers
@@ -568,6 +577,7 @@ public:
     static Function<void, gles::GLuint> DeletePerfQueryINTEL; ///< Wrapper for glDeletePerfQueryINTEL
     static Function<void, gles::GLuint> DeleteProgram; ///< Wrapper for glDeleteProgram
     static Function<void, gles::GLsizei, const gles::GLuint *> DeleteProgramPipelines; ///< Wrapper for glDeleteProgramPipelines
+    static Function<void, gles::GLsizei, const gles::GLuint *> DeleteProgramPipelinesEXT; ///< Wrapper for glDeleteProgramPipelinesEXT
     static Function<void, gles::GLsizei, const gles::GLuint *> DeleteQueries; ///< Wrapper for glDeleteQueries
     static Function<void, gles::GLsizei, const gles::GLuint *> DeleteQueriesEXT; ///< Wrapper for glDeleteQueriesEXT
     static Function<void, gles::GLsizei, const gles::GLuint *> DeleteRenderbuffers; ///< Wrapper for glDeleteRenderbuffers
@@ -584,17 +594,17 @@ public:
     static Function<void, gles::GLboolean> DepthMask; ///< Wrapper for glDepthMask
     static Function<void, gles::GLuint, gles::GLsizei, const gles::GLfloat *> DepthRangeArrayfvNV; ///< Wrapper for glDepthRangeArrayfvNV
     static Function<void, gles::GLuint, gles::GLsizei, const gles::GLfloat *> DepthRangeArrayfvOES; ///< Wrapper for glDepthRangeArrayfvOES
+    static Function<void, gles::GLfloat, gles::GLfloat> DepthRangef; ///< Wrapper for glDepthRangef
     static Function<void, gles::GLuint, gles::GLfloat, gles::GLfloat> DepthRangeIndexedfNV; ///< Wrapper for glDepthRangeIndexedfNV
     static Function<void, gles::GLuint, gles::GLfloat, gles::GLfloat> DepthRangeIndexedfOES; ///< Wrapper for glDepthRangeIndexedfOES
-    static Function<void, gles::GLfloat, gles::GLfloat> DepthRangef; ///< Wrapper for glDepthRangef
     static Function<void, gles::GLuint, gles::GLuint> DetachShader; ///< Wrapper for glDetachShader
     static Function<void, gles::GLenum> Disable; ///< Wrapper for glDisable
     static Function<void, gles::GLuint> DisableDriverControlQCOM; ///< Wrapper for glDisableDriverControlQCOM
-    static Function<void, gles::GLuint> DisableVertexAttribArray; ///< Wrapper for glDisableVertexAttribArray
     static Function<void, gles::GLenum, gles::GLuint> Disablei; ///< Wrapper for glDisablei
     static Function<void, gles::GLenum, gles::GLuint> DisableiEXT; ///< Wrapper for glDisableiEXT
     static Function<void, gles::GLenum, gles::GLuint> DisableiNV; ///< Wrapper for glDisableiNV
     static Function<void, gles::GLenum, gles::GLuint> DisableiOES; ///< Wrapper for glDisableiOES
+    static Function<void, gles::GLuint> DisableVertexAttribArray; ///< Wrapper for glDisableVertexAttribArray
     static Function<void, gles::GLenum, gles::GLsizei, const gles::GLenum *> DiscardFramebufferEXT; ///< Wrapper for glDiscardFramebufferEXT
     static Function<void, gles::GLuint, gles::GLuint, gles::GLuint> DispatchCompute; ///< Wrapper for glDispatchCompute
     static Function<void, gles::GLintptr> DispatchComputeIndirect; ///< Wrapper for glDispatchComputeIndirect
@@ -633,22 +643,22 @@ public:
     static Function<void, gles::GLenum, gles::GLuint, gles::GLsizei> DrawTransformFeedbackInstancedEXT; ///< Wrapper for glDrawTransformFeedbackInstancedEXT
     static Function<void, gles::GLuint64, gles::GLuint, gles::GLfloat, gles::GLfloat, gles::GLfloat, gles::GLfloat, gles::GLfloat, gles::GLfloat, gles::GLfloat, gles::GLfloat, gles::GLfloat> DrawVkImageNV; ///< Wrapper for glDrawVkImageNV
     static Function<void, gles::GLenum, gles::GLeglImageOES> EGLImageTargetRenderbufferStorageOES; ///< Wrapper for glEGLImageTargetRenderbufferStorageOES
-    static Function<void, gles::GLenum, gles::GLeglImageOES, const gles::GLint *> EGLImageTargetTexStorageEXT; ///< Wrapper for glEGLImageTargetTexStorageEXT
+    static Function<void, gles::GLenum, gles::GLeglImageOES, const gles::GLint*> EGLImageTargetTexStorageEXT; ///< Wrapper for glEGLImageTargetTexStorageEXT
     static Function<void, gles::GLenum, gles::GLeglImageOES> EGLImageTargetTexture2DOES; ///< Wrapper for glEGLImageTargetTexture2DOES
-    static Function<void, gles::GLuint, gles::GLeglImageOES, const gles::GLint *> EGLImageTargetTextureStorageEXT; ///< Wrapper for glEGLImageTargetTextureStorageEXT
+    static Function<void, gles::GLuint, gles::GLeglImageOES, const gles::GLint*> EGLImageTargetTextureStorageEXT; ///< Wrapper for glEGLImageTargetTextureStorageEXT
     static Function<void, gles::GLenum> Enable; ///< Wrapper for glEnable
     static Function<void, gles::GLuint> EnableDriverControlQCOM; ///< Wrapper for glEnableDriverControlQCOM
-    static Function<void, gles::GLuint> EnableVertexAttribArray; ///< Wrapper for glEnableVertexAttribArray
     static Function<void, gles::GLenum, gles::GLuint> Enablei; ///< Wrapper for glEnablei
     static Function<void, gles::GLenum, gles::GLuint> EnableiEXT; ///< Wrapper for glEnableiEXT
     static Function<void, gles::GLenum, gles::GLuint> EnableiNV; ///< Wrapper for glEnableiNV
     static Function<void, gles::GLenum, gles::GLuint> EnableiOES; ///< Wrapper for glEnableiOES
+    static Function<void, gles::GLuint> EnableVertexAttribArray; ///< Wrapper for glEnableVertexAttribArray
     static Function<void> EndConditionalRenderNV; ///< Wrapper for glEndConditionalRenderNV
     static Function<void, gles::GLuint> EndPerfMonitorAMD; ///< Wrapper for glEndPerfMonitorAMD
     static Function<void, gles::GLuint> EndPerfQueryINTEL; ///< Wrapper for glEndPerfQueryINTEL
     static Function<void, gles::GLenum> EndQuery; ///< Wrapper for glEndQuery
     static Function<void, gles::GLenum> EndQueryEXT; ///< Wrapper for glEndQueryEXT
-    static Function<void, gles::BufferBitQCOM> EndTilingQCOM; ///< Wrapper for glEndTilingQCOM
+    static Function<void, gles::GLbitfield> EndTilingQCOM; ///< Wrapper for glEndTilingQCOM
     static Function<void> EndTransformFeedback; ///< Wrapper for glEndTransformFeedback
     static Function<void, gles::GLenum, void **> ExtGetBufferPointervQCOM; ///< Wrapper for glExtGetBufferPointervQCOM
     static Function<void, gles::GLuint *, gles::GLint, gles::GLint *> ExtGetBuffersQCOM; ///< Wrapper for glExtGetBuffersQCOM
@@ -662,7 +672,7 @@ public:
     static Function<void, gles::GLuint *, gles::GLint, gles::GLint *> ExtGetTexturesQCOM; ///< Wrapper for glExtGetTexturesQCOM
     static Function<gles::GLboolean, gles::GLuint> ExtIsProgramBinaryQCOM; ///< Wrapper for glExtIsProgramBinaryQCOM
     static Function<void, gles::GLenum, gles::GLenum, gles::GLint> ExtTexObjectStateOverrideiQCOM; ///< Wrapper for glExtTexObjectStateOverrideiQCOM
-    static Function<gles::GLsync, gles::GLenum, gles::UnusedMask> FenceSync; ///< Wrapper for glFenceSync
+    static Function<gles::GLsync, gles::GLenum, gles::GLbitfield> FenceSync; ///< Wrapper for glFenceSync
     static Function<gles::GLsync, gles::GLenum, gles::GLbitfield> FenceSyncAPPLE; ///< Wrapper for glFenceSyncAPPLE
     static Function<void> Finish; ///< Wrapper for glFinish
     static Function<void, gles::GLuint> FinishFenceNV; ///< Wrapper for glFinishFenceNV
@@ -692,11 +702,13 @@ public:
     static Function<void, gles::GLenum, gles::GLenum, gles::GLuint, gles::GLint> FramebufferTextureOES; ///< Wrapper for glFramebufferTextureOES
     static Function<void, gles::GLenum> FrontFace; ///< Wrapper for glFrontFace
     static Function<void, gles::GLsizei, gles::GLuint *> GenBuffers; ///< Wrapper for glGenBuffers
+    static Function<void, gles::GLenum> GenerateMipmap; ///< Wrapper for glGenerateMipmap
     static Function<void, gles::GLsizei, gles::GLuint *> GenFencesNV; ///< Wrapper for glGenFencesNV
     static Function<void, gles::GLsizei, gles::GLuint *> GenFramebuffers; ///< Wrapper for glGenFramebuffers
     static Function<gles::GLuint, gles::GLsizei> GenPathsNV; ///< Wrapper for glGenPathsNV
     static Function<void, gles::GLsizei, gles::GLuint *> GenPerfMonitorsAMD; ///< Wrapper for glGenPerfMonitorsAMD
     static Function<void, gles::GLsizei, gles::GLuint *> GenProgramPipelines; ///< Wrapper for glGenProgramPipelines
+    static Function<void, gles::GLsizei, gles::GLuint *> GenProgramPipelinesEXT; ///< Wrapper for glGenProgramPipelinesEXT
     static Function<void, gles::GLsizei, gles::GLuint *> GenQueries; ///< Wrapper for glGenQueries
     static Function<void, gles::GLsizei, gles::GLuint *> GenQueriesEXT; ///< Wrapper for glGenQueriesEXT
     static Function<void, gles::GLsizei, gles::GLuint *> GenRenderbuffers; ///< Wrapper for glGenRenderbuffers
@@ -706,11 +718,10 @@ public:
     static Function<void, gles::GLsizei, gles::GLuint *> GenTransformFeedbacks; ///< Wrapper for glGenTransformFeedbacks
     static Function<void, gles::GLsizei, gles::GLuint *> GenVertexArrays; ///< Wrapper for glGenVertexArrays
     static Function<void, gles::GLsizei, gles::GLuint *> GenVertexArraysOES; ///< Wrapper for glGenVertexArraysOES
-    static Function<void, gles::GLenum> GenerateMipmap; ///< Wrapper for glGenerateMipmap
     static Function<void, gles::GLuint, gles::GLuint, gles::GLsizei, gles::GLsizei *, gles::GLint *, gles::GLenum *, gles::GLchar *> GetActiveAttrib; ///< Wrapper for glGetActiveAttrib
     static Function<void, gles::GLuint, gles::GLuint, gles::GLsizei, gles::GLsizei *, gles::GLint *, gles::GLenum *, gles::GLchar *> GetActiveUniform; ///< Wrapper for glGetActiveUniform
-    static Function<void, gles::GLuint, gles::GLuint, gles::GLsizei, gles::GLsizei *, gles::GLchar *> GetActiveUniformBlockName; ///< Wrapper for glGetActiveUniformBlockName
     static Function<void, gles::GLuint, gles::GLuint, gles::GLenum, gles::GLint *> GetActiveUniformBlockiv; ///< Wrapper for glGetActiveUniformBlockiv
+    static Function<void, gles::GLuint, gles::GLuint, gles::GLsizei, gles::GLsizei *, gles::GLchar *> GetActiveUniformBlockName; ///< Wrapper for glGetActiveUniformBlockName
     static Function<void, gles::GLuint, gles::GLsizei, const gles::GLuint *, gles::GLenum, gles::GLint *> GetActiveUniformsiv; ///< Wrapper for glGetActiveUniformsiv
     static Function<void, gles::GLuint, gles::GLsizei, gles::GLsizei *, gles::GLuint *> GetAttachedShaders; ///< Wrapper for glGetAttachedShaders
     static Function<gles::GLint, gles::GLuint, const gles::GLchar *> GetAttribLocation; ///< Wrapper for glGetAttribLocation
@@ -722,8 +733,9 @@ public:
     static Function<void, gles::GLenum, gles::GLenum, void **> GetBufferPointervOES; ///< Wrapper for glGetBufferPointervOES
     static Function<void, gles::GLsizei, gles::GLfloat *> GetCoverageModulationTableNV; ///< Wrapper for glGetCoverageModulationTableNV
     static Function<gles::GLuint, gles::GLuint, gles::GLsizei, gles::GLenum *, gles::GLenum *, gles::GLuint *, gles::GLenum *, gles::GLsizei *, gles::GLchar *> GetDebugMessageLog; ///< Wrapper for glGetDebugMessageLog
-    static Function<void, gles::GLuint, gles::GLsizei, gles::GLsizei *, gles::GLchar *> GetDriverControlStringQCOM; ///< Wrapper for glGetDriverControlStringQCOM
+    static Function<gles::GLuint, gles::GLuint, gles::GLsizei, gles::GLenum *, gles::GLenum *, gles::GLuint *, gles::GLenum *, gles::GLsizei *, gles::GLchar *> GetDebugMessageLogKHR; ///< Wrapper for glGetDebugMessageLogKHR
     static Function<void, gles::GLint *, gles::GLsizei, gles::GLuint *> GetDriverControlsQCOM; ///< Wrapper for glGetDriverControlsQCOM
+    static Function<void, gles::GLuint, gles::GLsizei, gles::GLsizei *, gles::GLchar *> GetDriverControlStringQCOM; ///< Wrapper for glGetDriverControlStringQCOM
     static Function<gles::GLenum> GetError; ///< Wrapper for glGetError
     static Function<void, gles::GLuint, gles::GLenum, gles::GLint *> GetFenceivNV; ///< Wrapper for glGetFenceivNV
     static Function<void, gles::GLuint *> GetFirstPerfQueryIdINTEL; ///< Wrapper for glGetFirstPerfQueryIdINTEL
@@ -737,6 +749,7 @@ public:
     static Function<gles::GLsizei, gles::GLuint> GetFramebufferPixelLocalStorageSizeEXT; ///< Wrapper for glGetFramebufferPixelLocalStorageSizeEXT
     static Function<gles::GLenum> GetGraphicsResetStatus; ///< Wrapper for glGetGraphicsResetStatus
     static Function<gles::GLenum> GetGraphicsResetStatusEXT; ///< Wrapper for glGetGraphicsResetStatusEXT
+    static Function<gles::GLenum> GetGraphicsResetStatusKHR; ///< Wrapper for glGetGraphicsResetStatusKHR
     static Function<gles::GLuint64, gles::GLuint, gles::GLint, gles::GLboolean, gles::GLint, gles::GLenum> GetImageHandleNV; ///< Wrapper for glGetImageHandleNV
     static Function<void, gles::GLenum, gles::GLuint, gles::GLint64 *> GetInteger64i_v; ///< Wrapper for glGetInteger64i_v
     static Function<void, gles::GLenum, gles::GLint64 *> GetInteger64v; ///< Wrapper for glGetInteger64v
@@ -744,69 +757,86 @@ public:
     static Function<void, gles::GLenum, gles::GLuint, gles::GLint *> GetIntegeri_v; ///< Wrapper for glGetIntegeri_v
     static Function<void, gles::GLenum, gles::GLuint, gles::GLint *> GetIntegeri_vEXT; ///< Wrapper for glGetIntegeri_vEXT
     static Function<void, gles::GLenum, gles::GLint *> GetIntegerv; ///< Wrapper for glGetIntegerv
-    static Function<void, gles::GLenum, gles::GLenum, gles::GLsizei, gles::GLenum, gles::GLsizei, gles::GLint *> GetInternalformatSampleivNV; ///< Wrapper for glGetInternalformatSampleivNV
     static Function<void, gles::GLenum, gles::GLenum, gles::GLenum, gles::GLsizei, gles::GLint *> GetInternalformativ; ///< Wrapper for glGetInternalformativ
+    static Function<void, gles::GLenum, gles::GLenum, gles::GLsizei, gles::GLenum, gles::GLsizei, gles::GLint *> GetInternalformatSampleivNV; ///< Wrapper for glGetInternalformatSampleivNV
     static Function<void, gles::GLuint, gles::GLenum, gles::GLint, gles::GLsizei, gles::GLuint *> GetMemoryObjectDetachedResourcesuivNV; ///< Wrapper for glGetMemoryObjectDetachedResourcesuivNV
     static Function<void, gles::GLuint, gles::GLenum, gles::GLint *> GetMemoryObjectParameterivEXT; ///< Wrapper for glGetMemoryObjectParameterivEXT
     static Function<void, gles::GLenum, gles::GLuint, gles::GLfloat *> GetMultisamplefv; ///< Wrapper for glGetMultisamplefv
     static Function<void, gles::GLuint, gles::GLuint *> GetNextPerfQueryIdINTEL; ///< Wrapper for glGetNextPerfQueryIdINTEL
+    static Function<void, gles::GLuint, gles::GLint, gles::GLsizei, gles::GLfloat *> GetnUniformfv; ///< Wrapper for glGetnUniformfv
+    static Function<void, gles::GLuint, gles::GLint, gles::GLsizei, gles::GLfloat *> GetnUniformfvEXT; ///< Wrapper for glGetnUniformfvEXT
+    static Function<void, gles::GLuint, gles::GLint, gles::GLsizei, gles::GLfloat *> GetnUniformfvKHR; ///< Wrapper for glGetnUniformfvKHR
+    static Function<void, gles::GLuint, gles::GLint, gles::GLsizei, gles::GLint *> GetnUniformiv; ///< Wrapper for glGetnUniformiv
+    static Function<void, gles::GLuint, gles::GLint, gles::GLsizei, gles::GLint *> GetnUniformivEXT; ///< Wrapper for glGetnUniformivEXT
+    static Function<void, gles::GLuint, gles::GLint, gles::GLsizei, gles::GLint *> GetnUniformivKHR; ///< Wrapper for glGetnUniformivKHR
+    static Function<void, gles::GLuint, gles::GLint, gles::GLsizei, gles::GLuint *> GetnUniformuiv; ///< Wrapper for glGetnUniformuiv
+    static Function<void, gles::GLuint, gles::GLint, gles::GLsizei, gles::GLuint *> GetnUniformuivKHR; ///< Wrapper for glGetnUniformuivKHR
     static Function<void, gles::GLenum, gles::GLuint, gles::GLsizei, gles::GLsizei *, gles::GLchar *> GetObjectLabel; ///< Wrapper for glGetObjectLabel
     static Function<void, gles::GLenum, gles::GLuint, gles::GLsizei, gles::GLsizei *, gles::GLchar *> GetObjectLabelEXT; ///< Wrapper for glGetObjectLabelEXT
+    static Function<void, gles::GLenum, gles::GLuint, gles::GLsizei, gles::GLsizei *, gles::GLchar *> GetObjectLabelKHR; ///< Wrapper for glGetObjectLabelKHR
     static Function<void, const void *, gles::GLsizei, gles::GLsizei *, gles::GLchar *> GetObjectPtrLabel; ///< Wrapper for glGetObjectPtrLabel
+    static Function<void, const void *, gles::GLsizei, gles::GLsizei *, gles::GLchar *> GetObjectPtrLabelKHR; ///< Wrapper for glGetObjectPtrLabelKHR
+    static Function<void, gles::GLenum, gles::GLenum, gles::GLfloat *> GetPathColorGenfvNV; ///< Wrapper for glGetPathColorGenfvNV
+    static Function<void, gles::GLenum, gles::GLenum, gles::GLint *> GetPathColorGenivNV; ///< Wrapper for glGetPathColorGenivNV
     static Function<void, gles::GLuint, gles::GLubyte *> GetPathCommandsNV; ///< Wrapper for glGetPathCommandsNV
     static Function<void, gles::GLuint, gles::GLfloat *> GetPathCoordsNV; ///< Wrapper for glGetPathCoordsNV
     static Function<void, gles::GLuint, gles::GLfloat *> GetPathDashArrayNV; ///< Wrapper for glGetPathDashArrayNV
     static Function<gles::GLfloat, gles::GLuint, gles::GLsizei, gles::GLsizei> GetPathLengthNV; ///< Wrapper for glGetPathLengthNV
-    static Function<void, gles::PathRenderingMaskNV, gles::GLuint, gles::GLsizei, gles::GLsizei, gles::GLfloat *> GetPathMetricRangeNV; ///< Wrapper for glGetPathMetricRangeNV
-    static Function<void, gles::PathRenderingMaskNV, gles::GLsizei, gles::GLenum, const void *, gles::GLuint, gles::GLsizei, gles::GLfloat *> GetPathMetricsNV; ///< Wrapper for glGetPathMetricsNV
+    static Function<void, gles::PathMetricMask, gles::GLuint, gles::GLsizei, gles::GLsizei, gles::GLfloat *> GetPathMetricRangeNV; ///< Wrapper for glGetPathMetricRangeNV
+    static Function<void, gles::PathMetricMask, gles::GLsizei, gles::GLenum, const void *, gles::GLuint, gles::GLsizei, gles::GLfloat *> GetPathMetricsNV; ///< Wrapper for glGetPathMetricsNV
     static Function<void, gles::GLuint, gles::GLenum, gles::GLfloat *> GetPathParameterfvNV; ///< Wrapper for glGetPathParameterfvNV
     static Function<void, gles::GLuint, gles::GLenum, gles::GLint *> GetPathParameterivNV; ///< Wrapper for glGetPathParameterivNV
     static Function<void, gles::GLenum, gles::GLsizei, gles::GLenum, const void *, gles::GLuint, gles::GLfloat, gles::GLfloat, gles::GLenum, gles::GLfloat *> GetPathSpacingNV; ///< Wrapper for glGetPathSpacingNV
+    static Function<void, gles::GLenum, gles::GLenum, gles::GLfloat *> GetPathTexGenfvNV; ///< Wrapper for glGetPathTexGenfvNV
+    static Function<void, gles::GLenum, gles::GLenum, gles::GLint *> GetPathTexGenivNV; ///< Wrapper for glGetPathTexGenivNV
     static Function<void, gles::GLuint, gles::GLuint, gles::GLuint, gles::GLchar *, gles::GLuint, gles::GLchar *, gles::GLuint *, gles::GLuint *, gles::GLuint *, gles::GLuint *, gles::GLuint64 *> GetPerfCounterInfoINTEL; ///< Wrapper for glGetPerfCounterInfoINTEL
     static Function<void, gles::GLuint, gles::GLenum, gles::GLsizei, gles::GLuint *, gles::GLint *> GetPerfMonitorCounterDataAMD; ///< Wrapper for glGetPerfMonitorCounterDataAMD
     static Function<void, gles::GLuint, gles::GLuint, gles::GLenum, void *> GetPerfMonitorCounterInfoAMD; ///< Wrapper for glGetPerfMonitorCounterInfoAMD
-    static Function<void, gles::GLuint, gles::GLuint, gles::GLsizei, gles::GLsizei *, gles::GLchar *> GetPerfMonitorCounterStringAMD; ///< Wrapper for glGetPerfMonitorCounterStringAMD
     static Function<void, gles::GLuint, gles::GLint *, gles::GLint *, gles::GLsizei, gles::GLuint *> GetPerfMonitorCountersAMD; ///< Wrapper for glGetPerfMonitorCountersAMD
-    static Function<void, gles::GLuint, gles::GLsizei, gles::GLsizei *, gles::GLchar *> GetPerfMonitorGroupStringAMD; ///< Wrapper for glGetPerfMonitorGroupStringAMD
+    static Function<void, gles::GLuint, gles::GLuint, gles::GLsizei, gles::GLsizei *, gles::GLchar *> GetPerfMonitorCounterStringAMD; ///< Wrapper for glGetPerfMonitorCounterStringAMD
     static Function<void, gles::GLint *, gles::GLsizei, gles::GLuint *> GetPerfMonitorGroupsAMD; ///< Wrapper for glGetPerfMonitorGroupsAMD
+    static Function<void, gles::GLuint, gles::GLsizei, gles::GLsizei *, gles::GLchar *> GetPerfMonitorGroupStringAMD; ///< Wrapper for glGetPerfMonitorGroupStringAMD
     static Function<void, gles::GLuint, gles::GLuint, gles::GLsizei, void *, gles::GLuint *> GetPerfQueryDataINTEL; ///< Wrapper for glGetPerfQueryDataINTEL
     static Function<void, gles::GLchar *, gles::GLuint *> GetPerfQueryIdByNameINTEL; ///< Wrapper for glGetPerfQueryIdByNameINTEL
     static Function<void, gles::GLuint, gles::GLuint, gles::GLchar *, gles::GLuint *, gles::GLuint *, gles::GLuint *, gles::GLuint *> GetPerfQueryInfoINTEL; ///< Wrapper for glGetPerfQueryInfoINTEL
     static Function<void, gles::GLenum, void **> GetPointerv; ///< Wrapper for glGetPointerv
+    static Function<void, gles::GLenum, void **> GetPointervKHR; ///< Wrapper for glGetPointervKHR
     static Function<void, gles::GLuint, gles::GLsizei, gles::GLsizei *, gles::GLenum *, void *> GetProgramBinary; ///< Wrapper for glGetProgramBinary
     static Function<void, gles::GLuint, gles::GLsizei, gles::GLsizei *, gles::GLenum *, void *> GetProgramBinaryOES; ///< Wrapper for glGetProgramBinaryOES
     static Function<void, gles::GLuint, gles::GLsizei, gles::GLsizei *, gles::GLchar *> GetProgramInfoLog; ///< Wrapper for glGetProgramInfoLog
     static Function<void, gles::GLuint, gles::GLenum, gles::GLenum, gles::GLint *> GetProgramInterfaceiv; ///< Wrapper for glGetProgramInterfaceiv
+    static Function<void, gles::GLuint, gles::GLenum, gles::GLint *> GetProgramiv; ///< Wrapper for glGetProgramiv
     static Function<void, gles::GLuint, gles::GLsizei, gles::GLsizei *, gles::GLchar *> GetProgramPipelineInfoLog; ///< Wrapper for glGetProgramPipelineInfoLog
+    static Function<void, gles::GLuint, gles::GLsizei, gles::GLsizei *, gles::GLchar *> GetProgramPipelineInfoLogEXT; ///< Wrapper for glGetProgramPipelineInfoLogEXT
     static Function<void, gles::GLuint, gles::GLenum, gles::GLint *> GetProgramPipelineiv; ///< Wrapper for glGetProgramPipelineiv
+    static Function<void, gles::GLuint, gles::GLenum, gles::GLint *> GetProgramPipelineivEXT; ///< Wrapper for glGetProgramPipelineivEXT
+    static Function<void, gles::GLuint, gles::GLenum, gles::GLuint, gles::GLsizei, const gles::GLenum *, gles::GLsizei, gles::GLsizei *, gles::GLfloat *> GetProgramResourcefvNV; ///< Wrapper for glGetProgramResourcefvNV
     static Function<gles::GLuint, gles::GLuint, gles::GLenum, const gles::GLchar *> GetProgramResourceIndex; ///< Wrapper for glGetProgramResourceIndex
+    static Function<void, gles::GLuint, gles::GLenum, gles::GLuint, gles::GLsizei, const gles::GLenum *, gles::GLsizei, gles::GLsizei *, gles::GLint *> GetProgramResourceiv; ///< Wrapper for glGetProgramResourceiv
     static Function<gles::GLint, gles::GLuint, gles::GLenum, const gles::GLchar *> GetProgramResourceLocation; ///< Wrapper for glGetProgramResourceLocation
     static Function<gles::GLint, gles::GLuint, gles::GLenum, const gles::GLchar *> GetProgramResourceLocationIndexEXT; ///< Wrapper for glGetProgramResourceLocationIndexEXT
     static Function<void, gles::GLuint, gles::GLenum, gles::GLuint, gles::GLsizei, gles::GLsizei *, gles::GLchar *> GetProgramResourceName; ///< Wrapper for glGetProgramResourceName
-    static Function<void, gles::GLuint, gles::GLenum, gles::GLuint, gles::GLsizei, const gles::GLenum *, gles::GLsizei, gles::GLsizei *, gles::GLfloat *> GetProgramResourcefvNV; ///< Wrapper for glGetProgramResourcefvNV
-    static Function<void, gles::GLuint, gles::GLenum, gles::GLuint, gles::GLsizei, const gles::GLenum *, gles::GLsizei, gles::GLsizei *, gles::GLint *> GetProgramResourceiv; ///< Wrapper for glGetProgramResourceiv
-    static Function<void, gles::GLuint, gles::GLenum, gles::GLint *> GetProgramiv; ///< Wrapper for glGetProgramiv
+    static Function<void, gles::GLenum, gles::GLenum, gles::GLint *> GetQueryiv; ///< Wrapper for glGetQueryiv
+    static Function<void, gles::GLenum, gles::GLenum, gles::GLint *> GetQueryivEXT; ///< Wrapper for glGetQueryivEXT
     static Function<void, gles::GLuint, gles::GLenum, gles::GLint64 *> GetQueryObjecti64vEXT; ///< Wrapper for glGetQueryObjecti64vEXT
     static Function<void, gles::GLuint, gles::GLenum, gles::GLint *> GetQueryObjectivEXT; ///< Wrapper for glGetQueryObjectivEXT
     static Function<void, gles::GLuint, gles::GLenum, gles::GLuint64 *> GetQueryObjectui64vEXT; ///< Wrapper for glGetQueryObjectui64vEXT
     static Function<void, gles::GLuint, gles::GLenum, gles::GLuint *> GetQueryObjectuiv; ///< Wrapper for glGetQueryObjectuiv
     static Function<void, gles::GLuint, gles::GLenum, gles::GLuint *> GetQueryObjectuivEXT; ///< Wrapper for glGetQueryObjectuivEXT
-    static Function<void, gles::GLenum, gles::GLenum, gles::GLint *> GetQueryiv; ///< Wrapper for glGetQueryiv
-    static Function<void, gles::GLenum, gles::GLenum, gles::GLint *> GetQueryivEXT; ///< Wrapper for glGetQueryivEXT
     static Function<void, gles::GLenum, gles::GLenum, gles::GLint *> GetRenderbufferParameteriv; ///< Wrapper for glGetRenderbufferParameteriv
+    static Function<void, gles::GLuint, gles::GLenum, gles::GLfloat *> GetSamplerParameterfv; ///< Wrapper for glGetSamplerParameterfv
     static Function<void, gles::GLuint, gles::GLenum, gles::GLint *> GetSamplerParameterIiv; ///< Wrapper for glGetSamplerParameterIiv
     static Function<void, gles::GLuint, gles::GLenum, gles::GLint *> GetSamplerParameterIivEXT; ///< Wrapper for glGetSamplerParameterIivEXT
     static Function<void, gles::GLuint, gles::GLenum, gles::GLint *> GetSamplerParameterIivOES; ///< Wrapper for glGetSamplerParameterIivOES
     static Function<void, gles::GLuint, gles::GLenum, gles::GLuint *> GetSamplerParameterIuiv; ///< Wrapper for glGetSamplerParameterIuiv
     static Function<void, gles::GLuint, gles::GLenum, gles::GLuint *> GetSamplerParameterIuivEXT; ///< Wrapper for glGetSamplerParameterIuivEXT
     static Function<void, gles::GLuint, gles::GLenum, gles::GLuint *> GetSamplerParameterIuivOES; ///< Wrapper for glGetSamplerParameterIuivOES
-    static Function<void, gles::GLuint, gles::GLenum, gles::GLfloat *> GetSamplerParameterfv; ///< Wrapper for glGetSamplerParameterfv
     static Function<void, gles::GLuint, gles::GLenum, gles::GLint *> GetSamplerParameteriv; ///< Wrapper for glGetSamplerParameteriv
     static Function<void, gles::GLuint, gles::GLenum, gles::GLuint64 *> GetSemaphoreParameterui64vEXT; ///< Wrapper for glGetSemaphoreParameterui64vEXT
     static Function<void, gles::GLuint, gles::GLsizei, gles::GLsizei *, gles::GLchar *> GetShaderInfoLog; ///< Wrapper for glGetShaderInfoLog
+    static Function<void, gles::GLuint, gles::GLenum, gles::GLint *> GetShaderiv; ///< Wrapper for glGetShaderiv
     static Function<void, gles::GLenum, gles::GLenum, gles::GLint *, gles::GLint *> GetShaderPrecisionFormat; ///< Wrapper for glGetShaderPrecisionFormat
     static Function<void, gles::GLuint, gles::GLsizei, gles::GLsizei *, gles::GLchar *> GetShaderSource; ///< Wrapper for glGetShaderSource
-    static Function<void, gles::GLuint, gles::GLenum, gles::GLint *> GetShaderiv; ///< Wrapper for glGetShaderiv
     static Function<void, gles::GLuint, gles::GLuint, gles::GLenum *> GetShadingRateImagePaletteNV; ///< Wrapper for glGetShadingRateImagePaletteNV
     static Function<void, gles::GLenum, gles::GLuint, gles::GLuint, gles::GLint *> GetShadingRateSampleLocationivNV; ///< Wrapper for glGetShadingRateSampleLocationivNV
     static Function<const gles::GLubyte *, gles::GLenum> GetString; ///< Wrapper for glGetString
@@ -815,13 +845,13 @@ public:
     static Function<void, gles::GLsync, gles::GLenum, gles::GLsizei, gles::GLsizei *, gles::GLint *> GetSyncivAPPLE; ///< Wrapper for glGetSyncivAPPLE
     static Function<void, gles::GLenum, gles::GLint, gles::GLenum, gles::GLfloat *> GetTexLevelParameterfv; ///< Wrapper for glGetTexLevelParameterfv
     static Function<void, gles::GLenum, gles::GLint, gles::GLenum, gles::GLint *> GetTexLevelParameteriv; ///< Wrapper for glGetTexLevelParameteriv
+    static Function<void, gles::GLenum, gles::GLenum, gles::GLfloat *> GetTexParameterfv; ///< Wrapper for glGetTexParameterfv
     static Function<void, gles::GLenum, gles::GLenum, gles::GLint *> GetTexParameterIiv; ///< Wrapper for glGetTexParameterIiv
     static Function<void, gles::GLenum, gles::GLenum, gles::GLint *> GetTexParameterIivEXT; ///< Wrapper for glGetTexParameterIivEXT
     static Function<void, gles::GLenum, gles::GLenum, gles::GLint *> GetTexParameterIivOES; ///< Wrapper for glGetTexParameterIivOES
     static Function<void, gles::GLenum, gles::GLenum, gles::GLuint *> GetTexParameterIuiv; ///< Wrapper for glGetTexParameterIuiv
     static Function<void, gles::GLenum, gles::GLenum, gles::GLuint *> GetTexParameterIuivEXT; ///< Wrapper for glGetTexParameterIuivEXT
     static Function<void, gles::GLenum, gles::GLenum, gles::GLuint *> GetTexParameterIuivOES; ///< Wrapper for glGetTexParameterIuivOES
-    static Function<void, gles::GLenum, gles::GLenum, gles::GLfloat *> GetTexParameterfv; ///< Wrapper for glGetTexParameterfv
     static Function<void, gles::GLenum, gles::GLenum, gles::GLint *> GetTexParameteriv; ///< Wrapper for glGetTexParameteriv
     static Function<gles::GLuint64, gles::GLuint> GetTextureHandleIMG; ///< Wrapper for glGetTextureHandleIMG
     static Function<gles::GLuint64, gles::GLuint> GetTextureHandleNV; ///< Wrapper for glGetTextureHandleNV
@@ -830,25 +860,20 @@ public:
     static Function<void, gles::GLuint, gles::GLuint, gles::GLsizei, gles::GLsizei *, gles::GLsizei *, gles::GLenum *, gles::GLchar *> GetTransformFeedbackVarying; ///< Wrapper for glGetTransformFeedbackVarying
     static Function<void, gles::GLuint, gles::GLsizei, gles::GLsizei *, gles::GLchar *> GetTranslatedShaderSourceANGLE; ///< Wrapper for glGetTranslatedShaderSourceANGLE
     static Function<gles::GLuint, gles::GLuint, const gles::GLchar *> GetUniformBlockIndex; ///< Wrapper for glGetUniformBlockIndex
-    static Function<void, gles::GLuint, gles::GLsizei, const gles::GLchar *const*, gles::GLuint *> GetUniformIndices; ///< Wrapper for glGetUniformIndices
-    static Function<gles::GLint, gles::GLuint, const gles::GLchar *> GetUniformLocation; ///< Wrapper for glGetUniformLocation
     static Function<void, gles::GLuint, gles::GLint, gles::GLfloat *> GetUniformfv; ///< Wrapper for glGetUniformfv
     static Function<void, gles::GLuint, gles::GLint, gles::GLint64EXT *> GetUniformi64vNV; ///< Wrapper for glGetUniformi64vNV
+    static Function<void, gles::GLuint, gles::GLsizei, const gles::GLchar *const*, gles::GLuint *> GetUniformIndices; ///< Wrapper for glGetUniformIndices
     static Function<void, gles::GLuint, gles::GLint, gles::GLint *> GetUniformiv; ///< Wrapper for glGetUniformiv
+    static Function<gles::GLint, gles::GLuint, const gles::GLchar *> GetUniformLocation; ///< Wrapper for glGetUniformLocation
     static Function<void, gles::GLuint, gles::GLint, gles::GLuint *> GetUniformuiv; ///< Wrapper for glGetUniformuiv
     static Function<void, gles::GLenum, gles::GLuint, gles::GLubyte *> GetUnsignedBytei_vEXT; ///< Wrapper for glGetUnsignedBytei_vEXT
     static Function<void, gles::GLenum, gles::GLubyte *> GetUnsignedBytevEXT; ///< Wrapper for glGetUnsignedBytevEXT
+    static Function<void, gles::GLuint, gles::GLenum, gles::GLfloat *> GetVertexAttribfv; ///< Wrapper for glGetVertexAttribfv
     static Function<void, gles::GLuint, gles::GLenum, gles::GLint *> GetVertexAttribIiv; ///< Wrapper for glGetVertexAttribIiv
     static Function<void, gles::GLuint, gles::GLenum, gles::GLuint *> GetVertexAttribIuiv; ///< Wrapper for glGetVertexAttribIuiv
-    static Function<void, gles::GLuint, gles::GLenum, void **> GetVertexAttribPointerv; ///< Wrapper for glGetVertexAttribPointerv
-    static Function<void, gles::GLuint, gles::GLenum, gles::GLfloat *> GetVertexAttribfv; ///< Wrapper for glGetVertexAttribfv
     static Function<void, gles::GLuint, gles::GLenum, gles::GLint *> GetVertexAttribiv; ///< Wrapper for glGetVertexAttribiv
+    static Function<void, gles::GLuint, gles::GLenum, void **> GetVertexAttribPointerv; ///< Wrapper for glGetVertexAttribPointerv
     static Function<gles::GLVULKANPROCNV, const gles::GLchar *> GetVkProcAddrNV; ///< Wrapper for glGetVkProcAddrNV
-    static Function<void, gles::GLuint, gles::GLint, gles::GLsizei, gles::GLfloat *> GetnUniformfv; ///< Wrapper for glGetnUniformfv
-    static Function<void, gles::GLuint, gles::GLint, gles::GLsizei, gles::GLfloat *> GetnUniformfvEXT; ///< Wrapper for glGetnUniformfvEXT
-    static Function<void, gles::GLuint, gles::GLint, gles::GLsizei, gles::GLint *> GetnUniformiv; ///< Wrapper for glGetnUniformiv
-    static Function<void, gles::GLuint, gles::GLint, gles::GLsizei, gles::GLint *> GetnUniformivEXT; ///< Wrapper for glGetnUniformivEXT
-    static Function<void, gles::GLuint, gles::GLint, gles::GLsizei, gles::GLuint *> GetnUniformuiv; ///< Wrapper for glGetnUniformuiv
     static Function<void, gles::GLenum, gles::GLenum> Hint; ///< Wrapper for glHint
     static Function<void, gles::GLuint, gles::GLuint64, gles::GLenum, gles::GLint> ImportMemoryFdEXT; ///< Wrapper for glImportMemoryFdEXT
     static Function<void, gles::GLuint, gles::GLuint64, gles::GLenum, void *> ImportMemoryWin32HandleEXT; ///< Wrapper for glImportMemoryWin32HandleEXT
@@ -875,6 +900,7 @@ public:
     static Function<gles::GLboolean, gles::GLuint, gles::GLfloat, gles::GLfloat> IsPointInStrokePathNV; ///< Wrapper for glIsPointInStrokePathNV
     static Function<gles::GLboolean, gles::GLuint> IsProgram; ///< Wrapper for glIsProgram
     static Function<gles::GLboolean, gles::GLuint> IsProgramPipeline; ///< Wrapper for glIsProgramPipeline
+    static Function<gles::GLboolean, gles::GLuint> IsProgramPipelineEXT; ///< Wrapper for glIsProgramPipelineEXT
     static Function<gles::GLboolean, gles::GLuint> IsQuery; ///< Wrapper for glIsQuery
     static Function<gles::GLboolean, gles::GLuint> IsQueryEXT; ///< Wrapper for glIsQueryEXT
     static Function<gles::GLboolean, gles::GLuint> IsRenderbuffer; ///< Wrapper for glIsRenderbuffer
@@ -901,19 +927,19 @@ public:
     static Function<void, gles::GLenum, gles::GLdouble, gles::GLdouble, gles::GLdouble, gles::GLdouble, gles::GLdouble, gles::GLdouble> MatrixFrustumEXT; ///< Wrapper for glMatrixFrustumEXT
     static Function<void, gles::GLenum, const gles::GLfloat *> MatrixLoad3x2fNV; ///< Wrapper for glMatrixLoad3x2fNV
     static Function<void, gles::GLenum, const gles::GLfloat *> MatrixLoad3x3fNV; ///< Wrapper for glMatrixLoad3x3fNV
+    static Function<void, gles::GLenum, const gles::GLdouble *> MatrixLoaddEXT; ///< Wrapper for glMatrixLoaddEXT
+    static Function<void, gles::GLenum, const gles::GLfloat *> MatrixLoadfEXT; ///< Wrapper for glMatrixLoadfEXT
     static Function<void, gles::GLenum> MatrixLoadIdentityEXT; ///< Wrapper for glMatrixLoadIdentityEXT
     static Function<void, gles::GLenum, const gles::GLfloat *> MatrixLoadTranspose3x3fNV; ///< Wrapper for glMatrixLoadTranspose3x3fNV
     static Function<void, gles::GLenum, const gles::GLdouble *> MatrixLoadTransposedEXT; ///< Wrapper for glMatrixLoadTransposedEXT
     static Function<void, gles::GLenum, const gles::GLfloat *> MatrixLoadTransposefEXT; ///< Wrapper for glMatrixLoadTransposefEXT
-    static Function<void, gles::GLenum, const gles::GLdouble *> MatrixLoaddEXT; ///< Wrapper for glMatrixLoaddEXT
-    static Function<void, gles::GLenum, const gles::GLfloat *> MatrixLoadfEXT; ///< Wrapper for glMatrixLoadfEXT
     static Function<void, gles::GLenum, const gles::GLfloat *> MatrixMult3x2fNV; ///< Wrapper for glMatrixMult3x2fNV
     static Function<void, gles::GLenum, const gles::GLfloat *> MatrixMult3x3fNV; ///< Wrapper for glMatrixMult3x3fNV
+    static Function<void, gles::GLenum, const gles::GLdouble *> MatrixMultdEXT; ///< Wrapper for glMatrixMultdEXT
+    static Function<void, gles::GLenum, const gles::GLfloat *> MatrixMultfEXT; ///< Wrapper for glMatrixMultfEXT
     static Function<void, gles::GLenum, const gles::GLfloat *> MatrixMultTranspose3x3fNV; ///< Wrapper for glMatrixMultTranspose3x3fNV
     static Function<void, gles::GLenum, const gles::GLdouble *> MatrixMultTransposedEXT; ///< Wrapper for glMatrixMultTransposedEXT
     static Function<void, gles::GLenum, const gles::GLfloat *> MatrixMultTransposefEXT; ///< Wrapper for glMatrixMultTransposefEXT
-    static Function<void, gles::GLenum, const gles::GLdouble *> MatrixMultdEXT; ///< Wrapper for glMatrixMultdEXT
-    static Function<void, gles::GLenum, const gles::GLfloat *> MatrixMultfEXT; ///< Wrapper for glMatrixMultfEXT
     static Function<void, gles::GLenum, gles::GLdouble, gles::GLdouble, gles::GLdouble, gles::GLdouble, gles::GLdouble, gles::GLdouble> MatrixOrthoEXT; ///< Wrapper for glMatrixOrthoEXT
     static Function<void, gles::GLenum> MatrixPopEXT; ///< Wrapper for glMatrixPopEXT
     static Function<void, gles::GLenum> MatrixPushEXT; ///< Wrapper for glMatrixPushEXT
@@ -942,16 +968,20 @@ public:
     static Function<void, gles::GLuint, gles::GLuint, gles::GLsizei, const gles::GLfloat *> NamedFramebufferSampleLocationsfvNV; ///< Wrapper for glNamedFramebufferSampleLocationsfvNV
     static Function<void, gles::GLuint, gles::GLsizei, gles::GLsizei, gles::GLenum, gles::GLsizei, gles::GLsizei> NamedRenderbufferStorageMultisampleAdvancedAMD; ///< Wrapper for glNamedRenderbufferStorageMultisampleAdvancedAMD
     static Function<void, gles::GLenum, gles::GLuint, gles::GLsizei, const gles::GLchar *> ObjectLabel; ///< Wrapper for glObjectLabel
+    static Function<void, gles::GLenum, gles::GLuint, gles::GLsizei, const gles::GLchar *> ObjectLabelKHR; ///< Wrapper for glObjectLabelKHR
     static Function<void, const void *, gles::GLsizei, const gles::GLchar *> ObjectPtrLabel; ///< Wrapper for glObjectPtrLabel
+    static Function<void, const void *, gles::GLsizei, const gles::GLchar *> ObjectPtrLabelKHR; ///< Wrapper for glObjectPtrLabelKHR
     static Function<void, gles::GLenum, gles::GLint> PatchParameteri; ///< Wrapper for glPatchParameteri
     static Function<void, gles::GLenum, gles::GLint> PatchParameteriEXT; ///< Wrapper for glPatchParameteriEXT
     static Function<void, gles::GLenum, gles::GLint> PatchParameteriOES; ///< Wrapper for glPatchParameteriOES
+    static Function<void, gles::GLenum, gles::GLenum, gles::GLenum, const gles::GLfloat *> PathColorGenNV; ///< Wrapper for glPathColorGenNV
     static Function<void, gles::GLuint, gles::GLsizei, const gles::GLubyte *, gles::GLsizei, gles::GLenum, const void *> PathCommandsNV; ///< Wrapper for glPathCommandsNV
     static Function<void, gles::GLuint, gles::GLsizei, gles::GLenum, const void *> PathCoordsNV; ///< Wrapper for glPathCoordsNV
     static Function<void, gles::GLenum> PathCoverDepthFuncNV; ///< Wrapper for glPathCoverDepthFuncNV
     static Function<void, gles::GLuint, gles::GLsizei, const gles::GLfloat *> PathDashArrayNV; ///< Wrapper for glPathDashArrayNV
+    static Function<void, gles::GLenum> PathFogGenNV; ///< Wrapper for glPathFogGenNV
     static Function<gles::GLenum, gles::GLuint, gles::GLenum, const void *, gles::PathFontStyle, gles::GLuint, gles::GLsizei, gles::GLuint, gles::GLfloat> PathGlyphIndexArrayNV; ///< Wrapper for glPathGlyphIndexArrayNV
-    static Function<gles::GLenum, gles::GLenum, const void *, gles::PathFontStyle, gles::GLuint, gles::GLfloat, gles::GLuint_array_2> PathGlyphIndexRangeNV; ///< Wrapper for glPathGlyphIndexRangeNV
+    static Function<gles::GLenum, gles::GLenum, const void *, gles::PathFontStyle, gles::GLuint, gles::GLfloat, gles::GLuint> PathGlyphIndexRangeNV; ///< Wrapper for glPathGlyphIndexRangeNV
     static Function<void, gles::GLuint, gles::GLenum, const void *, gles::PathFontStyle, gles::GLuint, gles::GLsizei, gles::GLenum, gles::GLuint, gles::GLfloat> PathGlyphRangeNV; ///< Wrapper for glPathGlyphRangeNV
     static Function<void, gles::GLuint, gles::GLenum, const void *, gles::PathFontStyle, gles::GLsizei, gles::GLenum, const void *, gles::GLenum, gles::GLuint, gles::GLfloat> PathGlyphsNV; ///< Wrapper for glPathGlyphsNV
     static Function<gles::GLenum, gles::GLuint, gles::GLenum, gles::GLsizeiptr, const void *, gles::GLsizei, gles::GLuint, gles::GLsizei, gles::GLuint, gles::GLfloat> PathMemoryGlyphIndexArrayNV; ///< Wrapper for glPathMemoryGlyphIndexArrayNV
@@ -964,6 +994,7 @@ public:
     static Function<void, gles::GLuint, gles::GLenum, gles::GLsizei, const void *> PathStringNV; ///< Wrapper for glPathStringNV
     static Function<void, gles::GLuint, gles::GLsizei, gles::GLsizei, gles::GLsizei, const gles::GLubyte *, gles::GLsizei, gles::GLenum, const void *> PathSubCommandsNV; ///< Wrapper for glPathSubCommandsNV
     static Function<void, gles::GLuint, gles::GLsizei, gles::GLsizei, gles::GLenum, const void *> PathSubCoordsNV; ///< Wrapper for glPathSubCoordsNV
+    static Function<void, gles::GLenum, gles::GLenum, gles::GLint, const gles::GLfloat *> PathTexGenNV; ///< Wrapper for glPathTexGenNV
     static Function<void> PauseTransformFeedback; ///< Wrapper for glPauseTransformFeedback
     static Function<void, gles::GLenum, gles::GLint> PixelStorei; ///< Wrapper for glPixelStorei
     static Function<gles::GLboolean, gles::GLuint, gles::GLsizei, gles::GLsizei, gles::GLfloat, gles::GLfloat *, gles::GLfloat *, gles::GLfloat *, gles::GLfloat *> PointAlongPathNV; ///< Wrapper for glPointAlongPathNV
@@ -971,6 +1002,7 @@ public:
     static Function<void, gles::GLfloat, gles::GLfloat> PolygonOffset; ///< Wrapper for glPolygonOffset
     static Function<void, gles::GLfloat, gles::GLfloat, gles::GLfloat> PolygonOffsetClampEXT; ///< Wrapper for glPolygonOffsetClampEXT
     static Function<void> PopDebugGroup; ///< Wrapper for glPopDebugGroup
+    static Function<void> PopDebugGroupKHR; ///< Wrapper for glPopDebugGroupKHR
     static Function<void> PopGroupMarkerEXT; ///< Wrapper for glPopGroupMarkerEXT
     static Function<void, gles::GLfloat, gles::GLfloat, gles::GLfloat, gles::GLfloat, gles::GLfloat, gles::GLfloat, gles::GLfloat, gles::GLfloat> PrimitiveBoundingBox; ///< Wrapper for glPrimitiveBoundingBox
     static Function<void, gles::GLfloat, gles::GLfloat, gles::GLfloat, gles::GLfloat, gles::GLfloat, gles::GLfloat, gles::GLfloat, gles::GLfloat> PrimitiveBoundingBoxEXT; ///< Wrapper for glPrimitiveBoundingBoxEXT
@@ -978,77 +1010,113 @@ public:
     static Function<void, gles::GLuint, gles::GLenum, const void *, gles::GLsizei> ProgramBinary; ///< Wrapper for glProgramBinary
     static Function<void, gles::GLuint, gles::GLenum, const void *, gles::GLint> ProgramBinaryOES; ///< Wrapper for glProgramBinaryOES
     static Function<void, gles::GLuint, gles::GLenum, gles::GLint> ProgramParameteri; ///< Wrapper for glProgramParameteri
+    static Function<void, gles::GLuint, gles::GLenum, gles::GLint> ProgramParameteriEXT; ///< Wrapper for glProgramParameteriEXT
     static Function<void, gles::GLuint, gles::GLint, gles::GLenum, gles::GLint, const gles::GLfloat *> ProgramPathFragmentInputGenNV; ///< Wrapper for glProgramPathFragmentInputGenNV
     static Function<void, gles::GLuint, gles::GLint, gles::GLfloat> ProgramUniform1f; ///< Wrapper for glProgramUniform1f
+    static Function<void, gles::GLuint, gles::GLint, gles::GLfloat> ProgramUniform1fEXT; ///< Wrapper for glProgramUniform1fEXT
     static Function<void, gles::GLuint, gles::GLint, gles::GLsizei, const gles::GLfloat *> ProgramUniform1fv; ///< Wrapper for glProgramUniform1fv
+    static Function<void, gles::GLuint, gles::GLint, gles::GLsizei, const gles::GLfloat *> ProgramUniform1fvEXT; ///< Wrapper for glProgramUniform1fvEXT
     static Function<void, gles::GLuint, gles::GLint, gles::GLint> ProgramUniform1i; ///< Wrapper for glProgramUniform1i
     static Function<void, gles::GLuint, gles::GLint, gles::GLint64EXT> ProgramUniform1i64NV; ///< Wrapper for glProgramUniform1i64NV
     static Function<void, gles::GLuint, gles::GLint, gles::GLsizei, const gles::GLint64EXT *> ProgramUniform1i64vNV; ///< Wrapper for glProgramUniform1i64vNV
+    static Function<void, gles::GLuint, gles::GLint, gles::GLint> ProgramUniform1iEXT; ///< Wrapper for glProgramUniform1iEXT
     static Function<void, gles::GLuint, gles::GLint, gles::GLsizei, const gles::GLint *> ProgramUniform1iv; ///< Wrapper for glProgramUniform1iv
+    static Function<void, gles::GLuint, gles::GLint, gles::GLsizei, const gles::GLint *> ProgramUniform1ivEXT; ///< Wrapper for glProgramUniform1ivEXT
     static Function<void, gles::GLuint, gles::GLint, gles::GLuint> ProgramUniform1ui; ///< Wrapper for glProgramUniform1ui
     static Function<void, gles::GLuint, gles::GLint, gles::GLuint64EXT> ProgramUniform1ui64NV; ///< Wrapper for glProgramUniform1ui64NV
     static Function<void, gles::GLuint, gles::GLint, gles::GLsizei, const gles::GLuint64EXT *> ProgramUniform1ui64vNV; ///< Wrapper for glProgramUniform1ui64vNV
+    static Function<void, gles::GLuint, gles::GLint, gles::GLuint> ProgramUniform1uiEXT; ///< Wrapper for glProgramUniform1uiEXT
     static Function<void, gles::GLuint, gles::GLint, gles::GLsizei, const gles::GLuint *> ProgramUniform1uiv; ///< Wrapper for glProgramUniform1uiv
+    static Function<void, gles::GLuint, gles::GLint, gles::GLsizei, const gles::GLuint *> ProgramUniform1uivEXT; ///< Wrapper for glProgramUniform1uivEXT
     static Function<void, gles::GLuint, gles::GLint, gles::GLfloat, gles::GLfloat> ProgramUniform2f; ///< Wrapper for glProgramUniform2f
+    static Function<void, gles::GLuint, gles::GLint, gles::GLfloat, gles::GLfloat> ProgramUniform2fEXT; ///< Wrapper for glProgramUniform2fEXT
     static Function<void, gles::GLuint, gles::GLint, gles::GLsizei, const gles::GLfloat *> ProgramUniform2fv; ///< Wrapper for glProgramUniform2fv
+    static Function<void, gles::GLuint, gles::GLint, gles::GLsizei, const gles::GLfloat *> ProgramUniform2fvEXT; ///< Wrapper for glProgramUniform2fvEXT
     static Function<void, gles::GLuint, gles::GLint, gles::GLint, gles::GLint> ProgramUniform2i; ///< Wrapper for glProgramUniform2i
     static Function<void, gles::GLuint, gles::GLint, gles::GLint64EXT, gles::GLint64EXT> ProgramUniform2i64NV; ///< Wrapper for glProgramUniform2i64NV
     static Function<void, gles::GLuint, gles::GLint, gles::GLsizei, const gles::GLint64EXT *> ProgramUniform2i64vNV; ///< Wrapper for glProgramUniform2i64vNV
+    static Function<void, gles::GLuint, gles::GLint, gles::GLint, gles::GLint> ProgramUniform2iEXT; ///< Wrapper for glProgramUniform2iEXT
     static Function<void, gles::GLuint, gles::GLint, gles::GLsizei, const gles::GLint *> ProgramUniform2iv; ///< Wrapper for glProgramUniform2iv
+    static Function<void, gles::GLuint, gles::GLint, gles::GLsizei, const gles::GLint *> ProgramUniform2ivEXT; ///< Wrapper for glProgramUniform2ivEXT
     static Function<void, gles::GLuint, gles::GLint, gles::GLuint, gles::GLuint> ProgramUniform2ui; ///< Wrapper for glProgramUniform2ui
     static Function<void, gles::GLuint, gles::GLint, gles::GLuint64EXT, gles::GLuint64EXT> ProgramUniform2ui64NV; ///< Wrapper for glProgramUniform2ui64NV
     static Function<void, gles::GLuint, gles::GLint, gles::GLsizei, const gles::GLuint64EXT *> ProgramUniform2ui64vNV; ///< Wrapper for glProgramUniform2ui64vNV
+    static Function<void, gles::GLuint, gles::GLint, gles::GLuint, gles::GLuint> ProgramUniform2uiEXT; ///< Wrapper for glProgramUniform2uiEXT
     static Function<void, gles::GLuint, gles::GLint, gles::GLsizei, const gles::GLuint *> ProgramUniform2uiv; ///< Wrapper for glProgramUniform2uiv
+    static Function<void, gles::GLuint, gles::GLint, gles::GLsizei, const gles::GLuint *> ProgramUniform2uivEXT; ///< Wrapper for glProgramUniform2uivEXT
     static Function<void, gles::GLuint, gles::GLint, gles::GLfloat, gles::GLfloat, gles::GLfloat> ProgramUniform3f; ///< Wrapper for glProgramUniform3f
+    static Function<void, gles::GLuint, gles::GLint, gles::GLfloat, gles::GLfloat, gles::GLfloat> ProgramUniform3fEXT; ///< Wrapper for glProgramUniform3fEXT
     static Function<void, gles::GLuint, gles::GLint, gles::GLsizei, const gles::GLfloat *> ProgramUniform3fv; ///< Wrapper for glProgramUniform3fv
+    static Function<void, gles::GLuint, gles::GLint, gles::GLsizei, const gles::GLfloat *> ProgramUniform3fvEXT; ///< Wrapper for glProgramUniform3fvEXT
     static Function<void, gles::GLuint, gles::GLint, gles::GLint, gles::GLint, gles::GLint> ProgramUniform3i; ///< Wrapper for glProgramUniform3i
     static Function<void, gles::GLuint, gles::GLint, gles::GLint64EXT, gles::GLint64EXT, gles::GLint64EXT> ProgramUniform3i64NV; ///< Wrapper for glProgramUniform3i64NV
     static Function<void, gles::GLuint, gles::GLint, gles::GLsizei, const gles::GLint64EXT *> ProgramUniform3i64vNV; ///< Wrapper for glProgramUniform3i64vNV
+    static Function<void, gles::GLuint, gles::GLint, gles::GLint, gles::GLint, gles::GLint> ProgramUniform3iEXT; ///< Wrapper for glProgramUniform3iEXT
     static Function<void, gles::GLuint, gles::GLint, gles::GLsizei, const gles::GLint *> ProgramUniform3iv; ///< Wrapper for glProgramUniform3iv
+    static Function<void, gles::GLuint, gles::GLint, gles::GLsizei, const gles::GLint *> ProgramUniform3ivEXT; ///< Wrapper for glProgramUniform3ivEXT
     static Function<void, gles::GLuint, gles::GLint, gles::GLuint, gles::GLuint, gles::GLuint> ProgramUniform3ui; ///< Wrapper for glProgramUniform3ui
     static Function<void, gles::GLuint, gles::GLint, gles::GLuint64EXT, gles::GLuint64EXT, gles::GLuint64EXT> ProgramUniform3ui64NV; ///< Wrapper for glProgramUniform3ui64NV
     static Function<void, gles::GLuint, gles::GLint, gles::GLsizei, const gles::GLuint64EXT *> ProgramUniform3ui64vNV; ///< Wrapper for glProgramUniform3ui64vNV
+    static Function<void, gles::GLuint, gles::GLint, gles::GLuint, gles::GLuint, gles::GLuint> ProgramUniform3uiEXT; ///< Wrapper for glProgramUniform3uiEXT
     static Function<void, gles::GLuint, gles::GLint, gles::GLsizei, const gles::GLuint *> ProgramUniform3uiv; ///< Wrapper for glProgramUniform3uiv
+    static Function<void, gles::GLuint, gles::GLint, gles::GLsizei, const gles::GLuint *> ProgramUniform3uivEXT; ///< Wrapper for glProgramUniform3uivEXT
     static Function<void, gles::GLuint, gles::GLint, gles::GLfloat, gles::GLfloat, gles::GLfloat, gles::GLfloat> ProgramUniform4f; ///< Wrapper for glProgramUniform4f
+    static Function<void, gles::GLuint, gles::GLint, gles::GLfloat, gles::GLfloat, gles::GLfloat, gles::GLfloat> ProgramUniform4fEXT; ///< Wrapper for glProgramUniform4fEXT
     static Function<void, gles::GLuint, gles::GLint, gles::GLsizei, const gles::GLfloat *> ProgramUniform4fv; ///< Wrapper for glProgramUniform4fv
+    static Function<void, gles::GLuint, gles::GLint, gles::GLsizei, const gles::GLfloat *> ProgramUniform4fvEXT; ///< Wrapper for glProgramUniform4fvEXT
     static Function<void, gles::GLuint, gles::GLint, gles::GLint, gles::GLint, gles::GLint, gles::GLint> ProgramUniform4i; ///< Wrapper for glProgramUniform4i
     static Function<void, gles::GLuint, gles::GLint, gles::GLint64EXT, gles::GLint64EXT, gles::GLint64EXT, gles::GLint64EXT> ProgramUniform4i64NV; ///< Wrapper for glProgramUniform4i64NV
     static Function<void, gles::GLuint, gles::GLint, gles::GLsizei, const gles::GLint64EXT *> ProgramUniform4i64vNV; ///< Wrapper for glProgramUniform4i64vNV
+    static Function<void, gles::GLuint, gles::GLint, gles::GLint, gles::GLint, gles::GLint, gles::GLint> ProgramUniform4iEXT; ///< Wrapper for glProgramUniform4iEXT
     static Function<void, gles::GLuint, gles::GLint, gles::GLsizei, const gles::GLint *> ProgramUniform4iv; ///< Wrapper for glProgramUniform4iv
+    static Function<void, gles::GLuint, gles::GLint, gles::GLsizei, const gles::GLint *> ProgramUniform4ivEXT; ///< Wrapper for glProgramUniform4ivEXT
     static Function<void, gles::GLuint, gles::GLint, gles::GLuint, gles::GLuint, gles::GLuint, gles::GLuint> ProgramUniform4ui; ///< Wrapper for glProgramUniform4ui
     static Function<void, gles::GLuint, gles::GLint, gles::GLuint64EXT, gles::GLuint64EXT, gles::GLuint64EXT, gles::GLuint64EXT> ProgramUniform4ui64NV; ///< Wrapper for glProgramUniform4ui64NV
     static Function<void, gles::GLuint, gles::GLint, gles::GLsizei, const gles::GLuint64EXT *> ProgramUniform4ui64vNV; ///< Wrapper for glProgramUniform4ui64vNV
+    static Function<void, gles::GLuint, gles::GLint, gles::GLuint, gles::GLuint, gles::GLuint, gles::GLuint> ProgramUniform4uiEXT; ///< Wrapper for glProgramUniform4uiEXT
     static Function<void, gles::GLuint, gles::GLint, gles::GLsizei, const gles::GLuint *> ProgramUniform4uiv; ///< Wrapper for glProgramUniform4uiv
+    static Function<void, gles::GLuint, gles::GLint, gles::GLsizei, const gles::GLuint *> ProgramUniform4uivEXT; ///< Wrapper for glProgramUniform4uivEXT
     static Function<void, gles::GLuint, gles::GLint, gles::GLuint64> ProgramUniformHandleui64IMG; ///< Wrapper for glProgramUniformHandleui64IMG
     static Function<void, gles::GLuint, gles::GLint, gles::GLuint64> ProgramUniformHandleui64NV; ///< Wrapper for glProgramUniformHandleui64NV
     static Function<void, gles::GLuint, gles::GLint, gles::GLsizei, const gles::GLuint64 *> ProgramUniformHandleui64vIMG; ///< Wrapper for glProgramUniformHandleui64vIMG
     static Function<void, gles::GLuint, gles::GLint, gles::GLsizei, const gles::GLuint64 *> ProgramUniformHandleui64vNV; ///< Wrapper for glProgramUniformHandleui64vNV
     static Function<void, gles::GLuint, gles::GLint, gles::GLsizei, gles::GLboolean, const gles::GLfloat *> ProgramUniformMatrix2fv; ///< Wrapper for glProgramUniformMatrix2fv
+    static Function<void, gles::GLuint, gles::GLint, gles::GLsizei, gles::GLboolean, const gles::GLfloat *> ProgramUniformMatrix2fvEXT; ///< Wrapper for glProgramUniformMatrix2fvEXT
     static Function<void, gles::GLuint, gles::GLint, gles::GLsizei, gles::GLboolean, const gles::GLfloat *> ProgramUniformMatrix2x3fv; ///< Wrapper for glProgramUniformMatrix2x3fv
+    static Function<void, gles::GLuint, gles::GLint, gles::GLsizei, gles::GLboolean, const gles::GLfloat *> ProgramUniformMatrix2x3fvEXT; ///< Wrapper for glProgramUniformMatrix2x3fvEXT
     static Function<void, gles::GLuint, gles::GLint, gles::GLsizei, gles::GLboolean, const gles::GLfloat *> ProgramUniformMatrix2x4fv; ///< Wrapper for glProgramUniformMatrix2x4fv
+    static Function<void, gles::GLuint, gles::GLint, gles::GLsizei, gles::GLboolean, const gles::GLfloat *> ProgramUniformMatrix2x4fvEXT; ///< Wrapper for glProgramUniformMatrix2x4fvEXT
     static Function<void, gles::GLuint, gles::GLint, gles::GLsizei, gles::GLboolean, const gles::GLfloat *> ProgramUniformMatrix3fv; ///< Wrapper for glProgramUniformMatrix3fv
+    static Function<void, gles::GLuint, gles::GLint, gles::GLsizei, gles::GLboolean, const gles::GLfloat *> ProgramUniformMatrix3fvEXT; ///< Wrapper for glProgramUniformMatrix3fvEXT
     static Function<void, gles::GLuint, gles::GLint, gles::GLsizei, gles::GLboolean, const gles::GLfloat *> ProgramUniformMatrix3x2fv; ///< Wrapper for glProgramUniformMatrix3x2fv
+    static Function<void, gles::GLuint, gles::GLint, gles::GLsizei, gles::GLboolean, const gles::GLfloat *> ProgramUniformMatrix3x2fvEXT; ///< Wrapper for glProgramUniformMatrix3x2fvEXT
     static Function<void, gles::GLuint, gles::GLint, gles::GLsizei, gles::GLboolean, const gles::GLfloat *> ProgramUniformMatrix3x4fv; ///< Wrapper for glProgramUniformMatrix3x4fv
+    static Function<void, gles::GLuint, gles::GLint, gles::GLsizei, gles::GLboolean, const gles::GLfloat *> ProgramUniformMatrix3x4fvEXT; ///< Wrapper for glProgramUniformMatrix3x4fvEXT
     static Function<void, gles::GLuint, gles::GLint, gles::GLsizei, gles::GLboolean, const gles::GLfloat *> ProgramUniformMatrix4fv; ///< Wrapper for glProgramUniformMatrix4fv
+    static Function<void, gles::GLuint, gles::GLint, gles::GLsizei, gles::GLboolean, const gles::GLfloat *> ProgramUniformMatrix4fvEXT; ///< Wrapper for glProgramUniformMatrix4fvEXT
     static Function<void, gles::GLuint, gles::GLint, gles::GLsizei, gles::GLboolean, const gles::GLfloat *> ProgramUniformMatrix4x2fv; ///< Wrapper for glProgramUniformMatrix4x2fv
+    static Function<void, gles::GLuint, gles::GLint, gles::GLsizei, gles::GLboolean, const gles::GLfloat *> ProgramUniformMatrix4x2fvEXT; ///< Wrapper for glProgramUniformMatrix4x2fvEXT
     static Function<void, gles::GLuint, gles::GLint, gles::GLsizei, gles::GLboolean, const gles::GLfloat *> ProgramUniformMatrix4x3fv; ///< Wrapper for glProgramUniformMatrix4x3fv
+    static Function<void, gles::GLuint, gles::GLint, gles::GLsizei, gles::GLboolean, const gles::GLfloat *> ProgramUniformMatrix4x3fvEXT; ///< Wrapper for glProgramUniformMatrix4x3fvEXT
     static Function<void, gles::GLenum, gles::GLuint, gles::GLsizei, const gles::GLchar *> PushDebugGroup; ///< Wrapper for glPushDebugGroup
+    static Function<void, gles::GLenum, gles::GLuint, gles::GLsizei, const gles::GLchar *> PushDebugGroupKHR; ///< Wrapper for glPushDebugGroupKHR
     static Function<void, gles::GLsizei, const gles::GLchar *> PushGroupMarkerEXT; ///< Wrapper for glPushGroupMarkerEXT
     static Function<void, gles::GLuint, gles::GLenum> QueryCounterEXT; ///< Wrapper for glQueryCounterEXT
     static Function<void, gles::GLuint, gles::GLboolean> RasterSamplesEXT; ///< Wrapper for glRasterSamplesEXT
     static Function<void, gles::GLenum> ReadBuffer; ///< Wrapper for glReadBuffer
     static Function<void, gles::GLenum, gles::GLint> ReadBufferIndexedEXT; ///< Wrapper for glReadBufferIndexedEXT
     static Function<void, gles::GLenum> ReadBufferNV; ///< Wrapper for glReadBufferNV
-    static Function<void, gles::GLint, gles::GLint, gles::GLsizei, gles::GLsizei, gles::GLenum, gles::GLenum, void *> ReadPixels; ///< Wrapper for glReadPixels
     static Function<void, gles::GLint, gles::GLint, gles::GLsizei, gles::GLsizei, gles::GLenum, gles::GLenum, gles::GLsizei, void *> ReadnPixels; ///< Wrapper for glReadnPixels
     static Function<void, gles::GLint, gles::GLint, gles::GLsizei, gles::GLsizei, gles::GLenum, gles::GLenum, gles::GLsizei, void *> ReadnPixelsEXT; ///< Wrapper for glReadnPixelsEXT
+    static Function<void, gles::GLint, gles::GLint, gles::GLsizei, gles::GLsizei, gles::GLenum, gles::GLenum, gles::GLsizei, void *> ReadnPixelsKHR; ///< Wrapper for glReadnPixelsKHR
+    static Function<void, gles::GLint, gles::GLint, gles::GLsizei, gles::GLsizei, gles::GLenum, gles::GLenum, void *> ReadPixels; ///< Wrapper for glReadPixels
     static Function<gles::GLboolean, gles::GLuint, gles::GLuint64> ReleaseKeyedMutexWin32EXT; ///< Wrapper for glReleaseKeyedMutexWin32EXT
     static Function<void> ReleaseShaderCompiler; ///< Wrapper for glReleaseShaderCompiler
     static Function<void, gles::GLenum, gles::GLenum, gles::GLsizei, gles::GLsizei> RenderbufferStorage; ///< Wrapper for glRenderbufferStorage
     static Function<void, gles::GLenum, gles::GLsizei, gles::GLenum, gles::GLsizei, gles::GLsizei> RenderbufferStorageMultisample; ///< Wrapper for glRenderbufferStorageMultisample
+    static Function<void, gles::GLenum, gles::GLsizei, gles::GLsizei, gles::GLenum, gles::GLsizei, gles::GLsizei> RenderbufferStorageMultisampleAdvancedAMD; ///< Wrapper for glRenderbufferStorageMultisampleAdvancedAMD
     static Function<void, gles::GLenum, gles::GLsizei, gles::GLenum, gles::GLsizei, gles::GLsizei> RenderbufferStorageMultisampleANGLE; ///< Wrapper for glRenderbufferStorageMultisampleANGLE
     static Function<void, gles::GLenum, gles::GLsizei, gles::GLenum, gles::GLsizei, gles::GLsizei> RenderbufferStorageMultisampleAPPLE; ///< Wrapper for glRenderbufferStorageMultisampleAPPLE
-    static Function<void, gles::GLenum, gles::GLsizei, gles::GLsizei, gles::GLenum, gles::GLsizei, gles::GLsizei> RenderbufferStorageMultisampleAdvancedAMD; ///< Wrapper for glRenderbufferStorageMultisampleAdvancedAMD
     static Function<void, gles::GLenum, gles::GLsizei, gles::GLenum, gles::GLsizei, gles::GLsizei> RenderbufferStorageMultisampleEXT; ///< Wrapper for glRenderbufferStorageMultisampleEXT
     static Function<void, gles::GLenum, gles::GLsizei, gles::GLenum, gles::GLsizei, gles::GLsizei> RenderbufferStorageMultisampleIMG; ///< Wrapper for glRenderbufferStorageMultisampleIMG
     static Function<void, gles::GLenum, gles::GLsizei, gles::GLenum, gles::GLsizei, gles::GLsizei> RenderbufferStorageMultisampleNV; ///< Wrapper for glRenderbufferStorageMultisampleNV
@@ -1058,15 +1126,15 @@ public:
     static Function<void> ResumeTransformFeedback; ///< Wrapper for glResumeTransformFeedback
     static Function<void, gles::GLfloat, gles::GLboolean> SampleCoverage; ///< Wrapper for glSampleCoverage
     static Function<void, gles::GLuint, gles::GLbitfield> SampleMaski; ///< Wrapper for glSampleMaski
+    static Function<void, gles::GLuint, gles::GLenum, gles::GLfloat> SamplerParameterf; ///< Wrapper for glSamplerParameterf
+    static Function<void, gles::GLuint, gles::GLenum, const gles::GLfloat *> SamplerParameterfv; ///< Wrapper for glSamplerParameterfv
+    static Function<void, gles::GLuint, gles::GLenum, gles::GLint> SamplerParameteri; ///< Wrapper for glSamplerParameteri
     static Function<void, gles::GLuint, gles::GLenum, const gles::GLint *> SamplerParameterIiv; ///< Wrapper for glSamplerParameterIiv
     static Function<void, gles::GLuint, gles::GLenum, const gles::GLint *> SamplerParameterIivEXT; ///< Wrapper for glSamplerParameterIivEXT
     static Function<void, gles::GLuint, gles::GLenum, const gles::GLint *> SamplerParameterIivOES; ///< Wrapper for glSamplerParameterIivOES
     static Function<void, gles::GLuint, gles::GLenum, const gles::GLuint *> SamplerParameterIuiv; ///< Wrapper for glSamplerParameterIuiv
     static Function<void, gles::GLuint, gles::GLenum, const gles::GLuint *> SamplerParameterIuivEXT; ///< Wrapper for glSamplerParameterIuivEXT
     static Function<void, gles::GLuint, gles::GLenum, const gles::GLuint *> SamplerParameterIuivOES; ///< Wrapper for glSamplerParameterIuivOES
-    static Function<void, gles::GLuint, gles::GLenum, gles::GLfloat> SamplerParameterf; ///< Wrapper for glSamplerParameterf
-    static Function<void, gles::GLuint, gles::GLenum, const gles::GLfloat *> SamplerParameterfv; ///< Wrapper for glSamplerParameterfv
-    static Function<void, gles::GLuint, gles::GLenum, gles::GLint> SamplerParameteri; ///< Wrapper for glSamplerParameteri
     static Function<void, gles::GLuint, gles::GLenum, const gles::GLint *> SamplerParameteriv; ///< Wrapper for glSamplerParameteriv
     static Function<void, gles::GLint, gles::GLint, gles::GLsizei, gles::GLsizei> Scissor; ///< Wrapper for glScissor
     static Function<void, gles::GLuint, gles::GLsizei, const gles::GLint *> ScissorArrayvNV; ///< Wrapper for glScissorArrayvNV
@@ -1089,7 +1157,7 @@ public:
     static Function<void, gles::GLuint, gles::GLuint, const gles::GLuint *, gles::GLuint, const gles::GLuint *, const gles::GLenum *> SignalSemaphoreEXT; ///< Wrapper for glSignalSemaphoreEXT
     static Function<void, gles::GLuint64> SignalVkFenceNV; ///< Wrapper for glSignalVkFenceNV
     static Function<void, gles::GLuint64> SignalVkSemaphoreNV; ///< Wrapper for glSignalVkSemaphoreNV
-    static Function<void, gles::GLuint, gles::GLuint, gles::GLuint, gles::GLuint, gles::BufferBitQCOM> StartTilingQCOM; ///< Wrapper for glStartTilingQCOM
+    static Function<void, gles::GLuint, gles::GLuint, gles::GLuint, gles::GLuint, gles::GLbitfield> StartTilingQCOM; ///< Wrapper for glStartTilingQCOM
     static Function<void, gles::GLsizei, gles::GLenum, const void *, gles::GLuint, gles::GLenum, gles::GLuint, gles::GLenum, const gles::GLfloat *> StencilFillPathInstancedNV; ///< Wrapper for glStencilFillPathInstancedNV
     static Function<void, gles::GLuint, gles::GLenum, gles::GLuint> StencilFillPathNV; ///< Wrapper for glStencilFillPathNV
     static Function<void, gles::GLenum, gles::GLint, gles::GLuint> StencilFunc; ///< Wrapper for glStencilFunc
@@ -1117,15 +1185,15 @@ public:
     static Function<void, gles::GLenum, gles::GLint, gles::GLint, gles::GLsizei, gles::GLsizei, gles::GLsizei, gles::GLint, gles::GLenum, gles::GLenum, const void *> TexImage3D; ///< Wrapper for glTexImage3D
     static Function<void, gles::GLenum, gles::GLint, gles::GLenum, gles::GLsizei, gles::GLsizei, gles::GLsizei, gles::GLint, gles::GLenum, gles::GLenum, const void *> TexImage3DOES; ///< Wrapper for glTexImage3DOES
     static Function<void, gles::GLenum, gles::GLint, gles::GLint, gles::GLint, gles::GLint, gles::GLsizei, gles::GLsizei, gles::GLsizei, gles::GLboolean> TexPageCommitmentEXT; ///< Wrapper for glTexPageCommitmentEXT
+    static Function<void, gles::GLenum, gles::GLenum, gles::GLfloat> TexParameterf; ///< Wrapper for glTexParameterf
+    static Function<void, gles::GLenum, gles::GLenum, const gles::GLfloat *> TexParameterfv; ///< Wrapper for glTexParameterfv
+    static Function<void, gles::GLenum, gles::GLenum, gles::GLint> TexParameteri; ///< Wrapper for glTexParameteri
     static Function<void, gles::GLenum, gles::GLenum, const gles::GLint *> TexParameterIiv; ///< Wrapper for glTexParameterIiv
     static Function<void, gles::GLenum, gles::GLenum, const gles::GLint *> TexParameterIivEXT; ///< Wrapper for glTexParameterIivEXT
     static Function<void, gles::GLenum, gles::GLenum, const gles::GLint *> TexParameterIivOES; ///< Wrapper for glTexParameterIivOES
     static Function<void, gles::GLenum, gles::GLenum, const gles::GLuint *> TexParameterIuiv; ///< Wrapper for glTexParameterIuiv
     static Function<void, gles::GLenum, gles::GLenum, const gles::GLuint *> TexParameterIuivEXT; ///< Wrapper for glTexParameterIuivEXT
     static Function<void, gles::GLenum, gles::GLenum, const gles::GLuint *> TexParameterIuivOES; ///< Wrapper for glTexParameterIuivOES
-    static Function<void, gles::GLenum, gles::GLenum, gles::GLfloat> TexParameterf; ///< Wrapper for glTexParameterf
-    static Function<void, gles::GLenum, gles::GLenum, const gles::GLfloat *> TexParameterfv; ///< Wrapper for glTexParameterfv
-    static Function<void, gles::GLenum, gles::GLenum, gles::GLint> TexParameteri; ///< Wrapper for glTexParameteri
     static Function<void, gles::GLenum, gles::GLenum, const gles::GLint *> TexParameteriv; ///< Wrapper for glTexParameteriv
     static Function<void, gles::GLenum, gles::GLsizei, gles::GLenum, gles::GLsizei> TexStorage1DEXT; ///< Wrapper for glTexStorage1DEXT
     static Function<void, gles::GLenum, gles::GLsizei, gles::GLenum, gles::GLsizei, gles::GLsizei> TexStorage2D; ///< Wrapper for glTexStorage2D
@@ -1135,6 +1203,7 @@ public:
     static Function<void, gles::GLenum, gles::GLsizei, gles::GLenum, gles::GLsizei, gles::GLsizei, gles::GLsizei> TexStorage3DEXT; ///< Wrapper for glTexStorage3DEXT
     static Function<void, gles::GLenum, gles::GLsizei, gles::GLenum, gles::GLsizei, gles::GLsizei, gles::GLsizei, gles::GLboolean> TexStorage3DMultisample; ///< Wrapper for glTexStorage3DMultisample
     static Function<void, gles::GLenum, gles::GLsizei, gles::GLenum, gles::GLsizei, gles::GLsizei, gles::GLsizei, gles::GLboolean> TexStorage3DMultisampleOES; ///< Wrapper for glTexStorage3DMultisampleOES
+    static Function<void, gles::GLenum, gles::GLsizei, gles::GLenum, gles::GLsizei, gles::GLuint, gles::GLuint64> TexStorageMem1DEXT; ///< Wrapper for glTexStorageMem1DEXT
     static Function<void, gles::GLenum, gles::GLsizei, gles::GLenum, gles::GLsizei, gles::GLsizei, gles::GLuint, gles::GLuint64> TexStorageMem2DEXT; ///< Wrapper for glTexStorageMem2DEXT
     static Function<void, gles::GLenum, gles::GLsizei, gles::GLenum, gles::GLsizei, gles::GLsizei, gles::GLboolean, gles::GLuint, gles::GLuint64> TexStorageMem2DMultisampleEXT; ///< Wrapper for glTexStorageMem2DMultisampleEXT
     static Function<void, gles::GLenum, gles::GLsizei, gles::GLenum, gles::GLsizei, gles::GLsizei, gles::GLsizei, gles::GLuint, gles::GLuint64> TexStorageMem3DEXT; ///< Wrapper for glTexStorageMem3DEXT
@@ -1147,6 +1216,7 @@ public:
     static Function<void, gles::GLuint, gles::GLenum, gles::GLsizei, gles::GLenum, gles::GLsizei> TextureStorage1DEXT; ///< Wrapper for glTextureStorage1DEXT
     static Function<void, gles::GLuint, gles::GLenum, gles::GLsizei, gles::GLenum, gles::GLsizei, gles::GLsizei> TextureStorage2DEXT; ///< Wrapper for glTextureStorage2DEXT
     static Function<void, gles::GLuint, gles::GLenum, gles::GLsizei, gles::GLenum, gles::GLsizei, gles::GLsizei, gles::GLsizei> TextureStorage3DEXT; ///< Wrapper for glTextureStorage3DEXT
+    static Function<void, gles::GLuint, gles::GLsizei, gles::GLenum, gles::GLsizei, gles::GLuint, gles::GLuint64> TextureStorageMem1DEXT; ///< Wrapper for glTextureStorageMem1DEXT
     static Function<void, gles::GLuint, gles::GLsizei, gles::GLenum, gles::GLsizei, gles::GLsizei, gles::GLuint, gles::GLuint64> TextureStorageMem2DEXT; ///< Wrapper for glTextureStorageMem2DEXT
     static Function<void, gles::GLuint, gles::GLsizei, gles::GLenum, gles::GLsizei, gles::GLsizei, gles::GLboolean, gles::GLuint, gles::GLuint64> TextureStorageMem2DMultisampleEXT; ///< Wrapper for glTextureStorageMem2DMultisampleEXT
     static Function<void, gles::GLuint, gles::GLsizei, gles::GLenum, gles::GLsizei, gles::GLsizei, gles::GLsizei, gles::GLuint, gles::GLuint64> TextureStorageMem3DEXT; ///< Wrapper for glTextureStorageMem3DEXT
@@ -1219,8 +1289,11 @@ public:
     static Function<gles::GLboolean, gles::GLenum> UnmapBufferOES; ///< Wrapper for glUnmapBufferOES
     static Function<void, gles::GLuint> UseProgram; ///< Wrapper for glUseProgram
     static Function<void, gles::GLuint, gles::UseProgramStageMask, gles::GLuint> UseProgramStages; ///< Wrapper for glUseProgramStages
+    static Function<void, gles::GLuint, gles::UseProgramStageMask, gles::GLuint> UseProgramStagesEXT; ///< Wrapper for glUseProgramStagesEXT
+    static Function<void, gles::GLenum, gles::GLuint> UseShaderProgramEXT; ///< Wrapper for glUseShaderProgramEXT
     static Function<void, gles::GLuint> ValidateProgram; ///< Wrapper for glValidateProgram
     static Function<void, gles::GLuint> ValidateProgramPipeline; ///< Wrapper for glValidateProgramPipeline
+    static Function<void, gles::GLuint> ValidateProgramPipelineEXT; ///< Wrapper for glValidateProgramPipelineEXT
     static Function<void, gles::GLuint, gles::GLfloat> VertexAttrib1f; ///< Wrapper for glVertexAttrib1f
     static Function<void, gles::GLuint, const gles::GLfloat *> VertexAttrib1fv; ///< Wrapper for glVertexAttrib1fv
     static Function<void, gles::GLuint, gles::GLfloat, gles::GLfloat> VertexAttrib2f; ///< Wrapper for glVertexAttrib2f
@@ -1253,7 +1326,7 @@ public:
     static Function<void, gles::GLuint, gles::GLfloat, gles::GLfloat> ViewportPositionWScaleNV; ///< Wrapper for glViewportPositionWScaleNV
     static Function<void, gles::GLuint, gles::GLenum, gles::GLenum, gles::GLenum, gles::GLenum> ViewportSwizzleNV; ///< Wrapper for glViewportSwizzleNV
     static Function<void, gles::GLuint, gles::GLuint, const gles::GLuint *, gles::GLuint, const gles::GLuint *, const gles::GLenum *> WaitSemaphoreEXT; ///< Wrapper for glWaitSemaphoreEXT
-    static Function<void, gles::GLsync, gles::UnusedMask, gles::GLuint64> WaitSync; ///< Wrapper for glWaitSync
+    static Function<void, gles::GLsync, gles::GLbitfield, gles::GLuint64> WaitSync; ///< Wrapper for glWaitSync
     static Function<void, gles::GLsync, gles::GLbitfield, gles::GLuint64> WaitSyncAPPLE; ///< Wrapper for glWaitSyncAPPLE
     static Function<void, gles::GLuint64> WaitVkSemaphoreNV; ///< Wrapper for glWaitVkSemaphoreNV
     static Function<void, gles::GLuint, gles::GLsizei, const gles::GLuint *, const gles::GLfloat *> WeightPathsNV; ///< Wrapper for glWeightPathsNV

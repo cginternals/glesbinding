@@ -10,8 +10,11 @@ namespace glesbinding
 
 
 Function<void, GLDEBUGPROC, const void *> Binding::DebugMessageCallback("glDebugMessageCallback");
+Function<void, GLDEBUGPROCKHR, const void *> Binding::DebugMessageCallbackKHR("glDebugMessageCallbackKHR");
 Function<void, GLenum, GLenum, GLenum, GLsizei, const GLuint *, GLboolean> Binding::DebugMessageControl("glDebugMessageControl");
+Function<void, GLenum, GLenum, GLenum, GLsizei, const GLuint *, GLboolean> Binding::DebugMessageControlKHR("glDebugMessageControlKHR");
 Function<void, GLenum, GLenum, GLuint, GLenum, GLsizei, const GLchar *> Binding::DebugMessageInsert("glDebugMessageInsert");
+Function<void, GLenum, GLenum, GLuint, GLenum, GLsizei, const GLchar *> Binding::DebugMessageInsertKHR("glDebugMessageInsertKHR");
 Function<void, GLsizei, const GLuint *> Binding::DeleteBuffers("glDeleteBuffers");
 Function<void, GLsizei, const GLuint *> Binding::DeleteFencesNV("glDeleteFencesNV");
 Function<void, GLsizei, const GLuint *> Binding::DeleteFramebuffers("glDeleteFramebuffers");
@@ -21,6 +24,7 @@ Function<void, GLsizei, GLuint *> Binding::DeletePerfMonitorsAMD("glDeletePerfMo
 Function<void, GLuint> Binding::DeletePerfQueryINTEL("glDeletePerfQueryINTEL");
 Function<void, GLuint> Binding::DeleteProgram("glDeleteProgram");
 Function<void, GLsizei, const GLuint *> Binding::DeleteProgramPipelines("glDeleteProgramPipelines");
+Function<void, GLsizei, const GLuint *> Binding::DeleteProgramPipelinesEXT("glDeleteProgramPipelinesEXT");
 Function<void, GLsizei, const GLuint *> Binding::DeleteQueries("glDeleteQueries");
 Function<void, GLsizei, const GLuint *> Binding::DeleteQueriesEXT("glDeleteQueriesEXT");
 Function<void, GLsizei, const GLuint *> Binding::DeleteRenderbuffers("glDeleteRenderbuffers");
@@ -37,17 +41,17 @@ Function<void, GLenum> Binding::DepthFunc("glDepthFunc");
 Function<void, GLboolean> Binding::DepthMask("glDepthMask");
 Function<void, GLuint, GLsizei, const GLfloat *> Binding::DepthRangeArrayfvNV("glDepthRangeArrayfvNV");
 Function<void, GLuint, GLsizei, const GLfloat *> Binding::DepthRangeArrayfvOES("glDepthRangeArrayfvOES");
+Function<void, GLfloat, GLfloat> Binding::DepthRangef("glDepthRangef");
 Function<void, GLuint, GLfloat, GLfloat> Binding::DepthRangeIndexedfNV("glDepthRangeIndexedfNV");
 Function<void, GLuint, GLfloat, GLfloat> Binding::DepthRangeIndexedfOES("glDepthRangeIndexedfOES");
-Function<void, GLfloat, GLfloat> Binding::DepthRangef("glDepthRangef");
 Function<void, GLuint, GLuint> Binding::DetachShader("glDetachShader");
 Function<void, GLenum> Binding::Disable("glDisable");
 Function<void, GLuint> Binding::DisableDriverControlQCOM("glDisableDriverControlQCOM");
-Function<void, GLuint> Binding::DisableVertexAttribArray("glDisableVertexAttribArray");
 Function<void, GLenum, GLuint> Binding::Disablei("glDisablei");
 Function<void, GLenum, GLuint> Binding::DisableiEXT("glDisableiEXT");
 Function<void, GLenum, GLuint> Binding::DisableiNV("glDisableiNV");
 Function<void, GLenum, GLuint> Binding::DisableiOES("glDisableiOES");
+Function<void, GLuint> Binding::DisableVertexAttribArray("glDisableVertexAttribArray");
 Function<void, GLenum, GLsizei, const GLenum *> Binding::DiscardFramebufferEXT("glDiscardFramebufferEXT");
 Function<void, GLuint, GLuint, GLuint> Binding::DispatchCompute("glDispatchCompute");
 Function<void, GLintptr> Binding::DispatchComputeIndirect("glDispatchComputeIndirect");
@@ -85,7 +89,6 @@ Function<void, GLenum, GLuint, GLuint, GLsizei, GLenum, const void *, GLint> Bin
 Function<void, GLenum, GLuint> Binding::DrawTransformFeedbackEXT("glDrawTransformFeedbackEXT");
 Function<void, GLenum, GLuint, GLsizei> Binding::DrawTransformFeedbackInstancedEXT("glDrawTransformFeedbackInstancedEXT");
 Function<void, GLuint64, GLuint, GLfloat, GLfloat, GLfloat, GLfloat, GLfloat, GLfloat, GLfloat, GLfloat, GLfloat> Binding::DrawVkImageNV("glDrawVkImageNV");
-
 
 
 } // namespace glesbinding

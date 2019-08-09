@@ -4,19 +4,14 @@
 #include <glesbinding/gles/functions.h>
 
 
-using namespace glesbinding;
-
-
 namespace gles
 {
 
 
 void glHint(GLenum target, GLenum mode)
 {
-    return Binding::Hint(target, mode);
+    return glesbinding::Binding::Hint(target, mode);
 }
-
-
 
 
 } // namespace gles

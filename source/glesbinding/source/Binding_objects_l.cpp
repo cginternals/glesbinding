@@ -14,5 +14,4 @@ Function<void, GLfloat> Binding::LineWidth("glLineWidth");
 Function<void, GLuint> Binding::LinkProgram("glLinkProgram");
 
 
-
 } // namespace glesbinding

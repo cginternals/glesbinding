@@ -9,7 +9,7 @@ namespace glesbinding
 {
 
 
-Function<GLsync, GLenum, UnusedMask> Binding::FenceSync("glFenceSync");
+Function<GLsync, GLenum, GLbitfield> Binding::FenceSync("glFenceSync");
 Function<GLsync, GLenum, GLbitfield> Binding::FenceSyncAPPLE("glFenceSyncAPPLE");
 Function<void> Binding::Finish("glFinish");
 Function<void, GLuint> Binding::FinishFenceNV("glFinishFenceNV");
@@ -38,7 +38,6 @@ Function<void, GLenum, GLenum, GLuint, GLint, GLsizei, GLint, GLsizei> Binding::
 Function<void, GLenum, GLenum, GLuint, GLint, GLint, GLsizei> Binding::FramebufferTextureMultiviewOVR("glFramebufferTextureMultiviewOVR");
 Function<void, GLenum, GLenum, GLuint, GLint> Binding::FramebufferTextureOES("glFramebufferTextureOES");
 Function<void, GLenum> Binding::FrontFace("glFrontFace");
-
 
 
 } // namespace glesbinding

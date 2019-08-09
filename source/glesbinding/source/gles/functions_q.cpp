@@ -4,19 +4,14 @@
 #include <glesbinding/gles/functions.h>
 
 
-using namespace glesbinding;
-
-
 namespace gles
 {
 
 
 void glQueryCounterEXT(GLuint id, GLenum target)
 {
-    return Binding::QueryCounterEXT(id, target);
+    return glesbinding::Binding::QueryCounterEXT(id, target);
 }
-
-
 
 
 } // namespace gles

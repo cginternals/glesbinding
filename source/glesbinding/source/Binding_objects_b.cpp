@@ -24,6 +24,7 @@ Function<void, GLuint, GLuint, GLuint, const GLchar *> Binding::BindFragDataLoca
 Function<void, GLenum, GLuint> Binding::BindFramebuffer("glBindFramebuffer");
 Function<void, GLuint, GLuint, GLint, GLboolean, GLint, GLenum, GLenum> Binding::BindImageTexture("glBindImageTexture");
 Function<void, GLuint> Binding::BindProgramPipeline("glBindProgramPipeline");
+Function<void, GLuint> Binding::BindProgramPipelineEXT("glBindProgramPipelineEXT");
 Function<void, GLenum, GLuint> Binding::BindRenderbuffer("glBindRenderbuffer");
 Function<void, GLuint, GLuint> Binding::BindSampler("glBindSampler");
 Function<void, GLuint> Binding::BindShadingRateImageNV("glBindShadingRateImageNV");
@@ -37,21 +38,22 @@ Function<void> Binding::BlendBarrierKHR("glBlendBarrierKHR");
 Function<void> Binding::BlendBarrierNV("glBlendBarrierNV");
 Function<void, GLfloat, GLfloat, GLfloat, GLfloat> Binding::BlendColor("glBlendColor");
 Function<void, GLenum> Binding::BlendEquation("glBlendEquation");
+Function<void, GLenum> Binding::BlendEquationEXT("glBlendEquationEXT");
+Function<void, GLuint, GLenum> Binding::BlendEquationi("glBlendEquationi");
+Function<void, GLuint, GLenum> Binding::BlendEquationiEXT("glBlendEquationiEXT");
+Function<void, GLuint, GLenum> Binding::BlendEquationiOES("glBlendEquationiOES");
 Function<void, GLenum, GLenum> Binding::BlendEquationSeparate("glBlendEquationSeparate");
 Function<void, GLuint, GLenum, GLenum> Binding::BlendEquationSeparatei("glBlendEquationSeparatei");
 Function<void, GLuint, GLenum, GLenum> Binding::BlendEquationSeparateiEXT("glBlendEquationSeparateiEXT");
 Function<void, GLuint, GLenum, GLenum> Binding::BlendEquationSeparateiOES("glBlendEquationSeparateiOES");
-Function<void, GLuint, GLenum> Binding::BlendEquationi("glBlendEquationi");
-Function<void, GLuint, GLenum> Binding::BlendEquationiEXT("glBlendEquationiEXT");
-Function<void, GLuint, GLenum> Binding::BlendEquationiOES("glBlendEquationiOES");
 Function<void, GLenum, GLenum> Binding::BlendFunc("glBlendFunc");
+Function<void, GLuint, GLenum, GLenum> Binding::BlendFunci("glBlendFunci");
+Function<void, GLuint, GLenum, GLenum> Binding::BlendFunciEXT("glBlendFunciEXT");
+Function<void, GLuint, GLenum, GLenum> Binding::BlendFunciOES("glBlendFunciOES");
 Function<void, GLenum, GLenum, GLenum, GLenum> Binding::BlendFuncSeparate("glBlendFuncSeparate");
 Function<void, GLuint, GLenum, GLenum, GLenum, GLenum> Binding::BlendFuncSeparatei("glBlendFuncSeparatei");
 Function<void, GLuint, GLenum, GLenum, GLenum, GLenum> Binding::BlendFuncSeparateiEXT("glBlendFuncSeparateiEXT");
 Function<void, GLuint, GLenum, GLenum, GLenum, GLenum> Binding::BlendFuncSeparateiOES("glBlendFuncSeparateiOES");
-Function<void, GLuint, GLenum, GLenum> Binding::BlendFunci("glBlendFunci");
-Function<void, GLuint, GLenum, GLenum> Binding::BlendFunciEXT("glBlendFunciEXT");
-Function<void, GLuint, GLenum, GLenum> Binding::BlendFunciOES("glBlendFunciOES");
 Function<void, GLenum, GLint> Binding::BlendParameteriNV("glBlendParameteriNV");
 Function<void, GLint, GLint, GLint, GLint, GLint, GLint, GLint, GLint, ClearBufferMask, GLenum> Binding::BlitFramebuffer("glBlitFramebuffer");
 Function<void, GLint, GLint, GLint, GLint, GLint, GLint, GLint, GLint, ClearBufferMask, GLenum> Binding::BlitFramebufferANGLE("glBlitFramebufferANGLE");
@@ -62,7 +64,6 @@ Function<void, GLenum, GLsizeiptr, const void *, BufferStorageMask> Binding::Buf
 Function<void, GLenum, GLintptr, GLsizeiptr, GLeglClientBufferEXT, BufferStorageMask> Binding::BufferStorageExternalEXT("glBufferStorageExternalEXT");
 Function<void, GLenum, GLsizeiptr, GLuint, GLuint64> Binding::BufferStorageMemEXT("glBufferStorageMemEXT");
 Function<void, GLenum, GLintptr, GLsizeiptr, const void *> Binding::BufferSubData("glBufferSubData");
-
 
 
 } // namespace glesbinding

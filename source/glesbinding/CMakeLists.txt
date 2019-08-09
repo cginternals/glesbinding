@@ -56,6 +56,7 @@ set(headers
     ${include_path}/gles/extension.h
     ${include_path}/gles/functions.h
     ${include_path}/gles/types.h
+    ${include_path}/gles/types.inl
     ${include_path}/gles/values.h
     
     ${include_path}/glesbinding.h
