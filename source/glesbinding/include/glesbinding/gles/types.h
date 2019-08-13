@@ -24,11 +24,6 @@
 namespace gles
 {
 
-using EGLint = int;
-using EGLchar = char;
-using EGLNativeDisplayType = void*;
-using EGLNativePixmapType = void*;
-using EGLNativeWindowType = void*;
 
 enum class GLextension : int;
 enum class GLenum : unsigned int;
@@ -65,7 +60,13 @@ enum class PathFontStyle : unsigned int;
 enum class PathMetricMask : unsigned int;
 enum class PathRenderingMaskNV : unsigned int;
 enum class PerformanceQueryCapsMaskINTEL : unsigned int;
+using EGLint = int;
+using EGLchar = char;
+using EGLNativeDisplayType = void *;
+using EGLNativePixmapType = void *;
+using EGLNativeWindowType = void *;
 enum class UnusedMask : unsigned int;
+
 
 } // namespace gles
 

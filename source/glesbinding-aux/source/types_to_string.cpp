@@ -230,6 +230,66 @@ std::ostream & operator<<(std::ostream & stream, const AbstractValue * value)
     }
 
     
+    if (typeid(*value) == typeid(Value<gles::EGLchar>))
+    {
+        return stream << *reinterpret_cast<const Value<gles::EGLchar>*>(value);
+    }
+    
+    
+    if (typeid(*value) == typeid(Value<gles::EGLchar *>))
+    {
+        return stream << *reinterpret_cast<const Value<gles::EGLchar *>*>(value);
+    }
+
+    
+    if (typeid(*value) == typeid(Value<gles::EGLint>))
+    {
+        return stream << *reinterpret_cast<const Value<gles::EGLint>*>(value);
+    }
+    
+    
+    if (typeid(*value) == typeid(Value<gles::EGLint *>))
+    {
+        return stream << *reinterpret_cast<const Value<gles::EGLint *>*>(value);
+    }
+
+    
+    if (typeid(*value) == typeid(Value<gles::EGLNativeDisplayType>))
+    {
+        return stream << *reinterpret_cast<const Value<gles::EGLNativeDisplayType>*>(value);
+    }
+    
+    
+    if (typeid(*value) == typeid(Value<gles::EGLNativeDisplayType *>))
+    {
+        return stream << *reinterpret_cast<const Value<gles::EGLNativeDisplayType *>*>(value);
+    }
+
+    
+    if (typeid(*value) == typeid(Value<gles::EGLNativePixmapType>))
+    {
+        return stream << *reinterpret_cast<const Value<gles::EGLNativePixmapType>*>(value);
+    }
+    
+    
+    if (typeid(*value) == typeid(Value<gles::EGLNativePixmapType *>))
+    {
+        return stream << *reinterpret_cast<const Value<gles::EGLNativePixmapType *>*>(value);
+    }
+
+    
+    if (typeid(*value) == typeid(Value<gles::EGLNativeWindowType>))
+    {
+        return stream << *reinterpret_cast<const Value<gles::EGLNativeWindowType>*>(value);
+    }
+    
+    
+    if (typeid(*value) == typeid(Value<gles::EGLNativeWindowType *>))
+    {
+        return stream << *reinterpret_cast<const Value<gles::EGLNativeWindowType *>*>(value);
+    }
+
+    
     if (typeid(*value) == typeid(Value<gles::GLbitfield>))
     {
         return stream << *reinterpret_cast<const Value<gles::GLbitfield>*>(value);

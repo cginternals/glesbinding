@@ -81,14 +81,14 @@ GLESBINDING_AUX_API std::ostream & operator<<(std::ostream & stream, const Value
 
 /**
 *  @brief
-*    A specialized ostream operator for the gl::GLubyte * Value template
+*    A specialized ostream operator for the GLubyte * Value template
 */
 template <>
 GLESBINDING_AUX_API std::ostream & operator<<(std::ostream & stream, const Value<gles::GLubyte *> & value);
 
 /**
 *  @brief
-*    A specialized ostream operator for the gl::GLchar * Value template
+*    A specialized ostream operator for the GLchar * Value template
 */
 template <>
 GLESBINDING_AUX_API std::ostream & operator<<(std::ostream & stream, const Value<gles::GLchar *> & value);
