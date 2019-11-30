@@ -23,4 +23,5 @@ endif()
 # 
 
 # Examples
-add_subdirectory("cubescape")
+add_subdirectory("cubescape-gl")
+add_subdirectory("cubescape-gles")

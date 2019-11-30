@@ -12,7 +12,7 @@ find_package(cpplocate REQUIRED)
 # 
 
 # Target name
-set(target cubescape)
+set(target cubescape-gles)
 
 # Exit here if required dependencies are not met
 if (NOT glfw3_FOUND)
