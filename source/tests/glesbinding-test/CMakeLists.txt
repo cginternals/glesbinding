@@ -78,7 +78,7 @@ target_link_libraries(${target}
     ${DEFAULT_LIBRARIES}
     glfw
     ${META_PROJECT_NAME}::glesbinding
-    gmock-dev
+    googletest::googletest
 )
 
 
