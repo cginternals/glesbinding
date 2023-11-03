@@ -61,13 +61,6 @@ GLESBINDING_CONSTEXPR Boolean32::operator unsigned int() const
     return m_value;
 }
 
-Boolean32 & Boolean32::operator=(const Boolean32 & other)
-{
-    m_value = other.m_value;
-
-    return *this;
-}
-
 GLESBINDING_CONSTEXPR bool Boolean32::operator<(const Boolean32 & other) const
 {
     return m_value < other.m_value;

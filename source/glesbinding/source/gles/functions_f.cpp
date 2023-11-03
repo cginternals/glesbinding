@@ -73,6 +73,11 @@ void glFramebufferParameteri(GLenum target, GLenum pname, GLint param)
     return glesbinding::Binding::FramebufferParameteri(target, pname, param);
 }
 
+void glFramebufferParameteriMESA(GLenum target, GLenum pname, GLint param)
+{
+    return glesbinding::Binding::FramebufferParameteriMESA(target, pname, param);
+}
+
 void glFramebufferPixelLocalStorageSizeEXT(GLuint target, GLsizei size)
 {
     return glesbinding::Binding::FramebufferPixelLocalStorageSizeEXT(target, size);
@@ -86,6 +91,11 @@ void glFramebufferRenderbuffer(GLenum target, GLenum attachment, GLenum renderbu
 void glFramebufferSampleLocationsfvNV(GLenum target, GLuint start, GLsizei count, const GLfloat * v)
 {
     return glesbinding::Binding::FramebufferSampleLocationsfvNV(target, start, count, v);
+}
+
+void glFramebufferShadingRateEXT(GLenum target, GLenum attachment, GLuint texture, GLint baseLayer, GLsizei numLayers, GLsizei texelWidth, GLsizei texelHeight)
+{
+    return glesbinding::Binding::FramebufferShadingRateEXT(target, attachment, texture, baseLayer, numLayers, texelWidth, texelHeight);
 }
 
 void glFramebufferTexture(GLenum target, GLenum attachment, GLuint texture, GLint level)

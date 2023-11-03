@@ -118,6 +118,11 @@ void glSelectPerfMonitorCountersAMD(GLuint monitor, GLboolean enable, GLuint gro
     return glesbinding::Binding::SelectPerfMonitorCountersAMD(monitor, enable, group, numCounters, counterList);
 }
 
+void glSemaphoreParameterivNV(GLuint semaphore, GLenum pname, const GLint * params)
+{
+    return glesbinding::Binding::SemaphoreParameterivNV(semaphore, pname, params);
+}
+
 void glSemaphoreParameterui64vEXT(GLuint semaphore, GLenum pname, const GLuint64 * params)
 {
     return glesbinding::Binding::SemaphoreParameterui64vEXT(semaphore, pname, params);
@@ -128,14 +133,24 @@ void glSetFenceNV(GLuint fence, GLenum condition)
     return glesbinding::Binding::SetFenceNV(fence, condition);
 }
 
-void glShaderBinary(GLsizei count, const GLuint * shaders, GLenum binaryformat, const void * binary, GLsizei length)
+void glShaderBinary(GLsizei count, const GLuint * shaders, GLenum binaryFormat, const void * binary, GLsizei length)
 {
-    return glesbinding::Binding::ShaderBinary(count, shaders, binaryformat, binary, length);
+    return glesbinding::Binding::ShaderBinary(count, shaders, binaryFormat, binary, length);
 }
 
 void glShaderSource(GLuint shader, GLsizei count, const GLchar *const* string, const GLint * length)
 {
     return glesbinding::Binding::ShaderSource(shader, count, string, length);
+}
+
+void glShadingRateCombinerOpsEXT(GLenum combinerOp0, GLenum combinerOp1)
+{
+    return glesbinding::Binding::ShadingRateCombinerOpsEXT(combinerOp0, combinerOp1);
+}
+
+void glShadingRateEXT(GLenum rate)
+{
+    return glesbinding::Binding::ShadingRateEXT(rate);
 }
 
 void glShadingRateImageBarrierNV(GLboolean synchronize)
@@ -146,6 +161,11 @@ void glShadingRateImageBarrierNV(GLboolean synchronize)
 void glShadingRateImagePaletteNV(GLuint viewport, GLuint first, GLsizei count, const GLenum * rates)
 {
     return glesbinding::Binding::ShadingRateImagePaletteNV(viewport, first, count, rates);
+}
+
+void glShadingRateQCOM(GLenum rate)
+{
+    return glesbinding::Binding::ShadingRateQCOM(rate);
 }
 
 void glShadingRateSampleOrderCustomNV(GLenum rate, GLuint samples, const GLint * locations)

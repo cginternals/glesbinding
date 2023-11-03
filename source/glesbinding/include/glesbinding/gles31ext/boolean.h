@@ -11,8 +11,11 @@ namespace gles31ext
 {
 
 
-// import booleans to namespace
+// use boolean type
+using gles::GLboolean;
 
+
+// import booleans to namespace
 using gles::GL_FALSE;
 using gles::GL_TRUE;
 

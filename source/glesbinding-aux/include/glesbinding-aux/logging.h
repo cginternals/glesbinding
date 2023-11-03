@@ -98,7 +98,7 @@ GLESBINDING_AUX_API void resume();
 *  @remarks
 *    This function is intended to get used by glbinding and not by a user of glbinding
 */
-GLESBINDING_AUX_API void log(LogEntry call);
+GLESBINDING_AUX_API void log(FunctionCall && call);
 
 
 } } // namespace glesbinding::aux

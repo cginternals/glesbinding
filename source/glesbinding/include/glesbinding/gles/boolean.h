@@ -1,3 +1,4 @@
+
 #pragma once
 
 
@@ -14,12 +15,6 @@ namespace gles
 
 using GLboolean = glesbinding::Boolean32;
 
-
-} // namespace gl
-
-
-namespace gles
-{
 
 // import booleans to namespace
 

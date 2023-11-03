@@ -148,7 +148,7 @@ void resume()
     Binding::addCallbackMask(CallbackMask::Timestamp | CallbackMask::Logging);
 }
 
-void log(FunctionCall * call)
+void log(FunctionCall && call)
 {
     auto available = false;
     auto next = g_buffer.nextHead(available);
@@ -162,7 +162,7 @@ void log(FunctionCall * call)
     assert(!g_buffer.isFull());
 
     delete next;
-    g_buffer.push(call);
+    g_buffer.push(new FunctionCall(std::move(call)));
 }
 
 void startWriter(const std::string & filepath)

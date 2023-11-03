@@ -58,10 +58,11 @@ Function<void, GLuint, GLenum> Binding::CoverStrokePathNV("glCoverStrokePathNV")
 Function<void, GLsizei, GLuint *> Binding::CreateMemoryObjectsEXT("glCreateMemoryObjectsEXT");
 Function<void, GLuint, GLuint *> Binding::CreatePerfQueryINTEL("glCreatePerfQueryINTEL");
 Function<GLuint> Binding::CreateProgram("glCreateProgram");
+Function<void, GLsizei, GLuint *> Binding::CreateSemaphoresNV("glCreateSemaphoresNV");
 Function<GLuint, GLenum> Binding::CreateShader("glCreateShader");
 Function<GLuint, GLenum, const GLchar *> Binding::CreateShaderProgramEXT("glCreateShaderProgramEXT");
 Function<GLuint, GLenum, GLsizei, const GLchar *const*> Binding::CreateShaderProgramv("glCreateShaderProgramv");
-Function<GLuint, GLenum, GLsizei, const GLchar **> Binding::CreateShaderProgramvEXT("glCreateShaderProgramvEXT");
+Function<GLuint, GLenum, GLsizei, const GLchar *const*> Binding::CreateShaderProgramvEXT("glCreateShaderProgramvEXT");
 Function<void, GLenum> Binding::CullFace("glCullFace");
 
 

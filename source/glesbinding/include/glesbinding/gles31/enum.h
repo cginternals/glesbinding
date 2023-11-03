@@ -11,6 +11,10 @@ namespace gles31
 {
 
 
+// use enum type
+using gles::GLenum;
+
+
 // import enums to namespace
 using gles::GL_ACTIVE_ATOMIC_COUNTER_BUFFERS;
 using gles::GL_ACTIVE_ATTRIBUTE_MAX_LENGTH;

@@ -57,9 +57,12 @@ Function<void, GLuint, GLenum, GLenum, GLenum, GLenum> Binding::BlendFuncSeparat
 Function<void, GLenum, GLint> Binding::BlendParameteriNV("glBlendParameteriNV");
 Function<void, GLint, GLint, GLint, GLint, GLint, GLint, GLint, GLint, ClearBufferMask, GLenum> Binding::BlitFramebuffer("glBlitFramebuffer");
 Function<void, GLint, GLint, GLint, GLint, GLint, GLint, GLint, GLint, ClearBufferMask, GLenum> Binding::BlitFramebufferANGLE("glBlitFramebufferANGLE");
+Function<void, GLint, GLint, GLint, GLint, GLint, GLint, GLint, GLint, GLint, GLint, ClearBufferMask, GLenum> Binding::BlitFramebufferLayerEXT("glBlitFramebufferLayerEXT");
+Function<void, GLint, GLint, GLint, GLint, GLint, GLint, GLint, GLint, ClearBufferMask, GLenum> Binding::BlitFramebufferLayersEXT("glBlitFramebufferLayersEXT");
 Function<void, GLint, GLint, GLint, GLint, GLint, GLint, GLint, GLint, ClearBufferMask, GLenum> Binding::BlitFramebufferNV("glBlitFramebufferNV");
 Function<void, GLenum, GLuint, GLuint64> Binding::BufferAttachMemoryNV("glBufferAttachMemoryNV");
 Function<void, GLenum, GLsizeiptr, const void *, GLenum> Binding::BufferData("glBufferData");
+Function<void, GLenum, GLintptr, GLsizeiptr, GLuint, GLuint64, GLboolean> Binding::BufferPageCommitmentMemNV("glBufferPageCommitmentMemNV");
 Function<void, GLenum, GLsizeiptr, const void *, BufferStorageMask> Binding::BufferStorageEXT("glBufferStorageEXT");
 Function<void, GLenum, GLintptr, GLsizeiptr, GLeglClientBufferEXT, BufferStorageMask> Binding::BufferStorageExternalEXT("glBufferStorageExternalEXT");
 Function<void, GLenum, GLsizeiptr, GLuint, GLuint64> Binding::BufferStorageMemEXT("glBufferStorageMemEXT");

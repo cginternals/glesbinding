@@ -208,9 +208,9 @@ void glMultiDrawArraysIndirectEXT(GLenum mode, const void * indirect, GLsizei dr
     return glesbinding::Binding::MultiDrawArraysIndirectEXT(mode, indirect, drawcount, stride);
 }
 
-void glMultiDrawElementsBaseVertexEXT(GLenum mode, const GLsizei * count, GLenum type, const void *const* indices, GLsizei primcount, const GLint * basevertex)
+void glMultiDrawElementsBaseVertexEXT(GLenum mode, const GLsizei * count, GLenum type, const void *const* indices, GLsizei drawcount, const GLint * basevertex)
 {
-    return glesbinding::Binding::MultiDrawElementsBaseVertexEXT(mode, count, type, indices, primcount, basevertex);
+    return glesbinding::Binding::MultiDrawElementsBaseVertexEXT(mode, count, type, indices, drawcount, basevertex);
 }
 
 void glMultiDrawElementsEXT(GLenum mode, const GLsizei * count, GLenum type, const void *const* indices, GLsizei primcount)

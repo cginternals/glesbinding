@@ -16,18 +16,19 @@ namespace gles
 {
 
 
-GLESBINDING_AUX_API std::ostream & operator<<(std::ostream & stream, const GLboolean & value);
 GLESBINDING_AUX_API std::ostream & operator<<(std::ostream & stream, const GLenum & value);
+GLESBINDING_AUX_API std::ostream & operator<<(std::ostream & stream, const GLboolean & value);
 GLESBINDING_AUX_API std::ostream & operator<<(std::ostream & stream, const GLextension & value);
 GLESBINDING_AUX_API std::ostream & operator<<(std::ostream & stream, const AttribMask & value);
 GLESBINDING_AUX_API std::ostream & operator<<(std::ostream & stream, const BufferStorageMask & value);
 GLESBINDING_AUX_API std::ostream & operator<<(std::ostream & stream, const ClearBufferMask & value);
 GLESBINDING_AUX_API std::ostream & operator<<(std::ostream & stream, const ContextFlagMask & value);
+GLESBINDING_AUX_API std::ostream & operator<<(std::ostream & stream, const FragmentShaderDestMaskATI & value);
+GLESBINDING_AUX_API std::ostream & operator<<(std::ostream & stream, const FragmentShaderDestModMaskATI & value);
 GLESBINDING_AUX_API std::ostream & operator<<(std::ostream & stream, const MapBufferAccessMask & value);
 GLESBINDING_AUX_API std::ostream & operator<<(std::ostream & stream, const MemoryBarrierMask & value);
 GLESBINDING_AUX_API std::ostream & operator<<(std::ostream & stream, const PathFontStyle & value);
 GLESBINDING_AUX_API std::ostream & operator<<(std::ostream & stream, const PathMetricMask & value);
-GLESBINDING_AUX_API std::ostream & operator<<(std::ostream & stream, const PathRenderingMaskNV & value);
 GLESBINDING_AUX_API std::ostream & operator<<(std::ostream & stream, const PerformanceQueryCapsMaskINTEL & value);
 GLESBINDING_AUX_API std::ostream & operator<<(std::ostream & stream, const SyncObjectMask & value);
 GLESBINDING_AUX_API std::ostream & operator<<(std::ostream & stream, const UnusedMask & value);
@@ -78,6 +79,13 @@ GLESBINDING_AUX_API std::ostream & operator<<(std::ostream & stream, const Value
 */
 template <>
 GLESBINDING_AUX_API std::ostream & operator<<(std::ostream & stream, const Value<gles::GLboolean> & value);
+
+/**
+*  @brief
+*    A specialized ostream operator for the const char * Value template
+*/
+template <>
+GLESBINDING_AUX_API std::ostream & operator<<(std::ostream & stream, const Value<const char *> & value);
 
 /**
 *  @brief

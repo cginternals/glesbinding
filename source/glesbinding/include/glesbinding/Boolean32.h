@@ -31,7 +31,6 @@ public:
     GLESBINDING_CONSTEXPR inline explicit operator int() const;
     GLESBINDING_CONSTEXPR inline explicit operator unsigned int() const;
 
-    inline Boolean32 & operator=(const Boolean32 & other);
     GLESBINDING_CONSTEXPR inline bool operator<(const Boolean32 & other) const;
     GLESBINDING_CONSTEXPR inline bool operator>(const Boolean32 & other) const;
     GLESBINDING_CONSTEXPR inline bool operator<=(const Boolean32 & other) const;

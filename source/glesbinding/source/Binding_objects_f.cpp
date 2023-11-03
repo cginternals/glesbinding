@@ -22,9 +22,11 @@ Function<void> Binding::FramebufferFetchBarrierQCOM("glFramebufferFetchBarrierQC
 Function<void, GLuint, GLuint, GLuint, GLuint, GLuint *> Binding::FramebufferFoveationConfigQCOM("glFramebufferFoveationConfigQCOM");
 Function<void, GLuint, GLuint, GLuint, GLfloat, GLfloat, GLfloat, GLfloat, GLfloat> Binding::FramebufferFoveationParametersQCOM("glFramebufferFoveationParametersQCOM");
 Function<void, GLenum, GLenum, GLint> Binding::FramebufferParameteri("glFramebufferParameteri");
+Function<void, GLenum, GLenum, GLint> Binding::FramebufferParameteriMESA("glFramebufferParameteriMESA");
 Function<void, GLuint, GLsizei> Binding::FramebufferPixelLocalStorageSizeEXT("glFramebufferPixelLocalStorageSizeEXT");
 Function<void, GLenum, GLenum, GLenum, GLuint> Binding::FramebufferRenderbuffer("glFramebufferRenderbuffer");
 Function<void, GLenum, GLuint, GLsizei, const GLfloat *> Binding::FramebufferSampleLocationsfvNV("glFramebufferSampleLocationsfvNV");
+Function<void, GLenum, GLenum, GLuint, GLint, GLsizei, GLsizei, GLsizei> Binding::FramebufferShadingRateEXT("glFramebufferShadingRateEXT");
 Function<void, GLenum, GLenum, GLuint, GLint> Binding::FramebufferTexture("glFramebufferTexture");
 Function<void, GLenum, GLenum, GLenum, GLuint, GLint> Binding::FramebufferTexture2D("glFramebufferTexture2D");
 Function<void, GLenum, GLenum, GLenum, GLuint, GLint, GLint, GLint> Binding::FramebufferTexture2DDownsampleIMG("glFramebufferTexture2DDownsampleIMG");

@@ -57,6 +57,18 @@ enum class ContextFlagMask : unsigned int
 };
 
 
+enum class FragmentShaderDestMaskATI : unsigned int
+{
+    GL_NONE_BIT                                = 0x0 // Generic GL_NONE_BIT
+};
+
+
+enum class FragmentShaderDestModMaskATI : unsigned int
+{
+    GL_NONE_BIT                                = 0x0 // Generic GL_NONE_BIT
+};
+
+
 enum class MapBufferAccessMask : unsigned int
 {
     GL_NONE_BIT                                = 0x0, // Generic GL_NONE_BIT
@@ -109,6 +121,15 @@ enum class PathFontStyle : unsigned int
 enum class PathMetricMask : unsigned int
 {
     GL_NONE_BIT                                = 0x0, // Generic GL_NONE_BIT
+    GL_GLYPH_WIDTH_BIT_NV                      = 0x01,
+    GL_GLYPH_HEIGHT_BIT_NV                     = 0x02,
+    GL_GLYPH_HORIZONTAL_BEARING_X_BIT_NV       = 0x04,
+    GL_GLYPH_HORIZONTAL_BEARING_Y_BIT_NV       = 0x08,
+    GL_GLYPH_HORIZONTAL_BEARING_ADVANCE_BIT_NV = 0x10,
+    GL_GLYPH_VERTICAL_BEARING_X_BIT_NV         = 0x20,
+    GL_GLYPH_VERTICAL_BEARING_Y_BIT_NV         = 0x40,
+    GL_GLYPH_VERTICAL_BEARING_ADVANCE_BIT_NV   = 0x80,
+    GL_GLYPH_HAS_KERNING_BIT_NV                = 0x100,
     GL_FONT_X_MIN_BOUNDS_BIT_NV                = 0x00010000,
     GL_FONT_Y_MIN_BOUNDS_BIT_NV                = 0x00020000,
     GL_FONT_X_MAX_BOUNDS_BIT_NV                = 0x00040000,
@@ -117,59 +138,19 @@ enum class PathMetricMask : unsigned int
     GL_FONT_ASCENDER_BIT_NV                    = 0x00200000,
     GL_FONT_DESCENDER_BIT_NV                   = 0x00400000,
     GL_FONT_HEIGHT_BIT_NV                      = 0x00800000,
-    GL_GLYPH_WIDTH_BIT_NV                      = 0x01,
     GL_FONT_MAX_ADVANCE_WIDTH_BIT_NV           = 0x01000000,
-    GL_GLYPH_HEIGHT_BIT_NV                     = 0x02,
     GL_FONT_MAX_ADVANCE_HEIGHT_BIT_NV          = 0x02000000,
-    GL_GLYPH_HORIZONTAL_BEARING_X_BIT_NV       = 0x04,
     GL_FONT_UNDERLINE_POSITION_BIT_NV          = 0x04000000,
-    GL_GLYPH_HORIZONTAL_BEARING_Y_BIT_NV       = 0x08,
     GL_FONT_UNDERLINE_THICKNESS_BIT_NV         = 0x08000000,
-    GL_GLYPH_HORIZONTAL_BEARING_ADVANCE_BIT_NV = 0x10,
-    GL_GLYPH_HAS_KERNING_BIT_NV                = 0x100,
     GL_FONT_HAS_KERNING_BIT_NV                 = 0x10000000,
-    GL_GLYPH_VERTICAL_BEARING_X_BIT_NV         = 0x20,
-    GL_FONT_NUM_GLYPH_INDICES_BIT_NV           = 0x20000000,
-    GL_GLYPH_VERTICAL_BEARING_Y_BIT_NV         = 0x40,
-    GL_GLYPH_VERTICAL_BEARING_ADVANCE_BIT_NV   = 0x80
-};
-
-
-enum class PathRenderingMaskNV : unsigned int
-{
-    GL_NONE_BIT                                = 0x0, // Generic GL_NONE_BIT
-    GL_FONT_X_MIN_BOUNDS_BIT_NV                = 0x00010000, // reuse from PathMetricMask
-    GL_FONT_Y_MIN_BOUNDS_BIT_NV                = 0x00020000, // reuse from PathMetricMask
-    GL_FONT_X_MAX_BOUNDS_BIT_NV                = 0x00040000, // reuse from PathMetricMask
-    GL_FONT_Y_MAX_BOUNDS_BIT_NV                = 0x00080000, // reuse from PathMetricMask
-    GL_FONT_UNITS_PER_EM_BIT_NV                = 0x00100000, // reuse from PathMetricMask
-    GL_FONT_ASCENDER_BIT_NV                    = 0x00200000, // reuse from PathMetricMask
-    GL_FONT_DESCENDER_BIT_NV                   = 0x00400000, // reuse from PathMetricMask
-    GL_FONT_HEIGHT_BIT_NV                      = 0x00800000, // reuse from PathMetricMask
-    GL_BOLD_BIT_NV                             = 0x01, // reuse from PathFontStyle
-    GL_GLYPH_WIDTH_BIT_NV                      = 0x01, // reuse from PathMetricMask
-    GL_FONT_MAX_ADVANCE_WIDTH_BIT_NV           = 0x01000000, // reuse from PathMetricMask
-    GL_ITALIC_BIT_NV                           = 0x02, // reuse from PathFontStyle
-    GL_GLYPH_HEIGHT_BIT_NV                     = 0x02, // reuse from PathMetricMask
-    GL_FONT_MAX_ADVANCE_HEIGHT_BIT_NV          = 0x02000000, // reuse from PathMetricMask
-    GL_GLYPH_HORIZONTAL_BEARING_X_BIT_NV       = 0x04, // reuse from PathMetricMask
-    GL_FONT_UNDERLINE_POSITION_BIT_NV          = 0x04000000, // reuse from PathMetricMask
-    GL_GLYPH_HORIZONTAL_BEARING_Y_BIT_NV       = 0x08, // reuse from PathMetricMask
-    GL_FONT_UNDERLINE_THICKNESS_BIT_NV         = 0x08000000, // reuse from PathMetricMask
-    GL_GLYPH_HORIZONTAL_BEARING_ADVANCE_BIT_NV = 0x10, // reuse from PathMetricMask
-    GL_GLYPH_HAS_KERNING_BIT_NV                = 0x100, // reuse from PathMetricMask
-    GL_FONT_HAS_KERNING_BIT_NV                 = 0x10000000, // reuse from PathMetricMask
-    GL_GLYPH_VERTICAL_BEARING_X_BIT_NV         = 0x20, // reuse from PathMetricMask
-    GL_FONT_NUM_GLYPH_INDICES_BIT_NV           = 0x20000000, // reuse from PathMetricMask
-    GL_GLYPH_VERTICAL_BEARING_Y_BIT_NV         = 0x40, // reuse from PathMetricMask
-    GL_GLYPH_VERTICAL_BEARING_ADVANCE_BIT_NV   = 0x80 // reuse from PathMetricMask
+    GL_FONT_NUM_GLYPH_INDICES_BIT_NV           = 0x20000000
 };
 
 
 enum class PerformanceQueryCapsMaskINTEL : unsigned int
 {
-    GL_NONE_BIT                                = 0x0, // Generic GL_NONE_BIT
     GL_PERFQUERY_SINGLE_CONTEXT_INTEL          = 0x00000000,
+    GL_NONE_BIT                                = 0x0, // Generic GL_NONE_BIT
     GL_PERFQUERY_GLOBAL_CONTEXT_INTEL          = 0x00000001
 };
 
@@ -218,7 +199,7 @@ GLESBINDING_CONSTEXPR static const MemoryBarrierMask GL_ALL_BARRIER_BITS = Memor
 GLESBINDING_CONSTEXPR static const UseProgramStageMask GL_ALL_SHADER_BITS = UseProgramStageMask::GL_ALL_SHADER_BITS;
 GLESBINDING_CONSTEXPR static const UseProgramStageMask GL_ALL_SHADER_BITS_EXT = UseProgramStageMask::GL_ALL_SHADER_BITS_EXT;
 GLESBINDING_CONSTEXPR static const MemoryBarrierMask GL_ATOMIC_COUNTER_BARRIER_BIT = MemoryBarrierMask::GL_ATOMIC_COUNTER_BARRIER_BIT;
-GLESBINDING_CONSTEXPR static const glesbinding::SharedBitfield<PathFontStyle, PathRenderingMaskNV> GL_BOLD_BIT_NV = PathFontStyle::GL_BOLD_BIT_NV;
+GLESBINDING_CONSTEXPR static const PathFontStyle GL_BOLD_BIT_NV = PathFontStyle::GL_BOLD_BIT_NV;
 GLESBINDING_CONSTEXPR static const MemoryBarrierMask GL_BUFFER_UPDATE_BARRIER_BIT = MemoryBarrierMask::GL_BUFFER_UPDATE_BARRIER_BIT;
 GLESBINDING_CONSTEXPR static const MemoryBarrierMask GL_CLIENT_MAPPED_BUFFER_BARRIER_BIT_EXT = MemoryBarrierMask::GL_CLIENT_MAPPED_BUFFER_BARRIER_BIT_EXT;
 GLESBINDING_CONSTEXPR static const BufferStorageMask GL_CLIENT_STORAGE_BIT_EXT = BufferStorageMask::GL_CLIENT_STORAGE_BIT_EXT;
@@ -234,36 +215,36 @@ GLESBINDING_CONSTEXPR static const ClearBufferMask GL_COVERAGE_BUFFER_BIT_NV = C
 GLESBINDING_CONSTEXPR static const glesbinding::SharedBitfield<AttribMask, ClearBufferMask> GL_DEPTH_BUFFER_BIT = AttribMask::GL_DEPTH_BUFFER_BIT;
 GLESBINDING_CONSTEXPR static const BufferStorageMask GL_DYNAMIC_STORAGE_BIT_EXT = BufferStorageMask::GL_DYNAMIC_STORAGE_BIT_EXT;
 GLESBINDING_CONSTEXPR static const MemoryBarrierMask GL_ELEMENT_ARRAY_BARRIER_BIT = MemoryBarrierMask::GL_ELEMENT_ARRAY_BARRIER_BIT;
-GLESBINDING_CONSTEXPR static const glesbinding::SharedBitfield<PathMetricMask, PathRenderingMaskNV> GL_FONT_ASCENDER_BIT_NV = PathMetricMask::GL_FONT_ASCENDER_BIT_NV;
-GLESBINDING_CONSTEXPR static const glesbinding::SharedBitfield<PathMetricMask, PathRenderingMaskNV> GL_FONT_DESCENDER_BIT_NV = PathMetricMask::GL_FONT_DESCENDER_BIT_NV;
-GLESBINDING_CONSTEXPR static const glesbinding::SharedBitfield<PathMetricMask, PathRenderingMaskNV> GL_FONT_HAS_KERNING_BIT_NV = PathMetricMask::GL_FONT_HAS_KERNING_BIT_NV;
-GLESBINDING_CONSTEXPR static const glesbinding::SharedBitfield<PathMetricMask, PathRenderingMaskNV> GL_FONT_HEIGHT_BIT_NV = PathMetricMask::GL_FONT_HEIGHT_BIT_NV;
-GLESBINDING_CONSTEXPR static const glesbinding::SharedBitfield<PathMetricMask, PathRenderingMaskNV> GL_FONT_MAX_ADVANCE_HEIGHT_BIT_NV = PathMetricMask::GL_FONT_MAX_ADVANCE_HEIGHT_BIT_NV;
-GLESBINDING_CONSTEXPR static const glesbinding::SharedBitfield<PathMetricMask, PathRenderingMaskNV> GL_FONT_MAX_ADVANCE_WIDTH_BIT_NV = PathMetricMask::GL_FONT_MAX_ADVANCE_WIDTH_BIT_NV;
-GLESBINDING_CONSTEXPR static const glesbinding::SharedBitfield<PathMetricMask, PathRenderingMaskNV> GL_FONT_NUM_GLYPH_INDICES_BIT_NV = PathMetricMask::GL_FONT_NUM_GLYPH_INDICES_BIT_NV;
-GLESBINDING_CONSTEXPR static const glesbinding::SharedBitfield<PathMetricMask, PathRenderingMaskNV> GL_FONT_UNDERLINE_POSITION_BIT_NV = PathMetricMask::GL_FONT_UNDERLINE_POSITION_BIT_NV;
-GLESBINDING_CONSTEXPR static const glesbinding::SharedBitfield<PathMetricMask, PathRenderingMaskNV> GL_FONT_UNDERLINE_THICKNESS_BIT_NV = PathMetricMask::GL_FONT_UNDERLINE_THICKNESS_BIT_NV;
-GLESBINDING_CONSTEXPR static const glesbinding::SharedBitfield<PathMetricMask, PathRenderingMaskNV> GL_FONT_UNITS_PER_EM_BIT_NV = PathMetricMask::GL_FONT_UNITS_PER_EM_BIT_NV;
-GLESBINDING_CONSTEXPR static const glesbinding::SharedBitfield<PathMetricMask, PathRenderingMaskNV> GL_FONT_X_MAX_BOUNDS_BIT_NV = PathMetricMask::GL_FONT_X_MAX_BOUNDS_BIT_NV;
-GLESBINDING_CONSTEXPR static const glesbinding::SharedBitfield<PathMetricMask, PathRenderingMaskNV> GL_FONT_X_MIN_BOUNDS_BIT_NV = PathMetricMask::GL_FONT_X_MIN_BOUNDS_BIT_NV;
-GLESBINDING_CONSTEXPR static const glesbinding::SharedBitfield<PathMetricMask, PathRenderingMaskNV> GL_FONT_Y_MAX_BOUNDS_BIT_NV = PathMetricMask::GL_FONT_Y_MAX_BOUNDS_BIT_NV;
-GLESBINDING_CONSTEXPR static const glesbinding::SharedBitfield<PathMetricMask, PathRenderingMaskNV> GL_FONT_Y_MIN_BOUNDS_BIT_NV = PathMetricMask::GL_FONT_Y_MIN_BOUNDS_BIT_NV;
+GLESBINDING_CONSTEXPR static const PathMetricMask GL_FONT_ASCENDER_BIT_NV = PathMetricMask::GL_FONT_ASCENDER_BIT_NV;
+GLESBINDING_CONSTEXPR static const PathMetricMask GL_FONT_DESCENDER_BIT_NV = PathMetricMask::GL_FONT_DESCENDER_BIT_NV;
+GLESBINDING_CONSTEXPR static const PathMetricMask GL_FONT_HAS_KERNING_BIT_NV = PathMetricMask::GL_FONT_HAS_KERNING_BIT_NV;
+GLESBINDING_CONSTEXPR static const PathMetricMask GL_FONT_HEIGHT_BIT_NV = PathMetricMask::GL_FONT_HEIGHT_BIT_NV;
+GLESBINDING_CONSTEXPR static const PathMetricMask GL_FONT_MAX_ADVANCE_HEIGHT_BIT_NV = PathMetricMask::GL_FONT_MAX_ADVANCE_HEIGHT_BIT_NV;
+GLESBINDING_CONSTEXPR static const PathMetricMask GL_FONT_MAX_ADVANCE_WIDTH_BIT_NV = PathMetricMask::GL_FONT_MAX_ADVANCE_WIDTH_BIT_NV;
+GLESBINDING_CONSTEXPR static const PathMetricMask GL_FONT_NUM_GLYPH_INDICES_BIT_NV = PathMetricMask::GL_FONT_NUM_GLYPH_INDICES_BIT_NV;
+GLESBINDING_CONSTEXPR static const PathMetricMask GL_FONT_UNDERLINE_POSITION_BIT_NV = PathMetricMask::GL_FONT_UNDERLINE_POSITION_BIT_NV;
+GLESBINDING_CONSTEXPR static const PathMetricMask GL_FONT_UNDERLINE_THICKNESS_BIT_NV = PathMetricMask::GL_FONT_UNDERLINE_THICKNESS_BIT_NV;
+GLESBINDING_CONSTEXPR static const PathMetricMask GL_FONT_UNITS_PER_EM_BIT_NV = PathMetricMask::GL_FONT_UNITS_PER_EM_BIT_NV;
+GLESBINDING_CONSTEXPR static const PathMetricMask GL_FONT_X_MAX_BOUNDS_BIT_NV = PathMetricMask::GL_FONT_X_MAX_BOUNDS_BIT_NV;
+GLESBINDING_CONSTEXPR static const PathMetricMask GL_FONT_X_MIN_BOUNDS_BIT_NV = PathMetricMask::GL_FONT_X_MIN_BOUNDS_BIT_NV;
+GLESBINDING_CONSTEXPR static const PathMetricMask GL_FONT_Y_MAX_BOUNDS_BIT_NV = PathMetricMask::GL_FONT_Y_MAX_BOUNDS_BIT_NV;
+GLESBINDING_CONSTEXPR static const PathMetricMask GL_FONT_Y_MIN_BOUNDS_BIT_NV = PathMetricMask::GL_FONT_Y_MIN_BOUNDS_BIT_NV;
 GLESBINDING_CONSTEXPR static const UseProgramStageMask GL_FRAGMENT_SHADER_BIT = UseProgramStageMask::GL_FRAGMENT_SHADER_BIT;
 GLESBINDING_CONSTEXPR static const UseProgramStageMask GL_FRAGMENT_SHADER_BIT_EXT = UseProgramStageMask::GL_FRAGMENT_SHADER_BIT_EXT;
 GLESBINDING_CONSTEXPR static const MemoryBarrierMask GL_FRAMEBUFFER_BARRIER_BIT = MemoryBarrierMask::GL_FRAMEBUFFER_BARRIER_BIT;
 GLESBINDING_CONSTEXPR static const UseProgramStageMask GL_GEOMETRY_SHADER_BIT = UseProgramStageMask::GL_GEOMETRY_SHADER_BIT;
 GLESBINDING_CONSTEXPR static const UseProgramStageMask GL_GEOMETRY_SHADER_BIT_EXT = UseProgramStageMask::GL_GEOMETRY_SHADER_BIT_EXT;
 GLESBINDING_CONSTEXPR static const UseProgramStageMask GL_GEOMETRY_SHADER_BIT_OES = UseProgramStageMask::GL_GEOMETRY_SHADER_BIT_OES;
-GLESBINDING_CONSTEXPR static const glesbinding::SharedBitfield<PathMetricMask, PathRenderingMaskNV> GL_GLYPH_HAS_KERNING_BIT_NV = PathMetricMask::GL_GLYPH_HAS_KERNING_BIT_NV;
-GLESBINDING_CONSTEXPR static const glesbinding::SharedBitfield<PathMetricMask, PathRenderingMaskNV> GL_GLYPH_HEIGHT_BIT_NV = PathMetricMask::GL_GLYPH_HEIGHT_BIT_NV;
-GLESBINDING_CONSTEXPR static const glesbinding::SharedBitfield<PathMetricMask, PathRenderingMaskNV> GL_GLYPH_HORIZONTAL_BEARING_ADVANCE_BIT_NV = PathMetricMask::GL_GLYPH_HORIZONTAL_BEARING_ADVANCE_BIT_NV;
-GLESBINDING_CONSTEXPR static const glesbinding::SharedBitfield<PathMetricMask, PathRenderingMaskNV> GL_GLYPH_HORIZONTAL_BEARING_X_BIT_NV = PathMetricMask::GL_GLYPH_HORIZONTAL_BEARING_X_BIT_NV;
-GLESBINDING_CONSTEXPR static const glesbinding::SharedBitfield<PathMetricMask, PathRenderingMaskNV> GL_GLYPH_HORIZONTAL_BEARING_Y_BIT_NV = PathMetricMask::GL_GLYPH_HORIZONTAL_BEARING_Y_BIT_NV;
-GLESBINDING_CONSTEXPR static const glesbinding::SharedBitfield<PathMetricMask, PathRenderingMaskNV> GL_GLYPH_VERTICAL_BEARING_ADVANCE_BIT_NV = PathMetricMask::GL_GLYPH_VERTICAL_BEARING_ADVANCE_BIT_NV;
-GLESBINDING_CONSTEXPR static const glesbinding::SharedBitfield<PathMetricMask, PathRenderingMaskNV> GL_GLYPH_VERTICAL_BEARING_X_BIT_NV = PathMetricMask::GL_GLYPH_VERTICAL_BEARING_X_BIT_NV;
-GLESBINDING_CONSTEXPR static const glesbinding::SharedBitfield<PathMetricMask, PathRenderingMaskNV> GL_GLYPH_VERTICAL_BEARING_Y_BIT_NV = PathMetricMask::GL_GLYPH_VERTICAL_BEARING_Y_BIT_NV;
-GLESBINDING_CONSTEXPR static const glesbinding::SharedBitfield<PathMetricMask, PathRenderingMaskNV> GL_GLYPH_WIDTH_BIT_NV = PathMetricMask::GL_GLYPH_WIDTH_BIT_NV;
-GLESBINDING_CONSTEXPR static const glesbinding::SharedBitfield<PathFontStyle, PathRenderingMaskNV> GL_ITALIC_BIT_NV = PathFontStyle::GL_ITALIC_BIT_NV;
+GLESBINDING_CONSTEXPR static const PathMetricMask GL_GLYPH_HAS_KERNING_BIT_NV = PathMetricMask::GL_GLYPH_HAS_KERNING_BIT_NV;
+GLESBINDING_CONSTEXPR static const PathMetricMask GL_GLYPH_HEIGHT_BIT_NV = PathMetricMask::GL_GLYPH_HEIGHT_BIT_NV;
+GLESBINDING_CONSTEXPR static const PathMetricMask GL_GLYPH_HORIZONTAL_BEARING_ADVANCE_BIT_NV = PathMetricMask::GL_GLYPH_HORIZONTAL_BEARING_ADVANCE_BIT_NV;
+GLESBINDING_CONSTEXPR static const PathMetricMask GL_GLYPH_HORIZONTAL_BEARING_X_BIT_NV = PathMetricMask::GL_GLYPH_HORIZONTAL_BEARING_X_BIT_NV;
+GLESBINDING_CONSTEXPR static const PathMetricMask GL_GLYPH_HORIZONTAL_BEARING_Y_BIT_NV = PathMetricMask::GL_GLYPH_HORIZONTAL_BEARING_Y_BIT_NV;
+GLESBINDING_CONSTEXPR static const PathMetricMask GL_GLYPH_VERTICAL_BEARING_ADVANCE_BIT_NV = PathMetricMask::GL_GLYPH_VERTICAL_BEARING_ADVANCE_BIT_NV;
+GLESBINDING_CONSTEXPR static const PathMetricMask GL_GLYPH_VERTICAL_BEARING_X_BIT_NV = PathMetricMask::GL_GLYPH_VERTICAL_BEARING_X_BIT_NV;
+GLESBINDING_CONSTEXPR static const PathMetricMask GL_GLYPH_VERTICAL_BEARING_Y_BIT_NV = PathMetricMask::GL_GLYPH_VERTICAL_BEARING_Y_BIT_NV;
+GLESBINDING_CONSTEXPR static const PathMetricMask GL_GLYPH_WIDTH_BIT_NV = PathMetricMask::GL_GLYPH_WIDTH_BIT_NV;
+GLESBINDING_CONSTEXPR static const PathFontStyle GL_ITALIC_BIT_NV = PathFontStyle::GL_ITALIC_BIT_NV;
 GLESBINDING_CONSTEXPR static const glesbinding::SharedBitfield<BufferStorageMask, MapBufferAccessMask> GL_MAP_COHERENT_BIT_EXT = BufferStorageMask::GL_MAP_COHERENT_BIT_EXT;
 GLESBINDING_CONSTEXPR static const MapBufferAccessMask GL_MAP_FLUSH_EXPLICIT_BIT = MapBufferAccessMask::GL_MAP_FLUSH_EXPLICIT_BIT;
 GLESBINDING_CONSTEXPR static const MapBufferAccessMask GL_MAP_FLUSH_EXPLICIT_BIT_EXT = MapBufferAccessMask::GL_MAP_FLUSH_EXPLICIT_BIT_EXT;
@@ -279,7 +260,7 @@ GLESBINDING_CONSTEXPR static const MapBufferAccessMask GL_MAP_UNSYNCHRONIZED_BIT
 GLESBINDING_CONSTEXPR static const glesbinding::SharedBitfield<BufferStorageMask, MapBufferAccessMask> GL_MAP_WRITE_BIT = BufferStorageMask::GL_MAP_WRITE_BIT;
 GLESBINDING_CONSTEXPR static const glesbinding::SharedBitfield<BufferStorageMask, MapBufferAccessMask> GL_MAP_WRITE_BIT_EXT = BufferStorageMask::GL_MAP_WRITE_BIT_EXT;
 GLESBINDING_CONSTEXPR static const UseProgramStageMask GL_MESH_SHADER_BIT_NV = UseProgramStageMask::GL_MESH_SHADER_BIT_NV;
-GLESBINDING_CONSTEXPR static const glesbinding::SharedBitfield<AttribMask, BufferStorageMask, ClearBufferMask, ContextFlagMask, MapBufferAccessMask, MemoryBarrierMask, PathFontStyle, PathMetricMask, PathRenderingMaskNV, PerformanceQueryCapsMaskINTEL, SyncObjectMask, UseProgramStageMask> GL_NONE_BIT = AttribMask::GL_NONE_BIT;
+GLESBINDING_CONSTEXPR static const glesbinding::SharedBitfield<AttribMask, BufferStorageMask, ClearBufferMask, ContextFlagMask, FragmentShaderDestMaskATI, FragmentShaderDestModMaskATI, MapBufferAccessMask, MemoryBarrierMask, PathFontStyle, PathMetricMask, PerformanceQueryCapsMaskINTEL, SyncObjectMask, UseProgramStageMask> GL_NONE_BIT = AttribMask::GL_NONE_BIT;
 GLESBINDING_CONSTEXPR static const PerformanceQueryCapsMaskINTEL GL_PERFQUERY_GLOBAL_CONTEXT_INTEL = PerformanceQueryCapsMaskINTEL::GL_PERFQUERY_GLOBAL_CONTEXT_INTEL;
 GLESBINDING_CONSTEXPR static const PerformanceQueryCapsMaskINTEL GL_PERFQUERY_SINGLE_CONTEXT_INTEL = PerformanceQueryCapsMaskINTEL::GL_PERFQUERY_SINGLE_CONTEXT_INTEL;
 GLESBINDING_CONSTEXPR static const MemoryBarrierMask GL_PIXEL_BUFFER_BARRIER_BIT = MemoryBarrierMask::GL_PIXEL_BUFFER_BARRIER_BIT;

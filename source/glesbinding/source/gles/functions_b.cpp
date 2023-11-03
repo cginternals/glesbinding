@@ -248,6 +248,16 @@ void glBlitFramebufferANGLE(GLint srcX0, GLint srcY0, GLint srcX1, GLint srcY1, 
     return glesbinding::Binding::BlitFramebufferANGLE(srcX0, srcY0, srcX1, srcY1, dstX0, dstY0, dstX1, dstY1, mask, filter);
 }
 
+void glBlitFramebufferLayerEXT(GLint srcX0, GLint srcY0, GLint srcX1, GLint srcY1, GLint srcLayer, GLint dstX0, GLint dstY0, GLint dstX1, GLint dstY1, GLint dstLayer, ClearBufferMask mask, GLenum filter)
+{
+    return glesbinding::Binding::BlitFramebufferLayerEXT(srcX0, srcY0, srcX1, srcY1, srcLayer, dstX0, dstY0, dstX1, dstY1, dstLayer, mask, filter);
+}
+
+void glBlitFramebufferLayersEXT(GLint srcX0, GLint srcY0, GLint srcX1, GLint srcY1, GLint dstX0, GLint dstY0, GLint dstX1, GLint dstY1, ClearBufferMask mask, GLenum filter)
+{
+    return glesbinding::Binding::BlitFramebufferLayersEXT(srcX0, srcY0, srcX1, srcY1, dstX0, dstY0, dstX1, dstY1, mask, filter);
+}
+
 void glBlitFramebufferNV(GLint srcX0, GLint srcY0, GLint srcX1, GLint srcY1, GLint dstX0, GLint dstY0, GLint dstX1, GLint dstY1, ClearBufferMask mask, GLenum filter)
 {
     return glesbinding::Binding::BlitFramebufferNV(srcX0, srcY0, srcX1, srcY1, dstX0, dstY0, dstX1, dstY1, mask, filter);
@@ -261,6 +271,11 @@ void glBufferAttachMemoryNV(GLenum target, GLuint memory, GLuint64 offset)
 void glBufferData(GLenum target, GLsizeiptr size, const void * data, GLenum usage)
 {
     return glesbinding::Binding::BufferData(target, size, data, usage);
+}
+
+void glBufferPageCommitmentMemNV(GLenum target, GLintptr offset, GLsizeiptr size, GLuint memory, GLuint64 memOffset, GLboolean commit)
+{
+    return glesbinding::Binding::BufferPageCommitmentMemNV(target, offset, size, memory, memOffset, commit);
 }
 
 void glBufferStorageEXT(GLenum target, GLsizeiptr size, const void * data, BufferStorageMask flags)

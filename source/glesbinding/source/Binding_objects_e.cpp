@@ -38,6 +38,7 @@ Function<void, GLuint, GLenum, GLint, GLenum, GLint *> Binding::ExtGetTexLevelPa
 Function<void, GLenum, GLint, GLint, GLint, GLint, GLsizei, GLsizei, GLsizei, GLenum, GLenum, void *> Binding::ExtGetTexSubImageQCOM("glExtGetTexSubImageQCOM");
 Function<void, GLuint *, GLint, GLint *> Binding::ExtGetTexturesQCOM("glExtGetTexturesQCOM");
 Function<GLboolean, GLuint> Binding::ExtIsProgramBinaryQCOM("glExtIsProgramBinaryQCOM");
+Function<void, GLuint, GLuint, GLuint, GLfloat> Binding::ExtrapolateTex2DQCOM("glExtrapolateTex2DQCOM");
 Function<void, GLenum, GLenum, GLint> Binding::ExtTexObjectStateOverrideiQCOM("glExtTexObjectStateOverrideiQCOM");
 
 

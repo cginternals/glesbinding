@@ -75,13 +75,13 @@ std::vector<GLbitfield> Meta::bitfields()
     return bitfields;    
 }
 
-std::vector<GLenum> Meta::enums()
+std::set<GLenum> Meta::enums()
 {
-    auto enums = std::vector<GLenum>{};
+    auto enums = std::set<GLenum>{};
 
     for (const auto & p : Meta_StringsByEnum)
     {
-        enums.push_back(p.first);
+        enums.insert(p.first);
     }
 
     return enums;
@@ -140,6 +140,20 @@ const std::string & Meta::getString(const GLenum glenum)
     }
 
     return none;
+}
+
+std::vector<std::string> Meta::getStrings(const GLenum glenum)
+{
+    const auto range = Meta_StringsByEnum.equal_range(glenum);
+
+    auto result = std::vector<std::string>();
+
+    for (auto i = range.first; i != range.second; ++i)
+    {
+        result.push_back(i->second);
+    }
+
+    return result;
 }
 
 const std::string & Meta::getString(const GLextension glextension)

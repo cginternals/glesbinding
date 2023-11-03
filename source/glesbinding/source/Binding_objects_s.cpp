@@ -31,12 +31,16 @@ Function<void, GLuint, GLint, GLint, GLsizei, GLsizei> Binding::ScissorIndexedOE
 Function<void, GLuint, const GLint *> Binding::ScissorIndexedvNV("glScissorIndexedvNV");
 Function<void, GLuint, const GLint *> Binding::ScissorIndexedvOES("glScissorIndexedvOES");
 Function<void, GLuint, GLboolean, GLuint, GLint, GLuint *> Binding::SelectPerfMonitorCountersAMD("glSelectPerfMonitorCountersAMD");
+Function<void, GLuint, GLenum, const GLint *> Binding::SemaphoreParameterivNV("glSemaphoreParameterivNV");
 Function<void, GLuint, GLenum, const GLuint64 *> Binding::SemaphoreParameterui64vEXT("glSemaphoreParameterui64vEXT");
 Function<void, GLuint, GLenum> Binding::SetFenceNV("glSetFenceNV");
 Function<void, GLsizei, const GLuint *, GLenum, const void *, GLsizei> Binding::ShaderBinary("glShaderBinary");
 Function<void, GLuint, GLsizei, const GLchar *const*, const GLint *> Binding::ShaderSource("glShaderSource");
+Function<void, GLenum, GLenum> Binding::ShadingRateCombinerOpsEXT("glShadingRateCombinerOpsEXT");
+Function<void, GLenum> Binding::ShadingRateEXT("glShadingRateEXT");
 Function<void, GLboolean> Binding::ShadingRateImageBarrierNV("glShadingRateImageBarrierNV");
 Function<void, GLuint, GLuint, GLsizei, const GLenum *> Binding::ShadingRateImagePaletteNV("glShadingRateImagePaletteNV");
+Function<void, GLenum> Binding::ShadingRateQCOM("glShadingRateQCOM");
 Function<void, GLenum, GLuint, const GLint *> Binding::ShadingRateSampleOrderCustomNV("glShadingRateSampleOrderCustomNV");
 Function<void, GLenum> Binding::ShadingRateSampleOrderNV("glShadingRateSampleOrderNV");
 Function<void, GLuint, GLuint, const GLuint *, GLuint, const GLuint *, const GLenum *> Binding::SignalSemaphoreEXT("glSignalSemaphoreEXT");

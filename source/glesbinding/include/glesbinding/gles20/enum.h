@@ -11,6 +11,10 @@ namespace gles20
 {
 
 
+// use enum type
+using gles::GLenum;
+
+
 // import enums to namespace
 using gles::GL_ACTIVE_ATTRIBUTE_MAX_LENGTH;
 using gles::GL_ACTIVE_ATTRIBUTES;

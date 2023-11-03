@@ -48,6 +48,16 @@ void glTexBufferRangeOES(GLenum target, GLenum internalformat, GLuint buffer, GL
     return glesbinding::Binding::TexBufferRangeOES(target, internalformat, buffer, offset, size);
 }
 
+void glTexEstimateMotionQCOM(GLuint ref, GLuint target, GLuint output)
+{
+    return glesbinding::Binding::TexEstimateMotionQCOM(ref, target, output);
+}
+
+void glTexEstimateMotionRegionsQCOM(GLuint ref, GLuint target, GLuint output, GLuint mask)
+{
+    return glesbinding::Binding::TexEstimateMotionRegionsQCOM(ref, target, output, mask);
+}
+
 void glTexImage2D(GLenum target, GLint level, GLint internalformat, GLsizei width, GLsizei height, GLint border, GLenum format, GLenum type, const void * pixels)
 {
     return glesbinding::Binding::TexImage2D(target, level, internalformat, width, height, border, format, type, pixels);
@@ -66,6 +76,11 @@ void glTexImage3DOES(GLenum target, GLint level, GLenum internalformat, GLsizei 
 void glTexPageCommitmentEXT(GLenum target, GLint level, GLint xoffset, GLint yoffset, GLint zoffset, GLsizei width, GLsizei height, GLsizei depth, GLboolean commit)
 {
     return glesbinding::Binding::TexPageCommitmentEXT(target, level, xoffset, yoffset, zoffset, width, height, depth, commit);
+}
+
+void glTexPageCommitmentMemNV(GLenum target, GLint layer, GLint level, GLint xoffset, GLint yoffset, GLint zoffset, GLsizei width, GLsizei height, GLsizei depth, GLuint memory, GLuint64 offset, GLboolean commit)
+{
+    return glesbinding::Binding::TexPageCommitmentMemNV(target, layer, level, xoffset, yoffset, zoffset, width, height, depth, memory, offset, commit);
 }
 
 void glTexParameterf(GLenum target, GLenum pname, GLfloat param)
@@ -158,6 +173,16 @@ void glTexStorage3DMultisampleOES(GLenum target, GLsizei samples, GLenum interna
     return glesbinding::Binding::TexStorage3DMultisampleOES(target, samples, internalformat, width, height, depth, fixedsamplelocations);
 }
 
+void glTexStorageAttribs2DEXT(GLenum target, GLsizei levels, GLenum internalformat, GLsizei width, GLsizei height, const GLint* attrib_list)
+{
+    return glesbinding::Binding::TexStorageAttribs2DEXT(target, levels, internalformat, width, height, attrib_list);
+}
+
+void glTexStorageAttribs3DEXT(GLenum target, GLsizei levels, GLenum internalformat, GLsizei width, GLsizei height, GLsizei depth, const GLint* attrib_list)
+{
+    return glesbinding::Binding::TexStorageAttribs3DEXT(target, levels, internalformat, width, height, depth, attrib_list);
+}
+
 void glTexStorageMem1DEXT(GLenum target, GLsizei levels, GLenum internalFormat, GLsizei width, GLuint memory, GLuint64 offset)
 {
     return glesbinding::Binding::TexStorageMem1DEXT(target, levels, internalFormat, width, memory, offset);
@@ -206,6 +231,11 @@ void glTextureAttachMemoryNV(GLuint texture, GLuint memory, GLuint64 offset)
 void glTextureFoveationParametersQCOM(GLuint texture, GLuint layer, GLuint focalPoint, GLfloat focalX, GLfloat focalY, GLfloat gainX, GLfloat gainY, GLfloat foveaArea)
 {
     return glesbinding::Binding::TextureFoveationParametersQCOM(texture, layer, focalPoint, focalX, focalY, gainX, gainY, foveaArea);
+}
+
+void glTexturePageCommitmentMemNV(GLuint texture, GLint layer, GLint level, GLint xoffset, GLint yoffset, GLint zoffset, GLsizei width, GLsizei height, GLsizei depth, GLuint memory, GLuint64 offset, GLboolean commit)
+{
+    return glesbinding::Binding::TexturePageCommitmentMemNV(texture, layer, level, xoffset, yoffset, zoffset, width, height, depth, memory, offset, commit);
 }
 
 void glTextureStorage1DEXT(GLuint texture, GLenum target, GLsizei levels, GLenum internalformat, GLsizei width)

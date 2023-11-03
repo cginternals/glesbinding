@@ -253,6 +253,11 @@ GLuint glCreateProgram()
     return glesbinding::Binding::CreateProgram();
 }
 
+void glCreateSemaphoresNV(GLsizei n, GLuint * semaphores)
+{
+    return glesbinding::Binding::CreateSemaphoresNV(n, semaphores);
+}
+
 GLuint glCreateShader(GLenum type)
 {
     return glesbinding::Binding::CreateShader(type);
@@ -268,7 +273,7 @@ GLuint glCreateShaderProgramv(GLenum type, GLsizei count, const GLchar *const* s
     return glesbinding::Binding::CreateShaderProgramv(type, count, strings);
 }
 
-GLuint glCreateShaderProgramvEXT(GLenum type, GLsizei count, const GLchar ** strings)
+GLuint glCreateShaderProgramvEXT(GLenum type, GLsizei count, const GLchar *const* strings)
 {
     return glesbinding::Binding::CreateShaderProgramvEXT(type, count, strings);
 }

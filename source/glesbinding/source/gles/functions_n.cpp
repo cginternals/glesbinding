@@ -13,6 +13,11 @@ void glNamedBufferAttachMemoryNV(GLuint buffer, GLuint memory, GLuint64 offset)
     return glesbinding::Binding::NamedBufferAttachMemoryNV(buffer, memory, offset);
 }
 
+void glNamedBufferPageCommitmentMemNV(GLuint buffer, GLintptr offset, GLsizeiptr size, GLuint memory, GLuint64 memOffset, GLboolean commit)
+{
+    return glesbinding::Binding::NamedBufferPageCommitmentMemNV(buffer, offset, size, memory, memOffset, commit);
+}
+
 void glNamedBufferStorageExternalEXT(GLuint buffer, GLintptr offset, GLsizeiptr size, GLeglClientBufferEXT clientBuffer, BufferStorageMask flags)
 {
     return glesbinding::Binding::NamedBufferStorageExternalEXT(buffer, offset, size, clientBuffer, flags);

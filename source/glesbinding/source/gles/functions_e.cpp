@@ -153,6 +153,11 @@ GLboolean glExtIsProgramBinaryQCOM(GLuint program)
     return glesbinding::Binding::ExtIsProgramBinaryQCOM(program);
 }
 
+void glExtrapolateTex2DQCOM(GLuint src1, GLuint src2, GLuint output, GLfloat scaleFactor)
+{
+    return glesbinding::Binding::ExtrapolateTex2DQCOM(src1, src2, output, scaleFactor);
+}
+
 void glExtTexObjectStateOverrideiQCOM(GLenum target, GLenum pname, GLint param)
 {
     return glesbinding::Binding::ExtTexObjectStateOverrideiQCOM(target, pname, param);

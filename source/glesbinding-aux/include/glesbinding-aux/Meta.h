@@ -82,7 +82,7 @@ public:
     *  @remark
     *    Beware, that some enums in the OpenGL API have different symbol names but identical enum values and that this function cannot differentiate between them
     */
-    static const std::string & getString(gles::GLenum glesenum);
+    // static const std::string & getString(gles::GLenum glesenum);
     
     /**
     *  @brief
@@ -103,7 +103,7 @@ public:
     *  @return
     *    The list of all enums known by the gl.xml
     */
-    static std::vector<gles::GLenum> enums();
+    static std::set<gles::GLenum> enums();
 
     /**
     *  @brief
@@ -256,7 +256,7 @@ public:
     *  @brief
     *    Convert bitfield to symbol name string representation
     *
-    *  @param[in] glbitfield
+    *  @param[in] bitfield
     *    The bitfield value
     *
     *  @return
@@ -268,7 +268,7 @@ public:
     *  @brief
     *    Convert bitfield to symbol name string representation
     *
-    *  @param[in] glbitfield
+    *  @param[in] bitfield
     *    The bitfield value
     *
     *  @return
@@ -280,7 +280,7 @@ public:
     *  @brief
     *    Convert bitfield to symbol name string representation
     *
-    *  @param[in] glbitfield
+    *  @param[in] bitfield
     *    The bitfield value
     *
     *  @return
@@ -292,7 +292,7 @@ public:
     *  @brief
     *    Convert bitfield to symbol name string representation
     *
-    *  @param[in] glbitfield
+    *  @param[in] bitfield
     *    The bitfield value
     *
     *  @return
@@ -304,7 +304,31 @@ public:
     *  @brief
     *    Convert bitfield to symbol name string representation
     *
-    *  @param[in] glbitfield
+    *  @param[in] bitfield
+    *    The bitfield value
+    *
+    *  @return
+    *    The string representation of the value
+    */
+    static const std::string & getString(gles::FragmentShaderDestMaskATI glesbitfield);
+
+    /**
+    *  @brief
+    *    Convert bitfield to symbol name string representation
+    *
+    *  @param[in] bitfield
+    *    The bitfield value
+    *
+    *  @return
+    *    The string representation of the value
+    */
+    static const std::string & getString(gles::FragmentShaderDestModMaskATI glesbitfield);
+
+    /**
+    *  @brief
+    *    Convert bitfield to symbol name string representation
+    *
+    *  @param[in] bitfield
     *    The bitfield value
     *
     *  @return
@@ -316,7 +340,7 @@ public:
     *  @brief
     *    Convert bitfield to symbol name string representation
     *
-    *  @param[in] glbitfield
+    *  @param[in] bitfield
     *    The bitfield value
     *
     *  @return
@@ -328,7 +352,7 @@ public:
     *  @brief
     *    Convert bitfield to symbol name string representation
     *
-    *  @param[in] glbitfield
+    *  @param[in] bitfield
     *    The bitfield value
     *
     *  @return
@@ -340,7 +364,7 @@ public:
     *  @brief
     *    Convert bitfield to symbol name string representation
     *
-    *  @param[in] glbitfield
+    *  @param[in] bitfield
     *    The bitfield value
     *
     *  @return
@@ -352,19 +376,7 @@ public:
     *  @brief
     *    Convert bitfield to symbol name string representation
     *
-    *  @param[in] glbitfield
-    *    The bitfield value
-    *
-    *  @return
-    *    The string representation of the value
-    */
-    static const std::string & getString(gles::PathRenderingMaskNV glesbitfield);
-
-    /**
-    *  @brief
-    *    Convert bitfield to symbol name string representation
-    *
-    *  @param[in] glbitfield
+    *  @param[in] bitfield
     *    The bitfield value
     *
     *  @return
@@ -376,7 +388,7 @@ public:
     *  @brief
     *    Convert bitfield to symbol name string representation
     *
-    *  @param[in] glbitfield
+    *  @param[in] bitfield
     *    The bitfield value
     *
     *  @return
@@ -388,7 +400,7 @@ public:
     *  @brief
     *    Convert bitfield to symbol name string representation
     *
-    *  @param[in] glbitfield
+    *  @param[in] bitfield
     *    The bitfield value
     *
     *  @return
@@ -400,13 +412,41 @@ public:
     *  @brief
     *    Convert bitfield to symbol name string representation
     *
-    *  @param[in] glbitfield
+    *  @param[in] bitfield
     *    The bitfield value
     *
     *  @return
     *    The string representation of the value
     */
     static const std::string & getString(gles::UseProgramStageMask glesbitfield);
+
+
+    /**
+    *  @brief
+    *    Convert enum to symbol name string representation
+    *
+    *  @param[in] enum
+    *    The enum value
+    *
+    *  @return
+    *    The shortest string representation of the value
+    *
+    *  @remark
+    *    Beware, that some enums in the API have different symbol names but identical enum values and that this function cannot differentiate between them
+    */
+    static const std::string & getString(gles::GLenum glesenum);
+
+    /**
+    *  @brief
+    *    Convert enum to symbol name string representation
+    *
+    *  @param[in] enum
+    *    The enum value
+    *
+    *  @return
+    *    All string representations of the value
+    */
+    static std::vector<std::string> getStrings(gles::GLenum glesenum);
 
 
 private:

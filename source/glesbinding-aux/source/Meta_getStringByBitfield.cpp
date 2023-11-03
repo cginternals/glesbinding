@@ -63,6 +63,26 @@ const std::string & Meta::getString(const ContextFlagMask glesbitfield)
     return none;
 }
 
+const std::string & Meta::getString(const FragmentShaderDestMaskATI glesbitfield)
+{
+    const auto i = Meta_StringsByFragmentShaderDestMaskATI.find(glesbitfield);
+    if (i != Meta_StringsByFragmentShaderDestMaskATI.end())
+    {
+        return i->second;
+    }
+    return none;
+}
+
+const std::string & Meta::getString(const FragmentShaderDestModMaskATI glesbitfield)
+{
+    const auto i = Meta_StringsByFragmentShaderDestModMaskATI.find(glesbitfield);
+    if (i != Meta_StringsByFragmentShaderDestModMaskATI.end())
+    {
+        return i->second;
+    }
+    return none;
+}
+
 const std::string & Meta::getString(const MapBufferAccessMask glesbitfield)
 {
     const auto i = Meta_StringsByMapBufferAccessMask.find(glesbitfield);
@@ -97,16 +117,6 @@ const std::string & Meta::getString(const PathMetricMask glesbitfield)
 {
     const auto i = Meta_StringsByPathMetricMask.find(glesbitfield);
     if (i != Meta_StringsByPathMetricMask.end())
-    {
-        return i->second;
-    }
-    return none;
-}
-
-const std::string & Meta::getString(const PathRenderingMaskNV glesbitfield)
-{
-    const auto i = Meta_StringsByPathRenderingMaskNV.find(glesbitfield);
-    if (i != Meta_StringsByPathRenderingMaskNV.end())
     {
         return i->second;
     }
