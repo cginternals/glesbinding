@@ -527,6 +527,7 @@ GLESBINDING_API void glMatrixScaledEXT(GLenum mode, GLdouble x, GLdouble y, GLdo
 GLESBINDING_API void glMatrixScalefEXT(GLenum mode, GLfloat x, GLfloat y, GLfloat z);
 GLESBINDING_API void glMatrixTranslatedEXT(GLenum mode, GLdouble x, GLdouble y, GLdouble z);
 GLESBINDING_API void glMatrixTranslatefEXT(GLenum mode, GLfloat x, GLfloat y, GLfloat z);
+GLESBINDING_API void glMaxActiveShaderCoresARM(GLuint count);
 GLESBINDING_API void glMaxShaderCompilerThreadsKHR(GLuint count);
 GLESBINDING_API void glMemoryBarrier(MemoryBarrierMask barriers);
 GLESBINDING_API void glMemoryBarrierByRegion(MemoryBarrierMask barriers);

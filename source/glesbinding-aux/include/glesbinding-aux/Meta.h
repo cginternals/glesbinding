@@ -322,18 +322,6 @@ public:
     *  @return
     *    The string representation of the value
     */
-    static const std::string & getString(gles::FragmentShaderDestModMaskATI glesbitfield);
-
-    /**
-    *  @brief
-    *    Convert bitfield to symbol name string representation
-    *
-    *  @param[in] bitfield
-    *    The bitfield value
-    *
-    *  @return
-    *    The string representation of the value
-    */
     static const std::string & getString(gles::MapBufferAccessMask glesbitfield);
 
     /**

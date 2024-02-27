@@ -76,12 +76,6 @@ std::ostream & operator<<(std::ostream & stream, const FragmentShaderDestMaskATI
     return stream;
 }
 
-std::ostream & operator<<(std::ostream & stream, const FragmentShaderDestModMaskATI & value)
-{
-    stream << glesbinding::aux::bitfieldString<FragmentShaderDestModMaskATI>(value);
-    return stream;
-}
-
 std::ostream & operator<<(std::ostream & stream, const MapBufferAccessMask & value)
 {
     stream << glesbinding::aux::bitfieldString<MapBufferAccessMask>(value);
@@ -330,18 +324,6 @@ if (typeid(*value) == typeid(Value<const char *>))
     if (typeid(*value) == typeid(Value<gles::FragmentShaderDestMaskATI *>))
     {
         return stream << *reinterpret_cast<const Value<gles::FragmentShaderDestMaskATI *>*>(value);
-    }
-
-    
-    if (typeid(*value) == typeid(Value<gles::FragmentShaderDestModMaskATI>))
-    {
-        return stream << *reinterpret_cast<const Value<gles::FragmentShaderDestModMaskATI>*>(value);
-    }
-    
-    
-    if (typeid(*value) == typeid(Value<gles::FragmentShaderDestModMaskATI *>))
-    {
-        return stream << *reinterpret_cast<const Value<gles::FragmentShaderDestModMaskATI *>*>(value);
     }
 
     

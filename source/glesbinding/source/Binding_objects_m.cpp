@@ -41,6 +41,7 @@ Function<void, GLenum, GLdouble, GLdouble, GLdouble> Binding::MatrixScaledEXT("g
 Function<void, GLenum, GLfloat, GLfloat, GLfloat> Binding::MatrixScalefEXT("glMatrixScalefEXT");
 Function<void, GLenum, GLdouble, GLdouble, GLdouble> Binding::MatrixTranslatedEXT("glMatrixTranslatedEXT");
 Function<void, GLenum, GLfloat, GLfloat, GLfloat> Binding::MatrixTranslatefEXT("glMatrixTranslatefEXT");
+Function<void, GLuint> Binding::MaxActiveShaderCoresARM("glMaxActiveShaderCoresARM");
 Function<void, GLuint> Binding::MaxShaderCompilerThreadsKHR("glMaxShaderCompilerThreadsKHR");
 Function<void, MemoryBarrierMask> Binding::MemoryBarrier("glMemoryBarrier");
 Function<void, MemoryBarrierMask> Binding::MemoryBarrierByRegion("glMemoryBarrierByRegion");

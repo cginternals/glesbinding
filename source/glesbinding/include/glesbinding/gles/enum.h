@@ -961,6 +961,13 @@ enum class GLenum : unsigned int
     GL_FRAGMENT_SHADING_RATE_WITH_SHADER_DEPTH_STENCIL_WRITES_SUPPORTED_EXT    = 0x96DD,
     GL_FRAGMENT_SHADING_RATE_WITH_SAMPLE_MASK_SUPPORTED_EXT                    = 0x96DE,
     GL_FRAGMENT_SHADING_RATE_ATTACHMENT_WITH_DEFAULT_FRAMEBUFFER_SUPPORTED_EXT = 0x96DF,
+    GL_SHADER_CORE_COUNT_ARM                                                   = 0x96F0,
+    GL_SHADER_CORE_ACTIVE_COUNT_ARM                                            = 0x96F1,
+    GL_SHADER_CORE_PRESENT_MASK_ARM                                            = 0x96F2,
+    GL_SHADER_CORE_MAX_WARP_COUNT_ARM                                          = 0x96F3,
+    GL_SHADER_CORE_PIXEL_RATE_ARM                                              = 0x96F4,
+    GL_SHADER_CORE_TEXEL_RATE_ARM                                              = 0x96F5,
+    GL_SHADER_CORE_FMA_RATE_ARM                                                = 0x96F6,
 
     // GetPointervPName
 
@@ -2412,10 +2419,11 @@ enum class GLenum : unsigned int
 
     // TextureWrapMode
 
-//  GL_LINEAR_MIPMAP_LINEAR                                                    = 0x2703, // reuse TextureMinFilter
     GL_REPEAT                                                                  = 0x2901,
     GL_CLAMP_TO_BORDER                                                         = 0x812D,
+    GL_CLAMP_TO_BORDER_EXT                                                     = 0x812D,
     GL_CLAMP_TO_BORDER_NV                                                      = 0x812D,
+    GL_CLAMP_TO_BORDER_OES                                                     = 0x812D,
     GL_CLAMP_TO_EDGE                                                           = 0x812F,
     GL_MIRRORED_REPEAT                                                         = 0x8370,
 
@@ -2499,8 +2507,6 @@ enum class GLenum : unsigned int
     GL_VERTEX_ARRAY_KHR                                                        = 0x8074,
     GL_MULTISAMPLE_EXT                                                         = 0x809D,
     GL_SAMPLE_ALPHA_TO_ONE_EXT                                                 = 0x809F,
-    GL_CLAMP_TO_BORDER_EXT                                                     = 0x812D,
-    GL_CLAMP_TO_BORDER_OES                                                     = 0x812D,
     GL_TEXTURE_MAX_LEVEL_APPLE                                                 = 0x813D,
     GL_FRAMEBUFFER_DEFAULT                                                     = 0x8218,
     GL_FRAMEBUFFER_UNDEFINED_OES                                               = 0x8219,
@@ -4622,6 +4628,13 @@ GLESBINDING_CONSTEXPR static const GLenum GL_MAX_FRAGMENT_SHADING_RATE_ATTACHMEN
 GLESBINDING_CONSTEXPR static const GLenum GL_FRAGMENT_SHADING_RATE_WITH_SHADER_DEPTH_STENCIL_WRITES_SUPPORTED_EXT = GLenum::GL_FRAGMENT_SHADING_RATE_WITH_SHADER_DEPTH_STENCIL_WRITES_SUPPORTED_EXT;
 GLESBINDING_CONSTEXPR static const GLenum GL_FRAGMENT_SHADING_RATE_WITH_SAMPLE_MASK_SUPPORTED_EXT = GLenum::GL_FRAGMENT_SHADING_RATE_WITH_SAMPLE_MASK_SUPPORTED_EXT;
 GLESBINDING_CONSTEXPR static const GLenum GL_FRAGMENT_SHADING_RATE_ATTACHMENT_WITH_DEFAULT_FRAMEBUFFER_SUPPORTED_EXT = GLenum::GL_FRAGMENT_SHADING_RATE_ATTACHMENT_WITH_DEFAULT_FRAMEBUFFER_SUPPORTED_EXT;
+GLESBINDING_CONSTEXPR static const GLenum GL_SHADER_CORE_COUNT_ARM = GLenum::GL_SHADER_CORE_COUNT_ARM;
+GLESBINDING_CONSTEXPR static const GLenum GL_SHADER_CORE_ACTIVE_COUNT_ARM = GLenum::GL_SHADER_CORE_ACTIVE_COUNT_ARM;
+GLESBINDING_CONSTEXPR static const GLenum GL_SHADER_CORE_PRESENT_MASK_ARM = GLenum::GL_SHADER_CORE_PRESENT_MASK_ARM;
+GLESBINDING_CONSTEXPR static const GLenum GL_SHADER_CORE_MAX_WARP_COUNT_ARM = GLenum::GL_SHADER_CORE_MAX_WARP_COUNT_ARM;
+GLESBINDING_CONSTEXPR static const GLenum GL_SHADER_CORE_PIXEL_RATE_ARM = GLenum::GL_SHADER_CORE_PIXEL_RATE_ARM;
+GLESBINDING_CONSTEXPR static const GLenum GL_SHADER_CORE_TEXEL_RATE_ARM = GLenum::GL_SHADER_CORE_TEXEL_RATE_ARM;
+GLESBINDING_CONSTEXPR static const GLenum GL_SHADER_CORE_FMA_RATE_ARM = GLenum::GL_SHADER_CORE_FMA_RATE_ARM;
 
 // GetPointervPName
 
@@ -6073,10 +6086,11 @@ GLESBINDING_CONSTEXPR static const GLenum GL_TEXTURE_CUBE_MAP_ARRAY_OES = GLenum
 
 // TextureWrapMode
 
-// GLESBINDING_CONSTEXPR static const GLenum GL_LINEAR_MIPMAP_LINEAR = GLenum::GL_LINEAR_MIPMAP_LINEAR; // reuse TextureMinFilter
 GLESBINDING_CONSTEXPR static const GLenum GL_REPEAT = GLenum::GL_REPEAT;
 GLESBINDING_CONSTEXPR static const GLenum GL_CLAMP_TO_BORDER = GLenum::GL_CLAMP_TO_BORDER;
+GLESBINDING_CONSTEXPR static const GLenum GL_CLAMP_TO_BORDER_EXT = GLenum::GL_CLAMP_TO_BORDER_EXT;
 GLESBINDING_CONSTEXPR static const GLenum GL_CLAMP_TO_BORDER_NV = GLenum::GL_CLAMP_TO_BORDER_NV;
+GLESBINDING_CONSTEXPR static const GLenum GL_CLAMP_TO_BORDER_OES = GLenum::GL_CLAMP_TO_BORDER_OES;
 GLESBINDING_CONSTEXPR static const GLenum GL_CLAMP_TO_EDGE = GLenum::GL_CLAMP_TO_EDGE;
 GLESBINDING_CONSTEXPR static const GLenum GL_MIRRORED_REPEAT = GLenum::GL_MIRRORED_REPEAT;
 
@@ -6160,8 +6174,6 @@ GLESBINDING_CONSTEXPR static const GLenum GL_MAX_3D_TEXTURE_SIZE_OES = GLenum::G
 GLESBINDING_CONSTEXPR static const GLenum GL_VERTEX_ARRAY_KHR = GLenum::GL_VERTEX_ARRAY_KHR;
 GLESBINDING_CONSTEXPR static const GLenum GL_MULTISAMPLE_EXT = GLenum::GL_MULTISAMPLE_EXT;
 GLESBINDING_CONSTEXPR static const GLenum GL_SAMPLE_ALPHA_TO_ONE_EXT = GLenum::GL_SAMPLE_ALPHA_TO_ONE_EXT;
-GLESBINDING_CONSTEXPR static const GLenum GL_CLAMP_TO_BORDER_EXT = GLenum::GL_CLAMP_TO_BORDER_EXT;
-GLESBINDING_CONSTEXPR static const GLenum GL_CLAMP_TO_BORDER_OES = GLenum::GL_CLAMP_TO_BORDER_OES;
 GLESBINDING_CONSTEXPR static const GLenum GL_TEXTURE_MAX_LEVEL_APPLE = GLenum::GL_TEXTURE_MAX_LEVEL_APPLE;
 GLESBINDING_CONSTEXPR static const GLenum GL_FRAMEBUFFER_DEFAULT = GLenum::GL_FRAMEBUFFER_DEFAULT;
 GLESBINDING_CONSTEXPR static const GLenum GL_FRAMEBUFFER_UNDEFINED_OES = GLenum::GL_FRAMEBUFFER_UNDEFINED_OES;

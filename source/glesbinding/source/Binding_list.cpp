@@ -526,6 +526,7 @@ const Binding::array_t Binding::s_functions =
     &MatrixScalefEXT,
     &MatrixTranslatedEXT,
     &MatrixTranslatefEXT,
+    &MaxActiveShaderCoresARM,
     &MaxShaderCompilerThreadsKHR,
     &MemoryBarrier,
     &MemoryBarrierByRegion,

@@ -43,6 +43,7 @@ const std::unordered_map<std::string, GLextension> Meta_ExtensionsByString_A =
     { "GL_ARM_mali_program_binary", GLextension::GL_ARM_mali_program_binary },
     { "GL_ARM_mali_shader_binary", GLextension::GL_ARM_mali_shader_binary },
     { "GL_ARM_rgba8", GLextension::GL_ARM_rgba8 },
+    { "GL_ARM_shader_core_properties", GLextension::GL_ARM_shader_core_properties },
     { "GL_ARM_shader_framebuffer_fetch", GLextension::GL_ARM_shader_framebuffer_fetch },
     { "GL_ARM_shader_framebuffer_fetch_depth_stencil", GLextension::GL_ARM_shader_framebuffer_fetch_depth_stencil },
     { "GL_ARM_texture_unnormalized_coordinates", GLextension::GL_ARM_texture_unnormalized_coordinates }
@@ -222,6 +223,7 @@ const std::unordered_map<std::string, GLextension> Meta_ExtensionsByString_M =
     { "GL_MESA_framebuffer_flip_y", GLextension::GL_MESA_framebuffer_flip_y },
     { "GL_MESA_framebuffer_swap_xy", GLextension::GL_MESA_framebuffer_swap_xy },
     { "GL_MESA_program_binary_formats", GLextension::GL_MESA_program_binary_formats },
+    { "GL_MESA_sampler_objects", GLextension::GL_MESA_sampler_objects },
     { "GL_MESA_shader_integer_functions", GLextension::GL_MESA_shader_integer_functions }
 };
 

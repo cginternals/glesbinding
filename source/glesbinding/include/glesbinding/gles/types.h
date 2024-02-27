@@ -30,7 +30,6 @@ enum class BufferStorageMask : unsigned int;
 enum class ClearBufferMask : unsigned int;
 enum class ContextFlagMask : unsigned int;
 enum class FragmentShaderDestMaskATI : unsigned int;
-enum class FragmentShaderDestModMaskATI : unsigned int;
 enum class GLenum : unsigned int;
 enum class GLextension : int;
 enum class MapBufferAccessMask : unsigned int;

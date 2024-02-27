@@ -315,6 +315,7 @@ using gles::glMatrixScaledEXT;
 using gles::glMatrixScalefEXT;
 using gles::glMatrixTranslatedEXT;
 using gles::glMatrixTranslatefEXT;
+using gles::glMaxActiveShaderCoresARM;
 using gles::glMaxShaderCompilerThreadsKHR;
 using gles::glMemoryObjectParameterivEXT;
 using gles::glMinSampleShadingOES;

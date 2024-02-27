@@ -56,11 +56,6 @@ const std::unordered_map<FragmentShaderDestMaskATI, std::string> Meta_StringsByF
     { FragmentShaderDestMaskATI::GL_NONE_BIT, "GL_NONE_BIT" }
 };
 
-const std::unordered_map<FragmentShaderDestModMaskATI, std::string> Meta_StringsByFragmentShaderDestModMaskATI =
-{
-    { FragmentShaderDestModMaskATI::GL_NONE_BIT, "GL_NONE_BIT" }
-};
-
 const std::unordered_map<MapBufferAccessMask, std::string> Meta_StringsByMapBufferAccessMask =
 {
     { MapBufferAccessMask::GL_MAP_COHERENT_BIT_EXT, "GL_MAP_COHERENT_BIT_EXT" },

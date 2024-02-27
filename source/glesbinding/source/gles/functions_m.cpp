@@ -168,6 +168,11 @@ void glMatrixTranslatefEXT(GLenum mode, GLfloat x, GLfloat y, GLfloat z)
     return glesbinding::Binding::MatrixTranslatefEXT(mode, x, y, z);
 }
 
+void glMaxActiveShaderCoresARM(GLuint count)
+{
+    return glesbinding::Binding::MaxActiveShaderCoresARM(count);
+}
+
 void glMaxShaderCompilerThreadsKHR(GLuint count)
 {
     return glesbinding::Binding::MaxShaderCompilerThreadsKHR(count);

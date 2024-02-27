@@ -64,7 +64,7 @@ public:
 
     using ContextSwitchCallback = std::function<void(ContextHandle)>;   ///< The signature of the context switch callback
     
-    using array_t = std::array<AbstractFunction *, 908>; ///< The type of the build-in functions collection
+    using array_t = std::array<AbstractFunction *, 909>; ///< The type of the build-in functions collection
 
 
 public:
@@ -960,6 +960,7 @@ public:
     static Function<void, gles::GLenum, gles::GLfloat, gles::GLfloat, gles::GLfloat> MatrixScalefEXT; ///< Wrapper for glMatrixScalefEXT
     static Function<void, gles::GLenum, gles::GLdouble, gles::GLdouble, gles::GLdouble> MatrixTranslatedEXT; ///< Wrapper for glMatrixTranslatedEXT
     static Function<void, gles::GLenum, gles::GLfloat, gles::GLfloat, gles::GLfloat> MatrixTranslatefEXT; ///< Wrapper for glMatrixTranslatefEXT
+    static Function<void, gles::GLuint> MaxActiveShaderCoresARM; ///< Wrapper for glMaxActiveShaderCoresARM
     static Function<void, gles::GLuint> MaxShaderCompilerThreadsKHR; ///< Wrapper for glMaxShaderCompilerThreadsKHR
     static Function<void, gles::MemoryBarrierMask> MemoryBarrier; ///< Wrapper for glMemoryBarrier
     static Function<void, gles::MemoryBarrierMask> MemoryBarrierByRegion; ///< Wrapper for glMemoryBarrierByRegion
