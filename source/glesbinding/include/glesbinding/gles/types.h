@@ -9,6 +9,7 @@
 
 #include <KHR/khrplatform.h>
 
+
 #ifdef _MSC_VER
 #define GLES_APIENTRY __stdcall
 #else
@@ -25,21 +26,6 @@ namespace gles
 {
 
 
-enum class AttribMask : unsigned int;
-enum class BufferStorageMask : unsigned int;
-enum class ClearBufferMask : unsigned int;
-enum class ContextFlagMask : unsigned int;
-enum class FragmentShaderDestMaskATI : unsigned int;
-enum class GLenum : unsigned int;
-enum class GLextension : int;
-enum class MapBufferAccessMask : unsigned int;
-enum class MemoryBarrierMask : unsigned int;
-enum class PathFontStyle : unsigned int;
-enum class PathMetricMask : unsigned int;
-enum class PerformanceQueryCapsMaskINTEL : unsigned int;
-enum class SyncObjectMask : unsigned int;
-enum class UnusedMask : unsigned int;
-enum class UseProgramStageMask : unsigned int;
 using EGLchar = char;
 using EGLint = int;
 using EGLNativeDisplayType = void *;
@@ -63,6 +49,22 @@ using GLubyte = khronos_uint8_t;
 using GLuint = unsigned int;
 using GLuint64 = khronos_uint64_t;
 using GLuint64EXT = khronos_uint64_t;
+enum class AttribMask : unsigned int;
+enum class BufferStorageMask : unsigned int;
+enum class ClearBufferMask : unsigned int;
+enum class ContextFlagMask : unsigned int;
+enum class FragmentShaderDestMaskATI : unsigned int;
+enum class FragmentShaderDestModMaskATI : unsigned int;
+enum class GLenum : unsigned int;
+enum class GLextension : int;
+enum class MapBufferAccessMask : unsigned int;
+enum class MemoryBarrierMask : unsigned int;
+enum class PathFontStyle : unsigned int;
+enum class PathMetricMask : unsigned int;
+enum class PerformanceQueryCapsMaskINTEL : unsigned int;
+enum class SyncObjectMask : unsigned int;
+enum class UnusedMask : unsigned int;
+enum class UseProgramStageMask : unsigned int;
 using GLDEBUGPROC = void (GLES_APIENTRY *)(GLenum source,GLenum type,GLuint id,GLenum severity,GLsizei length,const GLchar *message,const void *userParam);
 using GLDEBUGPROCKHR = void (GLES_APIENTRY *)(GLenum source,GLenum type,GLuint id,GLenum severity,GLsizei length,const GLchar *message,const void *userParam);
 using GLVULKANPROCNV = void (GLES_APIENTRY *)(void);

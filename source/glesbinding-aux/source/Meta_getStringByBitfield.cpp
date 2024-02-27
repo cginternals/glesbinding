@@ -73,6 +73,16 @@ const std::string & Meta::getString(const FragmentShaderDestMaskATI glesbitfield
     return none;
 }
 
+const std::string & Meta::getString(const FragmentShaderDestModMaskATI glesbitfield)
+{
+    const auto i = Meta_StringsByFragmentShaderDestModMaskATI.find(glesbitfield);
+    if (i != Meta_StringsByFragmentShaderDestModMaskATI.end())
+    {
+        return i->second;
+    }
+    return none;
+}
+
 const std::string & Meta::getString(const MapBufferAccessMask glesbitfield)
 {
     const auto i = Meta_StringsByMapBufferAccessMask.find(glesbitfield);

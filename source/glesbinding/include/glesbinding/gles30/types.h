@@ -21,6 +21,7 @@ using gles::EGLNativeDisplayType;
 using gles::EGLNativePixmapType;
 using gles::EGLNativeWindowType;
 using gles::FragmentShaderDestMaskATI;
+using gles::FragmentShaderDestModMaskATI;
 using gles::GLbitfield;
 using gles::GLboolean;
 using gles::GLchar;

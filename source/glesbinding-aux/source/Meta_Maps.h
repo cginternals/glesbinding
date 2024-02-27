@@ -38,6 +38,7 @@ extern const std::unordered_map<gles::BufferStorageMask, std::string> Meta_Strin
 extern const std::unordered_map<gles::ClearBufferMask, std::string> Meta_StringsByClearBufferMask;
 extern const std::unordered_map<gles::ContextFlagMask, std::string> Meta_StringsByContextFlagMask;
 extern const std::unordered_map<gles::FragmentShaderDestMaskATI, std::string> Meta_StringsByFragmentShaderDestMaskATI;
+extern const std::unordered_map<gles::FragmentShaderDestModMaskATI, std::string> Meta_StringsByFragmentShaderDestModMaskATI;
 extern const std::unordered_map<gles::MapBufferAccessMask, std::string> Meta_StringsByMapBufferAccessMask;
 extern const std::unordered_map<gles::MemoryBarrierMask, std::string> Meta_StringsByMemoryBarrierMask;
 extern const std::unordered_map<gles::PathFontStyle, std::string> Meta_StringsByPathFontStyle;

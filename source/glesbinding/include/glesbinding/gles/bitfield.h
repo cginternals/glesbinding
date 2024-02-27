@@ -63,6 +63,12 @@ enum class FragmentShaderDestMaskATI : unsigned int
 };
 
 
+enum class FragmentShaderDestModMaskATI : unsigned int
+{
+    GL_NONE_BIT                                = 0x0 // Generic GL_NONE_BIT
+};
+
+
 enum class MapBufferAccessMask : unsigned int
 {
     GL_NONE_BIT                                = 0x0, // Generic GL_NONE_BIT
@@ -254,7 +260,7 @@ GLESBINDING_CONSTEXPR static const MapBufferAccessMask GL_MAP_UNSYNCHRONIZED_BIT
 GLESBINDING_CONSTEXPR static const glesbinding::SharedBitfield<BufferStorageMask, MapBufferAccessMask> GL_MAP_WRITE_BIT = BufferStorageMask::GL_MAP_WRITE_BIT;
 GLESBINDING_CONSTEXPR static const glesbinding::SharedBitfield<BufferStorageMask, MapBufferAccessMask> GL_MAP_WRITE_BIT_EXT = BufferStorageMask::GL_MAP_WRITE_BIT_EXT;
 GLESBINDING_CONSTEXPR static const UseProgramStageMask GL_MESH_SHADER_BIT_NV = UseProgramStageMask::GL_MESH_SHADER_BIT_NV;
-GLESBINDING_CONSTEXPR static const glesbinding::SharedBitfield<AttribMask, BufferStorageMask, ClearBufferMask, ContextFlagMask, FragmentShaderDestMaskATI, MapBufferAccessMask, MemoryBarrierMask, PathFontStyle, PathMetricMask, PerformanceQueryCapsMaskINTEL, SyncObjectMask, UseProgramStageMask> GL_NONE_BIT = AttribMask::GL_NONE_BIT;
+GLESBINDING_CONSTEXPR static const glesbinding::SharedBitfield<AttribMask, BufferStorageMask, ClearBufferMask, ContextFlagMask, FragmentShaderDestMaskATI, FragmentShaderDestModMaskATI, MapBufferAccessMask, MemoryBarrierMask, PathFontStyle, PathMetricMask, PerformanceQueryCapsMaskINTEL, SyncObjectMask, UseProgramStageMask> GL_NONE_BIT = AttribMask::GL_NONE_BIT;
 GLESBINDING_CONSTEXPR static const PerformanceQueryCapsMaskINTEL GL_PERFQUERY_GLOBAL_CONTEXT_INTEL = PerformanceQueryCapsMaskINTEL::GL_PERFQUERY_GLOBAL_CONTEXT_INTEL;
 GLESBINDING_CONSTEXPR static const PerformanceQueryCapsMaskINTEL GL_PERFQUERY_SINGLE_CONTEXT_INTEL = PerformanceQueryCapsMaskINTEL::GL_PERFQUERY_SINGLE_CONTEXT_INTEL;
 GLESBINDING_CONSTEXPR static const MemoryBarrierMask GL_PIXEL_BUFFER_BARRIER_BIT = MemoryBarrierMask::GL_PIXEL_BUFFER_BARRIER_BIT;
