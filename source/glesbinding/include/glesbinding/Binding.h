@@ -64,7 +64,7 @@ public:
 
     using ContextSwitchCallback = std::function<void(ContextHandle)>;   ///< The signature of the context switch callback
     
-    using array_t = std::array<AbstractFunction *, 909>; ///< The type of the build-in functions collection
+    using array_t = std::array<AbstractFunction *, 911>; ///< The type of the build-in functions collection
 
 
 public:
@@ -979,6 +979,7 @@ public:
     static Function<void, gles::GLuint, gles::GLintptr, gles::GLsizeiptr, gles::GLeglClientBufferEXT, gles::BufferStorageMask> NamedBufferStorageExternalEXT; ///< Wrapper for glNamedBufferStorageExternalEXT
     static Function<void, gles::GLuint, gles::GLsizeiptr, gles::GLuint, gles::GLuint64> NamedBufferStorageMemEXT; ///< Wrapper for glNamedBufferStorageMemEXT
     static Function<void, gles::GLuint, gles::GLuint, gles::GLsizei, const gles::GLfloat *> NamedFramebufferSampleLocationsfvNV; ///< Wrapper for glNamedFramebufferSampleLocationsfvNV
+    static Function<void, gles::GLuint, gles::GLenum, gles::GLuint, gles::GLint, gles::GLint, gles::GLsizei> NamedFramebufferTextureMultiviewOVR; ///< Wrapper for glNamedFramebufferTextureMultiviewOVR
     static Function<void, gles::GLuint, gles::GLsizei, gles::GLsizei, gles::GLenum, gles::GLsizei, gles::GLsizei> NamedRenderbufferStorageMultisampleAdvancedAMD; ///< Wrapper for glNamedRenderbufferStorageMultisampleAdvancedAMD
     static Function<void, gles::GLenum, gles::GLuint, gles::GLsizei, const gles::GLchar *> ObjectLabel; ///< Wrapper for glObjectLabel
     static Function<void, gles::GLenum, gles::GLuint, gles::GLsizei, const gles::GLchar *> ObjectLabelKHR; ///< Wrapper for glObjectLabelKHR
@@ -1234,6 +1235,7 @@ public:
     static Function<void, gles::GLenum, gles::GLint, gles::GLint, gles::GLint, gles::GLint, gles::GLsizei, gles::GLsizei, gles::GLsizei, gles::GLenum, gles::GLenum, const void *> TexSubImage3D; ///< Wrapper for glTexSubImage3D
     static Function<void, gles::GLenum, gles::GLint, gles::GLint, gles::GLint, gles::GLint, gles::GLsizei, gles::GLsizei, gles::GLsizei, gles::GLenum, gles::GLenum, const void *> TexSubImage3DOES; ///< Wrapper for glTexSubImage3DOES
     static Function<void, gles::GLuint, gles::GLuint, gles::GLuint64> TextureAttachMemoryNV; ///< Wrapper for glTextureAttachMemoryNV
+    static Function<void> TextureBarrierNV; ///< Wrapper for glTextureBarrierNV
     static Function<void, gles::GLuint, gles::GLuint, gles::GLuint, gles::GLfloat, gles::GLfloat, gles::GLfloat, gles::GLfloat, gles::GLfloat> TextureFoveationParametersQCOM; ///< Wrapper for glTextureFoveationParametersQCOM
     static Function<void, gles::GLuint, gles::GLint, gles::GLint, gles::GLint, gles::GLint, gles::GLint, gles::GLsizei, gles::GLsizei, gles::GLsizei, gles::GLuint, gles::GLuint64, gles::GLboolean> TexturePageCommitmentMemNV; ///< Wrapper for glTexturePageCommitmentMemNV
     static Function<void, gles::GLuint, gles::GLenum, gles::GLsizei, gles::GLenum, gles::GLsizei> TextureStorage1DEXT; ///< Wrapper for glTextureStorage1DEXT

@@ -991,6 +991,8 @@ enum class GLenum : unsigned int
     GL_TEXTURE_ALPHA_SIZE                                                      = 0x805F,
     GL_TEXTURE_UNNORMALIZED_COORDINATES_ARM                                    = 0x8F6A,
     GL_SURFACE_COMPRESSION_EXT                                                 = 0x96C0,
+    GL_TEXTURE_Y_DEGAMMA_QCOM                                                  = 0x9710,
+    GL_TEXTURE_CBCR_DEGAMMA_QCOM                                               = 0x9711,
 
     // GraphicsResetStatus
 
@@ -2351,6 +2353,8 @@ enum class GLenum : unsigned int
     GL_DEPTH_STENCIL_TEXTURE_MODE                                              = 0x90EA,
     GL_TEXTURE_TILING_EXT                                                      = 0x9580,
     GL_TEXTURE_FOVEATED_CUTOFF_DENSITY_QCOM                                    = 0x96A0,
+//  GL_TEXTURE_Y_DEGAMMA_QCOM                                                  = 0x9710, // reuse GetTextureParameter
+//  GL_TEXTURE_CBCR_DEGAMMA_QCOM                                               = 0x9711, // reuse GetTextureParameter
 
     // TextureSwizzle
 
@@ -2741,6 +2745,7 @@ enum class GLenum : unsigned int
     GL_FRAMEBUFFER_FLIP_Y_MESA                                                 = 0x8BBB,
     GL_FRAMEBUFFER_FLIP_X_MESA                                                 = 0x8BBC,
     GL_FRAMEBUFFER_SWAP_XY_MESA                                                = 0x8BBD,
+    GL_CONST_BW_TILING_MESA                                                    = 0x8BBE,
     GL_COUNTER_TYPE_AMD                                                        = 0x8BC0,
     GL_COUNTER_RANGE_AMD                                                       = 0x8BC1,
     GL_UNSIGNED_INT64_AMD                                                      = 0x8BC2,
@@ -4658,6 +4663,8 @@ GLESBINDING_CONSTEXPR static const GLenum GL_TEXTURE_BLUE_SIZE = GLenum::GL_TEXT
 GLESBINDING_CONSTEXPR static const GLenum GL_TEXTURE_ALPHA_SIZE = GLenum::GL_TEXTURE_ALPHA_SIZE;
 GLESBINDING_CONSTEXPR static const GLenum GL_TEXTURE_UNNORMALIZED_COORDINATES_ARM = GLenum::GL_TEXTURE_UNNORMALIZED_COORDINATES_ARM;
 GLESBINDING_CONSTEXPR static const GLenum GL_SURFACE_COMPRESSION_EXT = GLenum::GL_SURFACE_COMPRESSION_EXT;
+GLESBINDING_CONSTEXPR static const GLenum GL_TEXTURE_Y_DEGAMMA_QCOM = GLenum::GL_TEXTURE_Y_DEGAMMA_QCOM;
+GLESBINDING_CONSTEXPR static const GLenum GL_TEXTURE_CBCR_DEGAMMA_QCOM = GLenum::GL_TEXTURE_CBCR_DEGAMMA_QCOM;
 
 // GraphicsResetStatus
 
@@ -6018,6 +6025,8 @@ GLESBINDING_CONSTEXPR static const GLenum GL_TEXTURE_SWIZZLE_A = GLenum::GL_TEXT
 GLESBINDING_CONSTEXPR static const GLenum GL_DEPTH_STENCIL_TEXTURE_MODE = GLenum::GL_DEPTH_STENCIL_TEXTURE_MODE;
 GLESBINDING_CONSTEXPR static const GLenum GL_TEXTURE_TILING_EXT = GLenum::GL_TEXTURE_TILING_EXT;
 GLESBINDING_CONSTEXPR static const GLenum GL_TEXTURE_FOVEATED_CUTOFF_DENSITY_QCOM = GLenum::GL_TEXTURE_FOVEATED_CUTOFF_DENSITY_QCOM;
+// GLESBINDING_CONSTEXPR static const GLenum GL_TEXTURE_Y_DEGAMMA_QCOM = GLenum::GL_TEXTURE_Y_DEGAMMA_QCOM; // reuse GetTextureParameter
+// GLESBINDING_CONSTEXPR static const GLenum GL_TEXTURE_CBCR_DEGAMMA_QCOM = GLenum::GL_TEXTURE_CBCR_DEGAMMA_QCOM; // reuse GetTextureParameter
 
 // TextureSwizzle
 
@@ -6408,6 +6417,7 @@ GLESBINDING_CONSTEXPR static const GLenum GL_PALETTE8_RGB5_A1_OES = GLenum::GL_P
 GLESBINDING_CONSTEXPR static const GLenum GL_FRAMEBUFFER_FLIP_Y_MESA = GLenum::GL_FRAMEBUFFER_FLIP_Y_MESA;
 GLESBINDING_CONSTEXPR static const GLenum GL_FRAMEBUFFER_FLIP_X_MESA = GLenum::GL_FRAMEBUFFER_FLIP_X_MESA;
 GLESBINDING_CONSTEXPR static const GLenum GL_FRAMEBUFFER_SWAP_XY_MESA = GLenum::GL_FRAMEBUFFER_SWAP_XY_MESA;
+GLESBINDING_CONSTEXPR static const GLenum GL_CONST_BW_TILING_MESA = GLenum::GL_CONST_BW_TILING_MESA;
 GLESBINDING_CONSTEXPR static const GLenum GL_COUNTER_TYPE_AMD = GLenum::GL_COUNTER_TYPE_AMD;
 GLESBINDING_CONSTEXPR static const GLenum GL_COUNTER_RANGE_AMD = GLenum::GL_COUNTER_RANGE_AMD;
 GLESBINDING_CONSTEXPR static const GLenum GL_UNSIGNED_INT64_AMD = GLenum::GL_UNSIGNED_INT64_AMD;

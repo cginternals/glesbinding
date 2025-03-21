@@ -33,6 +33,11 @@ void glNamedFramebufferSampleLocationsfvNV(GLuint framebuffer, GLuint start, GLs
     return glesbinding::Binding::NamedFramebufferSampleLocationsfvNV(framebuffer, start, count, v);
 }
 
+void glNamedFramebufferTextureMultiviewOVR(GLuint framebuffer, GLenum attachment, GLuint texture, GLint level, GLint baseViewIndex, GLsizei numViews)
+{
+    return glesbinding::Binding::NamedFramebufferTextureMultiviewOVR(framebuffer, attachment, texture, level, baseViewIndex, numViews);
+}
+
 void glNamedRenderbufferStorageMultisampleAdvancedAMD(GLuint renderbuffer, GLsizei samples, GLsizei storageSamples, GLenum internalformat, GLsizei width, GLsizei height)
 {
     return glesbinding::Binding::NamedRenderbufferStorageMultisampleAdvancedAMD(renderbuffer, samples, storageSamples, internalformat, width, height);

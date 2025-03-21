@@ -224,7 +224,8 @@ const std::unordered_map<std::string, GLextension> Meta_ExtensionsByString_M =
     { "GL_MESA_framebuffer_swap_xy", GLextension::GL_MESA_framebuffer_swap_xy },
     { "GL_MESA_program_binary_formats", GLextension::GL_MESA_program_binary_formats },
     { "GL_MESA_sampler_objects", GLextension::GL_MESA_sampler_objects },
-    { "GL_MESA_shader_integer_functions", GLextension::GL_MESA_shader_integer_functions }
+    { "GL_MESA_shader_integer_functions", GLextension::GL_MESA_shader_integer_functions },
+    { "GL_MESA_texture_const_bandwidth", GLextension::GL_MESA_texture_const_bandwidth }
 };
 
 const std::unordered_map<std::string, GLextension> Meta_ExtensionsByString_N =
@@ -289,6 +290,7 @@ const std::unordered_map<std::string, GLextension> Meta_ExtensionsByString_N =
     { "GL_NV_shadow_samplers_cube", GLextension::GL_NV_shadow_samplers_cube },
     { "GL_NV_sRGB_formats", GLextension::GL_NV_sRGB_formats },
     { "GL_NV_stereo_view_rendering", GLextension::GL_NV_stereo_view_rendering },
+    { "GL_NV_texture_barrier", GLextension::GL_NV_texture_barrier },
     { "GL_NV_texture_border_clamp", GLextension::GL_NV_texture_border_clamp },
     { "GL_NV_texture_compression_s3tc_update", GLextension::GL_NV_texture_compression_s3tc_update },
     { "GL_NV_texture_npot_2D_mipmap", GLextension::GL_NV_texture_npot_2D_mipmap },
@@ -382,6 +384,7 @@ const std::unordered_map<std::string, GLextension> Meta_ExtensionsByString_Q =
     { "GL_QCOM_texture_lod_bias", GLextension::GL_QCOM_texture_lod_bias },
     { "GL_QCOM_tiled_rendering", GLextension::GL_QCOM_tiled_rendering },
     { "GL_QCOM_writeonly_rendering", GLextension::GL_QCOM_writeonly_rendering },
+    { "GL_QCOM_ycbcr_degamma", GLextension::GL_QCOM_ycbcr_degamma },
     { "GL_QCOM_YUV_texture_gather", GLextension::GL_QCOM_YUV_texture_gather }
 };
 

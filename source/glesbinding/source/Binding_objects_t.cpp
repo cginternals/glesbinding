@@ -53,6 +53,7 @@ Function<void, GLenum, GLint, GLint, GLint, GLsizei, GLsizei, GLenum, GLenum, co
 Function<void, GLenum, GLint, GLint, GLint, GLint, GLsizei, GLsizei, GLsizei, GLenum, GLenum, const void *> Binding::TexSubImage3D("glTexSubImage3D");
 Function<void, GLenum, GLint, GLint, GLint, GLint, GLsizei, GLsizei, GLsizei, GLenum, GLenum, const void *> Binding::TexSubImage3DOES("glTexSubImage3DOES");
 Function<void, GLuint, GLuint, GLuint64> Binding::TextureAttachMemoryNV("glTextureAttachMemoryNV");
+Function<void> Binding::TextureBarrierNV("glTextureBarrierNV");
 Function<void, GLuint, GLuint, GLuint, GLfloat, GLfloat, GLfloat, GLfloat, GLfloat> Binding::TextureFoveationParametersQCOM("glTextureFoveationParametersQCOM");
 Function<void, GLuint, GLint, GLint, GLint, GLint, GLint, GLsizei, GLsizei, GLsizei, GLuint, GLuint64, GLboolean> Binding::TexturePageCommitmentMemNV("glTexturePageCommitmentMemNV");
 Function<void, GLuint, GLenum, GLsizei, GLenum, GLsizei> Binding::TextureStorage1DEXT("glTextureStorage1DEXT");

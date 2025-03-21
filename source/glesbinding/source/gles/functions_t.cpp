@@ -228,6 +228,11 @@ void glTextureAttachMemoryNV(GLuint texture, GLuint memory, GLuint64 offset)
     return glesbinding::Binding::TextureAttachMemoryNV(texture, memory, offset);
 }
 
+void glTextureBarrierNV()
+{
+    return glesbinding::Binding::TextureBarrierNV();
+}
+
 void glTextureFoveationParametersQCOM(GLuint texture, GLuint layer, GLuint focalPoint, GLfloat focalX, GLfloat focalY, GLfloat gainX, GLfloat gainY, GLfloat foveaArea)
 {
     return glesbinding::Binding::TextureFoveationParametersQCOM(texture, layer, focalPoint, focalX, focalY, gainX, gainY, foveaArea);

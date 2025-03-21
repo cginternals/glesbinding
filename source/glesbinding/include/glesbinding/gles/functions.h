@@ -546,6 +546,7 @@ GLESBINDING_API void glNamedBufferPageCommitmentMemNV(GLuint buffer, GLintptr of
 GLESBINDING_API void glNamedBufferStorageExternalEXT(GLuint buffer, GLintptr offset, GLsizeiptr size, GLeglClientBufferEXT clientBuffer, BufferStorageMask flags);
 GLESBINDING_API void glNamedBufferStorageMemEXT(GLuint buffer, GLsizeiptr size, GLuint memory, GLuint64 offset);
 GLESBINDING_API void glNamedFramebufferSampleLocationsfvNV(GLuint framebuffer, GLuint start, GLsizei count, const GLfloat * v);
+GLESBINDING_API void glNamedFramebufferTextureMultiviewOVR(GLuint framebuffer, GLenum attachment, GLuint texture, GLint level, GLint baseViewIndex, GLsizei numViews);
 GLESBINDING_API void glNamedRenderbufferStorageMultisampleAdvancedAMD(GLuint renderbuffer, GLsizei samples, GLsizei storageSamples, GLenum internalformat, GLsizei width, GLsizei height);
 GLESBINDING_API void glObjectLabel(GLenum identifier, GLuint name, GLsizei length, const GLchar * label);
 GLESBINDING_API void glObjectLabelKHR(GLenum identifier, GLuint name, GLsizei length, const GLchar * label);
@@ -801,6 +802,7 @@ GLESBINDING_API void glTexSubImage2D(GLenum target, GLint level, GLint xoffset, 
 GLESBINDING_API void glTexSubImage3D(GLenum target, GLint level, GLint xoffset, GLint yoffset, GLint zoffset, GLsizei width, GLsizei height, GLsizei depth, GLenum format, GLenum type, const void * pixels);
 GLESBINDING_API void glTexSubImage3DOES(GLenum target, GLint level, GLint xoffset, GLint yoffset, GLint zoffset, GLsizei width, GLsizei height, GLsizei depth, GLenum format, GLenum type, const void * pixels);
 GLESBINDING_API void glTextureAttachMemoryNV(GLuint texture, GLuint memory, GLuint64 offset);
+GLESBINDING_API void glTextureBarrierNV();
 GLESBINDING_API void glTextureFoveationParametersQCOM(GLuint texture, GLuint layer, GLuint focalPoint, GLfloat focalX, GLfloat focalY, GLfloat gainX, GLfloat gainY, GLfloat foveaArea);
 GLESBINDING_API void glTexturePageCommitmentMemNV(GLuint texture, GLint layer, GLint level, GLint xoffset, GLint yoffset, GLint zoffset, GLsizei width, GLsizei height, GLsizei depth, GLuint memory, GLuint64 offset, GLboolean commit);
 GLESBINDING_API void glTextureStorage1DEXT(GLuint texture, GLenum target, GLsizei levels, GLenum internalformat, GLsizei width);

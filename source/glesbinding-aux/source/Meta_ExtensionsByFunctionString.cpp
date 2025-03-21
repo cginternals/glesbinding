@@ -387,6 +387,7 @@ const std::unordered_map<std::string, std::set<GLextension>> Meta_ExtensionsByFu
     { "glNamedBufferStorageExternalEXT", { GLextension::GL_EXT_external_buffer } },
     { "glNamedBufferStorageMemEXT", { GLextension::GL_EXT_memory_object } },
     { "glNamedFramebufferSampleLocationsfvNV", { GLextension::GL_NV_sample_locations } },
+    { "glNamedFramebufferTextureMultiviewOVR", { GLextension::GL_OVR_multiview } },
     { "glNamedRenderbufferStorageMultisampleAdvancedAMD", { GLextension::GL_AMD_framebuffer_multisample_advanced } }
 };
 const std::unordered_map<std::string, std::set<GLextension>> Meta_ExtensionsByFunctionString_O =
@@ -585,6 +586,7 @@ const std::unordered_map<std::string, std::set<GLextension>> Meta_ExtensionsByFu
     { "glTexStorageMem3DMultisampleEXT", { GLextension::GL_EXT_memory_object } },
     { "glTexSubImage3DOES", { GLextension::GL_OES_texture_3D } },
     { "glTextureAttachMemoryNV", { GLextension::GL_NV_memory_attachment } },
+    { "glTextureBarrierNV", { GLextension::GL_NV_texture_barrier } },
     { "glTextureFoveationParametersQCOM", { GLextension::GL_QCOM_texture_foveated } },
     { "glTexturePageCommitmentMemNV", { GLextension::GL_NV_memory_object_sparse } },
     { "glTextureStorage1DEXT", { GLextension::GL_EXT_texture_storage } },
